@@ -5,8 +5,8 @@ I upload configuration files (often named dotfiles as they usually start with a 
 
 Here is a list of the files :
 
-* **.irssi/config**  [https://irssi.org/](irssi) configuration file. Uses [https://github.com/claytron/dotfiles/blob/master/.irssi/scripts/tmux_away.pl](tmux-away) and [https://github.com/mjholtkamp/irssi-trackbar](trackbar) with the [https://github.com/huyz/irssi-colors-solarized](solarized-universal) theme.
-* **.i3/config** [https://i3wm.org/](i3 Window Manager) configuration file. Zenburn style. 
-* **.tmux.conf** [https://tmux.github.io/](tmux) configuration file. Uses [https://github.com/powerline/powerline](Powerline) installed via pip.
-* **.vimrc** [](Vim) configuration file. Uses [https://github.com/powerline/powerline](Powerline) installed via pip.
-* **.zshrc** Configuration file for the [http://www.zsh.org/](ZSH) shell with [https://github.com/robbyrussell/oh-my-zsh](Oh-My-ZSH).
+* **.irssi/config** [irssi](https://irssi.org/) configuration file. Uses [tmux-away](https://github.com/claytron/dotfiles/blob/master/.irssi/scripts/tmux_away.pl) and [trackbar](https://github.com/mjholtkamp/irssi-trackbar) with the [solarized-universal](https://github.com/huyz/irssi-colors-solarized) theme.
+* **.i3/config** [i3 Window Manager](https://i3wm.org/) configuration file. Zenburn style. 
+* **.tmux.conf** [tmux](https://tmux.github.io/) configuration file. Uses [Powerline](https://github.com/powerline/powerline) installed via pip.
+* **.vimrc** [Vim](http://www.vim.org/) configuration file. Uses [Powerline](https://github.com/powerline/powerline) installed via pip.
+* **.zshrc** Configuration file for the [ZSH](http://www.zsh.org/) shell with [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh).
