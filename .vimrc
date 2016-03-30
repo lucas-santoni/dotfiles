@@ -3,6 +3,7 @@ set t_Co=256
 
 "Manage plugins
 execute pathogen#infect()
+"Pathogen https://github.com/tpope/vim-pathogen
 
 "Syntax processing
 syntax on
