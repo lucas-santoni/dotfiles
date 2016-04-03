@@ -109,26 +109,26 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+e layout toggle split
 bindsym $mod+ampersand workspace 1:Terminal
 bindsym $mod+eacute workspace 2:Chrome
-bindsym $mod+quotedbl workspace 3:Chat
-bindsym $mod+apostrophe workspace 4:Music
+bindsym $mod+quotedbl workspace 3
+bindsym $mod+apostrophe workspace 4
 bindsym $mod+parenleft workspace 5
 bindsym $mod+minus workspace 6
 bindsym $mod+egrave workspace 7
 bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+ccedilla workspace 9:Chat
+bindsym $mod+agrave workspace 10:Music
 
 # move focused container to workspace
 bindsym $mod+Shift+ampersand move container to workspace 1:Terminal
 bindsym $mod+Shift+eacute move container to workspace 2:Chrome
-bindsym $mod+Shift+quotedbl move container to workspace 3:Chat
-bindsym $mod+Shift+apostrophe move container to workspace 4:Music
+bindsym $mod+Shift+quotedbl move container to workspace 3
+bindsym $mod+Shift+apostrophe move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+minus move container to workspace 6
 bindsym $mod+Shift+egrave move container to workspace 7
 bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+ccedilla move container to workspace 9: Chat
+bindsym $mod+Shift+agrave move container to workspace 10:Music
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -217,7 +217,7 @@ client.urgent           $border $backg   $textur $indicator $child
 
 # asignments
 assign [class="chromium-browser"] 2:Chrome
-# assign [class=""] 3:Chat # In progress
-# assign [class="Spotify" instance="spotify"] 4:Music # Bugs
-for_window [class="Spotify"] move to workspace 4:Music
+
+# assign [class="Spotify" instance="spotify"] 10:Music # Bugs
+for_window [class="Spotify"] move to workspace 10:Music
 
