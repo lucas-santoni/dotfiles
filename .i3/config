@@ -127,7 +127,7 @@ bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+minus move container to workspace 6
 bindsym $mod+Shift+egrave move container to workspace 7
 bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9: Chat
+bindsym $mod+Shift+ccedilla move container to workspace 9:Chat
 bindsym $mod+Shift+agrave move container to workspace 10:Music
 
 # reload the configuration file
