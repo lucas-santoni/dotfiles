@@ -96,3 +96,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lirc="ssh -p 22 pi@192.168.1.20 -t tmux attach -t IRC"
 alias irc="ssh -p 22 pi@geographer.servebeer.com -t tmux attach -t IRC"
+alias py="bpython"
