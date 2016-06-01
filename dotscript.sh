@@ -1,19 +1,19 @@
 usage()
 {
-    echo "Usage : $0 [-a file_to_add] [-l file_to_link]"
+  echo "Usage : $0 [-a file_to_add] [-l file_to_link]"
 }
 
 linkExistingFile()
 {
-    ln -s $fileToLink ~/$fileToLinl
+  ln -s $fileToLink ~/$fileToLink
 }
 
 addNewFile()
 {
-    cp ~/$fileToAdd .
-    mv ~/$fileToAdd ~/$fileToAdd.bak
-    fileToLink=$fileToAdd
-    linkExistingFile
+  cp ~/$fileToAdd .
+  mv ~/$fileToAdd ~/$fileToAdd.bak
+  fileToLink=$fileToAdd
+  linkExistingFile
 }
 
 while [ "$1" != "" ]; do
