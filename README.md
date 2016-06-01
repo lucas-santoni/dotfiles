@@ -25,7 +25,7 @@ Here is a list of the files :
 * **.vimrc** [Vim](http://www.vim.org/) configuration file. Uses
   [Powerline](https://github.com/powerline/powerline) installed via pip. There
   are also many plugins installed via
-  [Vundle](https://github.com/VundleVim/Vundle.vim)
+  [Vundle](https://github.com/VundleVim/Vundle.vim).
 * **.zshrc** Configuration file for the [ZSH](http://www.zsh.org/) shell with
   [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh).
 
