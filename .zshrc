@@ -96,8 +96,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lirc="ssh -p 22 pi@192.168.1.20 -t tmux attach -t IRC"
-alias irc="ssh -p 22 pi@geographer.servebeer.com -t tmux attach -t IRC"
+alias lirc="ssh lan -t tmux attach -t IRC"
+alias irc="ssh server -t tmux attach -t IRC"
 alias py="bpython"
 alias startlocal="sudo /opt/lampp/xampp start"
 alias stoplocal="sudo /opt/lampp/xampp stop"
