@@ -1,3 +1,5 @@
 [user]
   name = Geographer
   email = geographer@geographer.fr
+[push]
+  default = simple
