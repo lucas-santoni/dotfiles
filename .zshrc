@@ -50,12 +50,14 @@ ZSH_THEME="agnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(sudo git sublime zsh-autosuggestions zsh-syntax-highlighting)
-# zsh-syntax-highlighting : https://github.com/zsh-users/zsh-syntax-highlighting (oh-my-zsh installation)
+# zsh-syntax-highlighting : https://github.com/zsh-users/zsh-syntax-highlighting
+# (oh-my-zsh installation)
 # zsh-autosuggestions : https://github.com/zsh-users/zsh-autosuggestions
 
 # User env
@@ -97,3 +99,5 @@ source $ZSH/oh-my-zsh.sh
 alias lirc="ssh -p 22 pi@192.168.1.20 -t tmux attach -t IRC"
 alias irc="ssh -p 22 pi@geographer.servebeer.com -t tmux attach -t IRC"
 alias py="bpython"
+alias startlocal="sudo /opt/lampp/xampp start"
+alias stoplocal="sudo /opt/lampp/xampp stop"
