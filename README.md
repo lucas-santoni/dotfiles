@@ -31,8 +31,8 @@ Here is a list of the files :
 
 Feel free to use `dotscript.sh` in order to help you manage your dotfiles :
 
-$ ./dotscript.sh -h
-Usage : ./dotscript.sh \[-a file\_to\_add\] \[-l file\_to\_link\]
+`$ ./dotscript.sh -h
+Usage : ./dotscript.sh \[-a file\_to\_add\] \[-l file\_to\_link\]`
 
 If you are french, here is
 [a little post](http://blog.geographer.fr/posts/gerer-ses-dotfiles) I wrote on
