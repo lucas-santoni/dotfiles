@@ -3,3 +3,5 @@
   email = geographer@geographer.fr
 [push]
   default = simple
+[core]
+	editor = vim
