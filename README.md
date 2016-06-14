@@ -22,6 +22,7 @@ Here is a list of the files :
   ignore this ! ;-)
 * **.tmux.conf** > [tmux](https://tmux.github.io/) configuration file. Uses
   [Powerline](https://github.com/powerline/powerline) installed via pip.
+  Very different shortcuts.
 * **.vimrc** > [Vim](http://www.vim.org/) configuration file. Uses
   [Powerline](https://github.com/powerline/powerline) installed via pip. There
   are also many plugins installed via
