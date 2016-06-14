@@ -19,7 +19,7 @@ Here is a list of the files :
   and [trackbar](https://github.com/mjholtkamp/irssi-trackbar) with the
   [solarized-universal](https://github.com/huyz/irssi-colors-solarized) theme.
 * **.gitconfig** > My personnal configuration file for Git. You can propably
-  ignore this ! ;-)
+  ignore this ! :-)
 * **.tmux.conf** > [tmux](https://tmux.github.io/) configuration file. Uses
   [Powerline](https://github.com/powerline/powerline) installed via pip.
   Very different shortcuts.
