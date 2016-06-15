@@ -22,13 +22,14 @@ Here is a list of the files :
   ignore this ! :-)
 * **.tmux.conf** > [tmux](https://tmux.github.io/) configuration file. Uses
   [Powerline](https://github.com/powerline/powerline) installed via pip.
-  Very different shortcuts.
+  Different shortcuts.
 * **.vimrc** > [Vim](http://www.vim.org/) configuration file. Uses
   [Powerline](https://github.com/powerline/powerline) installed via pip. There
   are also many plugins installed via
   [Vundle](https://github.com/VundleVim/Vundle.vim).
 * **.zshrc** > Configuration file for the [ZSH](http://www.zsh.org/) shell with
-  [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh).
+  [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh). Various plugins, see
+  comments in file.
 
 Feel free to use `dotscript.sh` in order to help you manage your dotfiles :
 
