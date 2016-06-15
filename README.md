@@ -34,7 +34,7 @@ Feel free to use `dotscript.sh` in order to help you manage your dotfiles :
 
 ```
 $ ./dotscript.sh -h
-Usage : ./dotscript.sh \[-a file\_to\_add\] \[-l file\_to\_link\]
+Usage : ./dotscript.sh [-a file_to_add] [-l file_to_link]
 ```
 
 If you are french, here is
