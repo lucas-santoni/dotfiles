@@ -5,6 +5,9 @@ I normally have the latest stable versions of Gnome and Gnome-Shell installed.
 
 ## Gnome-Shell extensions
 
+You can get the Gnome-Shell extensions from [here](https://extensions.gnome.org/).
+Use Firefox directly from your Gnome system in order to enable them easily.
+
 * Alternatetab *A better Alt + Tab*
 * Dash to dock *A dock*
 * Icon hider *For removing useless icons in topbar*
@@ -15,6 +18,8 @@ I normally have the latest stable versions of Gnome and Gnome-Shell installed.
 * Workspace indicator *Workspace indicator in topbar*
 
 ## Theming
+
+Just follow the installation guides.
 
 * GTK Theme : [Arc Theme](https://github.com/horst3180/arc-theme) *The basic one*
 * Shell Theme : [Arc Shell](https://github.com/horst3180/arc-theme) *User themes must be enabled !*
