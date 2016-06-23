@@ -2,7 +2,7 @@
 DEFAULT_USER=geographer
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/geographer/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
