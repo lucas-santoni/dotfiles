@@ -25,3 +25,11 @@ Just follow the installation guides.
 * Shell Theme : [Arc Shell](https://github.com/horst3180/arc-theme) *User themes must be enabled !*
 * Basic icons : [Numix Icons](https://github.com/numixproject/numix-icon-theme) *For folders...* 
 * Application Icons : [Numix Circle Icons](https://github.com/numixproject/numix-icon-theme-circle) *For applications...*
+
+## Extras
+
+Here is a command to fix the workspaces for multiple monitors :
+
+```
+gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
+```
