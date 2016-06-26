@@ -21,9 +21,11 @@
 	"material_theme_accent_cyan": true,
 	"material_theme_small_tab": true,
 	"overlay_scroll_bars": "enabled",
-	"theme": "Material-Theme.sublime-theme",
-	"translate_tabs_to_spaces": true,
+	"rulers":
+	[
+		80
+	],
 	"tab_size": 4,
-	"rulers": [80]
-
+	"theme": "Material-Theme.sublime-theme",
+	"translate_tabs_to_spaces": true
 }
