@@ -18,7 +18,7 @@ Here is a list of the files :
   ux_away.pl)
   and [trackbar](https://github.com/mjholtkamp/irssi-trackbar) with the
   [solarized-universal](https://github.com/huyz/irssi-colors-solarized) theme.
-* **sublime_text/\*** > [Sublime Text](https://www.sublimetext.com/) configuration file. 
+* **sublime_text/** > [Sublime Text](https://www.sublimetext.com/) configuration file. 
   Requires [Package Control](https://packagecontrol.io/) for the plugins to install.
 * **.gitconfig** > My personnal configuration file for Git. You can propably
   ignore this ! :-)
