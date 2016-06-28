@@ -1,6 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
+	"fade_fold_buttons": false,
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"font_options":
 	[
@@ -25,8 +26,9 @@
 	[
 		80
 	],
+	"highlight_line": true,
+	"scroll_speed": 0,
 	"tab_size": 4,
 	"theme": "Material-Theme.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"scroll_speed": 0
+	"translate_tabs_to_spaces": true
 }

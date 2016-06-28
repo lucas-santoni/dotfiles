@@ -12,6 +12,7 @@
 		"Material Theme",
 		"Package Control",
 		"SublimeGit",
-		"SublimeLinter"
+		"SublimeLinter",
+		"SublimeLinter-contrib-clang"
 	]
 }
