@@ -96,7 +96,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# irc alias
 alias irc="ssh server -t tmux attach -t IRC"
+
+# python alias
 alias py="bpython"
+
+# server aliases
 alias startlocal="sudo /opt/lampp/xampp start"
 alias stoplocal="sudo /opt/lampp/xampp stop"
+
+# virtualenv aliases
+alias workon="source /bin/activate"
+alias workoff="deactivate"
