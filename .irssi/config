@@ -127,11 +127,8 @@ channels = (
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
   { name = "#Zenk-Security"; chatnet = "Rizon"; autojoin = "yes"; },
-  {
-    name = "#Zenk-Security-Offtopic";
-    chatnet = "Rizon";
-    autojoin = "yes";
-  }
+  { name = "#Zenk-Security-Offtopic"; chatnet = "Rizon"; autojoin = "yes"; },
+  { name = "#Zenk-Music"; chatnet = "Rizon"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -389,7 +386,7 @@ statusbar = {
 settings = {
   core = {
     real_name = "Geographer";
-    user_name = "geographer";
+    user_name = "Geographer";
     nick = "Geographer";
     quit_message = ":-)";
   };
