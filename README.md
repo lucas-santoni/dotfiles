@@ -13,11 +13,6 @@ Here is a list of the files :
 
 * **.i3/config** >  [i3 Window Manager](https://i3wm.org/) configuration file.
   Zenburn style.
-* **.irssi/config** > [irssi](https://irssi.org/) configuration file. Uses
-  [tmux-away](https://github.com/claytron/dotfiles/blob/master/.irssi/scripts/tm
-  ux_away.pl)
-  and [trackbar](https://github.com/mjholtkamp/irssi-trackbar) with the
-  [solarized-universal](https://github.com/huyz/irssi-colors-solarized) theme.
 * **sublime_text/** > [Sublime Text](https://www.sublimetext.com/) configuration file. 
   Requires [Package Control](https://packagecontrol.io/) for the plugins to install.
 * **.gitconfig** > My personnal configuration file for Git. You can propably
