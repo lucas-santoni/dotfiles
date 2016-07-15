@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # irc alias
-alias irc="ssh server -t tmux attach -t IRC"
+alias irc="ssh vps -t tmux attach -t IRC"
 
 # python alias
 alias py="bpython"
