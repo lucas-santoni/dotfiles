@@ -27,6 +27,8 @@ Just follow the installation guides.
 * Basic icons : [Numix Icons](https://github.com/numixproject/numix-icon-theme) *For folders...* 
 * Application Icons : [Numix Circle Icons](https://github.com/numixproject/numix-icon-theme-circle) *For applications...*
 
+Alternatively, for people who enjoy transparency : [Xenlism Themes](http://xenlism.github.io/minimalism/) *Can be mixed with Arc*
+
 ## Extras
 
 Here is a command to fix the workspaces for multiple monitors :
