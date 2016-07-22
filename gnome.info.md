@@ -11,12 +11,11 @@ Use Firefox directly from your Gnome system in order to enable them easily.
 * Alternatetab *A better Alt + Tab*
 * Dash to dock *A dock*
 * Icon hider *For removing useless icons in topbar*
-* Impatience *For faster animations*
+* No topleft hot corner *Because it's annoying, I use the super button instead*
 * Openweather *For the weather in topbar*
 * Panel OSD *For replacing notifications because of dock*
 * User themes *For themes*
 * Workspace indicator *Workspace indicator in topbar*
-* No Topleft Hot Corner *Disable the hot corner*
 
 ## Theming
 
