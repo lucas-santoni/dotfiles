@@ -10,6 +10,7 @@ Use Firefox directly from your Gnome system in order to enable them easily.
 
 * Alternatetab *A better Alt + Tab*
 * Dash to dock *A dock*
+* Hide Top Bar *Even more space*
 * Icon hider *For removing useless icons in topbar*
 * No topleft hot corner *Because it's annoying, I use the super button instead*
 * Openweather *For the weather in topbar*
