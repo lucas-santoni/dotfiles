@@ -13,6 +13,7 @@
 		"Package Control",
 		"SublimeGit",
 		"SublimeLinter",
-		"SublimeLinter-contrib-clang"
+		"SublimeLinter-contrib-clang",
+		"SublimeLinter-contrib-jslint"
 	]
 }
