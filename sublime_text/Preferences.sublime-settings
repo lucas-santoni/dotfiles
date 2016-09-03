@@ -31,5 +31,7 @@
 	"tab_size": 4,
 	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"draw_centered": true
+	"draw_centered": true,
+	"wrap_width": 80,
+	"word_wrap": true
 }
