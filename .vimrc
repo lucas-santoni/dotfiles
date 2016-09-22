@@ -83,12 +83,13 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=red
 set incsearch
 set hlsearch
 
-"Powerline
-"I need to if this
-"set rtp+=/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+:if filereadable("/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim")
+:  set rtp+="/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim"
+:else
+:  python from powerline.vim import setup as powerline_setup
+:  python powerline_setup()
+:  python del powerline_setup
+:endif
 set laststatus=2
 
 "More than 80 chars is bad
