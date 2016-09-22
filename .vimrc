@@ -83,8 +83,9 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=red
 set incsearch
 set hlsearch
 
-:if filereadable("/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim")
-:  set rtp+="/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim"
+"Powerline
+:if isdirectory("/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim")
+:  set rtp+=/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim
 :else
 :  python from powerline.vim import setup as powerline_setup
 :  python powerline_setup()
