@@ -84,7 +84,7 @@ set incsearch
 set hlsearch
 
 "Powerline
-:if isdirectory("/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim")
+:if isdirectory("~/.local/lib/python3.5/site-packages/powerline/bindings/vim")
 :  set rtp+=/home/geographer/.local/lib/python3.5/site-packages/powerline/bindings/vim
 :else
 :  python from powerline.vim import setup as powerline_setup
