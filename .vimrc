@@ -88,7 +88,6 @@ let powerlineLocalPath = $HOME . "/.local/lib/python3.5/site-packages/powerline/
 :if isdirectory(powerlineLocalPath)
 :  set rtp+=~/.local/lib/python3.5/site-packages/powerline/bindings/vim
 :else
-:  echo powerlineLocalPath
 :  python from powerline.vim import setup as powerline_setup
 :  python powerline_setup()
 :  python del powerline_setup
