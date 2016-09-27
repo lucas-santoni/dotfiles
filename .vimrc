@@ -85,18 +85,22 @@ set hlsearch
 
 "Powerline
 let powerlineLocalPath = $HOME . "/.local/lib/python3.5/site-packages/powerline/bindings/vim"
-:if isdirectory(powerlineLocalPath)
-:  set rtp+=~/.local/lib/python3.5/site-packages/powerline/bindings/vim
-:else
-:  python from powerline.vim import setup as powerline_setup
-:  python powerline_setup()
-:  python del powerline_setup
-:endif
+if isdirectory(powerlineLocalPath)
+  set rtp+=~/.local/lib/python3.5/site-packages/powerline/bindings/vim
+else
+  python from powerline.vim import setup as powerline_setup
+  python powerline_setup()
+  python del powerline_setup
+endif
 set laststatus=2
 
 "More than 80 chars is bad
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+  match OverLength /\%81v.\+/
+endif
 
 "Keyboard shortcuts
 nnoremap <F6> :GundoToggle<CR>
