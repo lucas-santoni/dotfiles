@@ -61,7 +61,7 @@ plugins=(sudo git sublime zsh-autosuggestions zsh-syntax-highlighting)
 # zsh-autosuggestions : https://github.com/zsh-users/zsh-autosuggestions
 
 # User env
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+export PATH="/usr/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Oh-My-ZSH path
