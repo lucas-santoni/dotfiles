@@ -18,6 +18,7 @@ Use Firefox directly from your Gnome system in order to enable them easily.
 * User themes *For themes*
 * Workspace indicator *Workspace indicator in topbar*
 * TopIcons *Move legacy tray icons to the topbar*
+* Notifications Alert *Reminds you that your notification tray is not empty*
 
 ## Theming
 
