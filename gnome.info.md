@@ -17,6 +17,7 @@ Use Firefox directly from your Gnome system in order to enable them easily.
 * Panel OSD *For replacing notifications because of dock*
 * User themes *For themes*
 * Workspace indicator *Workspace indicator in topbar*
+* TopIcons *Move legacy tray icons to the topbar*
 
 ## Theming
 
