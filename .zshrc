@@ -110,3 +110,8 @@ alias stoplocal="sudo /opt/lampp/xampp stop"
 # virtualenv aliases
 alias workon="source bin/activate"
 alias workoff="deactivate"
+
+# text editors
+alias ne="emacs -nw"
+alias e="vim"
+alias v="vim"
