@@ -17,6 +17,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/goyo.vim'
 
 "End loading plugins
 call vundle#end()
@@ -69,8 +70,8 @@ set number
 
 "Set line cursor
 set cursorline
-hi cursorline cterm=none
-hi cursorlinenr ctermfg=red
+hi cursorline cterm=none ctermbg=238
+hi cursorlinenr cterm=none ctermbg=238
 
 "Wildmenu
 set wildmenu
@@ -80,7 +81,7 @@ set lazyredraw
 
 "Show matching chars
 set showmatch
-hi MatchParen cterm=bold ctermbg=none ctermfg=red
+hi MatchParen ctermfg=red
 
 "Better search
 set incsearch
@@ -102,7 +103,6 @@ set laststatus=2
 if exists('+colorcolumn')
   set colorcolumn=80
 else
-  highlight OverLength ctermbg=red ctermfg=white guibg=#592929
   match OverLength /\%81v.\+/
 endif
 
