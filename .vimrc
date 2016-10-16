@@ -61,6 +61,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+"But still insert tab
+:inoremap <S-Tab> <C-V><Tab>
+
 "Show line numbers
 set number
 
@@ -84,7 +87,8 @@ set incsearch
 set hlsearch
 
 "Powerline
-let powerlineLocalPath = $HOME . "/.local/lib/python3.5/site-packages/powerline/bindings/vim"
+let powerlineLocalPath = $HOME .
+  \"/.local/lib/python3.5/site-packages/powerline/bindings/vim"
 if isdirectory(powerlineLocalPath)
   set rtp+=~/.local/lib/python3.5/site-packages/powerline/bindings/vim
 else
