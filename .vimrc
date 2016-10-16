@@ -63,7 +63,7 @@ set shiftwidth=2
 set expandtab
 
 "But still insert tab
-:inoremap <S-Tab> <C-V><Tab>
+inoremap <F2> <C-V><Tab>
 
 "Show line numbers
 set number
