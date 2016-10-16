@@ -72,6 +72,7 @@ set number
 set cursorline
 hi cursorline cterm=none ctermbg=238
 hi cursorlinenr cterm=none ctermbg=238
+hi SignColumn cterm=none ctermbg=238
 
 "Wildmenu
 set wildmenu
@@ -89,7 +90,7 @@ set hlsearch
 
 "Powerline
 let powerlineLocalPath = $HOME .
-  \"/.local/lib/python3.5/site-packages/powerline/bindings/vim"
+      \"/.local/lib/python3.5/site-packages/powerline/bindings/vim"
 if isdirectory(powerlineLocalPath)
   set rtp+=~/.local/lib/python3.5/site-packages/powerline/bindings/vim
 else
@@ -101,6 +102,7 @@ set laststatus=2
 
 "More than 80 chars is bad
 if exists('+colorcolumn')
+  hi colorcolumn ctermbg=238
   set colorcolumn=80
 else
   match OverLength /\%81v.\+/
