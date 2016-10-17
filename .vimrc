@@ -56,11 +56,11 @@ set list
 hi NonText ctermfg=241 guifg=gray
 hi SpecialKey ctermfg=241 guifg=gray
 
-"Use spaces instead of tabs
-set tabstop=2
+"Correct indentation (for Epitech currently)
+"set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set expandtab
+"set expandtab
 
 "But still insert tab
 inoremap <F2> <C-V><Tab>
