@@ -51,7 +51,7 @@ filetype plugin indent on
 "colorscheme solarized
 
 "Invisibles
-set listchars=tab:▸\ ,eol:¬,trail:~
+set listchars=tab:..,eol:¬,trail:~
 set list
 hi NonText ctermfg=241 guifg=gray
 hi SpecialKey ctermfg=241 guifg=gray
