@@ -115,3 +115,6 @@ alias workoff="deactivate"
 alias ne="emacs -nw"
 alias e="vim"
 alias v="vim"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
