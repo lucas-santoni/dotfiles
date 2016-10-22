@@ -18,12 +18,17 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/goyo.vim'
+Plugin 'nanotech/jellybeans.vim'
 
 "End loading plugins
 call vundle#end()
 
 "256 colors
 set t_Co=256
+
+"Syntax coloration
+let g:jellybeans_use_lowcolor_black = 0
+colorscheme jellybeans
 
 "Syntax processing
 syntax on
@@ -48,8 +53,8 @@ filetype plugin indent on
 "Invisibles
 set listchars=tab:..,eol:¬,trail:~
 set list
-hi NonText ctermfg=241 guifg=gray
-hi SpecialKey ctermfg=241 guifg=gray
+hi NonText ctermfg=241 ctermbg=none
+hi SpecialKey ctermfg=241 ctermbg=none
 
 "Correct indentation (for Epitech currently)
 set softtabstop=2
@@ -63,9 +68,9 @@ set number
 
 "Set line cursor
 set cursorline
-hi cursorline cterm=none ctermbg=238
-hi cursorlinenr cterm=none ctermbg=238
-hi SignColumn cterm=none ctermbg=238
+hi cursorline ctermbg=234
+hi cursorlinenr ctermbg=234 ctermfg=none
+hi SignColumn ctermbg=234
 
 "Wildmenu
 set wildmenu
@@ -75,7 +80,7 @@ set lazyredraw
 
 "Show matching chars
 set showmatch
-hi MatchParen ctermfg=red
+hi MatchParen ctermfg=red ctermbg=none
 
 "Better search
 set incsearch
@@ -95,7 +100,7 @@ set laststatus=2
 
 "More than 80 chars is bad
 if exists('+colorcolumn')
-  hi colorcolumn ctermbg=238
+  hi colorcolumn ctermbg=234
   set colorcolumn=80
 else
   match OverLength /\%81v.\+/
