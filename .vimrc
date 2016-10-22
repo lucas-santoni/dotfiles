@@ -45,11 +45,6 @@ let g:vim_markdown_folding_disabled = 1
 "Correct indentation
 filetype plugin indent on
 
-"Solarized dark color scheme
-"I don't use GVim so this is useless
-"set background=dark
-"colorscheme solarized
-
 "Invisibles
 set listchars=tab:..,eol:¬,trail:~
 set list
@@ -57,10 +52,8 @@ hi NonText ctermfg=241 guifg=gray
 hi SpecialKey ctermfg=241 guifg=gray
 
 "Correct indentation (for Epitech currently)
-"set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-"set expandtab
 
 "But still insert tab
 inoremap <F2> <C-V><Tab>
