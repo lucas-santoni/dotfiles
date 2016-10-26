@@ -19,12 +19,21 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/goyo.vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 "End loading plugins
 call vundle#end()
 
 "256 colors
 set t_Co=256
+
+"Snippets
+let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
+let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-b>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 "Syntax coloration
 let g:jellybeans_use_lowcolor_black = 0
@@ -65,6 +74,7 @@ inoremap <F2> <C-V><Tab>
 
 "Show line numbers
 set number
+set relativenumber
 
 "Set line cursor
 set cursorline

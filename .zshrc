@@ -100,6 +100,9 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# private aliases
+source ~/.private-dotfiles/private_aliases
+
 # irc alias
 alias irc="ssh vps -t tmux attach -t IRC"
 
