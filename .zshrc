@@ -122,5 +122,8 @@ alias ne="emacs -nw"
 alias e="vim"
 alias v="vim"
 
+# tmux
+alias attach="tmux attach -t"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
