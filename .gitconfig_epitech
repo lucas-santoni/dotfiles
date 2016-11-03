@@ -1,0 +1,7 @@
+[user]
+  name = Lucas Santoni
+  email = lucas.santoni@epitech.eu
+[push]
+  default = simple
+[core]
+  editor = vim
