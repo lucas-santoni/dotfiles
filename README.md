@@ -17,6 +17,8 @@ Here is a list of the files :
   Requires [Package Control](https://packagecontrol.io/) for the plugins to install.
 * **.gitconfig** > My personnal configuration file for Git. You can propably
   ignore this ! :-)
+* **.gitconfig_epitech** > My personnal configuration file for Git at Epitech.
+  You can also propably ignore this !
 * **.tmux.conf** > [tmux](https://tmux.github.io/) configuration file. Uses
   [Powerline](https://github.com/powerline/powerline) installed via pip.
   Different shortcuts.
@@ -24,6 +26,7 @@ Here is a list of the files :
   [Powerline](https://github.com/powerline/powerline) installed via pip. There
   are also many plugins installed via
   [Vundle](https://github.com/VundleVim/Vundle.vim).
+* **.vim/...** > Some resources for Vim like personnal scripts or snippets.
 * **README.md** > This file.
 * **.zshrc** > Configuration file for the [ZSH](http://www.zsh.org/) shell with
   [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh). Various plugins, see
