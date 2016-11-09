@@ -19,6 +19,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/goyo.vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -36,8 +37,10 @@ let g:UltiSnipsJumpForwardTrigger = "<c-b>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 "Syntax coloration
-let g:jellybeans_use_lowcolor_black = 0
-colorscheme jellybeans
+"let g:jellybeans_use_lowcolor_black = 0
+"colorscheme jellybeans
+set background=dark
+colorscheme solarized
 
 "Syntax processing
 syntax on
@@ -78,7 +81,7 @@ set relativenumber
 
 "Set line cursor
 set cursorline
-
+hi cursorlinenr ctermbg=0
 "Wildmenu
 set wildmenu
 
@@ -87,7 +90,7 @@ set lazyredraw
 
 "Show matching chars
 set showmatch
-hi MatchParen ctermfg=red ctermbg=none
+hi MatchParen ctermfg=blue ctermbg=none
 
 "Better search
 set incsearch
@@ -107,7 +110,7 @@ set laststatus=2
 
 "More than 80 chars is bad
 if exists('+colorcolumn')
-  hi colorcolumn ctermbg=234
+  hi colorcolumn ctermbg=0
   set colorcolumn=80
 else
   match OverLength /\%81v.\+/
