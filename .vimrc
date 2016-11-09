@@ -78,10 +78,12 @@ inoremap <F2> <C-V><Tab>
 "Show line numbers
 set number
 set relativenumber
+hi linenr ctermbg=none
 
 "Set line cursor
 set cursorline
 hi cursorlinenr ctermbg=0
+
 "Wildmenu
 set wildmenu
 
