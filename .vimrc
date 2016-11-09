@@ -78,9 +78,6 @@ set relativenumber
 
 "Set line cursor
 set cursorline
-hi cursorline ctermbg=234
-hi cursorlinenr ctermbg=234 ctermfg=none
-hi SignColumn ctermbg=234
 
 "Wildmenu
 set wildmenu
