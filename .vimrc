@@ -92,7 +92,7 @@ set lazyredraw
 
 "Show matching chars
 set showmatch
-hi MatchParen ctermfg=blue ctermbg=none
+hi MatchParen ctermfg=5 ctermbg=none
 
 "Better search
 set incsearch
