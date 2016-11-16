@@ -64,6 +64,11 @@ plugins=(sudo git sublime zsh-autosuggestions zsh-syntax-highlighting)
 export PATH="/usr/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# CSFML Environement Variable (Epitech)
+export LIBRARY_PATH=$LIBRARY_PATH:~/.graph_programming/lib
+export LD_LIBRARY_PATH=$LIBRARY_PATH:~/.graph_programming/lib
+export CPATH=$CPATH:~/.graph_programming/include
+
 # Oh-My-ZSH path
 source $ZSH/oh-my-zsh.sh
 
