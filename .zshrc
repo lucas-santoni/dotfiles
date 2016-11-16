@@ -143,6 +143,11 @@ alias ne="emacs -nw"
 alias e="vim"
 alias v="vim"
 
+# package manager
+alias install="sudo dnf install"
+alias update="sudo dnf update"
+alias upgrade="sudo dnf upgrade"
+
 # tmux
 alias attach="tmux attach -t"
 
