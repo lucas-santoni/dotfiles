@@ -138,6 +138,9 @@ alias stoplocal="sudo /opt/lampp/xampp stop"
 alias workon="source bin/activate"
 alias workoff="deactivate"
 
+# use del instead of rm to get a trash
+alias del='mv $* -t ~/.trash'
+
 # text editors
 alias ne="emacs -nw"
 alias e="vim"
