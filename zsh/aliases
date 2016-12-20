@@ -14,9 +14,6 @@ alias irc="ssh vps -t tmux attach -t IRC"
 # sublime text
 alias st="subl3"
 
-# epitech
-alias norme="/usr/bin/norme.py . -verbose -libc -printline"
-
 # misc
 alias mv="mv -v"
 alias cp="cp -v"
