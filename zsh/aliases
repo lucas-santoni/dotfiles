@@ -1,0 +1,27 @@
+# tmux
+alias tm="tmux -2"
+alias attach="tmux attach -t"
+
+# yaourt
+alias search="yaourt"
+alias install="yaourt -Syua"
+alias remove="yaourt -Rsn"
+alias clean="paccache -rk 1"
+
+# ssh
+alias irc="ssh vps -t tmux attach -t IRC"
+
+# sublime text
+alias st="subl3"
+
+# epitech
+alias norme="/usr/bin/norme.py . -verbose -libc -printline"
+
+# misc
+alias mv="mv -v"
+alias cp="cp -v"
+alias rrm="rm -Rf"
+alias cx="chmod +x"
+alias what="ag --hidden --ignore .git"
+alias goodbyefriend="shutdown -h now"
+alias internet="nmtui"
