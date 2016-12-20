@@ -1,0 +1,43 @@
+[options]
+font = Inconsolata-g for Powerline 13
+
+[colors]
+
+# special
+foreground      = #d0d0d0
+foreground_bold = #d0d0d0
+cursor          = #d0d0d0
+background      = #3a3a3a
+
+# black
+color0  = #4e4e4e
+color8  = #626262
+
+# red
+color1  = #d68787
+color9  = #d75f87
+
+# green
+color2  = #5f865f
+color10 = #87af87
+
+# yellow
+color3  = #d8af5f
+color11 = #ffd787
+
+# blue
+color4  = #85add4
+color12 = #add4fb
+
+# magenta
+color5  = #d7afaf
+color13 = #ffafaf
+
+# cyan
+color6  = #87afaf
+color14 = #87d7d7
+
+# white
+color7  = #d0d0d0
+color15 = #ffffff
+
