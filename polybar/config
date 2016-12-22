@@ -23,15 +23,15 @@ border-top-color = ${colors.primary}
 spacing = 1
 padding-left = 1
 padding-right = 1
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = Terminus:size=10;0
 font-1 = FontAwesome:size=10;0
 
 modules-left = i3
 modules-center = date
-modules-right = wlan battery
+modules-right = volume backlight battery
 
 tray-position = right
 tray-padding = 2
@@ -95,7 +95,7 @@ label-connected = %local_ip%
 
 format-disconnected-underline = ${self.format-connected-underline}
 format-disconnected-prefix = " "
-label-disconnected = "non connecté :-("
+label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
@@ -137,3 +137,15 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
+
+[module/backlight]
+type = internal/backlight
+format = <label>
+label =  %percentage%
+card = intel_backlight
+
+[module/volume]
+type = internal/volume
+master-mixer = Master
+format-volume = <label-volume>
+label-volume =  %percentage%
