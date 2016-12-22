@@ -8,7 +8,8 @@ export TERM=xterm
 ZSH_THEME="sorin"
 
 # Plugins
-plugins=(git sudo zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git sudo zsh-syntax-highlighting
+zsh-autosuggestions vi-mode npm node)
 
 # ZSH
 source $ZSH/oh-my-zsh.sh
