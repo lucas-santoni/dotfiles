@@ -12,7 +12,6 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
 	],
 	"indent_guide_options":
 	[
@@ -33,5 +32,6 @@
 	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true,
-	"wrap_width": 80
+	"wrap_width": 80,
+	"vintage_start_in_command_mode": true
 }
