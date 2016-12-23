@@ -1,10 +1,11 @@
 # tmux
 alias tm="tmux -2"
-alias attach="tmux attach -t"
+alias at="tmux attach -t"
 
 # yaourt
 alias search="yaourt"
-alias install="yaourt -Syua"
+alias install="yaourt -Sa"
+alias update="yaourt -Syua"
 alias remove="yaourt -Rsn"
 alias clean="paccache -rk 1"
 
