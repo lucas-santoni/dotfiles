@@ -1,4 +1,5 @@
 # tmux
+alias tmux="tmux -2"
 alias tm="tmux -2"
 alias at="tmux attach -t"
 
@@ -18,6 +19,8 @@ alias st="subl3"
 # misc
 alias mv="mv -v"
 alias cp="cp -v"
+alias ccp="cp -R"
+alias ln="ln -v"
 alias rrm="rm -Rf"
 alias cx="chmod +x"
 alias what="ag --hidden --ignore .git"
