@@ -3,8 +3,13 @@ for_window [class="^.*"] border pixel 8
 gaps inner 10
 gaps outer 5
 
-# Start all popups windows floating
+# My floating friends
 for_window [window_role="pop-up"] floating enable
+for_window [class="imv"] floating enable
+for_window [class="Thunar"] floating enable
+for_window [class="File-roller"] floating enable
+for_window [class="Vlc"] floating enable
+for_window [class="Corebird"] floating enable
 
 # Font
 font pango: Inconsolata-g 11

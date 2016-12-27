@@ -28,10 +28,10 @@
 		80
 	],
 	"scroll_speed": 0,
-	"tab_size": 4,
+	"tab_size": 2,
 	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
+	"vintage_start_in_command_mode": true,
 	"word_wrap": true,
-	"wrap_width": 80,
-	"vintage_start_in_command_mode": true
+	"wrap_width": 80
 }
