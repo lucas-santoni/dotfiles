@@ -19,6 +19,10 @@ alias st="subl3"
 # gdb
 alias gdb="gdb -q"
 
+# forecast
+alias meteo="curl wttr.in/Paris"
+alias moon="curl wttr.in/Moon"
+
 # misc
 alias mv="mv -v"
 alias cp="cp -v"
