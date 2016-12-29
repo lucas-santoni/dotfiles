@@ -34,11 +34,19 @@
 ! white
 *.color7:       #d0d0d0
 
-rofi.terminal:        termite
-rofi.columns:         1
-rofi.eh:              1
-rofi.bw:              0
-rofi.sidebar-mode:    false
-rofi.separator-style: none
-rofi.hide-scrollbar:  true
-rofi.color-enabled:   true
+rofi.location:          0
+rofi.color-enabled:     true
+rofi.color-window:      argb:dc111111, argb:dc111111
+rofi.color-normal:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.color-urgent:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.color-active:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.separator-style:   dash
+rofi.fullscreen:        true
+rofi.padding:           130
+rofi.hide-scrollbar:    true
+rofi.line-margin:       5
+rofi.fake-transparency: false
+rofi.yoffset:           0
+rofi.xoffset:           0
+rofi.width:             1366
+rofi.opacity:           90
