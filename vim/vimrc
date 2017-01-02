@@ -76,7 +76,7 @@ set showmatch
 hi MatchParen ctermfg=5 ctermbg=none
 
 "More than 80 chars is bad
-hi olorcolumn ctermbg=0
+hi colorcolumn ctermbg=0
 set colorcolumn=80
 
 "Colorscheme
