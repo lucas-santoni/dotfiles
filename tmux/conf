@@ -19,7 +19,6 @@ bind l select-pane -R
 set-option -g allow-rename off
 
 # General style
-set-option -g status-position top
 set-option -g status-justify centre
 set-option -g status-bg default
 set-option -g status-fg black
