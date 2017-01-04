@@ -10,6 +10,7 @@ for_window [class="Thunar"] floating enable
 for_window [class="File-roller"] floating enable
 for_window [class="Vlc"] floating enable
 for_window [class="Corebird"] floating enable
+for_window [class="Wine"] floating enable
 
 # Font
 font pango: Inconsolata-g 11
