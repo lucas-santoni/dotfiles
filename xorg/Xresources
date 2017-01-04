@@ -41,7 +41,7 @@ rofi.color-window:      argb:dc111111, argb:dc111111
 rofi.color-normal:      argb:003a3a3a, #626262, argb:003a3a3a, argb:003a3a3a, argb:ffffd787
 rofi.color-urgent:      argb:003a3a3a, #626262, argb:003a3a3a, argb:003a3a3a, argb:ffffd787
 rofi.color-active:      argb:003a3a3a, #626262, argb:003a3a3a, argb:003a3a3a, argb:ffffd787
-rofi.separator-style:   dash
+rofi.separator-style:   none
 rofi.fullscreen:        true
 rofi.padding:           130
 rofi.hide-scrollbar:    true

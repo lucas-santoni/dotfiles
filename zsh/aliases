@@ -23,6 +23,10 @@ alias gdb="gdb -q"
 alias meteo="curl wttr.in/Paris"
 alias moon="curl wttr.in/Moon"
 
+# valgrind
+alias vatrack="valgrind --track-origins=yes"
+alias valeak="valgrind --leak-check=full"
+
 # misc
 alias mv="mv -v"
 alias cp="cp -v"
