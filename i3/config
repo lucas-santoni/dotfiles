@@ -128,7 +128,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Define colors
-set $pimp	#ffd787
+set $pimp	#f3eed8
 set $wesh	#d75f87
 set $back	#626262
 
