@@ -63,6 +63,9 @@ let g:airline#extensions#tabline#close_symbol = ':p'
 set cursorline
 hi cursorlinenr ctermbg=0
 
+"Smooth scrolling
+set scrolloff=2
+
 "Identation
 filetype plugin indent on
 set softtabstop=2
@@ -78,6 +81,7 @@ hi MatchParen ctermfg=5 ctermbg=none
 "More than 80 chars is bad
 hi colorcolumn ctermbg=0
 set colorcolumn=80
+set synmaxcol=150
 
 "Colorscheme
 colo seoul256
