@@ -27,6 +27,12 @@ alias moon="curl wttr.in/Moon"
 alias vatrack="valgrind --track-origins=yes"
 alias valeak="valgrind --leak-check=full"
 
+# make
+alias m="make"
+alias mr="make re"
+alias mc="make clean"
+alias mf="make fclean"
+
 # misc
 alias mv="mv -v"
 alias cp="cp -v"
