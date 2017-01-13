@@ -1,7 +1,7 @@
 # Gaps
 for_window [class="^.*"] border pixel 8
-gaps inner 10
-gaps outer 5
+gaps inner 15
+gaps outer 10
 
 # My floating friends
 for_window [window_role="pop-up"] floating enable
@@ -11,6 +11,7 @@ for_window [class="File-roller"] floating enable
 for_window [class="Vlc"] floating enable
 for_window [class="Corebird"] floating enable
 for_window [class="Wine"] floating enable
+for_window [class="Lxappearance"] floating enable
 
 # Font
 font pango: Inconsolata-g 11
