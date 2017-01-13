@@ -98,3 +98,6 @@ let g:fzf_layout = { 'down': '~30%' }
 
 "Nerdtree
 nnoremap <F5> :NERDTreeTabsToggle<CR>
+
+highlight Pmenu ctermfg=252 ctermbg=0
+highlight PmenuSel ctermfg=3 ctermbg=0
