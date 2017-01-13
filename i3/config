@@ -46,6 +46,9 @@ exec --no-startup-id nm-applet
 # Terminal
 bindsym $mod+Return exec termite
 
+# File explorer
+bindsym $mod+U exec thunar
+
 # Google Chrome
 bindsym $mod+G exec google-chrome-stable
 
