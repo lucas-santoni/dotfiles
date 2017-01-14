@@ -87,6 +87,10 @@ set synmaxcol=150
 colo seoul256
 set background=dark
 
+"Autocomplation color
+highlight Pmenu ctermfg=252 ctermbg=0
+highlight PmenuSel ctermfg=3 ctermbg=0
+
 "FZF
 map <F3> :FZF <CR>
 let g:fzf_action = {
@@ -98,6 +102,3 @@ let g:fzf_layout = { 'down': '~30%' }
 
 "Nerdtree
 nnoremap <F5> :NERDTreeTabsToggle<CR>
-
-highlight Pmenu ctermfg=252 ctermbg=0
-highlight PmenuSel ctermfg=3 ctermbg=0
