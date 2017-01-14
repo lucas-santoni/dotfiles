@@ -1,7 +1,7 @@
 # Environment
 export ZSH=~/.oh-my-zsh
 export DEFAULT_USER=geographer
-export PATH="/usr/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+export PATH="/usr/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/geographer/.local/bin"
 export TERM=xterm
 
 # Theme
