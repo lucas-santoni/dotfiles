@@ -12,6 +12,7 @@ for_window [class="Vlc"] floating enable
 for_window [class="Corebird"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="love"] floating enable
 
 # Font
 font pango: Inconsolata-g 11
@@ -50,7 +51,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+U exec thunar
 
 # Google Chrome
-bindsym $mod+G exec google-chrome-stable
+bindsym $mod+G exec --no-startup-id google-chrome-stable
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh

@@ -140,12 +140,12 @@ animation-charging-framerate = 750
 
 [module/backlight]
 type = internal/backlight
-format = <label>
+format = <label>%
 label =  %percentage%
 card = intel_backlight
 
 [module/volume]
 type = internal/volume
 master-mixer = Master
-format-volume = <label-volume>
+format-volume = <label-volume>%
 label-volume =  %percentage%
