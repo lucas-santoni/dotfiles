@@ -3,12 +3,13 @@ alias tmux="tmux -2"
 alias tm="tmux -2"
 alias at="tmux attach -t"
 
-# yaourt
+# yaourt / pacman
 alias search="yaourt"
 alias install="yaourt -Sa"
 alias update="yaourt -Syua"
 alias remove="yaourt -Rsn"
 alias clean="paccache -rk 1"
+alias orphans="sudo pacman -Rns $(pacman -Qtdq)"
 
 # ssh
 alias irc="ssh vps -t tmux attach -t IRC"
