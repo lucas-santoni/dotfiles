@@ -1,5 +1,5 @@
 [options]
-font = Inconsolata-g for Powerline 13
+font = Inconsolata-g for Powerline 15
 scrollback_lines = 10000
 
 [colors]

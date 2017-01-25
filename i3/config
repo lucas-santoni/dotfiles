@@ -1,5 +1,5 @@
 # Gaps
-for_window [class="^.*"] border pixel 8
+for_window [class="^.*"] border pixel 5
 gaps inner 15
 gaps outer 10
 
@@ -124,10 +124,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Resize windows
 mode "resize" {
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
