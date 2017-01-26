@@ -27,11 +27,11 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = xos4 Terminus:size=15;3
-font-1 = FontAwesome:size=12;3
+font-1 = FontAwesome:size=11;4
 
 modules-left = i3
 modules-center = date
-modules-right = volume backlight battery
+modules-right = pacman volume backlight battery
 
 tray-position = right
 tray-padding = 2
@@ -109,7 +109,7 @@ time = %H:%M
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = %date% %time%
+label =%date% %time%
 
 [module/battery]
 type = internal/battery
@@ -136,16 +136,21 @@ animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 700
+animation-charging-framerate = 500
 
 [module/backlight]
 type = internal/backlight
 format = <label>%
-label =  %percentage%
+label =  %percentage%
 card = intel_backlight
 
 [module/volume]
 type = internal/volume
 master-mixer = Master
 format-volume = <label-volume>%
-label-volume =  %percentage%
+label-volume =  %percentage%
+
+[module/pacman]
+type = custom/script
+exec = ~/.dotfiles/scripts/getpacmanupdates.sh
+interval = 10
