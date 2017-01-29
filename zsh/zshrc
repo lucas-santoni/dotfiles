@@ -9,7 +9,7 @@ ZSH_THEME="sorin"
 
 # Plugins
 plugins=(git sudo zsh-syntax-highlighting
-zsh-autosuggestions vi-mode npm node)
+zsh-autosuggestions npm node)
 
 # ZSH
 source $ZSH/oh-my-zsh.sh
