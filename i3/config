@@ -24,7 +24,7 @@ new_window normal
 set $mod Mod4
 
 # Set a background
-exec_always --no-startup-id feh --bg-scale ~/Images/Wallpaper
+exec_always --no-startup-id feh --bg-scale ~/Images/wallpaper
 
 # Enable animations
 exec_always --no-startup-id compton --config ~/.compton

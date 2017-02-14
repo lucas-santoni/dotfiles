@@ -1,0 +1,72 @@
+# ls
+alias l="exa -la"
+alias t="exa --tree"
+alias tt="exa --long --tree"
+
+# tmux
+alias tm="tmux -2"
+alias tmux="tmux -2"
+alias at="tmux attach -t"
+
+# yaourt / pacman
+alias search="yaourt"
+alias install="yaourt -Sa"
+alias update="yaourt -Syua"
+alias remove="yaourt -Rsn"
+alias clean="paccache -rk 1"
+alias orphans="sudo pacman -Rns '(pacman -Qtdq)'"
+
+# ssh
+alias irc="ssh vps -t tmux attach -t IRC"
+
+# sublime text
+alias st="subl3"
+
+# forecast
+alias meteo="curl wttr.in/Paris"
+alias moon="curl wttr.in/Moon"
+
+# programming
+alias gdb="gdb -q"
+alias vatrack="valgrind --track-origins=yes"
+alias valeak="valgrind --leak-check=full"
+
+# make
+alias ma="make all"
+alias mr="make re"
+alias mc="make clean"
+alias mf="make fclean"
+
+# misc
+alias mv="mv -v"
+alias cp="cp -v"
+alias ccp="cp -R"
+alias ln="ln -v"
+alias rrm="rm -Rf"
+alias cx="chmod +x"
+alias what="ag --hidden --ignore .git"
+alias goodbyefriend="shutdown -h now"
+alias internet="nmtui"
+
+# git
+alias g='git'
+alias ga='git add'
+alias gaa='git add --all'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gcb='git checkout -b'
+alias gcl='git clone --recursive'
+alias gcm='git checkout master'
+alias gcmsg='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
+alias gf='git fetch'
+alias gl='git pull'
+alias gloga="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias glog='git log --oneline --decorate --graph'
+alias gm='git merge'
+alias gp='git push'
+alias grb='git rebase'
+alias gst='git status'
