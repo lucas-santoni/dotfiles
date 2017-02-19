@@ -29,6 +29,9 @@ exec_always --no-startup-id feh --bg-scale ~/Images/wallpaper
 # Enable animations
 exec_always --no-startup-id compton --config ~/.compton
 
+# Enable warmer screen colors at night
+exec --no-startup-id redshift
+
 # Mouse support for floating windows
 floating_modifier $mod
 
