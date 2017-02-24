@@ -28,9 +28,9 @@
 		80
 	],
 	"scroll_speed": 0,
-	"tab_size": 2,
+	"tab_size": 8,
 	"theme": "Material-Theme.sublime-theme",
-	"translate_tabs_to_spaces": true,
+	"translate_tabs_to_spaces": false,
 	"vintage_start_in_command_mode": true,
 	"word_wrap": true,
 	"wrap_width": 80

@@ -16,6 +16,7 @@
 		"SublimeGit",
 		"SublimeLinter",
 		"SublimeLinter-contrib-clang",
-		"SublimeLinter-contrib-jslint"
+		"SublimeLinter-contrib-jslint",
+		"VintageLines"
 	]
 }
