@@ -7,18 +7,33 @@ primary = #f3eed8
 secondary = #5f865f
 alert = #d68787
 
+[global/wm]
+margin-top = 10%
+margin-bottom = 10%
+
 [bar/bot]
+monitor-strict = false
+wm-name = i3
+monitor = eDP-1
 bottom = true
-width = 100%
-height = 30
-offset-x = 0
-offset-y = 0
+
+width = 1920
+height = 32
+;offset-x = 10
+;offset-y = 10
+;override-redirect = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top = 2
+border-top-size = 2
+;border-bottom-size = 2
+;border-left-size = 2
+;border-right-size = 2
 border-top-color = ${colors.primary}
+;border-bottom-color = ${colors.primary}
+;border-left-color = ${colors.primary}
+;border-right-color = ${colors.primary}
 
 spacing = 1
 padding-left = 1
