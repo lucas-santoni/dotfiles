@@ -1,7 +1,7 @@
 # Gaps
 for_window [class="^.*"] border pixel 3
-gaps inner 15
-gaps outer 10
+gaps inner 10
+gaps outer 1
 
 # My floating friends
 for_window [window_role="pop-up"] floating enable
@@ -24,7 +24,7 @@ new_window normal
 set $mod Mod4
 
 # Set a background
-exec_always --no-startup-id feh --bg-scale ~/Images/wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Images/wallpaper
 
 # Enable animations
 exec_always --no-startup-id compton --config ~/.compton
