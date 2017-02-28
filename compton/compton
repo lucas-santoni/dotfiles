@@ -56,3 +56,5 @@ wintypes:
         focus = true;
     };
 };
+
+opacity-rule = ["97:class_g = 'Termite'"];
