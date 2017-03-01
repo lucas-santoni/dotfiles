@@ -58,6 +58,7 @@ let g:Powerline_symbols='unicode'
 set laststatus=2
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#close_symbol = ':p'
+let g:airline#extensions#tabline#show_buffers = 0
 
 "Cursorline
 set cursorline

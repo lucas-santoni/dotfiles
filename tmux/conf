@@ -19,11 +19,11 @@ bind l select-pane -R
 set-option -g allow-rename off
 
 # General style
-set-option -g status-justify centre
+set-option -g status-justify right
 set-option -g status-bg default
 set-option -g status-fg black
-set-option -g status-left ' #[fg=green]#S#[default]'
-set-option -g status-right '#[fg=yellow]#H#[default] '
+set-option -g status-right ' #[fg=green]#S#[default]'
+set-option -g status-left ''
 
 # Active style
 set-window-option -g window-status-current-fg red
