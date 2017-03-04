@@ -17,6 +17,9 @@ call plug#end()
 "Avoid useless redraw
 set lazyredraw
 
+"See all the autocompletion
+set wildmenu
+
 "Syntax processing
 syntax on
 
