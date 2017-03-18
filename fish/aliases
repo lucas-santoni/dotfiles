@@ -47,6 +47,7 @@ alias cx="chmod +x"
 alias what="ag --hidden --ignore .git"
 alias goodbyefriend="shutdown -h now"
 alias internet="nmtui"
+alias ba="bash --noprofile --norc"
 
 # git
 alias g='git'
