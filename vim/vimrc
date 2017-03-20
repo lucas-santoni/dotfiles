@@ -5,7 +5,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'plasticboy/vim-markdown'
 Plug 'ervandew/supertab'
+Plug 'justinmk/vim-syntax-extra'
 Plug 'raimondi/delimitmate'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -24,7 +26,7 @@ set wildmenu
 syntax on
 
 "Invisibles
-set listchars=tab:..,eol:¬,trail:~
+set listchars=tab:..,trail:~
 set list
 hi NonText ctermfg=241 ctermbg=none
 hi SpecialKey ctermfg=241 ctermbg=none
@@ -58,10 +60,10 @@ hi linenr ctermbg=none
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 let g:Powerline_symbols='unicode'
-set laststatus=2
 let g:airline_theme='bubblegum'
-let g:airline#extensions#tabline#close_symbol = ':p'
+let g:airline#extensions#tabline#close_symbol = ' '
 let g:airline#extensions#tabline#show_buffers = 0
+set laststatus=2
 
 "Cursorline
 set cursorline
@@ -85,7 +87,6 @@ hi MatchParen ctermfg=5 ctermbg=none
 "More than 80 chars is bad
 hi colorcolumn ctermbg=0
 set colorcolumn=80
-set synmaxcol=150
 
 "Colorscheme
 colo seoul256
@@ -106,3 +107,6 @@ let g:fzf_layout = { 'down': '~30%' }
 
 "Nerdtree
 nnoremap <F5> :NERDTreeTabsToggle<CR>
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
