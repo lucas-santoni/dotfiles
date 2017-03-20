@@ -14,7 +14,6 @@ margin-bottom = 10%
 [bar/bot]
 monitor-strict = false
 wm-name = i3
-monitor = eDP-1
 bottom = true
 
 width = 1920
