@@ -58,6 +58,8 @@ bindsym $mod+G exec --no-startup-id google-chrome-stable
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+bindsym F11 exec --no-startup-id xdo hide -N Polybar && xdo hide -a "Polybar tray window"
+bindsym F12 exec --no-startup-id xdo show -N Polybar && xdo show -a "Polybar tray window"
 
 # Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
