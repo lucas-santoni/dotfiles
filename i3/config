@@ -1,7 +1,7 @@
-# Gaps
+# Gaps & borders
 for_window [class="^.*"] border pixel 3
-gaps inner 30
-gaps outer 15
+gaps inner 20
+gaps outer 0
 
 # My floating friends
 for_window [window_role="pop-up"] floating enable
