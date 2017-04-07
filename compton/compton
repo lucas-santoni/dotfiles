@@ -56,3 +56,5 @@ wintypes:
         focus = true;
     };
 };
+
+inactive-dim = 0.02;

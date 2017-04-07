@@ -1,5 +1,5 @@
 [colors]
-background = #3a3a3a
+background = #00000000
 background-alt = #3a3a3a
 foreground = #d0d0d0
 foreground-alt = #d0d0d0
@@ -27,11 +27,11 @@ height = 32
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-size = 2
+;border-top-size = 2
 ;border-bottom-size = 2
 ,border-left-size = 2
 ;border-right-size = 2
-border-top-color = ${colors.primary}
+;border-top-color = ${colors.primary}
 ;border-bottom-color = ${colors.primary}
 ;border-left-color = ${colors.primary}
 ;border-right-color = ${colors.primary}

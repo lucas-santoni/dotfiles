@@ -4,7 +4,7 @@ function fish_mode_prompt
 end
 
 # Term compatibility
-set -g -x TERM xterm
+set -g -x TERM xterm-256color
 
 # Default editor
 set -g -x EDITOR vim
@@ -37,3 +37,6 @@ source ~/.private-dotfiles/private_aliases
 
 # Normal aliases
 source ~/.dotfiles/fish/aliases
+
+# Global node modules
+set -x -g NODE_PATH '/usr/lib/node_modules'
