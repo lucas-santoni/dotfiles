@@ -54,11 +54,16 @@ set number
 set relativenumber
 hi linenr ctermbg=none
 
-
+"Status line
 set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ }
+
+"Tabline
+let g:lightline.tab = {
+      \ 'active': ['filename'],
+      \ 'inactive': ['filename']}
 
 "Cursorline
 set cursorline
