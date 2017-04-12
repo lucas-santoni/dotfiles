@@ -9,6 +9,9 @@ set -g -x TERM xterm-256color
 # Default editor
 set -g -x EDITOR vim
 
+# Default user
+set -x -g default_user geographer
+
 # Prompt colors
 # Seoul 256
 set dangerous_colors 3a3a3a 4e4e4e 626262 d0d0d0 d8af5f ffd787 d68787 d75f87 85add4 add4fb 5f865f 87af87
