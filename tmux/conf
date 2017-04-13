@@ -15,26 +15,42 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+# Terminal scrolling
+set-option -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
 # No automatic rename
 set-option -g allow-rename off
 
-# General style
-set-option -g status-justify right
-set-option -g status-bg default
-set-option -g status-fg black
-set-option -g status-right ' #[fg=green]#S#[default]'
-set-option -g status-left ''
+# Left text
+set -g status-justify left
+set -g status-bg black
+if '[ -z "$DISPLAY" ]' 'set -g status-bg default'
+set -g status-fg white
+set -g status-interval 4
 
-# Active style
-set-window-option -g window-status-current-fg red
-set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-format '#[fg=red]#W#[default]'
+# Messaging
+set -g message-fg black
+set -g message-bg yellow
+set -g message-command-fg blue
+set -g message-command-bg black
 
-# Inactive
-set-window-option -g window-status-format '#W'
+# Window mode
+setw -g mode-bg colour6
+setw -g mode-fg colour0
 
-# Panes
-set -g pane-border-style bg=default
-set -g pane-border-style fg=black
-set -g pane-active-border-style bg=default
-set -g pane-active-border-style fg=red
+# Statusline
+if '[ -z "$DISPLAY" ]' 'setw -g window-status-format " #F#I:#W "'
+if '[ -z "$DISPLAY" ]' 'setw -g window-status-current-format " #F#I:#W "'
+setw -g window-status-format "#[fg=colour8]#[bg=white] #I #[bg=colour8]#[fg=white] #W "
+setw -g window-status-current-format "#[fg=black]#[bg=colour7] #I #[fg=black]#[bg=colour15] #W "
+setw -g window-status-current-bg black
+setw -g window-status-current-fg yellow
+setw -g window-status-current-attr bold
+setw -g window-status-bg black
+setw -g window-status-fg blue
+setw -g window-status-attr default
+set -g status-right '#[fg=yellow]#(cut -d " " -f 1-3 /proc/loadavg) #[fg=colour8]// #[fg=cyan]Tmux [#S]'
+if '[ -z "$DISPLAY" ]' 'set -g status-right "#[fg=magenta]#(cat /proc/loadavg | cut -d \" \" -f 1-3) #[fg=yellow]#S #[fg=white]| #[fg=green]%d-%m-%Y #[fg=white]| #[fg=cyan]%A %H:%M"'
+set -g status-right-length 35
+if '[ -z "$DISPLAY" ]' 'set -g status-right-length 60'
+set -g status-left ''

@@ -25,11 +25,6 @@ set -x -g LESS_TERMCAP_so (printf "\033[01;31;33m")
 set -x -g LESS_TERMCAP_ue (printf "\033[0m")
 set -x -g LESS_TERMCAP_us (printf "\033[01;32m")
 
-# csfml
-set -x -g LIBRARY_PATH "/home/geographer/.graph_programming/lib"
-set -x -g LD_LIBRARY_PATH "/home/geographer/.graph_programming/lib"
-set -x -g CPATH "/home/geographer/.graph_programming/include"
-
 # fzf
 set -x -g FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 set -x -g FZF_CTRL_T_OPTS "--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
