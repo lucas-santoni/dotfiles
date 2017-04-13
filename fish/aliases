@@ -1,7 +1,6 @@
 # ls
-alias l="exa -la"
-alias t="exa --tree"
-alias tt="exa --long --tree"
+alias ls="exa"
+alias l="ls -l"
 
 # tmux
 alias tm="tmux -2"
