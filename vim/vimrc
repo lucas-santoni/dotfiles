@@ -1,7 +1,6 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/seoul256.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'ervandew/supertab'
@@ -60,7 +59,7 @@ set relativenumber
 "Status line
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'seoul256',
       \ }
 
 "Tabline
@@ -72,8 +71,8 @@ let g:lightline.tab = {
 set cursorline
 
 "Colorscheme
+colo gruvbox
 set background=dark
-colo solarized
 
 "Smooth scrolling
 set scrolloff=2
@@ -84,7 +83,7 @@ set softtabstop=2
 set shiftwidth=2
 
 "But still insert tab
-inoremap <F2> <C-V><Tab>
+inoremap hh <C-V><Tab>
 
 "Show matching chars
 set showmatch

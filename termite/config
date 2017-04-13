@@ -1,43 +1,44 @@
 [options]
-font = Inconsolata for Powerline 17
+font = Monaco for Powerline 17
 scrollback_lines = 10000
 
 [colors]
+# hard contrast: background = #1d2021
+background = #282828
+# soft contrast: background = #32302f
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
-# special
-foreground      = #d0d0d0
-foreground_bold = #d0d0d0
-cursor          = #bcbcbc
-background      = rgba(58, 58, 59, 1)
+# dark0 + gray
+color0 = #282828
+color8 = #928374
 
-# black
-color0  = #4e4e4e
-color8  = #626262
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
 
-# red
-color1  = #d68787
-color9  = #d75f87
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
 
-# green
-color2  = #5f865f
-color10 = #87af87
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
 
-# yellow
-color3  = #d8af5f
-color11 = #ffd787
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
 
-# blue
-color4  = #85add4
-color12 = #add4fb
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
 
-# magenta
-color5  = #d7afaf
-color13 = #ffafaf
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
 
-# cyan
-color6  = #87afaf
-color14 = #87d7d7
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2
 
-# white
-color7  = #d0d0d0
-color15 = #ffffff
+ft = dosini cms=#%s

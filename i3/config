@@ -21,7 +21,7 @@ font pango: Inconsolata-g 11
 new_window normal
 
 # Mod key
-set $mod Mod4
+set $mod Mod1
 
 # Set a background
 exec_always --no-startup-id feh --bg-fill ~/Images/wallpaper
