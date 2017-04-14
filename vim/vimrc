@@ -29,8 +29,6 @@ syntax on
 "Invisibles
 set listchars=tab:..,trail:~
 set list
-hi NonText ctermfg=241 ctermbg=none
-hi SpecialKey ctermfg=241 ctermbg=none
 
 "Snippets
 let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
@@ -71,6 +69,7 @@ let g:lightline.tab = {
 set cursorline
 
 "Colorscheme
+set t_Co=256
 colo gruvbox
 set background=dark
 
@@ -90,12 +89,11 @@ set showmatch
 hi MatchParen ctermfg=5 ctermbg=none
 
 "More than 80 chars is bad
-hi colorcolumn ctermbg=0
 set colorcolumn=80
 
 "Autocomplation color
-highlight Pmenu ctermfg=252 ctermbg=0
-highlight PmenuSel ctermfg=3 ctermbg=0
+"highlight Pmenu ctermfg=252 ctermbg=0
+"highlight PmenuSel ctermfg=3 ctermbg=0
 
 "FZF
 map <F3> :FZF <CR>
