@@ -3,6 +3,9 @@ function fish_mode_prompt
   # Disable the vim indicator
 end
 
+# Vim mode
+fish_vi_key_bindings
+
 # Term compatibility
 set -g -x TERM xterm-256color
 
