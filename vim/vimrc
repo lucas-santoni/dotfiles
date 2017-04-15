@@ -108,3 +108,6 @@ let g:fzf_layout = { 'down': '~30%' }
 nnoremap <F5> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+" Clear background buffer
+set t_ut=

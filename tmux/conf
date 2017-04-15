@@ -1,3 +1,6 @@
+# 256 colors
+set -g default-terminal "screen-256color"
+
 # Remap master key
 unbind C-b
 set-option -g prefix C-a
