@@ -96,7 +96,7 @@ set colorcolumn=80
 "highlight PmenuSel ctermfg=3 ctermbg=0
 
 "FZF
-map <F3> :FZF <CR>
+map ff :FZF <CR>
 let g:fzf_action = {
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-x': 'split',
