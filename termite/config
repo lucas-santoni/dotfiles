@@ -1,5 +1,5 @@
 [options]
-font = Monaco for Powerline 17
+font = Monaco for Powerline 14
 scrollback_lines = 10000
 
 [colors]
