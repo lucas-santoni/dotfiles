@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'ervandew/supertab'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/syntastic'
@@ -11,6 +10,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
+Plug 'shougo/neocomplete.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
