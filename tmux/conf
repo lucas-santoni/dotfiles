@@ -1,6 +1,9 @@
 # 256 colors
 set -g default-terminal "screen-256color"
 
+# Mouse support$
+set-option -g mouse on
+
 # Remap master key
 unbind C-b
 set-option -g prefix C-a
