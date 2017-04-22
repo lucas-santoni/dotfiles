@@ -29,8 +29,8 @@ set -g status-interval 4
 set -g status-left ''
 
 # Right text
-setw -g window-status-format "#[fg=colour8]#[bg=white] #I #[bg=colour8]#[fg=white] #W "
-setw -g window-status-current-format "#[fg=black]#[bg=colour7] #I #[fg=black]#[bg=colour15] #W "
+setw -g window-status-format "#[bg=colour8]#[fg=black] #W "
+setw -g window-status-current-format "#[fg=black]#[bg=colour15] #W "
 setw -g window-status-current-bg black
 setw -g window-status-current-fg yellow
 setw -g window-status-bg black
