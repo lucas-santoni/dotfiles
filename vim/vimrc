@@ -106,9 +106,10 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~30%' }
 
 "Nerdtree
-nnoremap tt :NERDTreeTabsToggle<CR>
+nnoremap rr :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeIgnore=['\.o$', '\~$']
 
 " Clear background buffer
 set t_ut=
