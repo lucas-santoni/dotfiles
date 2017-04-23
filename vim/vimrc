@@ -66,6 +66,12 @@ let g:lightline.tab = {
       \ 'active': ['filename'],
       \ 'inactive': ['filename']}
 
+"Buffers integration
+:set hidden
+nnoremap <C-H> :bprev<CR>
+nnoremap <C-L> :bnext<CR>
+nnoremap <C-J> :bdelete<CR>
+
 "Cursorline
 set cursorline
 
@@ -91,10 +97,6 @@ hi MatchParen ctermfg=5 ctermbg=none
 
 "More than 80 chars is bad
 set colorcolumn=80
-
-"Autocomplation color
-"highlight Pmenu ctermfg=252 ctermbg=0
-"highlight PmenuSel ctermfg=3 ctermbg=0
 
 "FZF
 map ff :FZF <CR>
