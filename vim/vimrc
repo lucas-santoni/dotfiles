@@ -71,6 +71,7 @@ let g:lightline.tab = {
 nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
 nnoremap <C-J> :bdelete<CR>
+nnoremap <C-K> :ls<CR>
 
 "Cursorline
 set cursorline
