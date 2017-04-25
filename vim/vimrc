@@ -61,11 +61,6 @@ let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ }
 
-"Tabline
-let g:lightline.tab = {
-      \ 'active': ['filename'],
-      \ 'inactive': ['filename']}
-
 "Buffers integration
 :set hidden
 nnoremap <C-H> :bprev<CR>
