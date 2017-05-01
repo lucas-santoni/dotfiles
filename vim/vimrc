@@ -74,7 +74,7 @@ set cursorline
 "Colorscheme
 set t_Co=256
 colo gruvbox
-set background=dark
+hi Normal ctermbg=none
 
 "Smooth scrolling
 set scrolloff=2
