@@ -74,7 +74,10 @@ set cursorline
 "Colorscheme
 set t_Co=256
 colo gruvbox
+
+"Use terminal emulator background
 hi Normal ctermbg=none
+hi NonText ctermbg=none
 
 "Smooth scrolling
 set scrolloff=2
