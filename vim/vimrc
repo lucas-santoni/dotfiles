@@ -15,6 +15,10 @@ Plug 'shougo/neocomplete.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
+"Bye Vi
+set nocompatible
+set backspace=2
+
 "Remap escape
 :imap jj <Esc>
 
