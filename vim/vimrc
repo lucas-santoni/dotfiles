@@ -2,8 +2,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-rhubarb'
 Plug 'plasticboy/vim-markdown'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'digitaltoad/vim-pug'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
@@ -90,6 +95,7 @@ set scrolloff=2
 filetype plugin indent on
 set softtabstop=2
 set shiftwidth=2
+set expandtab
 
 "But still insert tab
 inoremap hh <C-V><Tab>
@@ -115,6 +121,21 @@ nnoremap rr :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeIgnore=['\.o$', '\~$']
+
+"Tags
+nnoremap tt :TagbarToggle<CR>
+let g:tagbar_compact = 1
+
+"Git colors
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
+
+"Syntastic colors
+highlight SyntasticErrorSign ctermfg=red
+highlight SyntasticWarningSign ctermbg=yellow
 
 " Clear background buffer
 set t_ut=
