@@ -136,7 +136,7 @@ highlight GitGutterChangeDelete ctermfg=yellow
 
 "Syntastic colors
 highlight SyntasticErrorSign ctermfg=red
-highlight SyntasticWarningSign ctermbg=yellow
+highlight SyntasticWarningSign ctermfg=yellow
 
 " Clear background buffer
 set t_ut=
