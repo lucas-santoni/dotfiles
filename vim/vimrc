@@ -73,6 +73,7 @@ set cursorline
 
 "Colorscheme
 set t_Co=256
+set background=dark
 colo gruvbox
 
 "Use terminal emulator background

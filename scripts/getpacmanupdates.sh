@@ -1,5 +1,5 @@
-#!/bin/sh
+#! /bin/bash
 
-result=' '
+result=" "
 result+=$(checkupdates | wc -l)
 echo $result
