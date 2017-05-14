@@ -9,8 +9,9 @@ Plug 'tpope/vim-rhubarb'
 Plug 'plasticboy/vim-markdown'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'digitaltoad/vim-pug'
+Plug 'dag/vim-fish'
 Plug 'raimondi/delimitmate'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'SirVer/ultisnips'
@@ -47,17 +48,7 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<c-b>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
-"Syntaxt check with Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 0
-
-"vim-markdown configuration
+"Markdown configuration
 let g:vim_markdown_folding_disabled = 1
 
 "Line numbers
@@ -133,9 +124,15 @@ highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 
-"Syntastic colors
-highlight SyntasticErrorSign ctermfg=red
-highlight SyntasticWarningSign ctermbg=yellow
+"Ale signs
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+
+"ALE colors
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+highlight ALEErrorSign ctermfg=red
+highlight ALEWarningSign ctermfg=yellow
 
 " Clear background buffer
 set t_ut=
