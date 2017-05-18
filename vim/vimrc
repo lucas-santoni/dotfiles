@@ -1,6 +1,6 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'Geospace/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
@@ -46,7 +46,7 @@ set list
 let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
 let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
 let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<c-b>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 "Markdown configuration
@@ -55,13 +55,6 @@ let g:vim_markdown_folding_disabled = 1
 "Line numbers
 set number
 set relativenumber
-
-"Status line
-set laststatus=2
-let g:airline_theme = 'gruvbox'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
 
 "Buffers integration
 :set hidden
@@ -139,5 +132,22 @@ highlight clear ALEWarningSign
 highlight ALEErrorSign ctermfg=red
 highlight ALEWarningSign ctermfg=yellow
 
-" Clear background buffer
+"Status line
+set laststatus=2
+set noshowmode
+let g:airline_theme = 'gruvbox'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'b', 'c' ],
+      \ [ 'x', 'z', 'error', 'warning' ]
+      \ ]
+let g:airline#extensions#hunks#enabled = 0
+let g:airline_section_z = airline#section#create(['%3p%%'])
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+
+"Clear background buffer
 set t_ut=

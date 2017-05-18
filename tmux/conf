@@ -39,7 +39,7 @@ setw -g window-status-current-fg yellow
 setw -g window-status-bg black
 setw -g window-status-fg blue
 setw -g window-status-attr default
-set -g status-right "#[fg=yellow]#S #[fg=white]| #[fg=green]%d-%m-%Y #[fg=white]| #[fg=cyan]%A %H:%M"
+set -g status-right "#[fg=yellow]#S #[fg=white]| #[fg=cyan]%H:%M"
 set -g status-right-length 60
 
 # Messaging
