@@ -1,7 +1,8 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
@@ -57,9 +58,10 @@ set relativenumber
 
 "Status line
 set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'seoul256',
-      \ }
+let g:airline_theme = 'gruvbox'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
 
 "Buffers integration
 :set hidden
