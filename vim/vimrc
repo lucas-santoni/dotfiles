@@ -141,13 +141,14 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#default#layout = [
-      \ [ 'a', 'b', 'c' ],
-      \ [ 'x', 'z', 'error', 'warning' ]
+      \ [ 'a', 'error', 'warning', 'b', 'c' ],
+      \ [ 'x', 'z' ]
       \ ]
 let g:airline#extensions#hunks#enabled = 0
 let g:airline_section_z = airline#section#create(['%3p%%'])
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#whitespace#enabled = 0
 
 "Clear background buffer
 set t_ut=
