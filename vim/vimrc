@@ -30,6 +30,10 @@ set backspace=2
 "Parenthesis
 let g:rainbow_active = 1
 
+"Splits
+set splitright
+set splitbelow
+
 "Search
 set incsearch
 set hlsearch
