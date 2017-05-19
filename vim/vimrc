@@ -12,6 +12,7 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'digitaltoad/vim-pug'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
+Plug 'luochen1990/rainbow'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -25,6 +26,14 @@ call plug#end()
 "Bye Vi
 set nocompatible
 set backspace=2
+
+"Parenthesis
+let g:rainbow_active = 1
+
+"Search
+set incsearch
+set hlsearch
+set ignorecase
 
 "Remap escape
 :imap jj <Esc>
