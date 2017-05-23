@@ -17,7 +17,6 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'shougo/neocomplete.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

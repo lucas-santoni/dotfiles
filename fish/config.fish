@@ -14,6 +14,8 @@ set -g -x EDITOR vim
 
 # Default user
 set -x -g default_user geographer
+set -x -g FULLNAME "Lucas Santoni"
+set -x -g EPITECH_LOGIN lucas.santoni@epitech.eu
 
 # Colored man
 set -x -g LESS_TERMCAP_mb (printf "\033[01;31m")
