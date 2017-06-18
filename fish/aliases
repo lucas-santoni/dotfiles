@@ -7,7 +7,7 @@ alias tt="t -al"
 
 # vm
 alias startarch="vmrun start ~/Documents/Virtual\ Machines.localized/Archlinux.vmwarevm/Archlinux.vmx nogui"
-alias stoparch="vmrun stop Documents/Virtual\ Machines.localized/Archlinux.vmwarevm/Archlinux.vmx"
+alias stoparch="vmrun stop ~/Documents/Virtual\ Machines.localized/Archlinux.vmwarevm/Archlinux.vmx"
 
 # tmux
 alias tm="tmux -2"
