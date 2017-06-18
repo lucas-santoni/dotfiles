@@ -5,6 +5,9 @@ alias tree="exa --tree"
 alias t="tree"
 alias tt="t -al"
 
+# vm
+alias startarch="vmrun start ~/Documents/Virtual\ Machines.localized/Archlinux.vmwarevm/Archlinux.vmx nogui"
+
 # tmux
 alias tm="tmux -2"
 alias tmux="tmux -2"
