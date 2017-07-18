@@ -3,6 +3,9 @@ function fish_mode_prompt
   # Disable the vim indicator
 end
 
+# Disable greeting
+set fish_greeting
+
 # Vim mode
 fish_vi_key_bindings
 

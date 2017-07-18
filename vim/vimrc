@@ -20,6 +20,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'shougo/neocomplete.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
@@ -125,6 +126,10 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeIgnore=['\.o$', '\~$']
 
+"Splits
+cabbrev s split
+cabbrev v vsplit
+
 "Tags
 nnoremap tt :TagbarToggle<CR>
 let g:tagbar_compact = 1
@@ -169,6 +174,9 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#ale#error_symbol = '✘ '
 let g:airline#extensions#ale#warning_symbol = '⚠ '
+
+"Grep
+nnoremap <C-a> :Grepper<CR>
 
 "Clear background buffer
 set t_ut=
