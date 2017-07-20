@@ -85,10 +85,6 @@ set t_Co=256
 set background=dark
 colo gruvbox
 
-"Use terminal emulator background
-hi Normal ctermbg=none
-hi NonText ctermbg=none
-
 "Smooth scrolling
 set scrolloff=2
 
@@ -177,6 +173,10 @@ let g:airline#extensions#ale#warning_symbol = '⚠ '
 
 "Grep
 nnoremap <C-a> :Grepper<CR>
+
+"Use terminal emulator background
+hi Normal ctermbg=none
+hi NonText ctermbg=none
 
 "Clear background buffer
 set t_ut=
