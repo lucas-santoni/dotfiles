@@ -39,7 +39,7 @@ set splitbelow
 set incsearch
 set hlsearch
 set ignorecase
-nnoremap yy :nohl<CR>
+nnoremap qq :nohl<CR>
 
 "Remap escape
 :imap jj <Esc>
@@ -157,7 +157,7 @@ highlight ALEWarningSign ctermfg=yellow
 set laststatus=2
 set noshowmode
 let g:airline_theme = 'gruvbox'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#buffer_min_count = 3
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#show_tab_type = 0
