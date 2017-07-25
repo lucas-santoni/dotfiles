@@ -9,7 +9,7 @@ alias ls="exa"
 alias l="ls -l"
 alias tree="exa --tree"
 alias t="tree"
-alias tt="t -al"
+alias tt="t --long"
 
 # vm
 alias startarch="vmrun start ~/Documents/Virtual\ Machines.localized/Archlinux.vmwarevm/Archlinux.vmx nogui"

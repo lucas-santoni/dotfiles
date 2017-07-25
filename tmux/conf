@@ -28,22 +28,30 @@ set-option -g allow-rename off
 set -g status-justify left
 set -g status-bg default
 set -g status-fg white
-set -g status-interval 4
+set -g status-interval 1
 set -g status-left ''
+set -g window-status-separator ''
 
 # Right text
 setw -g window-status-format "#[bg=colour8]#[fg=black] #W "
-setw -g window-status-current-format "#[fg=black]#[bg=colour15] #W "
+setw -g window-status-current-format "#[bg=colour12]#[fg=black] #W "
 setw -g window-status-current-bg black
-setw -g window-status-current-fg yellow
+setw -g window-status-current-fg cyan
 setw -g window-status-bg black
-setw -g window-status-fg blue
+setw -g window-status-fg cyan
 setw -g window-status-attr default
-set -g status-right "#[fg=yellow]#S #[fg=white]| #[fg=cyan]%H:%M"
+set -g status-right "#[bg=colour2]#[fg=black] #S #[bg=colour3]#[fg=black] %H:%M #[bg=colour5]#[fg=black] %d %h #[bg=colour4]#[fg=black] #{battery_percentage} "
 set -g status-right-length 60
 
 # Messaging
 set -g message-fg black
-set -g message-bg yellow
-set -g message-command-fg blue
-set -g message-command-bg black
+set -g message-bg cyan
+set -g message-command-fg black
+set -g message-command-bg cyan
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-battery'
+
+run '~/.tmux/plugins/tpm/tpm'

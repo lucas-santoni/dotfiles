@@ -39,6 +39,7 @@ set splitbelow
 set incsearch
 set hlsearch
 set ignorecase
+nnoremap yy :nohl<CR>
 
 "Remap escape
 :imap jj <Esc>
@@ -106,6 +107,7 @@ hi MatchParen ctermfg=5 ctermbg=none
 
 "More than 80 chars is bad
 set colorcolumn=80
+set tw=79
 
 "FZF
 map ff :FZF <CR>
@@ -156,7 +158,7 @@ set laststatus=2
 set noshowmode
 let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#buffer_min_count = 3
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#default#layout = [
@@ -172,7 +174,7 @@ let g:airline#extensions#ale#error_symbol = '✘ '
 let g:airline#extensions#ale#warning_symbol = '⚠ '
 
 "Grep
-nnoremap <C-a> :Grepper<CR>
+nnoremap <C-g> :Grepper<CR>
 
 "Use terminal emulator background
 hi Normal ctermbg=none
