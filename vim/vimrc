@@ -19,7 +19,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-Plug 'shougo/neocomplete.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
@@ -57,13 +56,6 @@ syntax on
 set listchars=tab:..,trail:~
 set list
 
-"Snippets
-let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
-let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
-
 "Markdown configuration
 let g:vim_markdown_folding_disabled = 1
 
@@ -100,6 +92,13 @@ set expandtab
 
 "But still insert tab
 inoremap hh <C-V><Tab>
+
+"Snippets
+let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
+let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 "Show matching chars
 set showmatch
