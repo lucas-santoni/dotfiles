@@ -144,8 +144,10 @@ let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_c_gcc_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
 let g:ale_c_clang_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
-let g:ale_cpp_gcc_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
-let g:ale_cpp_clang_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
+let g:ale_cpp_gcc_options =
+      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
+let g:ale_cpp_clang_options =
+      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
 
 "ALE colors
 highlight clear ALEErrorSign
