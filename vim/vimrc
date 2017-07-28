@@ -17,8 +17,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
 Plug 'mhinz/vim-grepper'
+Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
@@ -43,7 +43,7 @@ nnoremap qq :nohl<CR>
 :imap jj <Esc>
 
 "Avoid useless redraw
-set lazyredraw
+"set lazyredraw
 
 "See all the autocompletion
 set wildmenu
@@ -95,9 +95,8 @@ inoremap hh <C-V><Tab>
 "Snippets
 let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
 let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
+let g:UltiSnipsExpandTrigger = "<S-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<S-tab>"
 
 "Show matching chars
 set showmatch

@@ -106,15 +106,15 @@ endsnippet
 snippet main "main(...) {...}" b
 int	main(${1:int argc, char *const argv})
 {
-  $2;
-  return (0);
+  $2
+  return (SUCCESS);
 }
 endsnippet
 
 snippet func "C function" b
 $1	$2($3)
 {
-  $4;
+  $4
 }
 endsnippet
 
