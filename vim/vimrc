@@ -5,7 +5,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-rhubarb'
 Plug 'plasticboy/vim-markdown'
 Plug 'justinmk/vim-syntax-extra'
@@ -126,10 +125,6 @@ let NERDTreeIgnore=['\.o$', '\~$']
 "Splits
 cabbrev s split
 cabbrev v vsplit
-
-"Tags
-nnoremap tt :TagbarToggle<CR>
-let g:tagbar_compact = 1
 
 "Git colors
 highlight clear SignColumn
