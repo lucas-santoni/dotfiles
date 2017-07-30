@@ -30,7 +30,7 @@ set -x -g LESS_TERMCAP_ue (printf "\033[0m")
 set -x -g LESS_TERMCAP_us (printf "\033[01;32m")
 
 # fzf
-set -x -g FZF_ALT_C_OPTS "--preview 'tree {} | head -200'"
+set -x -g FZF_TMUX 1
 
 # Private aliases
 source ~/.private-dotfiles/private_aliases

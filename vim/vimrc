@@ -19,7 +19,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf'
 call plug#end()
 
 "Bye Vi
@@ -111,7 +111,7 @@ set tw=79
 map ff :FZF <CR>
 let g:fzf_action = {
       \ 'ctrl-t': 'tab split',
-      \ 'ctrl-x': 'split',
+      \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit' }
 
 let g:fzf_layout = { 'down': '~30%' }
