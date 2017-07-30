@@ -95,8 +95,9 @@ inoremap hh <C-V><Tab>
 "Snippets
 let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
 let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
-let g:UltiSnipsExpandTrigger = "<S-tab>"
-let g:UltiSnipsJumpForwardTrigger = "<S-tab>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 "Show matching chars
 set showmatch
@@ -174,6 +175,10 @@ nnoremap <C-g> :Grepper<CR>
 "Use terminal emulator background
 hi Normal ctermbg=none
 hi NonText ctermbg=none
+
+"Quickfix colors
+hi QuickFixLine cterm=None ctermbg=None ctermfg=None
+hi Search cterm=none ctermbg=240 ctermfg=3
 
 "Clear background buffer
 set t_ut=
