@@ -1,0 +1,24 @@
+def_key "/"
+    find
+def_key "/"
+    find_item_forward
+
+def_key "j"
+    scroll_down
+def_key "k"
+    scroll_up
+
+def_key "K"
+    page_up
+def_key "J"
+    page_down
+
+def_key "h"
+    previous_column
+def_key "l"
+    next_column
+
+def_key "n"
+    next_found_item
+def_key "N"
+    previous_found_item
