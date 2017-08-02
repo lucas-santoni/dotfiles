@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
+Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
@@ -32,7 +33,7 @@ nnoremap qq :nohl<CR>
 :imap jj <Esc>
 
 "Avoid useless redraw
-set lazyredraw
+"set lazyredraw
 
 "See all the autocompletion
 set wildmenu
@@ -43,10 +44,6 @@ syntax on
 "Invisibles
 set listchars=tab:..,trail:~
 set list
-
-"Line numbers
-set number
-set relativenumber
 
 "Buffers integration
 :set hidden
@@ -103,7 +100,7 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~30%' }
 
 "Nerdtree
-nnoremap rr :NERDTreeTabsToggle<CR>
+nnoremap rr :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeIgnore=['\.o$', '\~$']
@@ -111,6 +108,9 @@ let NERDTreeIgnore=['\.o$', '\~$']
 "Splits
 cabbrev s split
 cabbrev v vsplit
+
+"Fillchars
+set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 
 "Ale signs
 let g:ale_sign_error = '✘'
@@ -122,12 +122,21 @@ let g:ale_cpp_gcc_options =
 let g:ale_cpp_clang_options =
       \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
 
+"Signcolumns
+hi clear SignColumn
+hi SignColumn ctermbg=none
+
 "ALE colors
-highlight clear SignColumn
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 highlight ALEErrorSign ctermfg=red
 highlight ALEWarningSign ctermfg=yellow
+
+"GitGutter colors
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
 
 "Status line
 set laststatus=2
@@ -149,6 +158,10 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#ale#error_symbol = '✘ '
 let g:airline#extensions#ale#warning_symbol = '! '
 
+"Line numbers
+set number
+set relativenumber
+
 "Grep
 nnoremap <C-g> :Grepper<CR>
 
@@ -158,7 +171,4 @@ hi NonText ctermbg=none
 
 "Quickfix colors
 hi QuickFixLine cterm=None ctermbg=None ctermfg=None
-hi Search cterm=none ctermbg=240 ctermfg=3
-
-"Clear background buffer
-"set t_ut=
+hi Search ctermbg=58 ctermfg=15
