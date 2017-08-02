@@ -80,7 +80,7 @@ inoremap hh <C-V><Tab>
 
 "Snippets
 let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
-let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["mySnippets", "UltiSnips"]
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"

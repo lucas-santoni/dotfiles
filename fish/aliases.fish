@@ -14,3 +14,14 @@ alias gst="git status"
 alias gaa="git add --all"
 alias gc="git commit"
 alias gp="git push"
+
+## RM
+alias rm="rm -v"
+alias rrm="rm -Rf"
+
+## CP
+alias cp="cp -v"
+alias ccp="cp -R"
+
+## MV
+alias mv="mv -v"

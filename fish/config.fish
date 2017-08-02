@@ -11,13 +11,18 @@ function fish_mode_prompt
 end
 
 # Default editor is vim
-set -g -x EDITOR vim
+set -gx EDITOR vim
 
 # Colored man
-set -x -g LESS_TERMCAP_mb (printf "\033[01;31m")
-set -x -g LESS_TERMCAP_md (printf "\033[01;31m")
-set -x -g LESS_TERMCAP_me (printf "\033[0m")
-set -x -g LESS_TERMCAP_se (printf "\033[0m")
-set -x -g LESS_TERMCAP_so (printf "\033[01;31;33m")
-set -x -g LESS_TERMCAP_ue (printf "\033[0m")
-set -x -g LESS_TERMCAP_us (printf "\033[01;32m")
+set -xg LESS_TERMCAP_mb (printf "\033[01;31m")
+set -xg LESS_TERMCAP_md (printf "\033[01;31m")
+set -xg LESS_TERMCAP_me (printf "\033[0m")
+set -xg LESS_TERMCAP_se (printf "\033[0m")
+set -xg LESS_TERMCAP_so (printf "\033[01;31;33m")
+set -xg LESS_TERMCAP_ue (printf "\033[0m")
+set -xg LESS_TERMCAP_us (printf "\033[01;32m")
+
+# Personal infos
+# Used in vim snippets
+set -xg FULLNAME "Lucas Santoni"
+set -xg EPITECH_LOGIN "lucas.santoni@epitech.eu"
