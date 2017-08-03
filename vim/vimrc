@@ -113,6 +113,7 @@ cabbrev v vsplit
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 
 "Ale signs
+let g:ale_set_highlights = 0
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '!'
 let g:ale_c_gcc_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
