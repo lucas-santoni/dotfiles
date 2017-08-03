@@ -87,7 +87,6 @@ set showmatch
 hi MatchParen ctermfg=5 ctermbg=none
 
 "More than 80 chars is bad
-set colorcolumn=80
 set tw=79
 
 "FZF
@@ -172,4 +171,3 @@ hi NonText ctermbg=none
 
 "Quickfix colors
 hi QuickFixLine cterm=None ctermbg=None ctermfg=None
-hi Search ctermbg=58 ctermfg=15
