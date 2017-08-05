@@ -26,8 +26,8 @@ alias ccp="cp -R"
 ## MV
 alias mv="mv -v"
 
-## Tmux
-alias tm="tmux -2"
+## TMUX
 alias tmux="tmux -2"
+alias tm="tmux"
 alias at="tmux attach -t"
 alias tmls="tmux list-sessions"
