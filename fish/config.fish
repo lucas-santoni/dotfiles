@@ -6,8 +6,25 @@ set fish_greeting
 
 # Vim mode
 fish_vi_key_bindings
-function fish_mode_prompt
-  # Disable the vim indicator
+function fish_default_mode_prompt
+  if test "$fish_key_bindings" = "fish_vi_key_bindings"
+    or test "$fish_key_bindings" = "fish_hybrid_key_bindings"
+    set -l normal (set_color normal)
+    set -l blue (set_color blue)
+    set -l yellow (set_color yellow)
+    set -l green (set_color green)
+
+    switch $fish_bind_mode
+      case default
+        echo -sn $blue"N$normal "
+      case insert
+        echo -sn ""
+      case visual
+        echo -sn $yellow"V$normal "
+      case replace_one
+        echo -sn $green"R$normal "
+    end
+  end
 end
 
 # Default editor is vim
