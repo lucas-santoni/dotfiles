@@ -7,7 +7,7 @@ If you are looking for my _old_ dotfiles (Archlinux, i3, Polybar), take a look
 at the `backup/` folder.
 
 <p align="center">
-  <img src="screenshot.png" alt="Screenshot" width="800px">
+  <img src="screenshot.png" alt="Screenshot">
 </p>
 
 Have fun !
