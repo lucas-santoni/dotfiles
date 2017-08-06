@@ -4,7 +4,9 @@ source ~/.dotfiles/fish/aliases.fish
 # Disable greeting
 set fish_greeting
 
-# Vim mode
+# Vi mode
+# With cursor shape disabled
+function fish_vi_cursor; end
 fish_vi_key_bindings
 
 # Default editor is vim
