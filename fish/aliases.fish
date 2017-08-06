@@ -17,7 +17,6 @@ alias gp="git push"
 alias gd="git diff"
 
 ## RM
-alias rm="rm -v"
 alias rrm="rm -Rf"
 
 ## CP
