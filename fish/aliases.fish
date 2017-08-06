@@ -14,6 +14,7 @@ alias gst="git status"
 alias gaa="git add --all"
 alias gc="git commit"
 alias gp="git push"
+alias gd="git diff"
 
 ## RM
 alias rm="rm -v"
