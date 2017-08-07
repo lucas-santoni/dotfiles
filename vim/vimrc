@@ -6,13 +6,16 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'raimondi/delimitmate'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
-Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
+
+if has('python')
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+endif
 call plug#end()
 
 "Bye Vi
@@ -75,12 +78,14 @@ set expandtab
 "But still insert tab
 inoremap hh <C-V><Tab>
 
-"Snippets
-let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
-let g:UltiSnipsSnippetDirectories=["mySnippets", "UltiSnips"]
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+"Ultisnips
+if has('python')
+  let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
+  let g:UltiSnipsSnippetDirectories=["mySnippets", "UltiSnips"]
+  let g:UltiSnipsExpandTrigger = "<tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+  let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+endif
 
 "Show matching chars
 set showmatch
