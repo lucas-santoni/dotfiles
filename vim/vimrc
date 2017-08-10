@@ -7,11 +7,9 @@ Plug 'raimondi/delimitmate'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
-Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
-
 if has('python')
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
@@ -36,7 +34,7 @@ nnoremap qq :nohl<CR>
 :imap jj <Esc>
 
 "Avoid useless redraw
-"set lazyredraw
+set lazyredraw
 
 "See all the autocompletion
 set wildmenu
@@ -137,12 +135,6 @@ highlight clear ALEWarningSign
 highlight ALEErrorSign ctermfg=red
 highlight ALEWarningSign ctermfg=yellow
 
-"GitGutter colors
-highlight GitGutterAdd ctermfg=green
-highlight GitGutterChange ctermfg=yellow
-highlight GitGutterDelete ctermfg=red
-highlight GitGutterChangeDelete ctermfg=yellow
-
 "Status line
 set laststatus=2
 set noshowmode
@@ -165,7 +157,6 @@ let g:airline#extensions#ale#warning_symbol = '! '
 
 "Line numbers
 set number
-set relativenumber
 
 "Grep
 nnoremap <C-g> :Grepper<CR>
