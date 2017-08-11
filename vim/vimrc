@@ -36,7 +36,7 @@ nnoremap qq :nohl<CR>
 :imap jj <Esc>
 
 "Avoid useless redraw
-"set lazyredraw
+set lazyredraw
 
 "See all the autocompletion
 set wildmenu
@@ -120,12 +120,19 @@ set fillchars=vert:\ ,stl:\ ,stlnc:\
 let g:ale_set_highlights = 0
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '!'
+
+"Ale C/C++ linting
 let g:ale_c_gcc_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
 let g:ale_c_clang_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
 let g:ale_cpp_gcc_options =
       \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
 let g:ale_cpp_clang_options =
       \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
+
+"Ale Python linting
+"Override python.vim defaults
+let g:python_recommended_style = 0
+let g:ale_python_flake8_options = '--ignore E111,E121'
 
 "Signcolumns
 hi clear SignColumn
