@@ -1,6 +1,6 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'Geospace/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'raimondi/delimitmate'
@@ -162,8 +162,8 @@ set number
 nnoremap <C-g> :Grepper<CR>
 
 "Use terminal emulator background
-hi Normal ctermbg=none
-hi NonText ctermbg=none
+autocmd VimEnter * hi Normal ctermbg=none
+autocmd VimEnter * hi NonText ctermbg=none
 
 "Quickfix colors
 hi QuickFixLine cterm=None ctermbg=None ctermfg=None
