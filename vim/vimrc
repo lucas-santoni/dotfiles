@@ -90,6 +90,8 @@ set showmatch
 hi MatchParen ctermfg=5 ctermbg=none
 
 "More than 80 chars is bad
+set colorcolumn=80
+hi ColorColumn ctermbg=235
 set tw=79
 
 "FZF
@@ -113,6 +115,7 @@ cabbrev v vsplit
 
 "Fillchars
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+hi VertSplit ctermbg=239
 
 "Ale signs
 let g:ale_set_highlights = 0
