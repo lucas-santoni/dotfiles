@@ -115,7 +115,7 @@ cabbrev v vsplit
 
 "Fillchars
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
-hi VertSplit ctermbg=239
+hi VertSplit ctermbg=238
 
 "Ale signs
 let g:ale_set_highlights = 0
