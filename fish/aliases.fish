@@ -31,3 +31,12 @@ alias tmux="tmux -2"
 alias tm="tmux"
 alias at="tmux attach -t"
 alias tmls="tmux list-sessions"
+
+## MAKE
+alias m="make"
+alias mr="make re"
+
+## PYTHON
+alias python="python3"
+alias p="python"
+alias ip="ipython3"

@@ -1,6 +1,6 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'Geospace/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'raimondi/delimitmate'
@@ -90,6 +90,8 @@ set showmatch
 hi MatchParen ctermfg=5 ctermbg=none
 
 "More than 80 chars is bad
+set colorcolumn=80
+hi ColorColumn ctermbg=235
 set tw=79
 
 "FZF
@@ -113,6 +115,7 @@ cabbrev v vsplit
 
 "Fillchars
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+hi VertSplit ctermbg=238
 
 "Ale signs
 let g:ale_set_highlights = 0
@@ -170,8 +173,8 @@ set number
 nnoremap <C-g> :Grepper<CR>
 
 "Use terminal emulator background
-hi Normal ctermbg=none
-hi NonText ctermbg=none
+autocmd VimEnter * hi Normal ctermbg=none
+autocmd VimEnter * hi NonText ctermbg=none
 
 "Quickfix colors
 hi QuickFixLine cterm=None ctermbg=None ctermfg=None
