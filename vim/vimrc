@@ -76,6 +76,11 @@ set expandtab
 "But still insert tab
 inoremap hh <C-V><Tab>
 
+"If if can not find
+"these on the keyboard
+inoremap ww <
+inoremap WW >
+
 "Ultisnips
 if has('python')
   let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
