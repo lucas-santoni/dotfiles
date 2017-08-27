@@ -1,3 +1,6 @@
+## VIM
+alias e="mvim"
+
 ## LS
 alias ls="exa"
 alias l="ls -l"
