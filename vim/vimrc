@@ -10,9 +10,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
+Plug 'ctrlpvim/ctrlp.vim'
 if has('python')
   Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+  Plug 'honza/vim-snippets' 
 endif
 call plug#end()
 
@@ -29,6 +30,9 @@ set incsearch
 set hlsearch
 set ignorecase
 nnoremap qq :nohl<CR>
+
+"Ignore some extensions
+set wildignore+=*.so,*.o,*.swp
 
 "Remap escape
 :imap jj <Esc>
@@ -76,7 +80,7 @@ set expandtab
 "But still insert tab
 inoremap hh <C-V><Tab>
 
-"If if can not find
+"Just in case I can not find
 "these on the keyboard
 inoremap ww <
 inoremap WW >
@@ -93,10 +97,12 @@ endif
 "Show matching chars
 set showmatch
 hi MatchParen ctermfg=5 ctermbg=none
+hi MatchParen guifg=#fe8019 guibg=NONE
 
 "More than 80 chars is bad
 set colorcolumn=80
 hi ColorColumn ctermbg=235
+hi ColorColumn guibg=#1d2021
 set tw=79
 
 "FZF
@@ -121,6 +127,7 @@ cabbrev v vsplit
 "Fillchars
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 hi VertSplit ctermbg=238
+hi VertSplit guibg=#32302f
 
 "Ale signs
 let g:ale_set_highlights = 0
@@ -149,7 +156,9 @@ hi SignColumn ctermbg=none
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 highlight ALEErrorSign ctermfg=red
+highlight ALEErrorSign guifg=#fb4934
 highlight ALEWarningSign ctermfg=yellow
+highlight ALEWarningSign guifg=#fabd2f
 
 "Status line
 set laststatus=2
@@ -183,3 +192,16 @@ autocmd VimEnter * hi NonText ctermbg=none
 
 "Quickfix colors
 hi QuickFixLine cterm=None ctermbg=None ctermfg=None
+hi QuickFixLine gui=NONE guibg=NONE guifg=NONE
+
+"Graphical
+set guicursor+=n-v-c:blinkon0
+set guifont=Fantasque\ Sans\ Mono:h18
+set titlestring=Vim
+set guioptions=
+
+"This script makes it possible to run FZF into
+"an iTerm 3 window and forward the result to MacVim
+"Using CTRL+P may work better though...
+"FZF is more like a CLI app
+let g:fzf_launcher = "~/.mvimfzf.sh %s"
