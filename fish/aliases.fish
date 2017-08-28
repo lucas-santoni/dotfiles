@@ -9,6 +9,7 @@ alias t="tree"
 
 ## GIT
 alias g="git"
+alias gd="git diff"
 alias gl="git pull"
 alias gst="git status"
 alias ga="git add"
