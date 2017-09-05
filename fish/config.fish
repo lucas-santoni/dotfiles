@@ -1,6 +1,9 @@
 # Get the aliases
 source ~/.dotfiles/fish/aliases.fish
 
+# Get the functions
+source ~/.dotfiles/fish/functions.fish
+
 # Disable greeting
 set fish_greeting
 

@@ -1,4 +1,6 @@
 ## VIM
+alias vim="nvim"
+alias v="vim"
 alias e="mvim"
 
 ## LS
@@ -44,3 +46,6 @@ alias mr="make re"
 alias python="python3"
 alias p="python"
 alias ip="ipython3"
+
+## CHMOD
+alias cx="chmod +x"

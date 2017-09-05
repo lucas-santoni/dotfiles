@@ -11,9 +11,10 @@ Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
 if has('python')
   Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets' 
+  Plug 'honza/vim-snippets'
 endif
 call plug#end()
 
@@ -97,12 +98,10 @@ endif
 "Show matching chars
 set showmatch
 hi MatchParen ctermfg=5 ctermbg=none
-hi MatchParen guifg=#fe8019 guibg=NONE
 
 "More than 80 chars is bad
 set colorcolumn=80
 hi ColorColumn ctermbg=235
-hi ColorColumn guibg=#1d2021
 set tw=79
 
 "FZF
@@ -127,12 +126,13 @@ cabbrev v vsplit
 "Fillchars
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 hi VertSplit ctermbg=238
-hi VertSplit guibg=#32302f
 
 "Ale signs
 let g:ale_set_highlights = 0
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '!'
+"let g:ale_sign_error = '✘'
+let g:ale_sign_error = '>>'
+"let g:ale_sign_warning = '!'
+let g:ale_sign_warning = '>>'
 
 "Ale C/C++ linting
 let g:ale_c_gcc_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
@@ -150,15 +150,19 @@ let g:ale_python_flake8_options = '--ignore E111,E114,E121'
 
 "Signcolumns
 hi clear SignColumn
-hi SignColumn ctermbg=none
+hi SignColumn ctermbg=none guibg=NONE
+
+"GitGutter
+hi GitGutterAdd ctermfg=green guifg=green
+hi GitGutterChange ctermfg=yellow guifg=orange
+hi GitGutterDelete ctermfg=red guifg=red
+hi GitGutterChangeDelete ctermfg=yellow guifg=orange
 
 "ALE colors
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-highlight ALEErrorSign ctermfg=red
-highlight ALEErrorSign guifg=#fb4934
-highlight ALEWarningSign ctermfg=yellow
-highlight ALEWarningSign guifg=#fabd2f
+hi clear ALEErrorSign
+hi clear ALEWarningSign
+hi ALEErrorSign ctermfg=red
+hi ALEWarningSign ctermfg=yellow
 
 "Status line
 set laststatus=2
@@ -182,6 +186,7 @@ let g:airline#extensions#ale#warning_symbol = '! '
 
 "Line numbers
 set number
+set relativenumber
 
 "Grep
 nnoremap <C-g> :Grepper<CR>
@@ -192,12 +197,24 @@ autocmd VimEnter * hi NonText ctermbg=none
 
 "Quickfix colors
 hi QuickFixLine cterm=None ctermbg=None ctermfg=None
-hi QuickFixLine gui=NONE guibg=NONE guifg=NONE
 
-"Graphical
+"=================
+"=== GRAPHICAL ===
+"=================
+
+"Not blinking cursor
 set guicursor+=n-v-c:blinkon0
+
+"Find a workaround for 'narrow' fonts which do
+"not display all characters properly
 set guifont=Fantasque\ Sans\ Mono:h18
+"set guifont=Monaco:h15
+
+"Title of the actual window
 set titlestring=Vim
+
+"Remove all the scrollbars
+"May remove some other UI elements
 set guioptions=
 
 "This script makes it possible to run FZF into
@@ -205,3 +222,12 @@ set guioptions=
 "Using CTRL+P may work better though...
 "FZF is more like a CLI app
 let g:fzf_launcher = "~/.mvimfzf.sh %s"
+
+"Color modifications
+hi MatchParen guifg=#fe8019 guibg=NONE
+hi ColorColumn guibg=#1d2021
+hi VertSplit guibg=#32302f
+hi ALEErrorSign guifg=#fb4934
+hi ALEWarningSign guifg=#fabd2f
+hi EndOfBuffer guibg=NONE
+hi QuickFixLine gui=NONE guibg=NONE guifg=NONE
