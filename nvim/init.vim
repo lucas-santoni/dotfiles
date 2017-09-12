@@ -11,10 +11,6 @@ Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
 Plug 'airblade/vim-gitgutter'
-if has('python')
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-endif
 call plug#end()
 
 "Colors
