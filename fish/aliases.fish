@@ -1,7 +1,6 @@
 ## VIM
-alias vim="nvim"
-alias v="vim"
-alias e="mvim"
+alias v="nvim"
+alias e="nvim"
 
 ## LS
 alias ls="exa"
