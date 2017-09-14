@@ -21,13 +21,15 @@ syntax on
 set listchars=tab:..,trail:~
 set list
 
+"Remap page moves
+map <C-J> <S-Down>
+map <C-K> <S-Up>
+
 "Buffers integration
 set hidden
 set history=500
 nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
-nnoremap <C-J> :bdelete<CR>
-nnoremap <C-K> :ls<CR>
 
 "Identation
 filetype plugin indent on

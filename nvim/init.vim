@@ -43,8 +43,8 @@ set wildignore+=*.so,*.o,*.swp
 imap jj <Esc>
 
 "Remap page moves
-map <M-j> <S-Down>
-map <M-k> <S-Up>
+map <C-J> <S-Down>
+map <C-K> <S-Up>
 
 "Syntax processing
 syntax on
@@ -58,8 +58,6 @@ set hidden
 set history=500
 nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
-nnoremap <C-J> :bdelete<CR>
-nnoremap <C-K> :ls<CR>
 
 "Identation
 filetype plugin indent on
