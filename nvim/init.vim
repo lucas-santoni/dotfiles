@@ -11,6 +11,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
 Plug 'airblade/vim-gitgutter'
+Plug 'danro/rename.vim'
 call plug#end()
 
 "Colors
@@ -168,3 +169,6 @@ nnoremap rr :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeIgnore=['\.o$', '\~$']
+
+"Grepper
+nnoremap <C-g> :Grepper<CR>

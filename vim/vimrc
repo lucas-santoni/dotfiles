@@ -8,6 +8,9 @@ set hlsearch
 set ignorecase
 nnoremap qq :nohl<CR>
 
+"Wildmenu
+set wildmenu
+
 "Ignore some extensions
 set wildignore+=*.so,*.o,*.swp
 
