@@ -15,6 +15,9 @@ fish_vi_key_bindings
 # Default editor is vim
 set -gx EDITOR vim
 
+# Set term variable
+set -gx TERM xterm-256color
+
 # Colored man
 set -xg LESS_TERMCAP_mb (printf "\033[01;31m")
 set -xg LESS_TERMCAP_md (printf "\033[01;31m")
