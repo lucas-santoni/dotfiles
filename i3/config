@@ -3,10 +3,6 @@ for_window [class="^.*"] border pixel 5
 gaps inner 40
 gaps outer 20
 
-# More fullscreen
-smart_gaps on
-smart_borders on
-
 # My floating friends
 for_window [window_role="pop-up"] floating enable
 for_window [class="imv"] floating enable

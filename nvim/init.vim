@@ -123,13 +123,18 @@ let g:ale_set_highlights = 0
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '>>'
 
+"Linters to use
+let g:ale_linters = {
+\   'cpp': ['clang'],
+\}
+
 "Ale C/C++ linting
 let g:ale_c_gcc_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
 let g:ale_c_clang_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
 let g:ale_cpp_gcc_options =
-      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
+      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=gnu++14'
 let g:ale_cpp_clang_options =
-      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=c++14'
+      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=gnu++14'
 
 "Ale Python linting
 "Override python.vim defaults
@@ -172,3 +177,7 @@ let NERDTreeIgnore=['\.o$', '\~$']
 
 "Grepper
 nnoremap <C-g> :Grepper<CR>
+
+"Enable project specific stuff
+set exrc
+set secure
