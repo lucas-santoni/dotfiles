@@ -44,8 +44,8 @@ set wildignore+=*.so,*.o,*.swp
 imap jj <Esc>
 
 "Remap page moves
-map <C-J> <S-Down>
-map <C-K> <S-Up>
+map <C-J> }
+map <C-K> {
 
 "Syntax processing
 syntax on
