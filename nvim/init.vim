@@ -8,10 +8,12 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-grepper'
-Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'kiddos/deoplete-cpp'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 "Colors
@@ -32,6 +34,9 @@ set incsearch
 set hlsearch
 set ignorecase
 nnoremap qq :nohl<CR>
+
+"Popup menu
+set pumheight=10
 
 "Avoid useless redraw
 "Currently kind of buggy in nvim
@@ -103,6 +108,33 @@ set relativenumber
 "Do not show command
 set noshowcmd
 
+"Deoplete
+"TODO: Add includes paths
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#max_list = 30
+let g:deoplete#sources#cpp#cflags = ['-std=gnu11',
+      \'-Wall', '-Wextra', '-Wshadow']
+let g:deoplete#sources#cpp#cppflags = ['-std=gnu++14',
+      \'-Wall', '-Wextra', '-Wshadow']
+let g:deoplete#sources#cpp#c_include_path = ['/usr/local/include',
+      \'/usr/include', './include', './includes', './inc', '.']
+let g:deoplete#sources#cpp#cpp_include_path = ['/usr/local/include',
+      \'/usr/include', './include', './includes', './inc', '.']
+
+"Deoplete autocompletion with tab
+let g:deoplete#disable_auto_complete = 1
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+"Tagbar
+nnoremap tt :TagbarToggle<CR>
+
 "Quickfix colors
 hi QuickFixLine gui=None guibg=None guifg=None
 
@@ -129,12 +161,8 @@ let g:ale_linters = {
 \}
 
 "Ale C/C++ linting
-let g:ale_c_gcc_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
-let g:ale_c_clang_options = '-Wall -Wextra -O -Iinclude -Iincludes -Iinc'
-let g:ale_cpp_gcc_options =
-      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=gnu++14'
-let g:ale_cpp_clang_options =
-      \'-Wall -Wextra -O -Iinclude -Iincludes -Iinc --std=gnu++14'
+let g:ale_c_clang_options = '-Wall -Wextra -Wshadow --std=gnu11'
+let g:ale_cpp_clang_options = '-Wall -Wextra -Wshadow --std=gnu++14'
 
 "Ale Python linting
 "Override python.vim defaults
@@ -159,6 +187,7 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#ale#error_symbol = '✘ '
 let g:airline#extensions#ale#warning_symbol = '! '
+let g:airline#extensions#tagbar#enabled = 1
 
 "FZF
 map ff :FZF <CR>
