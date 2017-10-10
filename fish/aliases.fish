@@ -1,6 +1,6 @@
 ## VIM
 alias e="nvim"
-alias v="vimr"
+alias v="open -a Neovim.app"
 
 ## LS
 alias ls="exa"

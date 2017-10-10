@@ -12,7 +12,6 @@ Plug 'junegunn/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
 Plug 'Shougo/deoplete.nvim'
-Plug 'kiddos/deoplete-cpp'
 Plug 'majutsushi/tagbar'
 call plug#end()
 
@@ -109,17 +108,8 @@ set relativenumber
 set noshowcmd
 
 "Deoplete
-"TODO: Add includes paths
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 30
-let g:deoplete#sources#cpp#cflags = ['-std=gnu11',
-      \'-Wall', '-Wextra', '-Wshadow']
-let g:deoplete#sources#cpp#cppflags = ['-std=gnu++14',
-      \'-Wall', '-Wextra', '-Wshadow']
-let g:deoplete#sources#cpp#c_include_path = ['/usr/local/include',
-      \'/usr/include', './include', './includes', './inc', '.']
-let g:deoplete#sources#cpp#cpp_include_path = ['/usr/local/include',
-      \'/usr/include', './include', './includes', './inc', '.']
 
 "Deoplete autocompletion with tab
 let g:deoplete#disable_auto_complete = 1
