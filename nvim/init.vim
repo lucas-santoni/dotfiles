@@ -148,20 +148,20 @@ set relativenumber
 "Deoplete is the autocompletion framework
 "Enable it on startup
 "Load 30 entries at most
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_list = 30
+let g:deoplete#enable_at_startup=1
+let g:deoplete#max_list=30
 
 "Deoplete autocompletion with tab
 "Script for GitHub
 "More reliable that Supertab ?
 "Use tab/shift+tab to navigate between entries
-let g:deoplete#disable_auto_complete = 1
+let g:deoplete#disable_auto_complete=1
 inoremap <silent><expr> <tab>
       \ pumvisible() ? "\<c-n>" :
       \ <sid>check_back_space() ? "\<tab>" :
       \ deoplete#mappings#manual_complete()
 function! s:check_back_space() abort
-  let col = col('.') - 1
+  let col=col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 inoremap <silent><expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
@@ -175,13 +175,13 @@ inoremap <silent><expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 "and this prevent a bug which makes the key useless otherwise
 "Not necessary to remap jump forward/backward
 "when deoplete is present has it is prioritary
-"let g:UltiSnipsJumpForwardTrigger = \"<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = \"<S-tab>"
+"let g:UltiSnipsJumpForwardTrigger=\"<tab>"
+"let g:UltiSnipsJumpBackwardTrigger=\"<S-tab>"
 "TODO: Disable default snippets for some languages
-let g:UltiSnipsExpandTrigger = "<nop>"
-let g:ulti_expand_or_jump_res = 0
+let g:UltiSnipsExpandTrigger="<nop>"
+let g:ulti_expand_or_jump_res=0
 function! <SID>ExpandSnippetOrReturn()
-  let snippet = UltiSnips#ExpandSnippetOrJump()
+  let snippet=UltiSnips#ExpandSnippetOrJump()
   if g:ulti_expand_or_jump_res > 0
     return snippet
   else
@@ -194,6 +194,7 @@ inoremap <expr> <CR> pumvisible() ?
 "Tagbar
 "Install ctags for this to work
 nnoremap tt :TagbarToggle<CR>
+let g:tagbar_iconchars=['+', '-']
 
 "Quickfix colors
 "Hide this ugly yellow
@@ -216,13 +217,13 @@ hi ALEWarningSign guifg=Orange
 
 "Ale signs
 "No cute UTF chars, sorry
-let g:ale_set_highlights = 0
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '>>'
+let g:ale_set_highlights=0
+let g:ale_sign_error='>>'
+let g:ale_sign_warning='>>'
 
 "Linters to use
 "If nothing is precised, the default linters are used
-let g:ale_linters = {
+let g:ale_linters={
       \'cpp': ['clang'],
       \}
 
@@ -230,52 +231,55 @@ let g:ale_linters = {
 "Use basic flags
 "More specific flags should be provided on a project basis
 "by using a local .nvimrc at projet root re-exporting these variables
-let g:ale_c_clang_options = '-Wall -Wextra -Wshadow --std=gnu11'
-let g:ale_cpp_clang_options = '-Wall -Wextra -Wshadow --std=gnu++14'
+let g:ale_c_clang_options='-Wall -Wextra -Wshadow --std=gnu11'
+let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++14'
 
 "Ale Python linting
 "Override python.vim defaults
 "Ignored rules are for 2 spaces indenting
-let g:python_recommended_style = 0
-let g:ale_python_flake8_options = '--ignore E111,E114,E121'
+let g:python_recommended_style=0
+let g:ale_python_flake8_options='--ignore E111,E114,E121'
 
 "Airline
 "Airline is the statusbar framework
 "Set a matching colorscheme
 "Do not use powerline
-"Integrate airline, tagbar
-let g:airline_theme = 'gruvbox'
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#buffer_min_count = 3
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#default#layout = [
+"Mode, Ale errors, Ale warnings, file name
+"tagbar, syntax, percent
+let g:airline_theme='gruvbox'
+let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#tabline#buffer_min_count=2
+let g:airline_powerline_fonts=0
+let g:airline#extensions#tabline#show_tab_type=0
+let g:airline#extensions#default#layout=[
       \ [ 'a', 'error', 'warning', 'b', 'c' ],
       \ [ 'x', 'z' ]
       \ ]
-let g:airline#extensions#hunks#enabled = 0
-let g:airline_section_z = airline#section#create(['%3p%%'])
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#ale#error_symbol = '✘ '
-let g:airline#extensions#ale#warning_symbol = '! '
-let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline_section_z=airline#section#create(['%3p%%'])
+let g:airline#extensions#tabline#left_sep=''
+let g:airline#extensions#tabline#left_alt_sep=''
+let g:airline#extensions#whitespace#enabled=0
+let g:airline#extensions#ale#error_symbol='✘ '
+let g:airline#extensions#ale#warning_symbol='! '
+let g:airline#extensions#tagbar#enabled=1
+let g:airline_symbols.readonly=''
 
 "FZF
 "FZF is the fuzzy finder
 map ff :FZF <CR>
-let g:fzf_action = {
+let g:fzf_action={
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout={ 'down': '~30%' }
 
 "Nerdtree
 "Ignore object and tmp ~files
 nnoremap rr :NERDTreeToggle<CR>
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+let NERDTreeMinimalUI=1
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeIgnore=['\.o$', '\~$']
 
 "Grepper
