@@ -155,16 +155,16 @@ let g:deoplete#max_list = 30
 "Script for GitHub
 "More reliable that Supertab ?
 "Use tab/shift+tab to navigate between entries
-"TODO: Implement shift+tab
 let g:deoplete#disable_auto_complete = 1
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+inoremap <silent><expr> <tab>
+      \ pumvisible() ? "\<c-n>" :
+      \ <sid>check_back_space() ? "\<tab>" :
       \ deoplete#mappings#manual_complete()
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
+inoremap <silent><expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 "Snippets
 "UltiSnips is the snippet framework
@@ -177,6 +177,7 @@ endfunction
 "when deoplete is present has it is prioritary
 "let g:UltiSnipsJumpForwardTrigger = \"<tab>"
 "let g:UltiSnipsJumpBackwardTrigger = \"<S-tab>"
+"TODO: Disable default snippets for some languages
 let g:UltiSnipsExpandTrigger = "<nop>"
 let g:ulti_expand_or_jump_res = 0
 function! <SID>ExpandSnippetOrReturn()
