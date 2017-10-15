@@ -152,7 +152,7 @@ let g:ale_linters = {
 
 "Ale C/C++ linting
 let g:ale_c_clang_options = '-Wall -Wextra -Wshadow --std=gnu11'
-let g:ale_cpp_clang_options = '-Wall -Wextra -Wshadow --std=gnu++14'
+let g:ale_cpp_clang_options = '-Wall -Wextra -Wshadow --std=gnu++11'
 
 "Ale Python linting
 "Override python.vim defaults
