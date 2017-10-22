@@ -31,7 +31,7 @@ set $mod Mod1
 
 # Set a background
 # wallpaper is meant to be a symbolic link
-exec_always --no-startup-id feh --bg-fill ~/Images/wallpaper
+exec_always --no-startup-id feh --bg-tile ~/Images/wallpaper
 
 # Enable animations
 exec_always --no-startup-id compton --config ~/.compton
