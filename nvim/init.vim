@@ -261,8 +261,8 @@ let g:airline_section_z=airline#section#create(['%3p%%'])
 let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#whitespace#enabled=0
-let g:airline#extensions#ale#error_symbol='✘ '
-let g:airline#extensions#ale#warning_symbol='! '
+let g:airline#extensions#ale#error_symbol='☭ '
+let g:airline#extensions#ale#warning_symbol='☨⚕'
 let g:airline#extensions#tagbar#enabled=1
 let g:airline_symbols.readonly=''
 

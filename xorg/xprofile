@@ -1,4 +1,4 @@
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
 unset QT_STYLE_OVERRIDE
 setxkbmap -option caps:swapescape
-xset r rate 200 60
+xset r rate 300 60
