@@ -51,10 +51,7 @@ cabbrev v vsplit
 
 "Cursorline
 "Show the cursorline
-"Make numbers column bigger
-"Remove any eventual unwanted background
 set cursorline
-set numberwidth=4
 
 "Search
 "Search as you type
@@ -211,6 +208,9 @@ hi GitGutterAdd guifg=grey
 hi GitGutterChange guifg=grey
 hi GitGutterDelete guifg=grey
 hi GitGutterChangeDelete guifg=grey
+
+"Gutter always visible
+set signcolumn=yes
 
 "Ale colors
 "Ale is the syntax processing framework
