@@ -51,7 +51,7 @@ cabbrev v vsplit
 
 "Cursorline
 "Show the cursorline
-set cursorline
+"set cursorline
 
 "Search
 "Search as you type
@@ -143,8 +143,8 @@ set noshowcmd
 "Line numbers
 "Show linenumbers
 "Relative to current line
-set number
-set relativenumber
+"set number
+"set relativenumber
 
 "Deoplete
 "Deoplete is the autocompletion framework
@@ -210,6 +210,7 @@ hi GitGutterDelete guifg=grey
 hi GitGutterChangeDelete guifg=grey
 
 "Gutter always visible
+"Avoid jumps
 set signcolumn=yes
 
 "Ale colors
@@ -221,7 +222,6 @@ hi ALEErrorSign guifg=Red
 hi ALEWarningSign guifg=Orange
 
 "Ale signs
-"No cute UTF chars, sorry
 let g:ale_set_highlights=0
 let g:ale_sign_error='>>'
 let g:ale_sign_warning='>>'
@@ -249,8 +249,9 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121'
 "Airline is the statusbar framework
 "Set a matching colorscheme
 "Do not use powerline
-"Mode, Ale errors, Ale warnings, file name
-"tagbar, syntax, percent
+"Disable Git tracking
+"Mode, Ale errors, Ale warnings, file name, mode,
+"syntax, file position
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
@@ -261,14 +262,18 @@ let g:airline#extensions#default#layout=[
       \ [ 'x', 'z' ]
       \ ]
 let g:airline#extensions#hunks#enabled=0
-let g:airline_section_z=airline#section#create(['%3p%%'])
+let g:airline_section_z=airline#section#create(['%l/%L'])
 let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep=''
+let g:airline#extensions#tabline#right_sep=''
+let g:airline#extensions#tabline#right_alt_sep=''
 let g:airline#extensions#whitespace#enabled=0
 let g:airline#extensions#ale#error_symbol='☭ '
 let g:airline#extensions#ale#warning_symbol='☨⚕'
-let g:airline#extensions#tagbar#enabled=1
+let g:airline#extensions#tagbar#enabled=0
 let g:airline_symbols.readonly=''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
 
 "FZF
 "FZF is the fuzzy finder
