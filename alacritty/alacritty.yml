@@ -7,7 +7,7 @@ dimensions:
 
 padding:
   x: 5
-  y: 10
+  y: 5
 
 tabspaces: 8
 
@@ -35,7 +35,7 @@ custom_cursor_colors: false
 
 colors:
   primary:
-    background: '0x282828'
+    background: '0x1d2021'
     foreground: '0xebdbb2'
   normal:
     black:   '0x282828'

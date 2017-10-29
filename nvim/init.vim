@@ -29,11 +29,15 @@ call plug#end()
 "Colors
 "True colors only for compatible terminal emulators
 "Dark background (may affet color scheme)
+"Enable italics (may require patched terminfo)
+"Harder contrast
 "Set a colorscheme
 if has("termguicolors")
   set termguicolors
 endif
 set background=dark
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 
 "Splits
@@ -47,9 +51,10 @@ cabbrev v vsplit
 
 "Cursorline
 "Show the cursorline
+"Make numbers column bigger
 "Remove any eventual unwanted background
 set cursorline
-highlight CursorLineNr guibg=NONE
+set numberwidth=4
 
 "Search
 "Search as you type
@@ -122,10 +127,8 @@ inoremap WW >
 set showmatch
 
 "More than 80 chars is bad
-"Show a ruller
-"Auto wrap
-set colorcolumn=80
-set tw=79
+"Show a ruller on toggle
+nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 
 "Signcolumns
 "Avoid any unwanted background
