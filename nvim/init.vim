@@ -8,24 +8,24 @@
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
-Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'raimondi/delimitmate'
-Plug 'pangloss/vim-javascript'
-Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
 Plug 'sheerun/vim-polyglot'
-Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim'
-Plug 'majutsushi/tagbar'
+Plug 'w0rp/ale'
 call plug#end()
+
+"Remap leader
+let mapleader=" "
 
 "Colors
 "True colors only for compatible terminal emulators
@@ -155,7 +155,7 @@ let g:deoplete#enable_at_startup=1
 let g:deoplete#max_list=30
 
 "Deoplete autocompletion with tab
-"Script for GitHub
+"Script from GitHub
 "More reliable that Supertab ?
 "Use tab/shift+tab to navigate between entries
 let g:deoplete#disable_auto_complete=1
@@ -278,23 +278,21 @@ let g:airline_symbols.maxlinenr = ''
 
 "FZF
 "FZF is the fuzzy finder
-"And also the buffer switcher
 "Define some shortcuts
 "Choose a layout
 "Get the good colors
 map ff :FZF <CR>
-map <Space> :Buffers <CR>
 let g:fzf_action={
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout={ 'down': '~30%' }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
+let g:fzf_colors={
+  \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'bg+':     ['bg', 'Normal', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
@@ -302,7 +300,32 @@ let g:fzf_colors =
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+  \ 'header':  ['fg', 'Comment']
+  \ }
+
+"And also the grepper
+"Install ag because it is good
+nnoremap <Leader>h :Ag<CR>
+
+"And also the buffer switcher
+map <Leader>j :Buffers <CR>
+
+"And also the commit explorer
+"TODO: fix shell for preview
+"Change shell ?
+"Open issue ?
+map <Leader>k :Commits <CR>
+map <Leader>K :BCommits <CR>
+
+"Change statusline
+"TODO: Make this work
+"function! s:fzf_statusline()
+"  highlight fzf1 ctermfg=167 ctermbg=237
+"  highlight fzf2 ctermfg=142 ctermbg=237
+"  highlight fzf3 ctermfg=214 ctermbg=237
+"  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+"endfunction
+"autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 "Nerdtree
 "Ignore object and tmp ~files
@@ -311,10 +334,6 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeIgnore=['\.o$', '\~$']
-
-"Grepper
-"Install ag because it is good
-nnoremap <C-g> :Grepper<CR>
 
 "Enable project specific stuff
 "This is provided using a local .nvimrc
