@@ -27,6 +27,10 @@ call plug#end()
 "Remap leader
 let mapleader=" "
 
+"Change shell (env variable)
+"At least for FZF
+let $SHELL = '/bin/sh'
+
 "Colors
 "True colors only for compatible terminal emulators
 "Dark background (may affet color scheme)
@@ -311,7 +315,6 @@ nnoremap <Leader>h :Ag<CR>
 map <Leader>j :Buffers <CR>
 
 "And also the commit explorer
-"TODO: fix shell for preview
 "Change shell ?
 "Open issue ?
 map <Leader>k :Commits <CR>
