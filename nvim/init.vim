@@ -29,7 +29,7 @@ let mapleader=" "
 
 "Change shell (env variable)
 "At least for FZF
-let $SHELL = '/bin/sh'
+let $SHELL = '/bin/bash'
 
 "Colors
 "True colors only for compatible terminal emulators
