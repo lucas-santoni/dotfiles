@@ -214,10 +214,6 @@ hi GitGutterChange guifg=grey
 hi GitGutterDelete guifg=grey
 hi GitGutterChangeDelete guifg=grey
 
-"Gutter always visible
-"Avoid jumps
-set signcolumn=yes
-
 "Ale colors
 "Ale is the syntax processing framework
 "Intrusive colors
