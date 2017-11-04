@@ -31,7 +31,7 @@ set $mod Mod1
 
 # Set a background
 # wallpaper is meant to be a symbolic link
-exec_always --no-startup-id feh --bg-tile ~/Images/wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Images/wallpaper
 
 # Enable animations
 exec_always --no-startup-id compton --config ~/.compton
@@ -55,7 +55,7 @@ exec --no-startup-id dunst -config ~/.dunstrc
 exec --no-startup-id nm-applet
 
 # Terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # File explorer
 bindsym $mod+U exec thunar
