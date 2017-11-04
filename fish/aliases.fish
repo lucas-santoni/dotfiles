@@ -48,3 +48,6 @@ alias ip="ipython3"
 
 ## CHMOD
 alias cx="chmod +x"
+
+## GDB
+alias gdb="gdb -q"
