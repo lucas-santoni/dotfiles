@@ -27,7 +27,7 @@ module.exports = {
         ],
         "no-console": [
             "error",
-            { allow: ["warn", "error", "trace"] }
+            { allow: ["log", "warn", "error", "trace"] }
         ],
         "no-unused-vars": [
             "error",
