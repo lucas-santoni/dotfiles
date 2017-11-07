@@ -272,9 +272,10 @@ let g:airline#extensions#whitespace#enabled=0
 let g:airline#extensions#ale#error_symbol='☭ '
 let g:airline#extensions#ale#warning_symbol='☨ '
 let g:airline#extensions#tagbar#enabled=0
-let g:airline_symbols.readonly=''
+let g:airline_symbols.readonly='🔒'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = ''
 
 "FZF
 "FZF is the fuzzy finder
