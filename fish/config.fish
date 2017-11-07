@@ -30,6 +30,9 @@ set -xg LESS_TERMCAP_us (printf "\033[01;32m")
 # Add Cargo to PATH
 set -gx PATH $HOME/.cargo/bin $PATH
 
+# Add Gems to PATH
+set -gx PATH $HOME/.gem/ruby/2.4.0/bin $PATH
+
 # Personal infos
 # Used in vim snippets
 set -xg FULLNAME "Lucas Santoni"
