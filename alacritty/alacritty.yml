@@ -6,7 +6,7 @@ dimensions:
   lines: 30
 
 padding:
-  x: 5
+  x: 3
   y: 5
 
 tabspaces: 8
