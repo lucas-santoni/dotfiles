@@ -55,10 +55,10 @@ exec --no-startup-id dunst -config ~/.dunstrc
 exec --no-startup-id nm-applet
 
 # Terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # File explorer
-bindsym $mod+U exec thunar
+bindsym $mod+U exec --no-startup-id thunar
 
 # Google Chrome
 bindsym $mod+G exec --no-startup-id google-chrome-stable
