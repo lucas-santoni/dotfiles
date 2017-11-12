@@ -27,7 +27,7 @@ height = 32
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-size = 2
+border-top-size = 1
 ;border-bottom-size = 2
 ,border-left-size = 2
 ;border-right-size = 2
