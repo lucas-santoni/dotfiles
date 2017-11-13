@@ -9,6 +9,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
