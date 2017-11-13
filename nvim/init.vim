@@ -253,7 +253,6 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121'
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, file name, mode,
 "syntax, file position
-let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
@@ -340,3 +339,6 @@ let NERDTreeIgnore=['\.o$', '\~$']
 "Secure avoid loading dangerous stuff
 set exrc
 set secure
+
+"Personal background
+hi Normal guibg=#101617

@@ -27,6 +27,9 @@ set -xg LESS_TERMCAP_so (printf "\033[01;31;33m")
 set -xg LESS_TERMCAP_ue (printf "\033[0m")
 set -xg LESS_TERMCAP_us (printf "\033[01;32m")
 
+# Wine architechture
+set -xg WINEARCH win32
+
 # Add Cargo to PATH
 set -gx PATH $HOME/.cargo/bin $PATH
 

@@ -1,5 +1,5 @@
 # Gaps & borders
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 7
 gaps inner 40
 gaps outer 20
 
@@ -31,7 +31,7 @@ set $mod Mod1
 
 # Set a background
 # wallpaper is meant to be a symbolic link
-exec_always --no-startup-id feh --bg-fill ~/Images/wallpaper
+exec_always --no-startup-id feh --bg-tile ~/Images/wallpaper
 
 # Enable animations
 exec_always --no-startup-id compton --config ~/.compton
@@ -141,7 +141,7 @@ bindsym $mod+r mode "resize"
 
 # Define colors
 set $pimp	#f3eed8
-set $wesh	#d75f87
+set $wesh	#ffffff
 set $back	#626262
 
 # Colors
