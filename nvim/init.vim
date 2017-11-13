@@ -343,3 +343,4 @@ set secure
 
 "Personal background
 hi Normal guibg=#101617
+hi VertSplit guibg=#101617
