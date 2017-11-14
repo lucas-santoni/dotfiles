@@ -25,81 +25,50 @@ font pango: Inconsolata-g 11
 
 # Borders
 new_window normal
-
-# Mod key is alt
-set $mod Mod1
-
-# Set a background
-# wallpaper is meant to be a symbolic link
-exec_always --no-startup-id feh --bg-tile ~/Images/wallpaper
-
-# Enable animations
-exec_always --no-startup-id compton --config ~/.compton
-
-# Enable warmer screen colors at night
-exec --no-startup-id redshift
-
-# Mouse support for floating windows
 floating_modifier $mod
-
-# No mouse focus
 focus_follows_mouse none
 
-# i3lock
-bindsym $mod+o exec --no-startup-id ~/.i3lock
+# Modifier
+set $mod Mod1
 
-# Dunst
+# Execs
+exec_always --no-startup-id feh --bg-tile ~/Images/wallpaper
+exec_always --no-startup-id compton --config ~/.compton
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id redshift
 exec --no-startup-id dunst -config ~/.dunstrc
-
-# Network Manager applet
 exec --no-startup-id nm-applet
 
-# Terminal
+# Binds
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 3%-"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 3%+"
+
+bindsym $mod+o exec --no-startup-id ~/.i3lock
 bindsym $mod+Return exec --no-startup-id alacritty
-
-# File explorer
 bindsym $mod+U exec --no-startup-id thunar
-
-# Google Chrome
 bindsym $mod+G exec --no-startup-id google-chrome-stable
-
-# Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
-# Kill window
 bindsym $mod+w kill
-
-# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# Split in horizontal orientation
 bindsym $mod+i split h
-
-# Split in vertical orientation
 bindsym $mod+t split v
 
-# Enter fullscreen
 bindsym $mod+f fullscreen toggle
-
-# Toggle tilling/floating
 bindsym $mod+Shift+space floating toggle
-
-# Toggle focus betseen tilling/floating
 bindsym $mod+space focus mode_toggle
 
-# Switch workspaces
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -111,7 +80,6 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# Move to workspaces
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -123,39 +91,26 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# Reload this config file
 bindsym $mod+Shift+c reload
-
-# Restart i3
 bindsym $mod+Shift+r restart
 
-# Resize windows
 mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-        bindsym Escape mode "default"
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym j resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+  bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
-# Define colors
-set $pimp	#f3eed8
-set $wesh	#ffffff
+# Colors
+set $alert	#f3eed8
+set $main	#ffffff
 set $back	#626262
 
-# Colors
-client.focused		$pimp	$pimp	$pimp	$pimp	$pimp
-client.focused_inactive $back	$back	$back	$back	$back
-client.unfocused	$back	$back	$back	$back	$back
-client.urgent		$wesh	$wesh	$wesh	$wesh	$wesh
-client.placeholder	$back	$back	$back	$back	$back
-client.background	$back
-
-# Brightness fn keys
-bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
-bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
-
-# Sound fn keys
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 3%-"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 3%+"
+client.focused			$alert	$pimp	$pimp	$pimp	$pimp
+client.focused_inactive 	$back	$back	$back	$back	$back
+client.unfocused		$back	$back	$back	$back	$back
+client.urgent			$main	$main	$main	$main	$main
+client.placeholder		$back	$back	$back	$back	$back
+client.background		$back

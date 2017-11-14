@@ -31,9 +31,11 @@ set -xg LESS_TERMCAP_us (printf "\033[01;32m")
 set -xg WINEARCH win32
 
 # Add Cargo to PATH
+# TODO: Remove this
 set -gx PATH $HOME/.cargo/bin $PATH
 
 # Add Gems to PATH
+# TODO: Remove this
 set -gx PATH $HOME/.gem/ruby/2.4.0/bin $PATH
 
 # Personal infos
