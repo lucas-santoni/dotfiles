@@ -114,7 +114,7 @@ set cindent
 "Tabs if at Epitech, but displayed as two columns
 set shiftwidth=2
 set list
-if getcwd() =~ $EPITECH_PATH
+if !empty($EPITECH_PATH) && getcwd() =~ $EPITECH_PATH
   set noexpandtab
   set tabstop=2
   set softtabstop=2
@@ -351,4 +351,3 @@ set secure
 "Personal background
 hi Normal guibg=#101617
 hi VertSplit guibg=#101617
-
