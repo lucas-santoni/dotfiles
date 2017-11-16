@@ -116,8 +116,8 @@ set shiftwidth=2
 set list
 if getcwd() =~ $EPITECH_PATH
   set noexpandtab
-  set tabstop=8
-  set softtabstop=8
+  set tabstop=2
+  set softtabstop=2
   set listchars=tab:\|\ ,trail:~
 else
   set expandtab
