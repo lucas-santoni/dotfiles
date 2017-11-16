@@ -94,8 +94,6 @@ syntax on
 
 "Invisibles
 "Spot trailing characters
-set listchars=tab:..,trail:~
-set list
 
 "Buffers integration
 "Buffers can be hidden but still alive
@@ -107,15 +105,24 @@ nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
 
 "Identation
-"2 spaces as identation, everytime
-"This prevent from inserting a tab character
 filetype plugin indent on
 syntax enable
 set nosmartindent
 set cindent
-set softtabstop=2
+
+"2 spaces identations if not at Epitech
+"Tabs if at Epitech, but displayed as two columns
 set shiftwidth=2
-set expandtab
+set list
+if getcwd() =~ $EPITECH_PATH
+  set noexpandtab
+  set tabstop=8
+  set softtabstop=8
+  set listchars=tab:\|\ ,trail:~
+else
+  set expandtab
+  set listchars=tab:..,trail:~
+endif
 
 "But still insert tab
 inoremap hh <C-V><Tab>
@@ -344,3 +351,4 @@ set secure
 "Personal background
 hi Normal guibg=#101617
 hi VertSplit guibg=#101617
+
