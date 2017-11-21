@@ -1,6 +1,6 @@
 "This file is a Neovim configuration file
 "It may work on Vim > 8, who knows
-"It is a pretty heavy configuration
+"It is a quite heavy configuration
 
 "Plugins
 "Managed via vim-plug
@@ -21,7 +21,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/ncm-clang'
 Plug 'w0rp/ale'
 call plug#end()
 
@@ -159,27 +160,16 @@ set noshowcmd
 "set number
 "set relativenumber
 
-"Deoplete
-"Deoplete is the autocompletion framework
-"Enable it on startup
-"Load 30 entries at most
-let g:deoplete#enable_at_startup=1
-let g:deoplete#max_list=30
-
-"Deoplete autocompletion with tab
-"Script from GitHub
-"More reliable that Supertab ?
-"Use tab/shift+tab to navigate between entries
-let g:deoplete#disable_auto_complete=1
-inoremap <silent><expr> <tab>
-      \ pumvisible() ? "\<c-n>" :
-      \ <sid>check_back_space() ? "\<tab>" :
-      \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort
-  let col=col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-inoremap <silent><expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+"Autocompletion
+"Completion with ncm
+"The window automatically shows
+"Use tab and S-tab to move between the choices
+"Use enter to expand a snippet
+set shortmess+=c
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
+imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-U>":"\<CR>")
 
 "Snippets
 "UltiSnips is the snippet framework
@@ -188,8 +178,8 @@ inoremap <silent><expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 "Use a function instead
 "I do so because I use the enter key as my expand key
 "and this prevent a bug which makes the key useless otherwise
-"Not necessary to remap jump forward/backward
-"when deoplete is present has it is prioritary
+"Not necessary to remap jump forward/backward as it is
+"done on the autocompletion framework
 "let g:UltiSnipsJumpForwardTrigger=\"<tab>"
 "let g:UltiSnipsJumpBackwardTrigger=\"<S-tab>"
 "TODO: Disable default snippets for some languages
