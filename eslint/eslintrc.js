@@ -1,39 +1,48 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
+  'env': {
+    'browser': true,
+    'es6': true,
+    'node': true
   },
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "sourceType": "module"
+
+  'extends': 'eslint:recommended',
+
+  'parserOptions': {
+    'sourceType': 'module'
+    'ecmaVersion': 8
   },
-  "rules": {
-    "indent": [
-      "error",
+
+  'rules': {
+    'indent': [
+      'error',
       2
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
+
+    'linebreak-style': [
+      'error',
+      'unix'
     ],
-    "quotes": [
-      "error",
-      "single"
+
+    'quotes': [
+      'error',
+      'single'
     ],
-    "semi": [
-      "error",
-      "always"
+
+    'semi': [
+      'error',
+      'always'
     ],
-    "no-console": [
-      "error",
-      { allow: ["log", "warn", "error", "trace"] }
+
+    'no-console': [
+      'error',
+      { allow: ['log', 'warn', 'error', 'trace'] }
     ],
-    "no-unused-vars": [
-      "error",
+
+    'no-unused-vars': [
+      'error',
       {
-        "varsIgnorePattern": "[iI]gnore",
-        "argsIgnorePattern": "[iI]gnore"
+        'varsIgnorePattern': '[iI]gnore',
+        'argsIgnorePattern': '[iI]gnore'
       }
     ]
   }
