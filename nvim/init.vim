@@ -142,7 +142,9 @@ set showmatch
 nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 
 "Signcolumns
+"Always show it
 "Avoid any unwanted background
+set signcolumn=yes
 hi clear SignColumn
 hi SignColumn guibg=None
 
@@ -228,6 +230,7 @@ let g:ale_sign_warning='! '
 "Linters to use
 "If nothing is precised, the default linters are used
 let g:ale_linters={
+      \'javascript': ['eslint'],
       \'c': ['clang'],
       \'cpp': ['clang'],
       \}
@@ -250,7 +253,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121'
 "Set a matching colorscheme
 "Do not use powerline
 "Disable Git tracking
-"Mode, Ale errors, Ale warnings, file name, mode,
+"Mode, Git, Ale errors, Ale warnings, filename
 "syntax, file position
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
@@ -310,20 +313,8 @@ nnoremap <Leader>h :Ag<CR>
 map <Leader>j :Buffers <CR>
 
 "And also the commit explorer
-"Change shell ?
-"Open issue ?
 map <Leader>k :Commits <CR>
 map <Leader>K :BCommits <CR>
-
-"Change statusline
-"TODO: Make this work
-"function! s:fzf_statusline()
-"  highlight fzf1 ctermfg=167 ctermbg=237
-"  highlight fzf2 ctermfg=142 ctermbg=237
-"  highlight fzf3 ctermfg=214 ctermbg=237
-"  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-"endfunction
-"autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 "Nerdtree
 "Ignore object and tmp ~files
