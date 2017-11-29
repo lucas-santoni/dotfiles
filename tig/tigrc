@@ -33,8 +33,8 @@ bind generic gn view-next
 bind main    G move-last-line
 bind generic G move-last-line
 
-bind generic <C-f> move-page-down
-bind generic <C-b> move-page-up
+bind generic <C-j> move-page-down
+bind generic <C-k> move-page-up
 
 bind generic v  none
 bind generic vm view-main
