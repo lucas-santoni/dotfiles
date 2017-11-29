@@ -6,8 +6,8 @@ dimensions:
   lines: 30
 
 padding:
-  x: 3
-  y: 5
+  x: 20
+  y: 12
 
 tabspaces: 8
 
