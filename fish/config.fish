@@ -38,6 +38,12 @@ set -gx PATH $HOME/.cargo/bin $PATH
 # TODO: Remove this
 set -gx PATH $HOME/.gem/ruby/2.4.0/bin $PATH
 
+# Add scripts to PATH
+set -gx PATH $HOME/.dotfiles/scripts $PATH
+
+# Default virtual machine
+set -gx vmFile /Users/geographer/Documents/machines/Archlinux.vmwarevm/Archlinux.vmx
+
 # Personal infos
 # Used in vim snippets
 set -xg FULLNAME "Lucas Santoni"
