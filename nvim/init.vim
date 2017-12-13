@@ -13,7 +13,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
@@ -21,8 +20,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/ncm-clang'
+Plug 'pangloss/vim-javascript'
+Plug 'mhartington/nvim-typescript'
 Plug 'w0rp/ale'
 call plug#end()
 
@@ -231,6 +233,7 @@ let g:ale_sign_warning='! '
 "If nothing is precised, the default linters are used
 let g:ale_linters={
       \'javascript': ['eslint'],
+      \'typescript': ['tslint', 'tsserver'],
       \'c': ['clang'],
       \'cpp': ['clang'],
       \}
