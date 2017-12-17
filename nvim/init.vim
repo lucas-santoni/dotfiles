@@ -79,7 +79,7 @@ set pumheight=10
 
 "Avoid useless redraw
 "Currently kind of buggy in nvim
-"set lazyredraw
+set lazyredraw
 
 "Ignore some extensions in wildmenu
 set wildignore+=*.so,*.o,*.swp
@@ -167,14 +167,15 @@ set noshowcmd
 
 "Autocompletion
 "Completion with ncm
-"The window automatically shows
+"The window does not automatically show
 "Use tab and S-tab to move between the choices
 "Use enter to expand a snippet
 set shortmess+=c
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-imap <expr> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>")
-imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-U>":"\<CR>")
+let g:cm_auto_popup=0
+imap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Plug>(cm_force_refresh)")
+imap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+imap <expr> <CR>  (pumvisible() ?  "\<C-y>\<Plug>(expand_or_nl)" : "\<CR>")
+imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-u>":"\<CR>")
 
 "Snippets
 "UltiSnips is the snippet framework
