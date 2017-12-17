@@ -26,6 +26,7 @@ Plug 'roxma/ncm-clang'
 Plug 'pangloss/vim-javascript'
 Plug 'mhartington/nvim-typescript'
 Plug 'w0rp/ale'
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 
 "Remap leader
