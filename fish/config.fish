@@ -19,16 +19,16 @@ set -gx EDITOR vim
 set -gx TERM xterm-256color
 
 # Colored man
-set -xg LESS_TERMCAP_mb (printf "\033[01;31m")
-set -xg LESS_TERMCAP_md (printf "\033[01;31m")
-set -xg LESS_TERMCAP_me (printf "\033[0m")
-set -xg LESS_TERMCAP_se (printf "\033[0m")
-set -xg LESS_TERMCAP_so (printf "\033[01;31;33m")
-set -xg LESS_TERMCAP_ue (printf "\033[0m")
-set -xg LESS_TERMCAP_us (printf "\033[01;32m")
+set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
+set -gx LESS_TERMCAP_md (printf "\033[01;31m")
+set -gx LESS_TERMCAP_me (printf "\033[0m")
+set -gx LESS_TERMCAP_se (printf "\033[0m")
+set -gx LESS_TERMCAP_so (printf "\033[01;31;33m")
+set -gx LESS_TERMCAP_ue (printf "\033[0m")
+set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 
 # Wine architechture
-set -xg WINEARCH win32
+set -gx WINEARCH win32
 
 # Add Cargo to PATH
 # TODO: Remove this
@@ -46,5 +46,5 @@ set -gx vmFile /Users/geographer/Documents/machines/Archlinux.vmwarevm/Archlinux
 
 # Personal infos
 # Used in vim snippets
-set -xg FULLNAME "Lucas Santoni"
-set -xg EPITECH_LOGIN "lucas.santoni@epitech.eu"
+set -gx FULLNAME "Lucas Santoni"
+set -gx EPITECH_LOGIN "lucas.santoni@epitech.eu"
