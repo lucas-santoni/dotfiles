@@ -141,6 +141,9 @@ nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 set signcolumn=yes
 hi clear SignColumn
 
+"Vertical split color
+hi VertSplit guibg=bg
+
 "Status line
 "Always show statusline
 "Hide the mode indicator as it is built in Airline
@@ -238,7 +241,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121'
 "Disable Git tracking
 "Mode, Git, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='base16'
+let g:airline_theme='base16_grayscale'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
