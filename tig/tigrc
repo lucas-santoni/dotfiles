@@ -2,7 +2,7 @@
 # Colors
 #
 
-color cursor default cyan
+color cursor black blue
 color title-focus default default bold
 color title-blur white black
 color help-group white black

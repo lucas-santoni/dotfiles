@@ -14,6 +14,7 @@ Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'danro/rename.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -22,7 +23,7 @@ Plug 'roxma/ncm-clang'
 Plug 'mhartington/nvim-typescript'
 Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'digitaltoad/vim-pug'
 call plug#end()
 
@@ -80,12 +81,12 @@ set wildignore+=*.so,*.o,*.swp
 
 "Remap escape
 "jj is always near
-imap jj <Esc>
+inoremap jj <Esc>
 
 "Remap page moves
 "Avoid scrolling one line by one line
-map <C-J> }
-map <C-K> {
+noremap <C-J> }
+noremap <C-K> {
 
 "Syntax processing
 syntax on
@@ -160,21 +161,18 @@ set noshowcmd
 
 "Autocompletion
 "Completion with ncm
-"The window does not automatically show
 "Use tab and S-tab to move between the choices
 "Use enter to expand a snippet
 set shortmess+=c
 let g:cm_auto_popup=0
-imap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Plug>(cm_force_refresh)")
-imap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
-imap <expr> <CR>  (pumvisible() ?  "\<C-y>\<Plug>(expand_or_nl)" : "\<CR>")
-imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-u>":"\<CR>")
+inoremap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Tab>")
+inoremap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
 
 "Snippets
 "UltiSnips is the snippet framework
 "Tons of default snippets provided by vim-snippets
 "Disable the traditional expand key
-"Use a function instead
+"Use a function instead, triggered on enter when completion window is open
 "I do so because I use the enter key as my expand key
 "and this prevent a bug which makes the key useless otherwise
 "Not necessary to remap jump forward/backward as it is
@@ -270,7 +268,7 @@ let g:airline_symbols.branch = ''
 "Define some shortcuts
 "Choose a layout
 "Get the good colors
-map ff :FZF <CR>
+noremap ff :FZF <CR>
 let g:fzf_action={
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
@@ -297,11 +295,11 @@ let g:fzf_colors={
 nnoremap <Leader>h :Ag<CR>
 
 "And also the buffer switcher
-map <Leader>j :Buffers <CR>
+noremap <Leader>j :Buffers <CR>
 
 "And also the commit explorer
-map <Leader>k :Commits <CR>
-map <Leader>K :BCommits <CR>
+noremap <Leader>k :Commits <CR>
+noremap <Leader>K :BCommits <CR>
 
 "Nerdtree
 "Ignore object and tmp ~files
