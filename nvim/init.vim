@@ -7,25 +7,22 @@
 "Use :PlugInstall / :PlugClean
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/ncm-clang'
-Plug 'pangloss/vim-javascript'
 Plug 'mhartington/nvim-typescript'
 Plug 'w0rp/ale'
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'digitaltoad/vim-pug'
 call plug#end()
 
@@ -46,9 +43,7 @@ if has("termguicolors")
   set termguicolors
 endif
 set background=dark
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
+colorscheme base16-tomorrow-night
 
 "Splits
 "Split on right and on below
@@ -78,7 +73,6 @@ nnoremap qq :nohl<CR>
 set pumheight=10
 
 "Avoid useless redraw
-"Currently kind of buggy in nvim
 set lazyredraw
 
 "Ignore some extensions in wildmenu
@@ -95,9 +89,6 @@ map <C-K> {
 
 "Syntax processing
 syntax on
-
-"Invisibles
-"Spot trailing characters
 
 "Buffers integration
 "Buffers can be hidden but still alive
@@ -149,7 +140,6 @@ nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 "Avoid any unwanted background
 set signcolumn=yes
 hi clear SignColumn
-hi SignColumn guibg=None
 
 "Status line
 "Always show statusline
@@ -173,7 +163,7 @@ set noshowcmd
 set shortmess+=c
 let g:cm_auto_popup=0
 imap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Plug>(cm_force_refresh)")
-imap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+imap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
 imap <expr> <CR>  (pumvisible() ?  "\<C-y>\<Plug>(expand_or_nl)" : "\<CR>")
 imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-u>":"\<CR>")
 
@@ -202,21 +192,9 @@ endfunction
 inoremap <expr> <CR> pumvisible() ?
       \"<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
 
-"Tagbar
-"Install ctags for this to work
-nnoremap tt :TagbarToggle<CR>
-let g:tagbar_iconchars=['+', '-']
-
 "Quickfix colors
 "Hide this ugly yellow
 hi QuickFixLine gui=None guibg=None guifg=None
-
-"GitGutter color
-"Non intrusive colors
-hi GitGutterAdd guifg=grey
-hi GitGutterChange guifg=grey
-hi GitGutterDelete guifg=grey
-hi GitGutterChangeDelete guifg=grey
 
 "Ale colors
 "Ale is the syntax processing framework
@@ -260,6 +238,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121'
 "Disable Git tracking
 "Mode, Git, Ale errors, Ale warnings, filename
 "syntax, file position
+let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
@@ -334,7 +313,3 @@ let NERDTreeIgnore=['\.o$', '\~$']
 "Secure avoid loading dangerous stuff
 set exrc
 set secure
-
-"Personal background
-hi Normal guibg=#101617
-hi VertSplit guibg=#101617
