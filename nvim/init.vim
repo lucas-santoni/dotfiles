@@ -161,7 +161,7 @@ set noshowcmd
 "Use enter to expand a snippet
 inoremap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Tab>")
 inoremap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
-let g:cm_auto_popup=1
+let g:cm_auto_popup=0 "TODO: Complete on shortcut
 set shortmess+=c
 set completeopt=menu,menuone,noinsert
 set pumheight=5
