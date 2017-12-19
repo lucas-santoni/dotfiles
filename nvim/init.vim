@@ -69,10 +69,6 @@ set hlsearch
 set ignorecase
 nnoremap qq :nohl<CR>
 
-"Popup menu
-"Not too many entries
-set pumheight=10
-
 "Avoid useless redraw
 set lazyredraw
 
@@ -163,10 +159,12 @@ set noshowcmd
 "Completion with ncm
 "Use tab and S-tab to move between the choices
 "Use enter to expand a snippet
-set shortmess+=c
-let g:cm_auto_popup=0
 inoremap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Tab>")
 inoremap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
+let g:cm_auto_popup=1
+set shortmess+=c
+set completeopt=menu,menuone,noinsert
+set pumheight=5
 
 "Snippets
 "UltiSnips is the snippet framework
