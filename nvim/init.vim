@@ -157,11 +157,13 @@ set noshowcmd
 
 "Autocompletion
 "Completion with ncm
+"Trigger with C-p
 "Use tab and S-tab to move between the choices
-"Use enter to expand a snippet
+"Use enter to expand a snippet (see next block)
+imap <C-p> <Plug>(cm_force_refresh)
 inoremap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Tab>")
 inoremap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
-let g:cm_auto_popup=0 "TODO: Complete on shortcut
+let g:cm_auto_popup=0
 set shortmess+=c
 set completeopt=menu,menuone,noinsert
 set pumheight=5
