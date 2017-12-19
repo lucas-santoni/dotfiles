@@ -25,6 +25,7 @@ Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'digitaltoad/vim-pug'
+Plug 'dag/vim-fish'
 call plug#end()
 
 "Remap leader
