@@ -48,3 +48,7 @@ set -gx vmFile /Users/geographer/Documents/machines/Archlinux.vmwarevm/Archlinux
 # Used in vim snippets
 set -gx FULLNAME "Lucas Santoni"
 set -gx EPITECH_LOGIN "lucas.santoni@epitech.eu"
+
+# Locales
+set -gx LC_CTYPE fr_FR.UTF-8
+set -gx LC_ALL fr_FR.UTF-8
