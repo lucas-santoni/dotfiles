@@ -112,6 +112,7 @@ if !empty($EPITECH_PATH) && getcwd() =~ $EPITECH_PATH
   set tabstop=2
   set softtabstop=2
   set listchars=tab:\|\ ,trail:~
+  set cino+=g0
 else
   set expandtab
   set listchars=tab:..,trail:~
@@ -164,7 +165,7 @@ set noshowcmd
 imap <C-p> <Plug>(cm_force_refresh)
 inoremap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Tab>")
 inoremap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
-let g:cm_auto_popup=0
+let g:cm_auto_popup=1
 set shortmess+=c
 set completeopt=menu,menuone,noinsert
 set pumheight=5
