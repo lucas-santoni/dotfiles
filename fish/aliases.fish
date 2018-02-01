@@ -49,11 +49,15 @@ alias cx "chmod +x"
 ## GDB
 alias gdb "gdb -q"
 
+## VALGRIND
+alias va "valgrind"
+alias valeak "valgrind --leak-check=full --show-leak-kinds=all"
+
 ## DOCKER
 alias d "docker"
 alias drm "docker rm"
 alias da "docker start"
-alias do "docker stop"
+alias ds "docker stop"
 alias di "docker images"
 alias dps "docker ps"
 alias dpsa "docker ps -a"
