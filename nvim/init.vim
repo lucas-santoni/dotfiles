@@ -111,7 +111,7 @@ if !empty($EPITECH_PATH) && getcwd() =~ $EPITECH_PATH
   set noexpandtab
   set tabstop=2
   set softtabstop=2
-  set listchars=tab:\|\ ,trail:~
+  set listchars=tab:\ \ ,trail:~
   set cino+=g0
 else
   set expandtab
