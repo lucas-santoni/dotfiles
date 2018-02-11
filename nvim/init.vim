@@ -183,6 +183,7 @@ set pumheight=5
 "let g:UltiSnipsJumpBackwardTrigger=\"<S-tab>"
 "TODO: Disable default snippets for some languages
 let g:UltiSnipsExpandTrigger="<nop>"
+let g:UltiSnipsSnippetDirectories=[$HOME . '/.snippets']
 let g:ulti_expand_or_jump_res=0
 function! <SID>ExpandSnippetOrReturn()
   let snippet=UltiSnips#ExpandSnippetOrJump()
