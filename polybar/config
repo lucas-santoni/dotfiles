@@ -46,7 +46,7 @@ font-0 = xos4 Terminus:size=15;3
 font-1 = FontAwesome:size=11;4
 
 modules-left = i3
-modules-center = date
+modules-center = time
 modules-right = cpu volume
 
 tray-position = right
@@ -79,18 +79,14 @@ label-visible = 
 label-visible-foreground = ${colors.foreground}
 label-visible-padding = 1
 
-[module/date]
-type = internal/date
+[module/time]
+type = custom/script
+
 interval = 5
-
-date = %d/%m/%Y
-
-time = %H:%M
+exec = date "+%d/%m/%y %H:%M"
 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
-
-label =%date% %time%
 
 [module/cpu]
 type = internal/cpu
