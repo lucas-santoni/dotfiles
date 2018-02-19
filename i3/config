@@ -1,6 +1,6 @@
 # Gaps & borders
 for_window [class="^.*"] border pixel 7
-gaps inner 40
+gaps inner 30
 gaps outer 20
 
 # My floating friends
@@ -29,12 +29,12 @@ floating_modifier $mod
 focus_follows_mouse none
 
 # Modifier
-set $mod Mod1
+set $mod Mod4
 
 # Execs
-exec_always --no-startup-id feh --bg-tile ~/Images/wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Images/wallpaper
 exec_always --no-startup-id compton --config ~/.compton
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.dotfiles/polybar/launch.sh
 exec --no-startup-id redshift
 exec --no-startup-id dunst -config ~/.dunstrc
 exec --no-startup-id nm-applet
