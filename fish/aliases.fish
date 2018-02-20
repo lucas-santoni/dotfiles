@@ -71,5 +71,10 @@ alias dcpsa "docker-compose ps -a"
 
 ## EPITECH
 alias b "blih"
-alias norme "checkpatch.pl --ignore BLOCK_COMMENT_STYLE --no-tree --file (find . -name '*.c')"
+alias norme "checkpatch.pl
+  --ignore BLOCK_COMMENT_STYLE \
+  --ignore MULTILINE_DEREFERENCE \
+  --ignore CONST_STRUCT \
+  --ignore SPLIT_STRING \
+  --no-tree --file (find . -name '*.c')"
 alias fnorme "checkpatch.pl --no-tree --file (find . -name '*.c' -o -name '*.h')"
