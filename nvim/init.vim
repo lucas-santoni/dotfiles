@@ -103,7 +103,7 @@ syntax enable
 set nosmartindent
 set cindent
 
-"2 spaces identations if not at Epitech
+"2 spaces indentations if not at Epitech
 "Tabs if at Epitech, but displayed as two columns
 set shiftwidth=2
 set list
@@ -233,7 +233,7 @@ let g:ale_cpp_clang_options='-Wall -Wextra -Wshadow --std=gnu++14 -O0'
 "Override python.vim defaults
 "Ignored rules are for 2 spaces indenting
 let g:python_recommended_style=0
-let g:ale_python_flake8_options='--ignore E111,E114,E121'
+let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 
 "Airline
 "Airline is the statusbar framework
