@@ -15,11 +15,6 @@ export LC_ALL="fr_FR.UTF-8"
 # Aliases
 source ~/.dotfiles/bash/aliases.sh
 
-# Completions for macOS
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_TMUX=1
