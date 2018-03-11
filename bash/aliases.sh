@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## VIM
 alias e="nvim"
 
