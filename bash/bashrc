@@ -15,10 +15,6 @@ export LC_ALL="fr_FR.UTF-8"
 # Aliases
 source ~/.dotfiles/bash/aliases.sh
 
-# FZF
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_TMUX=1
-
 # Display # for root
 # and nothing otherwise
 userIndicator=""

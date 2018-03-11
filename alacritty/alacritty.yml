@@ -6,8 +6,8 @@ dimensions:
   lines: 30
 
 padding:
-  x: 20
-  y: 12
+  x: 12
+  y: 6
 
 tabspaces: 8
 
@@ -15,12 +15,12 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: Fantasque Sans Mono
+    family: Monaco
   bold:
-    family: Fantasque Sans Mono
+    family: Monaco
   italic:
-    family: Fantasque Sans Mono
-  size: 18.0
+    family: Monaco
+  size: 15.0
   offset:
     x: 0.0
     y: 0.0
@@ -38,26 +38,26 @@ colors:
     background: '0x1d1f22'
     foreground: '0xc5c8c6'
   cursor:
-    text: '0x1d1f21'
-    cursor: '0xc5c8c6'
+    text:       '0x1d1f21'
+    cursor:     '0xc5c8c6'
   normal:
-    black:   '0x1d1f21'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xc5c8c6'
+    black:      '0x1d1f21'
+    red:        '0xcc6666'
+    green:      '0xb5bd68'
+    yellow:     '0xf0c674'
+    blue:       '0x81a2be'
+    magenta:    '0xb294bb'
+    cyan:       '0x8abeb7'
+    white:      '0xc5c8c6'
   bright:
-    black:   '0x969896'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xc5c8c6'
+    black:      '0x969896'
+    red:        '0xcc6666'
+    green:      '0xb5bd68'
+    yellow:     '0xf0c674'
+    blue:       '0x81a2be'
+    magenta:    '0xb294bb'
+    cyan:       '0x8abeb7'
+    white:      '0xc5c8c6'
 
 visual_bell:
   animation: EaseOutExpo
@@ -80,7 +80,6 @@ hide_cursor_when_typing: false
 live_config_reload: true
 
 key_bindings:
-  - { key: C,        mods: Alt,     chars: "fzf-cd-widget\n"             }
   - { key: Key1,     mods: Alt,     chars: "»"                           }
   - { key: Key2,     mods: Alt,     chars: "~"                           }
   - { key: Key3,     mods: Alt,     chars: "#"                           }
