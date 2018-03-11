@@ -1,3 +1,7 @@
+#!/bin/bash
+
+source ~/.dotfiles/bash/git.sh
+
 # Display # for root
 # and nothing otherwise
 userIndicator=""
@@ -10,16 +14,19 @@ fi
 # Only basename
 path="\W"
 
-# Right prompt
+# Left prompt
 leftPrompt() {
+  # Update git status
+  getGitStatus
+
   # Get the git branch if any
   gitBranch=$(git branch 2> /dev/null | \
     sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/')
 
-   left="$userIndicator$path$gitBranch "
+   left="$userIndicator$path$gitBranch$gitStatus "
 }
 
-# Left prompt
+# Right prompt
 rightPrompt() {
   padding=$(expr ${COLUMNS} - ${#right})
   right= $(printf "%*s" $padding "right prompt")

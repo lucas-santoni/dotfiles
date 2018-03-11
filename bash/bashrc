@@ -7,6 +7,10 @@ source ~/.dotfiles/bash/aliases.sh
 # Bash options
 source ~/.dotfiles/bash/options.sh
 
+# Get colors
+source ~/.dotfiles/bash/colors.sh
+getColors
+
 # Get the prompt
 source ~/.dotfiles/bash/prompt.sh
 

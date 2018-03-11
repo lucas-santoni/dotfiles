@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Colors in man
 export LESS_TERMCAP_mb=$(printf "\033[01;31m")
 export LESS_TERMCAP_md=$(printf "\033[01;31m")

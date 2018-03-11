@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Get repo ACL
 grepo() {
   blih repository getacl $1
