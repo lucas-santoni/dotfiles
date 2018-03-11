@@ -1,0 +1,3 @@
+# Vim mode for readline
+set editing-mode vi
+set keymap vi-command
