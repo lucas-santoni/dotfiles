@@ -77,5 +77,6 @@ alias norme "checkpatch.pl
   --ignore MULTILINE_DEREFERENCE \
   --ignore CONST_STRUCT \
   --ignore SPLIT_STRING \
+  --ignore TRAILING_STATEMENTS \
   --no-tree --file (find . -name '*.c')"
 alias fnorme "checkpatch.pl --no-tree --file (find . -name '*.c' -o -name '*.h')"
