@@ -28,14 +28,12 @@ leftPrompt() {
 
 # Right prompt
 rightPrompt() {
-  padding=$(expr ${COLUMNS} - ${#right})
-  right= $(printf "%*s" $padding "right prompt")
+  right=""
 }
 
 # The prompt
 prompt() {
   leftPrompt
-  # rightPrompt
 
   PS1="$left"
 }
