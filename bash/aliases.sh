@@ -82,6 +82,7 @@ norme() {
   --ignore MULTILINE_DEREFERENCE \
   --ignore CONST_STRUCT \
   --ignore SPLIT_STRING \
+  --ignore INITIALISED_STATIC \
   --no-tree --file `find . -name '*.c'`
 }
 
