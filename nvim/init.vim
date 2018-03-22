@@ -26,6 +26,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'dag/vim-fish'
+Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 
 "Remap leader
@@ -125,6 +126,9 @@ inoremap hh <C-V><Tab>
 "these on the keyboard
 inoremap ww <
 inoremap WW >
+
+" Remap write
+nnoremap s :w<CR>
 
 "Show matching chars
 "Like () or {}
