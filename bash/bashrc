@@ -19,3 +19,6 @@ source ~/.dotfiles/bash/man.sh
 
 # Blih functions
 source ~/.dotfiles/bash/blih.sh
+
+# Still need fzf for Vim
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
