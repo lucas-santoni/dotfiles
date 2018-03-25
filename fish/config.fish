@@ -21,7 +21,26 @@ function fish_user_key_bindings
   for mode in insert default visual
     bind -M $mode \cf forward-char
   end
+
+  fzf_key_bindings
 end
+
+# FZF configuration
+set -gx FZF_ALT_C_COMMAND "command find -L \
+\$dir -mindepth 1 \\( \
+-path \$dir'*/\\.*' \
+-o -path ./Library \
+-o -path ./Applications \
+-o -fstype 'sysfs' \
+-o -fstype 'devfs' \
+-o -fstype 'devtmpfs' \\) -prune \
+-o -type d -print 2> /dev/null | sed 's@^\./@@'"
+set -gx FZF_CTRL_T_COMMAND 'ag --nocolor \
+--ignore Library \
+--ignore Applications \
+--ignore Google\ Drive \
+-g ""'
+set -gx FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS '--no-height --no-reverse'
 
 # Default editor is vim
 set -gx EDITOR vim
@@ -38,9 +57,6 @@ set -gx LESS_TERMCAP_so (printf "\033[01;31;33m")
 set -gx LESS_TERMCAP_ue (printf "\033[0m")
 set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 
-# Wine architechture
-set -gx WINEARCH win32
-
 # Add Cargo to PATH
 # TODO: Remove this
 set -gx PATH $HOME/.cargo/bin $PATH
@@ -51,9 +67,6 @@ set -gx PATH $HOME/.gem/ruby/2.4.0/bin $PATH
 
 # Add scripts to PATH
 set -gx PATH $HOME/.dotfiles/scripts $PATH
-
-# Default virtual machine
-set -gx vmFile /Users/geographer/Documents/machines/Archlinux.vmwarevm/Archlinux.vmx
 
 # Personal infos
 # Used in vim snippets
