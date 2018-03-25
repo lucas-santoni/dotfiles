@@ -9,14 +9,27 @@ set fish_greeting
 
 # Vi mode
 # With cursor shape disabled
+# Mode is handled by prompt
 function fish_vi_cursor; end
 fish_vi_key_bindings
+
+# Still enable ctrl+f in Vi mode
+function fish_user_key_bindings
+  for mode in insert default visual
+    bind -M $mode \cf forward-char
+  end
+end
 
 # Default editor is vim
 set -gx EDITOR vim
 
 # Set term variable
 set -gx TERM xterm-256color
+
+# Base16 colors
+if status --is-interactive
+  eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+end
 
 # Colored man
 set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
