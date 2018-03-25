@@ -7,6 +7,9 @@ source $HOME/.dotfiles/fish/functions.fish
 # Disable greeting
 set fish_greeting
 
+# Disable valid path underline
+set fish_color_valid_path
+
 # Vi mode
 # With cursor shape disabled
 # Mode is handled by prompt
