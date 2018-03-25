@@ -18,10 +18,8 @@ font:
     family: Monaco
   bold:
     family: Monaco
-    style: Bold
   italic:
     family: Monaco
-    style: Italic
   size: 15.0
   offset:
     x: 0.0
