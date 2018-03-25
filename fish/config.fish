@@ -26,11 +26,6 @@ set -gx EDITOR vim
 # Set term variable
 set -gx TERM xterm-256color
 
-# Base16 colors
-if status --is-interactive
-  eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
-end
-
 # Colored man
 set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
 set -gx LESS_TERMCAP_md (printf "\033[01;31m")
