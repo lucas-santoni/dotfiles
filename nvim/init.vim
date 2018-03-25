@@ -244,7 +244,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Set a matching colorscheme
 "Do not use powerline
 "Disable Git tracking
-"Mode, Git, Ale errors, Ale warnings, filename
+"Mode, Ale errors, Ale warnings, filename
 "syntax, file position
 let g:airline_theme='base16_grayscale'
 let g:airline#extensions#tabline#enabled=0
@@ -252,7 +252,7 @@ let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
 let g:airline#extensions#tabline#show_tab_type=0
 let g:airline#extensions#default#layout=[
-      \ [ 'a', 'error', 'warning', 'b', 'c' ],
+      \ [ 'a', 'error', 'warning', 'c' ],
       \ [ 'x', 'z' ]
       \ ]
 let g:airline#extensions#hunks#enabled=0
