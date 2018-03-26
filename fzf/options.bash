@@ -1,5 +1,5 @@
 # Base16 Tomorrow Night
-# Author: Chris Kempson (http://chriskempson.com)
+# Fullscreen
 
 _gen_fzf_default_opts() {
 
@@ -24,6 +24,7 @@ export FZF_DEFAULT_OPTS="
   --color=bg+:$color00,bg:$color00,spinner:$color0C,hl:$color0D
   --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C
   --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D
+  --no-height --no-reverse
 "
 
 }
