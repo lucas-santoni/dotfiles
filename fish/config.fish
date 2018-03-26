@@ -26,21 +26,8 @@ function fish_user_key_bindings
 end
 
 # FZF configuration
-set -gx FZF_ALT_C_COMMAND "command find -L \
-\$dir -mindepth 1 \\( \
--path \$dir'*/\\.*' \
--o -path ./Library \
--o -path ./Applications \
--o -fstype 'sysfs' \
--o -fstype 'devfs' \
--o -fstype 'devtmpfs' \\) -prune \
--o -type d -print 2> /dev/null | sed 's@^\./@@'"
-set -gx FZF_CTRL_T_COMMAND 'ag --nocolor \
---ignore Library \
---ignore Applications \
---ignore Google\ Drive \
--g ""'
-set -gx FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS '--no-height --no-reverse'
+set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
+set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 
 # Default editor is vim
 set -gx EDITOR vim
