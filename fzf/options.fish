@@ -1,5 +1,7 @@
 # Base16 Tomorrow Night
 # Fullscreen
+# Escaped end of lines are required otherwise fzf-tmux
+# will crash
 
 set -l color00 '#1d1f21'
 set -l color01 '#282a2e'
@@ -18,9 +20,9 @@ set -l color0D '#81a2be'
 set -l color0E '#b294bb'
 set -l color0F '#a3685a'
 
-set -U FZF_DEFAULT_OPTS "
-  --color=bg+:$color00,bg:$color00,spinner:$color0C,hl:$color0D
-  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C
-  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D
-  --no-height --no-reverse
+set -U FZF_DEFAULT_OPTS "\
+  --color=bg+:$color00,bg:$color00,spinner:$color0C,hl:$color0D \
+  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C \
+  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D \
+  --no-height --no-reverse \
 "

@@ -28,6 +28,7 @@ end
 # FZF configuration
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
+set -gx FZF_TMUX 1
 
 # Default editor is vim
 set -gx EDITOR vim
