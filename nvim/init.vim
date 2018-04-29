@@ -27,6 +27,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'dag/vim-fish'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "Remap leader
