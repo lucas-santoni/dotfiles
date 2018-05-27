@@ -3,7 +3,6 @@
 # Environment
 export PATH="/usr/local/bin/:$PATH"
 export EDITOR="vim"
-export TERM="xterm-256color"
 
 # Personal infos
 export FULLNAME="Lucas Santoni"
