@@ -53,9 +53,6 @@ set -gx FZF_TMUX 1
 # Default editor is vim
 set -gx EDITOR vim
 
-# Set term variable
-set -gx TERM xterm-256color
-
 # Colored man
 set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
 set -gx LESS_TERMCAP_md (printf "\033[01;31m")
@@ -72,9 +69,6 @@ set -gx PATH $HOME/.cargo/bin $PATH
 # Add Gems to PATH
 # TODO: Remove this
 set -gx PATH $HOME/.gem/ruby/2.4.0/bin $PATH
-
-# Add scripts to PATH
-set -gx PATH $HOME/.dotfiles/scripts $PATH
 
 # Personal infos
 # Used in vim snippets
