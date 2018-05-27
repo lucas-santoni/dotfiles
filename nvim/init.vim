@@ -1,35 +1,53 @@
-"This file is a Neovim configuration file
-"It may work on Vim > 8, who knows
-"It is a quite heavy configuration
-
 "Plugins
 "Managed via vim-plug
 "Use :PlugInstall / :PlugClean
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.vim/plugged')
-Plug 'chriskempson/base16-vim'
+"Colorscheme handled by pywal
+Plug 'dylanaraps/wal.vim'
+
+"Status bar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+
+"Automatic symbols completion
+"File explorer
+"Quick rename
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree'
+Plug 'danro/rename.vim'
+
+"FZF
+"Git support
 Plug '$HOME/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'danro/rename.vim'
-Plug 'SirVer/ultisnips'
+
+"Linting
+Plug 'w0rp/ale'
+
+"Snippets
 Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/ncm-clang'
-Plug 'mhartington/nvim-typescript'
-Plug 'w0rp/ale'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'digitaltoad/vim-pug'
-Plug 'dag/vim-fish'
+
+"Languages support
 Plug 'neovimhaskell/haskell-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'dag/vim-fish'
+Plug 'digitaltoad/vim-pug'
+
+"Vim asthetics
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+
 call plug#end()
+
+"Colors
+colorscheme wal
+
+"Hide vertical split
+hi clear VertSplit
 
 "Remap leader
 let mapleader=" "
@@ -37,18 +55,6 @@ let mapleader=" "
 "Change shell (env variable)
 "At least for FZF
 let $SHELL = '/bin/bash'
-
-"Colors
-"True colors only for compatible terminal emulators
-"Dark background (may affet color scheme)
-"Enable italics (may require patched terminfo)
-"Harder contrast
-"Set a colorscheme
-if has("termguicolors")
-  set termguicolors
-endif
-set background=dark
-colorscheme base16-tomorrow-night
 
 "Splits
 "Split on right and on below
@@ -58,10 +64,6 @@ set splitright
 set splitbelow
 cabbrev s split
 cabbrev v vsplit
-
-"Cursorline
-"Show the cursorline
-"set cursorline
 
 "Search
 "Search as you type
@@ -101,25 +103,15 @@ nnoremap <C-H> :bprev<CR>
 nnoremap <C-L> :bnext<CR>
 
 "Identation
+"2 spaces indentations
 filetype plugin indent on
 syntax enable
 set nosmartindent
 set cindent
-
-"2 spaces indentations if not at Epitech
-"Tabs if at Epitech, but displayed as two columns
 set shiftwidth=2
 set list
-if !empty($EPITECH_PATH) && getcwd() =~ $EPITECH_PATH
-  set noexpandtab
-  set tabstop=2
-  set softtabstop=2
-  set listchars=tab:\ \ ,trail:~
-  set cino+=g0
-else
-  set expandtab
-  set listchars=tab:..,trail:~
-endif
+set expandtab
+set listchars=tab:..,trail:~
 
 "But still insert tab
 inoremap hh <C-V><Tab>
@@ -129,7 +121,7 @@ inoremap hh <C-V><Tab>
 inoremap ww <
 inoremap WW >
 
-" Remap write
+"Remap write
 nnoremap s :w<CR>
 
 "Show matching chars
@@ -141,13 +133,9 @@ set showmatch
 nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 
 "Signcolumns
-"Always show it
 "Avoid any unwanted background
 set signcolumn=yes
 hi clear SignColumn
-
-"Vertical split color
-hi VertSplit guibg=bg
 
 "Status line
 "Always show statusline
@@ -156,12 +144,6 @@ hi VertSplit guibg=bg
 set laststatus=2
 set noshowmode
 set noshowcmd
-
-"Line numbers
-"Show linenumbers
-"Relative to current line
-"set number
-"set relativenumber
 
 "Autocompletion
 "Completion with ncm
@@ -206,14 +188,6 @@ inoremap <expr> <CR> pumvisible() ?
 "Hide this ugly yellow
 hi QuickFixLine gui=None guibg=None guifg=None
 
-"Ale colors
-"Ale is the syntax processing framework
-"Intrusive colors
-hi clear ALEErrorSign
-hi clear ALEWarningSign
-hi ALEErrorSign guifg=Red
-hi ALEWarningSign guifg=Orange
-
 "Ale signs
 let g:ale_set_highlights=0
 let g:ale_sign_error='! '
@@ -223,7 +197,6 @@ let g:ale_sign_warning='! '
 "If nothing is precised, the default linters are used
 let g:ale_linters={
       \'javascript': ['eslint'],
-      \'typescript': ['tslint', 'tsserver'],
       \'c': ['clang'],
       \'cpp': ['clang'],
       \}
@@ -248,7 +221,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='base16_grayscale'
+" let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
@@ -283,21 +256,20 @@ let g:fzf_action={
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout={ 'down': '~30%' }
-let g:fzf_colors={
-  \ 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'Normal', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'bg+':     ['bg', 'Conditional', 'Conditional'],
+  \ 'hl':      ['fg', 'Normal'],
+  \ 'hl+':     ['fg', 'Normal'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
   \ 'prompt':  ['fg', 'Conditional'],
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment']
-  \ }
+  \ 'header':  ['fg', 'Comment'] }
 
 "And also the grepper
 "Install ag because it is good
