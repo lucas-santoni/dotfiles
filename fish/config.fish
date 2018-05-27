@@ -4,6 +4,9 @@ source $HOME/.dotfiles/fish/aliases.fish
 # Get the functions
 source $HOME/.dotfiles/fish/functions.fish
 
+# Get various fish settings
+source $HOME/.options.fish
+
 # Disable greeting
 set fish_greeting
 
@@ -48,7 +51,7 @@ end
 # FZF configuration
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
-set -gx FZF_TMUX 1
+# set -gx FZF_TMUX 1
 
 # Default editor is vim
 set -gx EDITOR vim

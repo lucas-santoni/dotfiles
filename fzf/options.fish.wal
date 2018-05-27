@@ -1,0 +1,26 @@
+# Generic fzf colors
+# Meant to be used with wal
+
+set -l color00 '{color0}'
+set -l color01 '{color1}'
+set -l color02 '{color2}'
+set -l color03 '{color3}'
+set -l color04 '{color4}'
+set -l color05 '{color5}'
+set -l color06 '{color6}'
+set -l color07 '{color7}'
+set -l color08 '{color8}'
+set -l color09 '{color9}'
+set -l color0A '{color10}'
+set -l color0B '{color11}'
+set -l color0C '{color12}'
+set -l color0D '{color13}'
+set -l color0E '{color14}'
+set -l color0F '{color15}'
+
+set -U FZF_DEFAULT_OPTS "\
+  --color=bg+:$color00,bg:$color00,spinner:$color0C,hl:$color0D \
+  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C \
+  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D \
+  --no-height --no-reverse \
+"
