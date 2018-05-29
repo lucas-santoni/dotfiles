@@ -6,7 +6,7 @@ dimensions:
   lines: 30 
 padding:
   x: 6
-  y: 5
+  y: 1
 
 tabspaces: 8
 
@@ -21,7 +21,7 @@ font:
   italic:
     family: Fantasque Sans Mono
     style: italic
-  size: 18.0
+  size: 19.0
   offset:
     x: 0.0
     y: 0.0
@@ -68,7 +68,7 @@ background_opacity: 1.0
 
 hide_cursor_when_typing: false
 
-live_config_reload: false
+live_config_reload: true
 
 key_bindings:
   # Special chars ##########################################################
