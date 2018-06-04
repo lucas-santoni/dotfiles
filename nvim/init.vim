@@ -36,6 +36,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'digitaltoad/vim-pug'
+Plug 'mxw/vim-jsx'
 
 "Vim asthetics
 Plug 'junegunn/limelight.vim'
@@ -47,7 +48,7 @@ call plug#end()
 colorscheme wal
 
 "Hide vertical split
-hi clear VertSplit
+autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=DarkGray ctermbg=NONE
 
 "Remap leader
 let mapleader=" "
