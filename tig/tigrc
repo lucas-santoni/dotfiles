@@ -1,21 +1,15 @@
-#
 # Colors
-#
 
 color cursor black blue
 color title-focus default default bold
 color title-blur white black
 color help-group white black
 
-#
 # Variables
-#
 
 set line-graphics = ascii
 
-#
 # Vim style binding
-#
 
 bind generic h scroll-left
 bind generic j move-down

@@ -4,9 +4,6 @@ source $HOME/.dotfiles/fish/aliases.fish
 # Get the functions
 source $HOME/.dotfiles/fish/functions.fish
 
-# Get various fish settings
-source $HOME/.options.fish
-
 # Disable greeting
 set fish_greeting
 
