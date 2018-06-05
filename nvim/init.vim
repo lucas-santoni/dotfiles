@@ -3,8 +3,8 @@
 "Use :PlugInstall / :PlugClean
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.vim/plugged')
-"Colorscheme handled by pywal
-Plug 'dylanaraps/wal.vim'
+" Some colorscheme
+Plug 'dracula/vim'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -25,12 +25,6 @@ Plug 'tpope/vim-fugitive'
 "Linting
 Plug 'w0rp/ale'
 
-"Snippets
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/ncm-clang'
-
 "Languages support
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
@@ -45,10 +39,11 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "Colors
-colorscheme wal
+set termguicolors
+colorscheme dracula
 
 "Hide vertical split
-autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=DarkGray ctermbg=NONE
+autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
 
 "Remap leader
 let mapleader=" "
@@ -146,45 +141,6 @@ set laststatus=2
 set noshowmode
 set noshowcmd
 
-"Autocompletion
-"Completion with ncm
-"Trigger with C-p
-"Use tab and S-tab to move between the choices
-"Use enter to expand a snippet (see next block)
-imap <C-p> <Plug>(cm_force_refresh)
-inoremap <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<Tab>")
-inoremap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
-let g:cm_auto_popup=1
-set shortmess+=c
-set completeopt=menu,menuone,noinsert
-set pumheight=5
-
-"Snippets
-"UltiSnips is the snippet framework
-"Tons of default snippets provided by vim-snippets
-"Disable the traditional expand key
-"Use a function instead, triggered on enter when completion window is open
-"I do so because I use the enter key as my expand key
-"and this prevent a bug which makes the key useless otherwise
-"Not necessary to remap jump forward/backward as it is
-"done on the autocompletion framework
-"let g:UltiSnipsJumpForwardTrigger=\"<tab>"
-"let g:UltiSnipsJumpBackwardTrigger=\"<S-tab>"
-"TODO: Disable default snippets for some languages
-let g:UltiSnipsExpandTrigger="<nop>"
-let g:UltiSnipsSnippetDirectories=[$HOME . '/.snippets']
-let g:ulti_expand_or_jump_res=0
-function! <SID>ExpandSnippetOrReturn()
-  let snippet=UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return snippet
-  else
-    return "\<CR>"
-  endif
-endfunction
-inoremap <expr> <CR> pumvisible() ?
-      \"<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
-
 "Quickfix colors
 "Hide this ugly yellow
 hi QuickFixLine gui=None guibg=None guifg=None
@@ -222,7 +178,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-" let g:airline_theme='base16'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
