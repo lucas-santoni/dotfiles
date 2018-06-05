@@ -147,8 +147,8 @@ hi QuickFixLine gui=None guibg=None guifg=None
 
 "Ale signs
 let g:ale_set_highlights=0
-let g:ale_sign_error='> '
-let g:ale_sign_warning='> '
+let g:ale_sign_error='→ '
+let g:ale_sign_warning='→ '
 
 "Linters to use
 "If nothing is precised, the default linters are used
@@ -194,8 +194,9 @@ let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
 let g:airline#extensions#tabline#right_alt_sep=''
 let g:airline#extensions#whitespace#enabled=0
-let g:airline#extensions#ale#error_symbol='! '
-let g:airline#extensions#ale#warning_symbol='! '
+let g:airline#extensions#ale#error_symbol='✗ '
+let g:airline#extensions#ale#warning_symbol='✝ '
+let g:airline#extensions#ale#show_line_numbers=0
 let g:airline#extensions#tagbar#enabled=0
 let g:airline_symbols.readonly='🔒'
 let g:airline_symbols.linenr = ''
