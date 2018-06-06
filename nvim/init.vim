@@ -151,6 +151,9 @@ let g:ale_set_highlights=0
 let g:ale_sign_error='→ '
 let g:ale_sign_warning='→ '
 
+"Ale signs color
+hi todo guibg=None guifg=Orange
+
 "Linters to use
 "If nothing is precised, the default linters are used
 let g:ale_linters={
