@@ -31,6 +31,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'digitaltoad/vim-pug'
 Plug 'mxw/vim-jsx'
+Plug 'justinmk/vim-syntax-extra' "For C family
 
 "Vim asthetics
 Plug 'junegunn/limelight.vim'

@@ -2,8 +2,8 @@
 
 color cursor black blue
 color title-focus default default bold
-color title-blur white black
-color help-group white black
+color title-blur white default
+color help-group white default
 
 # Variables
 
