@@ -44,7 +44,7 @@ call plug#end()
 
 "Colors
 set termguicolors
-colorscheme challenger_deep
+colorscheme dracula
 
 "Hide vertical split
 autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
@@ -185,7 +185,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='challenger_deep'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
@@ -215,6 +215,7 @@ let g:airline_symbols.branch = ''
 "Define some shortcuts
 "Choose a layout
 "Get the good colors
+"Hide the statusline when in FZF
 noremap ff :FZF <CR>
 let g:fzf_action={
       \ 'ctrl-t': 'tab split',
@@ -223,11 +224,11 @@ let g:fzf_action={
 let g:fzf_layout={ 'down': '~30%' }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
-  \ 'bg+':     ['bg', 'Conditional', 'Conditional'],
-  \ 'hl':      ['fg', 'Normal'],
-  \ 'hl+':     ['fg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'Normal', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'border':  ['fg', 'Ignore'],
   \ 'prompt':  ['fg', 'Conditional'],
@@ -235,6 +236,9 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 "And also the grepper
 "Install ag because it is good
