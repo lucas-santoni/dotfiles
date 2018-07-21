@@ -70,6 +70,9 @@ set -gx PATH $HOME/.cargo/bin $PATH
 # TODO: Remove this
 set -gx PATH $HOME/.gem/ruby/2.4.0/bin $PATH
 
+# Go main workspace
+set -gx GOPATH $HOME/Documents/go
+
 # Personal infos
 # Used in vim snippets
 set -gx FULLNAME "Lucas Santoni"
