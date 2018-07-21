@@ -5,6 +5,7 @@
 call plug#begin('~/.vim/plugged')
 " Some colorscheme
 Plug 'dracula/vim'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -43,7 +44,7 @@ call plug#end()
 
 "Colors
 set termguicolors
-colorscheme dracula
+colorscheme challenger_deep
 
 "Hide vertical split
 autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
@@ -184,7 +185,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Disable Git tracking
 "Mode, Ale errors, Ale warnings, filename
 "syntax, file position
-let g:airline_theme='dracula'
+let g:airline_theme='challenger_deep'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
