@@ -33,6 +33,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'mxw/vim-jsx'
 Plug 'justinmk/vim-syntax-extra' "For C family
 Plug 'tomlion/vim-solidity'
+Plug 'kh3phr3n/python-syntax'
 
 "Vim asthetics
 Plug 'junegunn/limelight.vim'
