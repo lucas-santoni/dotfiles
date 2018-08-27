@@ -35,6 +35,7 @@ Plug 'mxw/vim-jsx'
 Plug 'justinmk/vim-syntax-extra' "For C family
 Plug 'tomlion/vim-solidity'
 Plug 'kh3phr3n/python-syntax'
+Plug 'lifepillar/pgsql.vim'
 
 "Vim asthetics
 Plug 'junegunn/limelight.vim'
