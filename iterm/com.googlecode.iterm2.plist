@@ -659,7 +659,7 @@ Duplicate Tab</string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 499 620 392 0 0 1920 1058 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>715 411 796 486 0 0 1920 1057 </string>
+	<string>715 468 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 444 592 584 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1321,6 +1321,10 @@ Duplicate Tab</string>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>D06BAB4E-EAA8-4B86-AED8-6500F5D65951</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1405,7 +1409,7 @@ Duplicate Tab</string>
 	<key>SwitchWindowModifier</key>
 	<integer>9</integer>
 	<key>TabStyle</key>
-	<integer>1</integer>
+	<integer>3</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>UKCrashReporterLastCrashReportDate</key>
