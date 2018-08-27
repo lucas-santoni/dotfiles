@@ -1,0 +1,10 @@
+let configpath = '/Users/geographer/.dotfiles/cvim/cvimrc'
+set localconfig
+
+set smoothscroll
+set cncpcompletion
+
+map <C-j> scrollPageDown
+map <C-k> scrollPageUp
+map <C-h> previousTab
+map <C-l> nextTab
