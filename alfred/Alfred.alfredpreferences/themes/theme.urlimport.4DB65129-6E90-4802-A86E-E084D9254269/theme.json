@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#B2B2B2FF",
+        "font" : "System Light",
+        "color" : "#FFFFFF54"
+      },
+      "shortcut" : {
+        "size" : 22,
+        "colorSelected" : "#00FF95FF",
+        "font" : "System Light",
+        "color" : "#00FF95FF"
+      },
+      "backgroundSelected" : "#FF374300",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#00FF95FF",
+        "font" : "System Light",
+        "color" : "#FFFFFFE5"
+      },
+      "iconPaddingHorizontal" : 17,
+      "paddingVertical" : 9,
+      "iconSize" : 29
+    },
+    "search" : {
+      "paddingVertical" : 0,
+      "background" : "#67676700",
+      "spacing" : 8,
+      "text" : {
+        "size" : 64,
+        "colorSelected" : "#000000FF",
+        "font" : "System Light",
+        "color" : "#FF6462FF"
+      },
+      "backgroundSelected" : "#B2D7FFFF"
+    },
+    "window" : {
+      "color" : "#000000CC",
+      "paddingHorizontal" : 39,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#000000FF",
+      "blur" : 40,
+      "roundness" : -64,
+      "paddingVertical" : 32
+    },
+    "credit" : "Chris",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#FF3743FF",
+      "thickness" : 0
+    },
+    "name" : "Neon Dreams"
+  }
+}
