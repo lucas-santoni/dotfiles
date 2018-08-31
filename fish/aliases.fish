@@ -80,3 +80,6 @@ alias norme "checkpatch.pl
   --ignore TRAILING_STATEMENTS \
   --no-tree --file (find . -name '*.c')"
 alias fnorme "checkpatch.pl --no-tree --file (find . -name '*.c' -o -name '*.h')"
+
+## BAT
+alias cat "bat --style=numbers,changes"
