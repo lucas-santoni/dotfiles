@@ -13,8 +13,7 @@ set fish_color_valid_path
 # Vi mode
 # With cursor shape disabled
 # Mode is handled by prompt
-function fish_vi_cursor; end
-fish_vi_key_bindings
+function fish_mode_prompt; end
 
 # Bindings !
 function fish_user_key_bindings
@@ -61,14 +60,6 @@ set -gx LESS_TERMCAP_se (printf "\033[0m")
 set -gx LESS_TERMCAP_so (printf "\033[01;31;33m")
 set -gx LESS_TERMCAP_ue (printf "\033[0m")
 set -gx LESS_TERMCAP_us (printf "\033[01;32m")
-
-# Add Cargo to PATH
-# TODO: Remove this
-set -gx PATH $HOME/.cargo/bin $PATH
-
-# Add Gems to PATH
-# TODO: Remove this
-set -gx PATH $HOME/.gem/ruby/2.4.0/bin $PATH
 
 # Go main workspace
 set -gx GOPATH $HOME/Documents/go
