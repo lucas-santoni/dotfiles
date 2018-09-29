@@ -25,3 +25,7 @@ end
 function srepo
   blih repository setacl $argv[1] $argv[2] $argv[3]
 end
+
+function lrepo
+  blih repository list
+end
