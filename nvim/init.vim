@@ -19,7 +19,7 @@ Plug 'danro/rename.vim'
 
 "FZF
 "Git support
-Plug '$HOME/.fzf'
+Plug '/usr/local/opt/fzf' "Brew path
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 
@@ -53,10 +53,6 @@ autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
 
 "Remap leader
 let mapleader=" "
-
-"Change shell (env variable)
-"At least for FZF
-let $SHELL = '/bin/bash'
 
 "Splits
 "Split on right and on below
