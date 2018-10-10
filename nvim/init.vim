@@ -6,6 +6,8 @@ call plug#begin('~/.vim/plugged')
 " Some colorscheme
 Plug 'dracula/vim'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'geospace/fantasy.vim'
+Plug 'dylanaraps/wal.vim'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -45,11 +47,12 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "Colors
-set termguicolors
-colorscheme dracula
+"set termguicolors
+colorscheme fantasy
 
 "Hide vertical split
-autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
+"Handled by colorscheme now
+"autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
 
 "Remap leader
 let mapleader=" "
@@ -153,7 +156,7 @@ let g:ale_sign_error='→ '
 let g:ale_sign_warning='→ '
 
 "Ale signs color
-hi todo guibg=None guifg=Orange
+" hi todo guibg=None guifg=Orange
 
 "Linters to use
 "If nothing is precised, the default linters are used
@@ -181,18 +184,20 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Set a matching colorscheme
 "Do not use powerline
 "Disable Git tracking
-"Mode, Ale errors, Ale warnings, filename
+"Mode, Ale errors, filename
+"Add 'warning' from Ale warning
 "syntax, file position
-let g:airline_theme='dracula'
+let g:airline_theme='wal'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
 let g:airline#extensions#tabline#show_tab_type=0
 let g:airline#extensions#default#layout=[
-      \ [ 'a', 'error', 'warning', 'c' ],
+      \ [ 'a', 'error', 'c' ],
       \ [ 'x', 'z' ]
       \ ]
 let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=0
 let g:airline_section_z=airline#section#create(['%l/%L'])
 let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep=''
