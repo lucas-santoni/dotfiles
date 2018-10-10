@@ -8,6 +8,7 @@ Plug 'dracula/vim'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'geospace/fantasy.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'arcticicestudio/nord-vim'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -40,15 +41,23 @@ Plug 'kh3phr3n/python-syntax'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
 
-"Vim asthetics
+"Vim aesthetics
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
 "Colors
-"set termguicolors
-colorscheme fantasy
+set termguicolors
+colorscheme nord
+
+"Colorscheme specific options
+let g:nord_italic=1
+let g:nord_underline=0
+let g:nord_italic_comments=1
+let g:nord_uniform_status_lines=0
+let g:nord_comment_brightness=13
+let g:nord_uniform_diff_background=1
 
 "Hide vertical split
 "Handled by colorscheme now
@@ -148,15 +157,12 @@ set noshowcmd
 
 "Quickfix colors
 "Hide this ugly yellow
-hi QuickFixLine gui=None guibg=None guifg=None
+" hi QuickFixLine gui=None guibg=None guifg=None
 
 "Ale signs
 let g:ale_set_highlights=0
 let g:ale_sign_error='→ '
 let g:ale_sign_warning='→ '
-
-"Ale signs color
-" hi todo guibg=None guifg=Orange
 
 "Linters to use
 "If nothing is precised, the default linters are used
@@ -187,7 +193,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Mode, Ale errors, filename
 "Add 'warning' from Ale warning
 "syntax, file position
-let g:airline_theme='wal'
+"let g:airline_theme='wal'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
@@ -226,22 +232,22 @@ let g:fzf_action={
       \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout={ 'down': '~30%' }
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'Normal', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+      \ { 'fg':    ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'Normal', 'Normal'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 "And also the grepper
 "Install ag because it is good
