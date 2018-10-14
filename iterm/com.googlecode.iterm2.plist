@@ -1359,7 +1359,7 @@ Duplicate Tab</string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>254 564 770 429 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>407 189 910 698 0 0 1680 1027 </string>
+	<string>445 163 910 698 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>777 302 604 278 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2188,7 +2188,7 @@ Duplicate Tab</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-09T21:56:40Z</date>
+	<date>2018-10-11T06:07:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2214,7 +2214,7 @@ Duplicate Tab</string>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>0</integer>
+	<integer>4</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>UseAdaptiveFrameRate</key>
