@@ -10,11 +10,6 @@ set fish_greeting
 # Disable valid path underline
 set fish_color_valid_path
 
-# Vi mode
-# With cursor shape disabled
-# Mode is handled by prompt
-function fish_mode_prompt; end
-
 # Bindings !
 function fish_user_key_bindings
   # Still enable ctrl+f in Vim mode
