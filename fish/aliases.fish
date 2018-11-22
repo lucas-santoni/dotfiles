@@ -17,6 +17,8 @@ alias ga "git add"
 alias gaa "git add --all"
 alias gc "git commit"
 alias gp "git push"
+alias gb "git branch"
+alias gm "git branch --merged"
 
 ## RM
 alias rrm "rm -Rf"
