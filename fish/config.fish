@@ -7,6 +7,9 @@ source $HOME/.dotfiles/fish/functions.fish
 # Disable greeting
 set fish_greeting
 
+# Vi mode
+fish_vi_key_bindings
+
 # Disable valid path underline
 set fish_color_valid_path
 
@@ -71,3 +74,6 @@ set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
 set -gx BAT_THEME "Nord"
+
+# Non-Apple llvm/clang
+set -gx PATH "/usr/local/opt/llvm/bin" $PATH
