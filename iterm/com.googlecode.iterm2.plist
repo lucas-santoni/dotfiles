@@ -16,8 +16,6 @@
 	<false/>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
-	<key>CGFontRenderingFontSmoothingDisabled</key>
-	<false/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>Custom Color Presets</key>
@@ -1254,6 +1252,14 @@ Make Text Smaller</string>
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x4e-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>25</integer>
+			<key>Text</key>
+			<string>New Window
+New Window</string>
+		</dict>
 		<key>0x54-0x120000</key>
 		<dict>
 			<key>Action</key>
@@ -1378,13 +1384,13 @@ Duplicate Tab</string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>417 417 796 486 0 0 1680 1027 </string>
+	<string>417 496 958 470 0 0 1680 1027 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>345 276 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>549 29 910 762 0 0 1680 1027 </string>
+	<string>231 167 910 762 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>166 162 910 762 0 0 1680 1027 </string>
+	<string>93 224 1648 762 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>-391 1461 1362 832 -1144 1050 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_0AC49006-0160-46DB-9DB8-0DF2A88F18A2</key>
@@ -2221,7 +2227,7 @@ Duplicate Tab</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-21T13:48:01Z</date>
+	<date>2018-11-23T21:53:43Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
