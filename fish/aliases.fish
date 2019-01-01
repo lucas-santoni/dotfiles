@@ -40,11 +40,6 @@ alias tmls "tmux list-sessions"
 alias m "make"
 alias mr "make re"
 
-## PYTHON
-alias python "python3"
-alias p "python3"
-alias ip "ipython3"
-
 ## CHMOD
 alias cx "chmod +x"
 
