@@ -9,6 +9,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'geospace/fantasy.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'rakr/vim-one'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -49,19 +50,9 @@ call plug#end()
 
 "Colors
 set termguicolors
-colorscheme nord
-
-"Colorscheme specific options
-let g:nord_italic=1
-let g:nord_underline=0
-let g:nord_italic_comments=1
-let g:nord_uniform_status_lines=0
-let g:nord_comment_brightness=13
-let g:nord_uniform_diff_background=1
-
-"Hide vertical split
-"Handled by colorscheme now
-"autocmd ColorScheme * highlight VertSplit gui=NONE guifg=DarkGray guibg=NONE
+colorscheme one
+set background=dark
+let g:one_allow_italics = 1
 
 "Remap leader
 let mapleader=" "
@@ -147,6 +138,10 @@ nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 set signcolumn=yes
 hi clear SignColumn
 
+"And set right Ale colors
+high ALEErrorSign guibg=NONE guifg=red
+high ALEWarningSign guibg=NONE guifg=yellow
+
 "Status line
 "Always show statusline
 "Hide the mode indicator as it is built in Airline
@@ -154,10 +149,6 @@ hi clear SignColumn
 set laststatus=2
 set noshowmode
 set noshowcmd
-
-"Quickfix colors
-"Hide this ugly yellow
-" hi QuickFixLine gui=None guibg=None guifg=None
 
 "Ale signs
 let g:ale_set_highlights=0
