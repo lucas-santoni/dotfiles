@@ -73,7 +73,11 @@ set -gx LC_CTYPE fr_FR.UTF-8
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
-set -gx BAT_THEME "Nord"
+set -gx BAT_THEME "TwoDark"
 
 # Non-Apple llvm/clang
 set -gx PATH "/usr/local/opt/llvm/bin" $PATH
+
+# Non-Apple Ruby
+set -gx PATH "/usr/local/opt/ruby/bin" $PATH
+set -gx PATH "/usr/local/Cellar/ruby/2.5.3_1/libexec/gembin" $PATH
