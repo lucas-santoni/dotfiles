@@ -41,6 +41,7 @@ Plug 'tomlion/vim-solidity'
 Plug 'kh3phr3n/python-syntax'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
+Plug 'plasticboy/vim-markdown' "Default one sucks
 
 "Vim aesthetics
 Plug 'junegunn/limelight.vim'
@@ -52,7 +53,7 @@ call plug#end()
 set termguicolors
 colorscheme one
 set background=dark
-let g:one_allow_italics = 1
+let g:one_allow_italics=1
 
 "Remap leader
 let mapleader=" "
@@ -133,6 +134,9 @@ set showmatch
 "Show a ruller on toggle
 nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
 
+"Markdown syntax
+let g:vim_markdown_folding_disabled=1
+
 "Signcolumns
 "Avoid any unwanted background
 set signcolumn=yes
@@ -206,9 +210,9 @@ let g:airline#extensions#ale#warning_symbol='✝ '
 let g:airline#extensions#ale#show_line_numbers=0
 let g:airline#extensions#tagbar#enabled=0
 let g:airline_symbols.readonly='🔒'
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = ''
+let g:airline_symbols.linenr=''
+let g:airline_symbols.maxlinenr=''
+let g:airline_symbols.branch=''
 
 "FZF
 "FZF is the fuzzy finder
