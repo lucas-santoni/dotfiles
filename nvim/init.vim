@@ -4,11 +4,7 @@
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.vim/plugged')
 " Some colorscheme
-Plug 'dracula/vim'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'geospace/fantasy.vim'
 Plug 'dylanaraps/wal.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'rakr/vim-one'
 
 "Status bar
@@ -33,15 +29,16 @@ Plug 'w0rp/ale'
 "Languages support
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'justinmk/vim-syntax-extra'
 Plug 'dag/vim-fish'
 Plug 'digitaltoad/vim-pug'
 Plug 'mxw/vim-jsx'
-Plug 'justinmk/vim-syntax-extra' "For C family
 Plug 'tomlion/vim-solidity'
 Plug 'kh3phr3n/python-syntax'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown' "Default one sucks
+Plug 'hashivim/vim-vagrant'
 
 "Vim aesthetics
 Plug 'junegunn/limelight.vim'
@@ -188,7 +185,6 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Mode, Ale errors, filename
 "Add 'warning' from Ale warning
 "syntax, file position
-"let g:airline_theme='wal'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
