@@ -8,6 +8,11 @@ alias la "exa -la"
 alias tree "exa --tree"
 alias t "exa --tree"
 
+## CD
+function c
+  cd $argv[1] ; and l
+end
+
 ## GIT
 alias g "git"
 alias gd "git diff"
@@ -80,3 +85,6 @@ alias fnorme "checkpatch.pl --no-tree --file (find . -name '*.c' -o -name '*.h')
 
 ## BAT
 alias cat "bat --style=numbers,changes"
+
+## EMACS
+alias emacs "e"
