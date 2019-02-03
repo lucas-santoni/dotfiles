@@ -80,4 +80,3 @@ set -gx PATH "/usr/local/opt/llvm/bin" $PATH
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH
-set -gx PATH "/usr/local/Cellar/ruby/2.5.3_1/libexec/gembin" $PATH
