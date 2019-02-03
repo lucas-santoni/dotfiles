@@ -39,6 +39,7 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown' "Default one sucks
 Plug 'hashivim/vim-vagrant'
+Plug 'rhysd/vim-crystal'
 
 "Vim aesthetics
 Plug 'junegunn/limelight.vim'
