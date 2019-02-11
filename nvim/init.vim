@@ -73,7 +73,7 @@ cabbrev v vsplit
 set incsearch
 set hlsearch
 set ignorecase
-nnoremap qq :nohl<CR>
+nnoremap <silent> qq :nohl<CR>
 
 "Avoid useless redraw
 set lazyredraw
@@ -99,8 +99,8 @@ syntax on
 "Switch buffers by using ctrl+h/l
 set hidden
 set history=500
-nnoremap <C-H> :bprev<CR>
-nnoremap <C-L> :bnext<CR>
+nnoremap <silent> <C-H> :bprev<CR>
+nnoremap <silent> <C-L> :bnext<CR>
 
 "Identation
 "2 spaces indentations
@@ -130,7 +130,7 @@ set showmatch
 
 "More than 80 chars is bad
 "Show a ruller on toggle
-nnoremap cc :let &cc = &cc == '' ? '79' : ''<CR>
+nnoremap <silent> cc :let &cc = &cc == '' ? '79' : ''<CR>
 
 "Markdown syntax
 let g:vim_markdown_folding_disabled=1
@@ -217,7 +217,7 @@ let g:airline_symbols.branch=''
 "Choose a layout
 "Get the good colors
 "Hide the statusline when in FZF
-noremap ff :FZF <CR>
+noremap <silent> ff :FZF <CR>
 let g:fzf_action={
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
@@ -243,18 +243,18 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 
 "And also the grepper
 "Install ag because it is good
-nnoremap <Leader>h :Ag<CR>
+nnoremap <silent> <Leader>h :Ag<CR>
 
 "And also the buffer switcher
-noremap <Leader>j :Buffers <CR>
+noremap <silent> <Leader>j :Buffers <CR>
 
 "And also the commit explorer
-noremap <Leader>k :Commits <CR>
-noremap <Leader>K :BCommits <CR>
+noremap <silent> <Leader>k :Commits <CR>
+noremap <silent> <Leader>K :BCommits <CR>
 
 "Nerdtree
 "Ignore object and tmp ~files
-nnoremap rr :NERDTreeToggle<CR>
+nnoremap <silent> rr :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
