@@ -76,7 +76,10 @@ set -gx LC_ALL fr_FR.UTF-8
 set -gx BAT_THEME "TwoDark"
 
 # Non-Apple llvm/clang
-set -gx PATH "/usr/local/opt/llvm/bin" $PATH
+# set -gx PATH "/usr/local/opt/llvm/bin" $PATH
+# set -gx CC "/usr/local/opt/llvm/bin/clang"
+# set -gx CXX "/usr/local/opt/llvm/bin/clang++"
+# set -gx AR "/usr/local/opt/llvm/bin/llvm-ar"
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH
