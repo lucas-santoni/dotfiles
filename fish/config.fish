@@ -83,3 +83,6 @@ set -gx BAT_THEME "TwoDark"
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH
+
+# Rust
+set -gx PATH "$HOME/.cargo/bin" $PATH
