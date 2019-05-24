@@ -4,8 +4,6 @@
 "Use :PlugUpdate / :PlugUpgrade
 call plug#begin('~/.vim/plugged')
 " Some colorscheme
-Plug 'dylanaraps/wal.vim'
-Plug 'rakr/vim-one'
 Plug 'chriskempson/base16-vim'
 
 "Status bar
@@ -14,16 +12,14 @@ Plug 'vim-airline/vim-airline-themes'
 
 "Automatic symbols completion
 "File explorer
-"Quick rename
+"Quick file rename
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree'
 Plug 'danro/rename.vim'
 
 "FZF
-"Git support
 Plug '/usr/local/opt/fzf' "Brew path
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
 
 "Linting
 Plug 'w0rp/ale'
@@ -44,16 +40,12 @@ Plug 'hashivim/vim-vagrant'
 Plug 'rhysd/vim-crystal'
 Plug 'rust-lang/rust.vim'
 
-"Vim aesthetics
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
-
 call plug#end()
 
 "Colors
 set background=dark
 set termguicolors
-colorscheme base16-ocean
+colorscheme base16-black-metal
 
 "Remap leader
 let mapleader=" "
@@ -80,8 +72,10 @@ nnoremap <silent> qq :nohl<CR>
 "Avoid useless redraw
 set lazyredraw
 
-"Ignore some extensions in wildmenu
-set wildignore+=*.so,*.o,*.swp
+" Time waited for key press(es) to complete
+" It makes for a faster key response
+set ttimeout
+set ttimeoutlen=50
 
 "Remap escape
 "jj is always near
@@ -192,7 +186,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Mode, Ale errors, filename
 "Add 'warning' from Ale warning
 "syntax, file position
-let g:airline_theme='base16_ocean'
+let g:airline_theme='base16_grayscale'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
@@ -255,17 +249,14 @@ nnoremap <silent> <Leader>h :Ag<CR>
 "And also the buffer switcher
 noremap <silent> <Leader>j :Buffers <CR>
 
-"And also the commit explorer
-noremap <silent> <Leader>k :Commits <CR>
-noremap <silent> <Leader>K :BCommits <CR>
-
 "Nerdtree
-"Ignore object and tmp ~files
+"TODO: Replace this with Vim's default shit
+"Ignore object and Python stuff
 nnoremap <silent> rr :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
-let NERDTreeIgnore=['\.o$', '\~$']
+let NERDTreeIgnore=['\.o$', '\.pyc$', '__pycache__']
 
 "Enable project specific stuff
 "This is provided using a local .nvimrc
