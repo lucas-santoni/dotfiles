@@ -45,10 +45,11 @@ end
 # FZF configuration
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
+# This does not work
 # set -gx FZF_TMUX 1
 
-# Default editor is vim
-set -gx EDITOR vim
+# Default editor is NeoVim
+set -gx EDITOR nvim
 
 # Colored man
 set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
@@ -62,24 +63,12 @@ set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 # Go main workspace
 set -gx GOPATH $HOME/Documents/go
 
-# Personal infos
-# Used in vim snippets
-set -gx FULLNAME "Lucas Santoni"
-set -gx EPITECH_LOGIN "lucas.santoni@epitech.eu"
-set -gx EPITECH_PATH "$HOME/Documents/epitech"
-
 # Locales
 set -gx LC_CTYPE fr_FR.UTF-8
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
 set -gx BAT_THEME "TwoDark"
-
-# Non-Apple llvm/clang
-# set -gx PATH "/usr/local/opt/llvm/bin" $PATH
-# set -gx CC "/usr/local/opt/llvm/bin/clang"
-# set -gx CXX "/usr/local/opt/llvm/bin/clang++"
-# set -gx AR "/usr/local/opt/llvm/bin/llvm-ar"
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH
