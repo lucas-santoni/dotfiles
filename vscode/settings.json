@@ -1,0 +1,133 @@
+{
+  // Editor
+  // Found this font order in a tutorial, may not be necessary
+  "editor.fontFamily": "Operator Mono, Consolas, 'Courier New', monospace",
+  "editor.fontWeight": "400",
+  "editor.fontSize": 18,
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.rulers": [80,120],
+  "editor.detectIndentation": false, // Do not adapt to opened file indentation
+  // settings
+  "[python]": {
+    "editor.tabSize": 4, // 4 spaces in Python to repect PEP8
+    "files.insertFinalNewline": true, // Empty line at end of file
+  },
+  "[typescriptreact]": {
+    "files.insertFinalNewline": true, // Empty line at end of file
+  },
+
+  // UI
+  "workbench.colorTheme": "Rouge", // Editor theme
+  "workbench.activityBar.visible": false, // The vertical bar on the left
+  "workbench.statusBar.feedback.visible": false, // The smileys
+  "workbench.iconTheme": "file-icons-colourless", // Avoid any mismatched colors
+  "workbench.startupEditor": "newUntitledFile", // Hide menu
+  "workbench.editor.enablePreview": false, // Disable the preview on single click
+  // and open the file right away
+  "workbench.colorCustomizations": {
+    // Some custom colors for the Rouge theme
+    // Mostly about a less present red
+    // Nuances generated with https://superdevresources.com/tools/color-shades
+
+    // Title bar
+    "titleBar.activeBackground": "#2b3b54",
+    "titleBar.inactiveBackground": "#1a2433",
+
+    // Status bar
+    "statusBar.background" : "#2b3b54",
+    "statusBar.noFolderBackground" : "#2b3b54", // When no folder is open
+    // I don't care so same color
+    "statusBar.debuggingBackground": "#ab7276",
+
+    // Scrollbar
+    "scrollbarSlider.background": "#2b3b54aa",
+  },
+
+  // EXPLORER
+  "explorer.openEditors.visible": 0, // Separated space for all the
+  // opened files
+
+  // WINDOW
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 1,
+
+  // VIM
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    {
+        "before": ["<C-h>"],
+        "commands": ["workbench.action.previousEditor"]
+    }, {
+        "before": ["<C-j>"],
+        "after": ["}"]
+    }, {
+        "before": ["<C-k>"],
+        "after": ["{"]
+    }, {
+        "before": ["<C-l>"],
+        "commands": ["workbench.action.nextEditor"]
+    }, {
+        "before": ["q", "q"],
+        "commands": [":nohl"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<C-j>"],
+      "after": ["}"]
+    }, {
+      "before": ["<C-k>"],
+      "after": ["{"]
+    }
+  ],
+  
+  // C/C++
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.intelliSenseMode": "clang-x64",
+
+  // JS(X)/TS(X)
+  // Parse .js, .jsx, .ts and .tsx
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // Python
+  // PEP with types
+  "python.linting.enabled": true,
+  "python.linting.pep8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": false,
+  "python.linting.pydocstyleEnabled": false,
+
+  // Crystal language
+  "crystal-lang.compiler": "/usr/local/bin/crystal",
+  "crystal-lang.completion": true,
+  "crystal-lang.hover": true,
+  "crystal-lang.implementations": true,
+
+  // Hide some files in the UI
+  "files.exclude": {
+    "**/__pycache__/": true,
+    "**/*.pyc": true,
+    "**/.mypy_cache/": true,
+
+    "**/.idea/": true,
+
+    "node_modules/": true,
+  },
+  "eslint.run": "onSave",
+  "git.autofetch": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+}

@@ -1,0 +1,16 @@
+// While Vim bindings relies on the ctrl key and letters in normal mode,
+// VSCode bindings mostly relies on the cmd key
+[
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.quickOpen"
+    // Browse file when not in an editor (f-f is available otherwise)
+  },
+  {
+    "key": "cmd+h",
+    "command": "workbench.action.showCommands"
+    // Command palette
+  },
+  // There is alsom cmd+j to open the bottom pane but it looks like
+  // a default shortcut
+]
