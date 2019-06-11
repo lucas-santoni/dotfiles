@@ -9,16 +9,20 @@
   "editor.rulers": [80,120],
   "editor.detectIndentation": false, // Do not adapt to opened file indentation
   // settings
+
   "[python]": {
-    "editor.tabSize": 4, // 4 spaces in Python to repect PEP8
+    "editor.tabSize": 4, // 4 spaces in Python to respect PEP8
     "files.insertFinalNewline": true, // Empty line at end of file
   },
   "[typescriptreact]": {
     "files.insertFinalNewline": true, // Empty line at end of file
   },
 
+  // No breadcrumbs above the editor
+  "breadcrumbs.enabled": false,
+
   // UI
-  "workbench.colorTheme": "Rouge", // Editor theme
+  "workbench.colorTheme": "Base16 Dark Chalk", // Editor theme
   "workbench.activityBar.visible": false, // The vertical bar on the left
   "workbench.statusBar.feedback.visible": false, // The smileys
   "workbench.iconTheme": "file-icons-colourless", // Avoid any mismatched colors
@@ -26,22 +30,14 @@
   "workbench.editor.enablePreview": false, // Disable the preview on single click
   // and open the file right away
   "workbench.colorCustomizations": {
-    // Some custom colors for the Rouge theme
-    // Mostly about a less present red
-    // Nuances generated with https://superdevresources.com/tools/color-shades
-
-    // Title bar
-    "titleBar.activeBackground": "#2b3b54",
-    "titleBar.inactiveBackground": "#1a2433",
+    // Nuances can be generated with
+    // https://superdevresources.com/tools/color-shades
 
     // Status bar
     "statusBar.background" : "#2b3b54",
     "statusBar.noFolderBackground" : "#2b3b54", // When no folder is open
     // I don't care so same color
     "statusBar.debuggingBackground": "#ab7276",
-
-    // Scrollbar
-    "scrollbarSlider.background": "#2b3b54aa",
   },
 
   // EXPLORER
@@ -53,24 +49,31 @@
   "window.zoomLevel": 1,
 
   // VIM
+  // Highlight on search
   "vim.hlsearch": true,
+  // Custom leader
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
     {
-        "before": ["<C-h>"],
-        "commands": ["workbench.action.previousEditor"]
+      // Previous tab
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.previousEditor"]
     }, {
-        "before": ["<C-j>"],
-        "after": ["}"]
+      // Jump a block down
+      "before": ["<C-j>"],
+      "after": ["}"]
     }, {
-        "before": ["<C-k>"],
-        "after": ["{"]
+      // Jump a block up
+      "before": ["<C-k>"],
+      "after": ["{"]
     }, {
-        "before": ["<C-l>"],
-        "commands": ["workbench.action.nextEditor"]
+      // Next tab
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.nextEditor"]
     }, {
-        "before": ["q", "q"],
-        "commands": [":nohl"]
+      // Remove highlight after search
+      "before": ["q", "q"],
+      "commands": [":nohl"]
     }
   ],
   "vim.insertModeKeyBindings": [
@@ -101,6 +104,11 @@
     "typescript",
     "typescriptreact"
   ],
+  // Update imports when files are moved
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // Run ESLint on save
+  "eslint.run": "onSave",
 
   // Python
   // PEP with types
@@ -119,15 +127,23 @@
 
   // Hide some files in the UI
   "files.exclude": {
+    // Python stuff
     "**/__pycache__/": true,
     "**/*.pyc": true,
     "**/.mypy_cache/": true,
 
+    // Jetbrains
     "**/.idea/": true,
 
+    // JS modules
     "node_modules/": true,
   },
-  "eslint.run": "onSave",
+
+  // Fetch from time to time
   "git.autofetch": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "files.associations": {
+    // Allow comments
+    ".eslintrc": "jsonc"
+  }
 }
