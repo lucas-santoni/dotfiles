@@ -1,7 +1,7 @@
 {
   // Editor
   // Found this font order in a tutorial, may not be necessary
-  "editor.fontFamily": "Operator Mono, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400",
   "editor.fontSize": 18,
   "editor.fontLigatures": true,
@@ -21,11 +21,10 @@
   // No breadcrumbs above the editor
   "breadcrumbs.enabled": false,
 
-  // UI
   "workbench.colorTheme": "Base16 Dark Chalk", // Editor theme
   "workbench.activityBar.visible": false, // The vertical bar on the left
   "workbench.statusBar.feedback.visible": false, // The smileys
-  "workbench.iconTheme": "file-icons-colourless", // Avoid any mismatched colors
+  "workbench.iconTheme": "file-icons", // Colorless is also available
   "workbench.startupEditor": "newUntitledFile", // Hide menu
   "workbench.editor.enablePreview": false, // Disable the preview on single click
   // and open the file right away
@@ -145,5 +144,5 @@
   "files.associations": {
     // Allow comments
     ".eslintrc": "jsonc"
-  }
+  },
 }
