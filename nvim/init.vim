@@ -25,27 +25,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 
 "Languages support
-Plug 'neovimhaskell/haskell-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'justinmk/vim-syntax-extra'
-Plug 'dag/vim-fish'
-Plug 'digitaltoad/vim-pug'
-Plug 'mxw/vim-jsx'
-Plug 'tomlion/vim-solidity'
-Plug 'kh3phr3n/python-syntax'
-Plug 'lifepillar/pgsql.vim'
-Plug 'cespare/vim-toml'
-Plug 'plasticboy/vim-markdown' "Default one sucks
-Plug 'hashivim/vim-vagrant'
-Plug 'rhysd/vim-crystal'
-Plug 'rust-lang/rust.vim'
+Plug 'sheerun/vim-polyglot' "Just in case
 
 call plug#end()
 
 "Colors
 set background=dark
 set termguicolors
-colorscheme base16-black-metal
+colorscheme base16-chalk
 
 "Remap leader
 let mapleader=" "
