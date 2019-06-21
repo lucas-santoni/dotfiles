@@ -120,6 +120,7 @@ nnoremap <silent> cc :let &cc = &cc == '' ? '79' : ''<CR>
 
 "Markdown syntax
 let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
 
 "Signcolumns
 "Avoid any unwanted background
