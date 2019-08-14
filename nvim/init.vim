@@ -26,6 +26,7 @@ Plug 'w0rp/ale'
 
 "Languages support
 Plug 'sheerun/vim-polyglot' "Just in case
+Plug 'blockloop/vim-swigjs'
 
 call plug#end()
 
