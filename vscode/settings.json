@@ -1,15 +1,17 @@
 {
-  // Editor
+  // ---------------------------------------------------------------------------
   // Found this font order in a tutorial, may not be necessary
   "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
-  "editor.fontWeight": "400",
+  "editor.fontWeight": "400", // Normal
   "editor.fontSize": 18,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
-  "editor.rulers": [80,120],
-  "editor.detectIndentation": false, // Do not adapt to opened file indentation
-  // settings
-
+  "editor.rulers": [
+    80,
+    120
+  ],
+  // ---------------------------------------------------------------------------
+  "editor.detectIndentation": false, // Do not adapt to opened file indentation settings
   "[python]": {
     "editor.tabSize": 4, // 4 spaces in Python to respect PEP8
     "files.insertFinalNewline": true, // Empty line at end of file
@@ -17,132 +19,173 @@
   "[typescriptreact]": {
     "files.insertFinalNewline": true, // Empty line at end of file
   },
-
-  // No breadcrumbs above the editor
-  "breadcrumbs.enabled": false,
-
-  "workbench.colorTheme": "Base16 Dark Chalk", // Editor theme
+  // ---------------------------------------------------------------------------
+  "breadcrumbs.enabled": false, // No breadcrumbs above the editor
+  "workbench.colorTheme": "Gruvbox Dark (Hard)", // Editor theme
   "workbench.activityBar.visible": false, // The vertical bar on the left
-  "workbench.statusBar.feedback.visible": false, // The smileys
-  "workbench.iconTheme": "file-icons", // Colorless is also available
+  "workbench.statusBar.feedback.visible": false, // Colorless is also available
   "workbench.startupEditor": "newUntitledFile", // Hide menu
-  "workbench.editor.enablePreview": false, // Disable the preview on single click
-  // and open the file right away
+  "workbench.editor.enablePreview": false, // Disable the preview on single click and open the file right away
   "workbench.colorCustomizations": {
     // Nuances can be generated with
     // https://superdevresources.com/tools/color-shades
-
-    // Status bar
-    "statusBar.background" : "#2b3b54",
-    "statusBar.noFolderBackground" : "#2b3b54", // When no folder is open
-    // I don't care so same color
-    "statusBar.debuggingBackground": "#ab7276",
+    "statusBar.background": "#242729", // Status bar when a folder is open (code . for example)
+    "statusBar.noFolderBackground": "#242729", // When no folder is open, I don't care so same color
+    "statusBar.debuggingBackground": "#242729",
   },
-
-  // EXPLORER
-  "explorer.openEditors.visible": 0, // Separated space for all the
-  // opened files
-
-  // WINDOW
+  // ---------------------------------------------------------------------------
+  "explorer.openEditors.visible": 0, // Separated space for all the opened files
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
-
-  // VIM
-  // Highlight on search
+  "window.zoomLevel": 0,
+  // ---------------------------------------------------------------------------
   "vim.hlsearch": true,
-  // Custom leader
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
     {
       // Previous tab
-      "before": ["<C-h>"],
-      "commands": ["workbench.action.previousEditor"]
-    }, {
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
       // Jump a block down
-      "before": ["<C-j>"],
-      "after": ["}"]
-    }, {
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "}"
+      ]
+    },
+    {
       // Jump a block up
-      "before": ["<C-k>"],
-      "after": ["{"]
-    }, {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "{"
+      ]
+    },
+    {
       // Next tab
-      "before": ["<C-l>"],
-      "commands": ["workbench.action.nextEditor"]
-    }, {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    {
       // Remove highlight after search
-      "before": ["q", "q"],
-      "commands": [":nohl"]
+      "before": [
+        "q",
+        "q"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     }
   ],
   "vim.insertModeKeyBindings": [
     {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": ["<C-j>"],
-      "after": ["}"]
-    }, {
-      "before": ["<C-k>"],
-      "after": ["{"]
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "}"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "{"
+      ]
     }
   ],
-  
-  // C/C++
+  // ---------------------------------------------------------------------------
   "C_Cpp.default.cppStandard": "c++17",
   "C_Cpp.default.intelliSenseMode": "clang-x64",
-
-  // JS(X)/TS(X)
-  // Parse .js, .jsx, .ts and .tsx
-  "eslint.validate": [
+  // ---------------------------------------------------------------------------
+  "eslint.validate": [ // Parse .js/.ts/.jsx/tsx
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
-  // Update imports when files are moved
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  // Run ESLint on save
   "eslint.run": "onSave",
-
-  // Python
-  // PEP with types
+  // ---------------------------------------------------------------------------
   "python.linting.enabled": true,
   "python.linting.pep8Enabled": true,
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": false,
   "python.linting.pydocstyleEnabled": false,
-
-  // Crystal language
+  // ---------------------------------------------------------------------------
   "crystal-lang.compiler": "/usr/local/bin/crystal",
   "crystal-lang.completion": true,
   "crystal-lang.hover": true,
   "crystal-lang.implementations": true,
-
-  // Hide some files in the UI
-  "files.exclude": {
+  // ---------------------------------------------------------------------------
+  // Server is at false for now as it breaks the autocompletion of
+  // not imported packages
+  "go.useLanguageServer": true,
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+  },
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ],
+  // Go settings that activate when the language server is disabled
+  "go.formatTool": "goimports",
+  "go.autocompleteUnimportedPackages": true,
+  // ---------------------------------------------------------------------------
+  "files.exclude": { // Files are not show in the UI explorer
     // Python stuff
     "**/__pycache__/": true,
     "**/*.pyc": true,
     "**/.mypy_cache/": true,
-
     // Jetbrains
     "**/.idea/": true,
-
     // JS modules
     "node_modules/": true,
   },
-
-  // Fetch from time to time
-  "git.autofetch": true,
-
+  "git.autofetch": true, // Fetch be fore pull
   "files.associations": {
-    // Allow comments
-    ".eslintrc": "jsonc"
+    ".eslintrc": "jsonc",
+    "*.prisma": "graphql"
   },
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.blame.line.enabled": false,
+  "gitlens.codeLens.visibility": "ondemand",
+  "extensions.ignoreRecommendations": false,
+  "[prisma]": {},
 }

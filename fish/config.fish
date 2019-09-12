@@ -63,15 +63,21 @@ set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 # Go main workspace
 set -gx GOPATH $HOME/Documents/go
 
+# Go binaries
+set -gx PATH $GOPATH/bin $PATH
+
 # Locales
 set -gx LC_CTYPE fr_FR.UTF-8
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
-set -gx BAT_THEME "TwoDark"
+set -gx BAT_THEME "gruvbox"
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH
+
+# Non-Apple Binutils
+set -gx PATH "/usr/local/opt/binutils/bin" $PATH
 
 # Rust
 set -gx PATH "$HOME/.cargo/bin" $PATH

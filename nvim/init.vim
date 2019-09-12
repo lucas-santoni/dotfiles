@@ -5,6 +5,7 @@
 call plug#begin('~/.vim/plugged')
 " Some colorscheme
 Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 
 "Status bar
 Plug 'vim-airline/vim-airline'
@@ -24,6 +25,9 @@ Plug 'junegunn/fzf.vim'
 "Linting
 Plug 'w0rp/ale'
 
+"Commentary motions
+Plug 'tpope/vim-commentary'
+
 "Languages support
 Plug 'sheerun/vim-polyglot' "Just in case
 Plug 'blockloop/vim-swigjs'
@@ -33,7 +37,9 @@ call plug#end()
 "Colors
 set background=dark
 set termguicolors
-colorscheme base16-chalk
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 "Remap leader
 let mapleader=" "
@@ -175,7 +181,7 @@ let g:ale_python_flake8_options='--ignore E111,E114,E121,E128'
 "Mode, Ale errors, filename
 "Add 'warning' from Ale warning
 "syntax, file position
-let g:airline_theme='base16_grayscale'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#buffer_min_count=2
 let g:airline_powerline_fonts=0
