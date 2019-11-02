@@ -2273,50 +2273,28 @@
 	<true/>
 	<key>GlobalKeyMap</key>
 	<dict>
-		<key>0x2d-0x100000</key>
-		<dict>
-			<key>Action</key>
-			<integer>28</integer>
-			<key>Text</key>
-			<string>0AC49006-0160-46DB-9DB8-0DF2A88F18A2</string>
-		</dict>
-		<key>0x2d-0x180000</key>
-		<dict>
-			<key>Action</key>
-			<integer>29</integer>
-			<key>Text</key>
-			<string>0AC49006-0160-46DB-9DB8-0DF2A88F18A2</string>
-		</dict>
-		<key>0x36-0x120000</key>
-		<dict>
-			<key>Action</key>
-			<integer>25</integer>
-			<key>Text</key>
-			<string>Make Text Smaller
-Make Text Smaller</string>
-		</dict>
-		<key>0x48-0x120000</key>
+		<key>0x48-0xa0000</key>
 		<dict>
 			<key>Action</key>
 			<integer>53</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x4a-0x120000</key>
+		<key>0x4a-0xa0000</key>
 		<dict>
 			<key>Action</key>
 			<integer>56</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x4b-0x120000</key>
+		<key>0x4b-0xa0000</key>
 		<dict>
 			<key>Action</key>
 			<integer>55</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x4c-0x120000</key>
+		<key>0x4c-0xa0000</key>
 		<dict>
 			<key>Action</key>
 			<integer>54</integer>
@@ -2331,36 +2309,35 @@ Make Text Smaller</string>
 			<string>New Window
 New Window</string>
 		</dict>
-		<key>0x54-0x120000</key>
+		<key>0x53-0x120000</key>
 		<dict>
 			<key>Action</key>
-			<integer>25</integer>
+			<integer>28</integer>
 			<key>Text</key>
-			<string>Duplicate Tab
-Duplicate Tab</string>
+			<string>0AC49006-0160-46DB-9DB8-0DF2A88F18A2</string>
 		</dict>
-		<key>0x68-0x100000</key>
+		<key>0x68-0x80000</key>
 		<dict>
 			<key>Action</key>
 			<integer>18</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x6a-0x100000</key>
+		<key>0x6a-0x80000</key>
 		<dict>
 			<key>Action</key>
 			<integer>21</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x6b-0x100000</key>
+		<key>0x6b-0x80000</key>
 		<dict>
 			<key>Action</key>
 			<integer>20</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x6c-0x100000</key>
+		<key>0x6c-0x80000</key>
 		<dict>
 			<key>Action</key>
 			<integer>19</integer>
@@ -2380,6 +2357,13 @@ Duplicate Tab</string>
 			<integer>2</integer>
 			<key>Text</key>
 			<string></string>
+		</dict>
+		<key>0x73-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>29</integer>
+			<key>Text</key>
+			<string>0AC49006-0160-46DB-9DB8-0DF2A88F18A2</string>
 		</dict>
 	</dict>
 	<key>HapticFeedbackForEsc</key>
@@ -2425,24 +2409,24 @@ Duplicate Tab</string>
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
-	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoK4HCA8aGxwdHh8gJjAxMlUkbnVsbNIJCgsOWk5TLm9iamVjdHNWJGNsYXNzogwN
-	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
-	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
-	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
-	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
-	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
-	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABrgsMEx4fICEiIyQqNDU2VSRu
+	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
+	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
+	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
+	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
+	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
 	AAAAADoAAAAAAAAAAAAAAAAAAAFM
 	</data>
 	<key>NSTableView Sort Ordering v2 KeyBingingTable</key>
 	<data>
-	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
-	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
-	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABowsMEVUkbnVsbNINDg8QWk5T
+	Lm9iamVjdHNWJGNsYXNzoIAC0hITFBVaJGNsYXNzbmFtZVgkY2xhc3Nlc15OU011dGFi
+	bGVBcnJheaMUFhdXTlNBcnJheVhOU09iamVjdAgRGiQpMjdJTFJUWF5jbnV2eH2IkaCk
+	rAAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
@@ -2451,12 +2435,16 @@ Duplicate Tab</string>
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>545 658 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>280 248 796 486 0 0 1680 1027 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>770 0 910 1027 0 0 1680 1027 </string>
+	<string>15 15 1650 998 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_0AC49006-0160-46DB-9DB8-0DF2A88F18A2</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0AC49006-0160-46DB-9DB8-0DF2A88F18A2_selection</key>
@@ -3131,7 +3119,7 @@ Duplicate Tab</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Iosevka 17</string>
+			<string>FantasqueSansMono-Regular 18</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3205,11 +3193,11 @@ Duplicate Tab</string>
 			<key>Use Tab Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>0.94999999999999996</real>
+			<real>1.05</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>13</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/geographer</string>
 		</dict>
@@ -3916,15 +3904,20 @@ Duplicate Tab</string>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.2.9</string>
-		<string>3.3.0beta13</string>
+		<string>3.3.6</string>
 		<string>3.3.0beta16</string>
+		<string>3.3.3</string>
+		<string>3.3.0beta13</string>
+		<string>3.3.5</string>
 		<string>3.3.2beta1</string>
 		<string>3.3.0beta15</string>
+		<string>3.2.9</string>
 		<string>3.3.3beta2</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Fantasque Sans Mono</string>
 		<string>Monaco</string>
 		<string>Iosevka Term</string>
 		<string>Iosevka</string>
@@ -3934,7 +3927,7 @@ Duplicate Tab</string>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{49, 703}</string>
+		<string>{114, 799}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
@@ -3943,7 +3936,7 @@ Duplicate Tab</string>
 	<key>NoSyncInstallationId</key>
 	<string>F1D816B7-59B5-4EB6-9FC6-60D4CBA5F4D2</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>37</integer>
+	<integer>132</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4449,6 +4442,22 @@ Duplicate Tab</string>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
@@ -4636,6 +4645,10 @@ Duplicate Tab</string>
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>chunc</string>
+	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>583671307.89023697</real>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
@@ -4727,7 +4740,7 @@ Duplicate Tab</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-02T22:31:37Z</date>
+	<date>2019-10-23T18:55:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -4768,6 +4781,8 @@ Duplicate Tab</string>
 	<integer>10</integer>
 	<key>TerminalVMargin</key>
 	<integer>10</integer>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1570464640</real>
 	<key>UseAdaptiveFrameRate</key>
 	<false/>
 	<key>UseBorder</key>
@@ -4785,7 +4800,7 @@ Duplicate Tab</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.3beta2</string>
+	<string>3.3.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

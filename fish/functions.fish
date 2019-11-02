@@ -1,7 +1,4 @@
-function play
-  mpv --really-quiet "$argv" &
-  disown
-end
+## BLIH
 
 function crepo
   blih repository create $argv[1]
@@ -23,4 +20,18 @@ end
 
 function lrepo
   blih repository list
+end
+
+
+## PANDOC
+
+function cnotes
+  set name "notes"
+  count $argv > /dev/null; and set name $argv[1]
+
+  pandoc --from=markdown+raw_html+markdown_in_html_blocks \
+    -V fontsize=10pt \
+    --variable urlcolor=blue \
+    $name.md \
+    -o $name.pdf
 end

@@ -13,7 +13,7 @@ fish_vi_key_bindings
 # Disable valid path underline
 set fish_color_valid_path
 
-# Bindings !
+# Bindings
 function fish_user_key_bindings
   # Still enable ctrl+f in Vim mode
   for mode in insert default visual
@@ -30,25 +30,15 @@ function fish_user_key_bindings
   bind \cj fzf-file-widget
   bind -e \ec
   bind \ck fzf-cd-widget
-
-  # Vim mode compatibility
-  if bind -M insert > /dev/null 2>&1
-    bind -M insert -e \cr
-    bind -M insert \ch fzf-history-widget
-    bind -M insert -e \ct
-    bind -M insert \cj fzf-file-widget
-    bind -M insert -e \ec
-    bind -M insert \ck fzf-cd-widget
-  end
 end
 
-# FZF configuration
+# FZF commands
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
-# This does not work
+# This does not work, bash seems to hang
 # set -gx FZF_TMUX 1
 
-# Default editor is NeoVim
+# Default editor
 set -gx EDITOR nvim
 
 # Colored man
@@ -71,7 +61,7 @@ set -gx LC_CTYPE fr_FR.UTF-8
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
-set -gx BAT_THEME "gruvbox"
+set -gx BAT_THEME "base16-default-dark"
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH
@@ -81,3 +71,9 @@ set -gx PATH "/usr/local/opt/binutils/bin" $PATH
 
 # Rust
 set -gx PATH "$HOME/.cargo/bin" $PATH
+
+# Disable venv display (handled by prompt)
+set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+
+# Prompt
+eval (starship init fish)

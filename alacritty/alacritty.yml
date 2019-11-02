@@ -48,7 +48,7 @@ font:
     family: Iosevka
     style: Italic
 
-  size: 19.0
+  size: 18.0
 
   # Extra space around each character
   offset:
@@ -116,7 +116,7 @@ visual_bell:
   color: '0xffffff'
 
 # Background opacity
-background_opacity: 0.98
+background_opacity: 0.96
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }

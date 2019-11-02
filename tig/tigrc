@@ -1,7 +1,7 @@
 # Colors
 
 color cursor black blue
-color title-focus default default bold
+color title-focus default default
 color title-blur white default
 color help-group white default
 

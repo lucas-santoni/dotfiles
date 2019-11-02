@@ -6,5 +6,7 @@
 	<array/>
 	<key>showContacts</key>
 	<false/>
+	<key>showPreferences</key>
+	<false/>
 </dict>
 </plist>
