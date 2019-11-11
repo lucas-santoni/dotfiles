@@ -7,22 +7,15 @@
     // Browse file when not in an editor (f-f is available otherwise)
   },
   {
-    "key": "cmd+h",
-    "command": "workbench.action.showCommands"
-    // Command palette
-  },
-  {
-    "key": "cmd+k",
+    "key": "cmd+i",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
     // Hover with keyboard
   },
   {
-    "key": "shift+cmd+k",
+    "key": "shift+cmd+i",
     "command": "editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     // Open quick fix with keyboard
   },
-  // There is also cmd+j to open the bottom pane but it looks like
-  // a default shortcut
 ]

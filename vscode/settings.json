@@ -3,13 +3,25 @@
   // Found this font order in a tutorial, may not be necessary
   "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
-  "editor.fontSize": 18,
+  "editor.fontSize": 17,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [
     80,
     120
   ],
+  "editor.suggestSelection": "first",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.lightbulb.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  // ---------------------------------------------------------------------------
+  "terminal.integrated.fontSize": 16,
+  // ---------------------------------------------------------------------------
+  "extensions.ignoreRecommendations": false, // No extensions recommendations
+  // ---------------------------------------------------------------------------
+  "window.title": "${activeEditorShort}",
+  "window.titleBarStyle": "native",
   // ---------------------------------------------------------------------------
   "editor.detectIndentation": false, // Do not adapt to opened file indentation settings
   "[python]": {
@@ -20,12 +32,11 @@
     "files.insertFinalNewline": true, // Empty line at end of file
   },
   // ---------------------------------------------------------------------------
-  "breadcrumbs.enabled": false, // No breadcrumbs above the editor
-  "workbench.colorTheme": "Gruvbox Dark (Hard)", // Editor theme
-  "workbench.activityBar.visible": false, // The vertical bar on the left
-  "workbench.statusBar.feedback.visible": false, // Colorless is also available
+  "breadcrumbs.enabled": false, // The vertical bar on the left
   "workbench.startupEditor": "newUntitledFile", // Hide menu
   "workbench.editor.enablePreview": false, // Disable the preview on single click and open the file right away
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Base16 Dark Default",
   "workbench.colorCustomizations": {
     // Nuances can be generated with
     // https://superdevresources.com/tools/color-shades
@@ -34,8 +45,7 @@
     "statusBar.debuggingBackground": "#242729",
   },
   // ---------------------------------------------------------------------------
-  "explorer.openEditors.visible": 0, // Separated space for all the opened files
-  "window.titleBarStyle": "custom",
+  "explorer.openEditors.visible": 0,
   "window.zoomLevel": 0,
   // ---------------------------------------------------------------------------
   "vim.hlsearch": true,
@@ -121,6 +131,7 @@
   "C_Cpp.default.cppStandard": "c++17",
   "C_Cpp.default.intelliSenseMode": "clang-x64",
   // ---------------------------------------------------------------------------
+  "eslint.run": "onSave",
   "eslint.validate": [ // Parse .js/.ts/.jsx/tsx
     "javascript",
     "javascriptreact",
@@ -129,14 +140,19 @@
   ],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "eslint.run": "onSave",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  // ---------------------------------------------------------------------------
+  "java.errors.incompleteClasspath.severity": "ignore",
   // ---------------------------------------------------------------------------
   "python.linting.enabled": true,
-  "python.linting.pep8Enabled": true,
-  "python.linting.mypyEnabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": false,
-  "python.linting.pydocstyleEnabled": false,
+  "python.linting.mypyEnabled": false, // Check types, enabled on project basis
+  "python.linting.flake8Enabled": true, // General linting, should always be there
+  "python.linting.pylintEnabled": false, // No care
+  "python.jediEnabled": false, // No care
+  "python.linting.pydocstyleEnabled": false, // Included in flake8
   // ---------------------------------------------------------------------------
   "crystal-lang.compiler": "/usr/local/bin/crystal",
   "crystal-lang.completion": true,
@@ -144,8 +160,8 @@
   "crystal-lang.implementations": true,
   // ---------------------------------------------------------------------------
   // Server is at false for now as it breaks the autocompletion of
-  // not imported packages
-  "go.useLanguageServer": true,
+  // not imported packages, fields completion
+  "go.useLanguageServer": false,
   "[go]": {
     "editor.snippetSuggestions": "none",
     "editor.formatOnSave": true,
@@ -155,37 +171,33 @@
   },
   "go.lintTool": "golangci-lint",
   "go.lintFlags": [
+    "-Egolint",
+    "-Einterfacer",
+    "-Elll",
+    "-Eunconvert",
+    "-Eunparam",
     "--fast"
   ],
   // Go settings that activate when the language server is disabled
   "go.formatTool": "goimports",
   "go.autocompleteUnimportedPackages": true,
   // ---------------------------------------------------------------------------
-  "files.exclude": { // Files are not show in the UI explorer
-    // Python stuff
+  "git.autofetch": true, // Fetch be fore pull
+  // ---------------------------------------------------------------------------
+  "files.exclude": {
     "**/__pycache__/": true,
     "**/*.pyc": true,
     "**/.mypy_cache/": true,
-    // Jetbrains
     "**/.idea/": true,
-    // JS modules
     "node_modules/": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
   },
-  "git.autofetch": true, // Fetch be fore pull
   "files.associations": {
     ".eslintrc": "jsonc",
     "*.prisma": "graphql"
   },
-  "gitlens.views.repositories.location": "gitlens",
-  "gitlens.views.fileHistory.location": "gitlens",
-  "gitlens.views.lineHistory.location": "gitlens",
-  "gitlens.views.compare.location": "gitlens",
-  "gitlens.views.search.location": "gitlens",
-  "gitlens.currentLine.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.blame.line.enabled": false,
-  "gitlens.codeLens.visibility": "ondemand",
-  "extensions.ignoreRecommendations": false,
-  "[prisma]": {},
+  // ---------------------------------------------------------------------------
 }
