@@ -47,4 +47,4 @@ alias dcd="docker-compose down"
 alias dcps="docker-compose ps"
 alias dcpsa="docker-compose ps -a"
 
-alias cat="bat --style=numbers,changes"
+alias cat="bat"

@@ -4,6 +4,10 @@ export EDITOR='neovim'
 export VISUAL='neovim'
 export PAGER='less'
 
+# BAT STYLING
+export BAT_THEME='base16'
+export BAT_STYLE='plain'
+
 # LANGUAGE
 export LANG='fr_FR.UTF-8'
 
