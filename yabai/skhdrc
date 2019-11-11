@@ -1,0 +1,41 @@
+# Focus window
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+# Swap window
+shift + cmd - h : yabai -m window --swap west
+shift + cmd - j : yabai -m window --swap south
+shift + cmd - k : yabai -m window --swap north
+shift + cmd - l : yabai -m window --swap east
+
+# Balance size of windows
+shift + cmd - 0 : yabai -m space --balance
+
+# Fast focus desktop
+cmd - 0x12 : yabai -m space --focus 1
+cmd - 0x13 : yabai -m space --focus 2
+cmd - 0x14 : yabai -m space --focus 3
+cmd - 0x15 : yabai -m space --focus 4
+cmd - 0x17 : yabai -m space --focus 5
+cmd - 0x16 : yabai -m space --focus 6
+cmd - 0x1A : yabai -m space --focus 7
+cmd - 0x1C : yabai -m space --focus 8
+cmd - 0x19 : yabai -m space --focus 9
+cmd - 0x1D : yabai -m space --focus 10
+
+# Send to desktop
+shift + cmd - 0x12 : yabai -m window --space 1
+shift + cmd - 0x13 : yabai -m window --space 2
+shift + cmd - 0x14 : yabai -m window --space 3
+shift + cmd - 0x15 : yabai -m window --space 4
+shift + cmd - 0x17 : yabai -m window --space 5
+shift + cmd - 0x16 : yabai -m window --space 6
+shift + cmd - 0x1A : yabai -m window --space 7
+shift + cmd - 0x1C : yabai -m window --space 8
+shift + cmd - 0x19 : yabai -m window --space 9
+shift + cmd - 0x1D : yabai -m window --space 10
+
+# Fullscreen
+shift + cmd - f : yabai -m window --toggle zoom-fullscreen
