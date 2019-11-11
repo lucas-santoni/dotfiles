@@ -16,20 +16,15 @@ Plug 'itchyny/lightline.vim' "Line
 call plug#end()
 
 "Colors
-set termguicolors
+" set termguicolors
+let base16colorspace=256
+set background=dark
 colorscheme base16-default-dark
 
 "Line
 let g:lightline = {
-  \ 'colorscheme': 'seoul256',
-  \ 'active': {
-  \  'left': [  [ 'mode', 'paste' ],
-  \             [ 'readonly', 'filename' ] ],
-  \  'right': [ [ 'lineinfo' ],
-  \             [ ],
-  \             [ 'percent' ] ]
-  \ },
-\ }
+   \ 'colorscheme': 'seoul256',
+ \ }
 
 "Remap leader
 let mapleader=" "
@@ -159,7 +154,7 @@ function! s:goyo_leave()
   endif
 
   "This must be repeated
-  hi VertSplit guibg=None
+  hi VertSplit ctermbg=None
   hi clear signcolumn
 endfunction
 
@@ -168,7 +163,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 "Cleaner vertical split
-hi VertSplit guibg=None
+hi VertSplit ctermbg=None
 
 "Cleaner UI
 set shortmess+=WI

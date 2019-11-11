@@ -48,7 +48,7 @@ font:
     family: Iosevka
     style: Italic
 
-  size: 18.0
+  size: 17.0
 
   # Extra space around each character
   offset:
@@ -110,13 +110,8 @@ colors:
     - { index: 20, color: '0xb8b8b8' }
     - { index: 21, color: '0xe8e8e8' }
 
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
-  color: '0xffffff'
-
 # Background opacity
-background_opacity: 0.96
+background_opacity: 1
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
@@ -158,14 +153,8 @@ cursor:
 live_config_reload: false
 
 shell:
-  # Fish shell
-  program: /usr/local/bin/fish
-  # Try to attach to an existing tmux session
-  # on startup
-  # Otherwise, create one
-  args:
-    - -c
-    - "tmux attach; or tmux"
+  # Shell
+  program: /bin/zsh
 
 # Windows 10 ConPTY backend
 enable_experimental_conpty_backend: false

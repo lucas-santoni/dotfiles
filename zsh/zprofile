@@ -1,0 +1,20 @@
+# SOME SOFTWARES
+export BROWSER='open'
+export EDITOR='neovim'
+export VISUAL='neovim'
+export PAGER='less'
+
+# LANGUAGE
+export LANG='fr_FR.UTF-8'
+
+# FASTER KEY RESPONSE
+export KEYTIMEOUT=1
+
+# NO DUPLICATES
+typeset -gU cdpath fpath mailpath path
+
+# PATH
+path=(
+  /usr/local/{bin,sbin}
+  $path
+)
