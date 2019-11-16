@@ -10,9 +10,6 @@ shift + cmd - j : yabai -m window --swap south
 shift + cmd - k : yabai -m window --swap north
 shift + cmd - l : yabai -m window --swap east
 
-# Balance size of windows
-shift + cmd - 0 : yabai -m space --balance
-
 # Fast focus desktop
 cmd - 0x12 : yabai -m space --focus 1
 cmd - 0x13 : yabai -m space --focus 2
