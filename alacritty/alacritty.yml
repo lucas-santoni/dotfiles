@@ -154,7 +154,7 @@ live_config_reload: false
 
 shell:
   # Shell
-  program: /bin/zsh
+  program: /usr/local/bin/zsh
 
 # Windows 10 ConPTY backend
 enable_experimental_conpty_backend: false
