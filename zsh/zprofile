@@ -9,7 +9,8 @@ export BAT_THEME='base16'
 export BAT_STYLE='plain'
 
 # LANGUAGE
-export LANG='fr_FR.UTF-8'
+export LANG=fr_FR.UTF-8
+export LC_ALL=fr_FR.UTF-8
 
 # FASTER KEY RESPONSE
 export KEYTIMEOUT=1
