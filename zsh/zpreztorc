@@ -18,14 +18,18 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'utility' \
   'completion' \
-  'syntax-highlighting' \
   'history-substring-search' \
+  'syntax-highlighting' \
+  'autosuggestions' \
   'tmux' \
 #  'node'
 
 # Vim mode
 zstyle ':prezto:module:editor' key-bindings 'vi'
 
-# Tmux configuration.
+# Autosuggestions color
+zstyle ':prezto:module:autosuggestions' color 'yes'
+
+# Tmux configuration
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
 zstyle ':prezto:module:tmux:session' name 'WORK'
