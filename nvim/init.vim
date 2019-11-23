@@ -11,7 +11,6 @@ Plug 'tpope/vim-commentary' "Motions to comments
 Plug 'sheerun/vim-polyglot' "Just in case
 Plug 'blockloop/vim-swigjs' "Not in Polyglot?
 Plug 'junegunn/goyo.vim' "The :Goyo command
-Plug 'itchyny/lightline.vim' "Line
 
 call plug#end()
 
@@ -20,11 +19,6 @@ call plug#end()
 let base16colorspace=256
 set background=dark
 colorscheme base16-default-dark
-
-"Line
-let g:lightline = {
-   \ 'colorscheme': 'seoul256',
- \ }
 
 "Remap leader
 let mapleader=" "
@@ -128,10 +122,11 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeIgnore=['\.o$', '\.pyc$', '__pycache__']
+let NERDTreeStatusline=" "
 
 "Goyo configuration
 let g:goyo_width=81
-nnoremap <silent> go :Goyo<CR>
+nnoremap <silent> <Leader>g :Goyo<CR>
 autocmd! User GoyoLeave nested 
 
 "More goyo shit
@@ -156,6 +151,9 @@ function! s:goyo_leave()
   "This must be repeated
   hi VertSplit ctermbg=None
   hi clear signcolumn
+
+  hi StatusLine ctermfg=gray ctermbg=none
+  hi StatusLineNC ctermbg=none
 endfunction
 
 "Place Goyo hooks
@@ -177,5 +175,7 @@ hi clear signcolumn
 set exrc
 set secure
 
-"Always a status line
-set laststatus=2
+"Statusline
+hi StatusLine ctermfg=243 ctermbg=none
+hi StatusLineNC ctermfg=237 ctermbg=none
+set statusline=%=%m\ %f\ %4l/%L

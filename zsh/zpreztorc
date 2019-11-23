@@ -20,8 +20,7 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'history-substring-search' \
   'syntax-highlighting' \
-  'autosuggestions' \
-  'tmux' \
+  'tmux'
 #  'node'
 
 # Vim mode
