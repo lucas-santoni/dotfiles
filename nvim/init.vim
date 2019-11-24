@@ -11,6 +11,7 @@ Plug 'tpope/vim-commentary' "Motions to comments
 Plug 'sheerun/vim-polyglot' "Just in case
 Plug 'blockloop/vim-swigjs' "Not in Polyglot?
 Plug 'junegunn/goyo.vim' "The :Goyo command
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
@@ -18,6 +19,13 @@ call plug#end()
 " set termguicolors
 let base16colorspace=256
 set background=dark
+
+"Sneak
+let g:sneak#s_next = 1
+let g:sneak#use_ic_scs = 1
+hi link Sneak None
+
+"Colorscheme
 colorscheme base16-default-dark
 
 "Remap leader
@@ -72,9 +80,6 @@ inoremap hh <C-V><Tab>
 "Just in case
 inoremap ww <
 inoremap WW >
-
-"Remap write
-nnoremap s :w<CR>
 
 "Show matching chars
 "Like () or {}
@@ -149,7 +154,7 @@ function! s:goyo_leave()
   endif
 
   "This must be repeated
-  hi VertSplit ctermbg=None
+  hi VertSplit ctermbg=None ctermfg=233
   hi clear signcolumn
 
   hi StatusLine ctermfg=gray ctermbg=none
@@ -161,7 +166,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 "Cleaner vertical split
-hi VertSplit ctermbg=None
+hi VertSplit ctermbg=None ctermfg=233
 
 "Cleaner UI
 set shortmess+=WI
@@ -176,6 +181,6 @@ set exrc
 set secure
 
 "Statusline
-hi StatusLine ctermfg=243 ctermbg=none
-hi StatusLineNC ctermfg=237 ctermbg=none
+hi StatusLine ctermfg=245 ctermbg=233
+hi StatusLineNC ctermfg=233 ctermbg=233
 set statusline=%=%m\ %f\ %4l/%L
