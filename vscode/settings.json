@@ -53,78 +53,24 @@
   "vim.normalModeKeyBindings": [
     {
       // Previous tab
-      "before": [
-        "<C-h>"
-      ],
-      "commands": [
-        "workbench.action.previousEditor"
-      ]
-    },
-    {
-      // Jump a block down
-      "before": [
-        "<C-j>"
-      ],
-      "after": [
-        "}"
-      ]
-    },
-    {
-      // Jump a block up
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "{"
-      ]
+      "before": [ "<C-h>" ],
+      "commands": [ "workbench.action.previousEditor" ]
     },
     {
       // Next tab
-      "before": [
-        "<C-l>"
-      ],
-      "commands": [
-        "workbench.action.nextEditor"
-      ]
+      "before": [ "<C-l>" ],
+      "commands": [ "workbench.action.nextEditor" ]
     },
     {
       // Remove highlight after search
-      "before": [
-        "q",
-        "q"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": [ "q", "q" ],
+      "commands": [ ":nohl" ]
     }
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": [
-        "<C-j>"
-      ],
-      "after": [
-        "}"
-      ]
-    },
-    {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "{"
-      ]
+      "before": [ "j", "j" ],
+      "after": [ "<Esc>" ]
     }
   ],
   // ---------------------------------------------------------------------------
