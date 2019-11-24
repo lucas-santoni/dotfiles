@@ -27,6 +27,10 @@ let mapleader=" "
 set splitright
 set splitbelow
 
+"Quick splits
+nnoremap <silent> <Leader>s :split<CR>
+nnoremap <silent> <Leader>v :vsplit<CR>
+
 "Search
 set incsearch
 set hlsearch
@@ -42,10 +46,6 @@ set ttimeoutlen=50
 
 "Remap escape
 inoremap jj <Esc>
-
-"Remap page moves
-noremap <C-J> }
-noremap <C-K> {
 
 "Syntax processing
 syntax on
@@ -81,14 +81,14 @@ nnoremap s :w<CR>
 set showmatch
 
 "80 chars ruller
-nnoremap <silent> cc :let &cc = &cc == '' ? '79' : ''<CR>
+nnoremap <silent> <Leader>r :let &cc = &cc == '' ? '79' : ''<CR>
 
 "Markdown syntax
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
 "FZF
-noremap <silent> ff :FZF <CR>
+noremap <silent> <Leader>f :FZF <CR>
 
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_layout = { 'window': 'enew' }
@@ -117,7 +117,7 @@ autocmd  FileType fzf set laststatus=2 noshowmode noruler
 nnoremap <silent> <Leader>h :Ag<CR>
 
 "Nerdtree
-nnoremap <silent> rr :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"

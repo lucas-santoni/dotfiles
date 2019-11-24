@@ -66,6 +66,11 @@
       "before": [ "q", "q" ],
       "commands": [ ":nohl" ]
     }
+    {
+      // Search panel
+      "before": [ "<leader>", "f" ],
+      "commands": [ "workbench.view.search" ]
+    }
   ],
   "vim.insertModeKeyBindings": [
     {
