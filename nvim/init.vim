@@ -77,6 +77,10 @@ set listchars=tab:..,trail:~
 "But still insert tab
 inoremap hh <C-V><Tab>
 
+"Line numbers
+" set number
+" hi LineNr ctermbg=none ctermfg=237
+
 "Just in case
 inoremap ww <
 inoremap WW >
@@ -157,8 +161,8 @@ function! s:goyo_leave()
   hi VertSplit ctermbg=None ctermfg=233
   hi clear signcolumn
 
-  hi StatusLine ctermfg=gray ctermbg=none
-  hi StatusLineNC ctermbg=none
+  hi StatusLine ctermfg=245 ctermbg=none
+  hi StatusLineNC ctermfg=233 ctermbg=none
 endfunction
 
 "Place Goyo hooks
@@ -181,6 +185,6 @@ set exrc
 set secure
 
 "Statusline
-hi StatusLine ctermfg=245 ctermbg=233
-hi StatusLineNC ctermfg=233 ctermbg=233
+hi StatusLine ctermfg=245 ctermbg=none
+hi StatusLineNC ctermfg=233 ctermbg=none
 set statusline=%=%m\ %f\ %4l/%L
