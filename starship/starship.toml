@@ -30,8 +30,8 @@ prompt_order = [
 add_newline = false
 
 [character]
-symbol = "$"
-vicmd_symbol = "%%"
+symbol = "λ"
+vicmd_symbol = "Λ"
 
 [cmd_duration]
 prefix = ""
@@ -51,8 +51,6 @@ symbol = ""
 [git_status]
 prefix = ""
 suffix = " "
-# Currently disabled as it breaks ZSH autcompletion menu
-disabled = true
 
 [directory]
 truncation_length = 1

@@ -1,9 +1,9 @@
 {
   // ---------------------------------------------------------------------------
   // Found this font order in a tutorial, may not be necessary
-  "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
-  "editor.fontSize": 17,
+  "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [
@@ -12,7 +12,7 @@
   ],
   "editor.suggestSelection": "first",
   "editor.minimap.enabled": false,
-  "editor.renderLineHighlight": "none",
+  "editor.renderLineHighlight": "all",
   "editor.lightbulb.enabled": false,
   "editor.scrollbar.horizontal": "hidden",
   // ---------------------------------------------------------------------------
@@ -40,9 +40,13 @@
   "workbench.colorCustomizations": {
     // Nuances can be generated with
     // https://superdevresources.com/tools/color-shades
-    "statusBar.background": "#242729", // Status bar when a folder is open (code . for example)
-    "statusBar.noFolderBackground": "#242729", // When no folder is open, I don't care so same color
-    "statusBar.debuggingBackground": "#242729",
+    "statusBar.background": "#222", // Status bar when a folder is open (code . for example)
+    "statusBar.noFolderBackground": "#222", // When no folder is open, I don't care so same color
+    "statusBar.debuggingBackground": "#222", // When in live debugging
+    "notificationCenter.border": "#aaa",
+    "notifications.border": "#aaa",
+    "notificationToast.border": "#aaa",
+    "notifications.background": "#1a1a1a",
   },
   // ---------------------------------------------------------------------------
   "explorer.openEditors.visible": 0,
@@ -50,6 +54,10 @@
   // ---------------------------------------------------------------------------
   "vim.hlsearch": true,
   "vim.leader": "<space>",
+  "vim.useSystemClipboard": true,
+  "vim.incsearch": true,
+  "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.normalModeKeyBindings": [
     {
       // Previous tab
@@ -65,7 +73,7 @@
       // Remove highlight after search
       "before": [ "q", "q" ],
       "commands": [ ":nohl" ]
-    }
+    },
     {
       // Search panel
       "before": [ "<leader>", "f" ],
@@ -150,5 +158,6 @@
     ".eslintrc": "jsonc",
     "*.prisma": "graphql"
   },
+  "latex-workshop.view.pdf.viewer": "internal",
   // ---------------------------------------------------------------------------
 }

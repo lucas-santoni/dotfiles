@@ -30,6 +30,12 @@ function fish_user_key_bindings
   bind \cj fzf-file-widget
   bind -e \ec
   bind \ck fzf-cd-widget
+
+  # if bind -M insert > /dev/null 2>&1
+  #   bind -M insert \ch fzf-history-widget
+  #   bind -M insert \cj fzf-file-widget
+  #   bind -M insert \ck fzf-cd-widget
+  # end
 end
 
 # FZF commands
@@ -40,15 +46,6 @@ set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 
 # Default editor
 set -gx EDITOR nvim
-
-# Colored man
-set -gx LESS_TERMCAP_mb (printf "\033[01;31m")
-set -gx LESS_TERMCAP_md (printf "\033[01;31m")
-set -gx LESS_TERMCAP_me (printf "\033[0m")
-set -gx LESS_TERMCAP_se (printf "\033[0m")
-set -gx LESS_TERMCAP_so (printf "\033[01;31;33m")
-set -gx LESS_TERMCAP_ue (printf "\033[0m")
-set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 
 # Go main workspace
 set -gx GOPATH $HOME/Documents/go
@@ -61,7 +58,7 @@ set -gx LC_CTYPE fr_FR.UTF-8
 set -gx LC_ALL fr_FR.UTF-8
 
 # Bat
-set -gx BAT_THEME "base16-default-dark"
+set -gx BAT_THEME "base16"
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH

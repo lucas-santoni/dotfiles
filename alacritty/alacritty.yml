@@ -8,14 +8,14 @@ window:
 
   # Window padding (changes require restart)
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
 
   # Spread additional padding evenly around the terminal content
   dynamic_padding: true
 
-  # Window decorations, no bar but keep the rounded corners
-  decorations: buttonless
+  # Window decorations
+  decorations: full
 
 scrolling:
   # Maximum number of lines in the scrollback buffer
@@ -37,18 +37,18 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
+    family: Monaco
     style: Regular
 
   bold:
-    family: Iosevka
+    family: Monaco
     style: Bold
 
   italic:
-    family: Iosevka
+    family: Monaco
     style: Italic
 
-  size: 17.0
+  size: 16.0
 
   # Extra space around each character
   offset:
@@ -65,7 +65,7 @@ font:
   use_thin_strokes: true
 
 # If true, bold text is drawn using the bright color variants
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Base16 Default Dark 256 - alacritty color config
 # Chris Kempson (http://chriskempson.com)
@@ -154,7 +154,9 @@ live_config_reload: false
 
 shell:
   # Shell
-  program: /usr/local/bin/zsh
+  program: /usr/local/bin/fish
+  args:
+    - -c tmux attach -t WORK || tmux new -s WORK
 
 # Windows 10 ConPTY backend
 enable_experimental_conpty_backend: false

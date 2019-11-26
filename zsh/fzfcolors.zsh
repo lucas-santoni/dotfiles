@@ -1,31 +1,32 @@
-# Base16 Default Dark
-# Author: Chris Kempson (http://chriskempson.com)
+# Base16 One Light
+# Author: Daniel Pfeifer (http://github.com/purpleKarrot)
 
 _gen_fzf_default_opts() {
 
-local color00='#282828'
-local color01='#282828'
-local color02='#383838'
-local color03='#585858'
-local color04='#b8b8b8'
-local color05='#d8d8d8'
-local color06='#e8e8e8'
-local color07='#f8f8f8'
-local color08='#ab4642'
-local color09='#dc9656'
-local color0A='#f7ca88'
-local color0B='#a1b56c'
-local color0C='#86c1b9'
-local color0D='#7cafc2'
-local color0E='#ba8baf'
-local color0F='#a16946'
+local color00='#fafafa'
+local color01='#f0f0f1'
+local color02='#e5e5e6'
+local color03='#a0a1a7'
+local color04='#696c77'
+local color05='#383a42'
+local color06='#202227'
+local color07='#090a0b'
+local color08='#ca1243'
+local color09='#d75f00'
+local color0A='#c18401'
+local color0B='#50a14f'
+local color0C='#0184bc'
+local color0D='#4078f2'
+local color0E='#a626a4'
+local color0F='#986801'
 
 export FZF_DEFAULT_OPTS="
-  --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D
+  --color=light
+  --color=bg+:-1
+  --color=spinner:$color0C,hl:$color0D
   --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C
   --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D
   --no-height --no-reverse
-  --no-256
 "
 
 }

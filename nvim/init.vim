@@ -11,14 +11,18 @@ Plug 'tpope/vim-commentary' "Motions to comments
 Plug 'sheerun/vim-polyglot' "Just in case
 Plug 'blockloop/vim-swigjs' "Not in Polyglot?
 Plug 'junegunn/goyo.vim' "The :Goyo command
-Plug 'justinmk/vim-sneak'
+Plug 'justinmk/vim-sneak' "The famous s motion
 
 call plug#end()
 
+"True colors
+" if exists('+termctermcolors')
+"   set termctermcolors
+" endif
+
 "Colors
-" set termguicolors
 let base16colorspace=256
-set background=dark
+"set background=dark
 
 "Sneak
 let g:sneak#s_next = 1
@@ -158,11 +162,11 @@ function! s:goyo_leave()
   endif
 
   "This must be repeated
-  hi VertSplit ctermbg=None ctermfg=233
+  hi VertSplit ctermbg=None
   hi clear signcolumn
 
   hi StatusLine ctermfg=245 ctermbg=none
-  hi StatusLineNC ctermfg=233 ctermbg=none
+  hi StatusLineNC ctermfg=240 ctermbg=none
 endfunction
 
 "Place Goyo hooks
@@ -170,7 +174,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 "Cleaner vertical split
-hi VertSplit ctermbg=None ctermfg=233
+hi VertSplit ctermbg=None
 
 "Cleaner UI
 set shortmess+=WI
@@ -186,5 +190,5 @@ set secure
 
 "Statusline
 hi StatusLine ctermfg=245 ctermbg=none
-hi StatusLineNC ctermfg=233 ctermbg=none
+hi StatusLineNC ctermfg=240 ctermbg=none
 set statusline=%=%m\ %f\ %4l/%L
