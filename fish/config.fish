@@ -73,4 +73,4 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # Prompt
-eval (starship init fish)
+starship init fish | source
