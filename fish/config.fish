@@ -24,18 +24,18 @@ function fish_user_key_bindings
   fzf_key_bindings
 
   # Set the custom bindings
-  bind -e \cr
-  bind \ch fzf-history-widget
-  bind -e \ct
-  bind \cj fzf-file-widget
+  # bind -e \cr
+  # bind \ch fzf-history-widget
+  # bind -e \ct
+  # bind \cj fzf-file-widget
   bind -e \ec
-  bind \ck fzf-cd-widget
+  bind \ch fzf-cd-widget
 
-  # if bind -M insert > /dev/null 2>&1
-  #   bind -M insert \ch fzf-history-widget
-  #   bind -M insert \cj fzf-file-widget
-  #   bind -M insert \ck fzf-cd-widget
-  # end
+  if bind -M insert > /dev/null 2>&1
+    bind -M insert \cr fzf-history-widget
+    bind -M insert \ct fzf-file-widget
+    bind -M insert \ch fzf-cd-widget
+  end
 end
 
 # FZF commands
