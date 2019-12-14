@@ -22,6 +22,22 @@ function lrepo
   blih repository list
 end
 
+function sync_cdn
+  rsync -avh --progress --delete /Users/geographer/Documents/cdn/ vps:/home/geographer/cdn/
+end
+
+function enable_razer
+  sudo chmod +x "/Library/Application Support/Razer/RzUpdater.app/Contents/MacOS/RzUpdater"
+  sudo chmod +x "/Library/Application Support/Razer/RzDeviceEngine.app/Contents/MacOS/RzDeviceEngine"
+  open -a /Library/Application\ Support/Razer/RzUpdater.app/Contents/MacOS/RzUpdater
+end
+
+function disable_razer
+  sudo chmod -x "/Library/Application Support/Razer/RzUpdater.app/Contents/MacOS/RzUpdater"
+  sudo chmod -x "/Library/Application Support/Razer/RzDeviceEngine.app/Contents/MacOS/RzDeviceEngine"
+  pkill RzDeviceEngine
+  pkill RzUpdater
+end
 
 ## PANDOC
 
