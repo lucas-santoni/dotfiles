@@ -1,9 +1,9 @@
 {
   // ---------------------------------------------------------------------------
   // Found this font order in a tutorial, may not be necessary
-  "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
-  "editor.fontSize": 16,
+  "editor.fontSize": 18,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [
@@ -16,7 +16,7 @@
   "editor.lightbulb.enabled": false,
   "editor.scrollbar.horizontal": "hidden",
   // ---------------------------------------------------------------------------
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 24,
   // ---------------------------------------------------------------------------
   "extensions.ignoreRecommendations": false, // No extensions recommendations
   // ---------------------------------------------------------------------------
@@ -113,6 +113,9 @@
   "python.jediEnabled": false, // No care
   "python.linting.pydocstyleEnabled": false, // Included in flake8
   // ---------------------------------------------------------------------------
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.message.update.show": false,
+  // ---------------------------------------------------------------------------
   "crystal-lang.compiler": "/usr/local/bin/crystal",
   "crystal-lang.completion": true,
   "crystal-lang.hover": true,
@@ -158,6 +161,5 @@
     ".eslintrc": "jsonc",
     "*.prisma": "graphql"
   },
-  "latex-workshop.view.pdf.viewer": "internal",
   // ---------------------------------------------------------------------------
 }

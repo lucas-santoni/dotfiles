@@ -37,18 +37,18 @@ scrolling:
 
 font:
   normal:
-    family: Monaco
+    family: Iosevka
     style: Regular
 
   bold:
-    family: Monaco
+    family: Iosevka
     style: Bold
 
   italic:
-    family: Monaco
+    family: Iosevka
     style: Italic
 
-  size: 16.0
+  size: 18.0
 
   # Extra space around each character
   offset:

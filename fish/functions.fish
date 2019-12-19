@@ -23,7 +23,16 @@ function lrepo
 end
 
 function sync_cdn
-  rsync -avh --progress --delete /Users/geographer/Documents/cdn/ vps:/home/geographer/cdn/
+  rsync -avh --progress --delete $HOME/Documents/cdn/ vps:/home/geographer/cdn/
+end
+
+function sync_blog
+  rsync --archive \
+        --verbose \
+        --compress \
+        --update \
+        --delete \
+        $HOME/Documents/blog/_site/* geographer@vps:/home/geographer/html/blog/
 end
 
 function enable_razer

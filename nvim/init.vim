@@ -15,15 +15,6 @@ Plug 'justinmk/vim-sneak' "The famous s motion
 
 call plug#end()
 
-"True colors
-" if exists('+termctermcolors')
-"   set termctermcolors
-" endif
-
-"Colors
-let base16colorspace=256
-"set background=dark
-
 "Sneak
 let g:sneak#s_next = 1
 let g:sneak#use_ic_scs = 1
@@ -33,6 +24,7 @@ hi link Sneak None
 colorscheme base16-default-dark
 
 "Remap leader
+let base16colorspace=256
 let mapleader=" "
 
 "Splits
@@ -76,14 +68,10 @@ set cindent
 set shiftwidth=2
 set list
 set expandtab
-set listchars=tab:..,trail:~
+let &listchars="tab:\u2192 ,extends:>,precedes:<,eol:\u00ac,trail:\u00b7"
 
 "But still insert tab
 inoremap hh <C-V><Tab>
-
-"Line numbers
-" set number
-" hi LineNr ctermbg=none ctermfg=237
 
 "Just in case
 inoremap ww <
@@ -102,6 +90,7 @@ let g:vim_markdown_frontmatter=1
 
 "FZF
 noremap <silent> <Leader>f :FZF <CR>
+noremap <silent> <Leader>b :Buffers<CR>
 
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_layout = { 'window': 'enew' }
@@ -192,3 +181,6 @@ set secure
 hi StatusLine ctermfg=245 ctermbg=none
 hi StatusLineNC ctermfg=240 ctermbg=none
 set statusline=%=%m\ %f\ %4l/%L
+
+" Try to get italics but does not really work
+highlight Comment cterm=italic gui=italic

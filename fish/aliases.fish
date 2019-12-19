@@ -1,76 +1,79 @@
 ## VIM
-alias e "nvim"
+abbr e "nvim"
 
 ## LS/TREE/EXA
-alias ls "exa"
-alias l "exa -l"
-alias la "exa -la"
-alias tree "exa --tree"
-alias t "exa --tree"
+abbr ls "exa"
+abbr l "exa -l"
+abbr la "exa -la"
+abbr tree "exa --tree"
+abbr t "exa --tree"
 
 ## CD
 function c
-  cd $argv[1] ; and l
+  cd $argv[1] ; and exa -l
 end
 
 ## GIT
-alias g "git"
-alias gd "git diff"
-alias gl "git pull"
-alias gst "git status"
-alias ga "git add"
-alias gaa "git add --all"
-alias gc "git commit"
-alias gp "git push"
-alias gb "git branch"
-alias gm "git branch --merged"
+abbr g "git"
+abbr gd "git diff"
+abbr gl "git pull"
+abbr gst "git status"
+abbr ga "git add"
+abbr gaa "git add --all"
+abbr gc "git commit"
+abbr gp "git push"
+abbr gb "git branch"
+abbr gm "git branch --merged"
 
 ## RM
-alias rrm "rm -Rf"
+abbr rrm "rm -Rf"
 
 ## CP
-alias cp "cp -v"
-alias ccp "cp -R"
+abbr cp "cp -v"
+abbr ccp "cp -R"
 
 ## MV
-alias mv "mv -v"
+abbr mv "mv -v"
 
 ## TMUX
-alias tmux "tmux -2"
-alias tm "tmux -2"
-alias at "tmux attach -t"
-alias tmls "tmux list-sessions"
+abbr tmux "tmux -2"
+abbr tm "tmux -2"
+abbr at "tmux attach -t"
+abbr tmls "tmux list-sessions"
 
 ## MAKE
-alias m "make"
-alias mr "make re"
+abbr m "make"
+abbr mr "make re"
 
 ## CHMOD
-alias cx "chmod +x"
+abbr cx "chmod +x"
 
 ## GDB
-alias gdb "gdb -q"
+abbr gdb "gdb -q"
 
 ## VALGRIND
-alias va "valgrind"
-alias valeak "valgrind --leak-check=full --show-leak-kinds=all"
+abbr va "valgrind"
+abbr valeak "valgrind --leak-check=full --show-leak-kinds=all"
 
 ## DOCKER
-alias d "docker"
-alias drm "docker rm"
-alias dt "docker start"
-alias da "docker attach"
-alias ds "docker stop"
-alias di "docker images"
-alias dps "docker ps"
-alias dpsa "docker ps -a"
+abbr d "docker"
+abbr drm "docker rm"
+abbr dt "docker start"
+abbr da "docker attach"
+abbr ds "docker stop"
+abbr di "docker images"
+abbr dps "docker ps"
+abbr dpsa "docker ps -a"
 
 ## DOCKER-COMPOSE
-alias dc "docker-compose"
-alias dcu "docker-compose up"
-alias dcd "docker-compose down"
-alias dcps "docker-compose ps"
-alias dcpsa "docker-compose ps -a"
+abbr dc "docker-compose"
+abbr dcu "docker-compose up"
+abbr dcd "docker-compose down"
+abbr dcps "docker-compose ps"
+abbr dcpsa "docker-compose ps -a"
 
 ## BAT
-alias cat "bat --style=numbers,changes"
+abbr cat "bat --style=numbers,changes"
+
+## BLOG
+abbr blog "docker run --rm -v $HOME/Documents/blog:/srv/jekyll -v $HOME/.jekyll-gems:/usr/local/bundle -p 127.0.0.1:4000:4000 jekyll/jekyll:latest jekyll"
