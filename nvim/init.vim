@@ -21,7 +21,7 @@ let g:sneak#use_ic_scs = 1
 hi link Sneak None
 
 "Colorscheme
-colorscheme base16-default-dark
+colorscheme base16-gruvbox-dark-hard
 
 "Remap leader
 let base16colorspace=256
