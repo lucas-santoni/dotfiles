@@ -27,12 +27,7 @@ function sync_cdn
 end
 
 function sync_blog
-  rsync --archive \
-        --verbose \
-        --compress \
-        --update \
-        --delete \
-        $HOME/Documents/blog/_site/* geographer@vps:/home/geographer/html/blog/
+  rsync -avh --progress --delete $HOME/Documents/blog/out/ geographer@vps:/home/geographer/html/blog/
 end
 
 function enable_razer

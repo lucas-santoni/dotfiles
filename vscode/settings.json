@@ -36,13 +36,12 @@
   "workbench.startupEditor": "newUntitledFile", // Hide menu
   "workbench.editor.enablePreview": false, // Disable the preview on single click and open the file right away
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Gruvbox Material Hard Dark",
   "workbench.colorCustomizations": {
     // Nuances can be generated with
     // https://superdevresources.com/tools/color-shades
-    // "statusBar.background": "#222", // Status bar when a folder is open (code . for example)
-    // "statusBar.noFolderBackground": "#222", // When no folder is open, I don't care so same color
-    // "statusBar.debuggingBackground": "#222", // When in live debugging
+    "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
+    "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
+    // "statusBar.debuggingBackground": "#333", // When in live debugging
     // "notificationCenter.border": "#aaa",
     // "notifications.border": "#aaa",
     // "notificationToast.border": "#aaa",

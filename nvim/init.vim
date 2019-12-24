@@ -21,10 +21,10 @@ let g:sneak#use_ic_scs = 1
 hi link Sneak None
 
 "Colorscheme
-colorscheme base16-gruvbox-dark-hard
+colorscheme base16-chalk
+let base16colorspace=256
 
 "Remap leader
-let base16colorspace=256
 let mapleader=" "
 
 "Splits
