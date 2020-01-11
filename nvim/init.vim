@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim' "Colors
+Plug 'haishanh/night-owl.vim'
 Plug 'raimondi/delimitmate' "Matching characters completions
 Plug 'scrooloose/nerdtree' "File explorer (built in Vim?)
 Plug 'danro/rename.vim' "The :Rename command
@@ -12,6 +13,7 @@ Plug 'sheerun/vim-polyglot' "Just in case
 Plug 'blockloop/vim-swigjs' "Not in Polyglot?
 Plug 'junegunn/goyo.vim' "The :Goyo command
 Plug 'justinmk/vim-sneak' "The famous s motion
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -21,7 +23,9 @@ let g:sneak#use_ic_scs = 1
 hi link Sneak None
 
 "Colorscheme
-colorscheme base16-chalk
+set background=dark
+set termguicolors
+colorscheme night-owl
 let base16colorspace=256
 
 "Remap leader
@@ -151,11 +155,10 @@ function! s:goyo_leave()
   endif
 
   "This must be repeated
-  hi VertSplit ctermbg=None
   hi clear signcolumn
 
-  hi StatusLine ctermfg=245 ctermbg=none
-  hi StatusLineNC ctermfg=240 ctermbg=none
+  " hi StatusLine ctermfg=245 ctermbg=none
+  " hi StatusLineNC ctermfg=240 ctermbg=none
 endfunction
 
 "Place Goyo hooks
@@ -163,7 +166,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 "Cleaner vertical split
-hi VertSplit ctermbg=None
+" hi VertSplit ctermbg=None
 
 "Cleaner UI
 set shortmess+=WI
@@ -178,9 +181,8 @@ set exrc
 set secure
 
 "Statusline
-hi StatusLine ctermfg=245 ctermbg=none
-hi StatusLineNC ctermfg=240 ctermbg=none
-set statusline=%=%m\ %f\ %4l/%L
+" hi StatusLine ctermfg=245 ctermbg=none
+" hi StatusLineNC ctermfg=240 ctermbg=none
+" set statusline=%=%m\ %f\ %4l/%L
+let g:lightline = { 'colorscheme': 'nightowl'}
 
-" Try to get italics but does not really work
-highlight Comment cterm=italic gui=italic

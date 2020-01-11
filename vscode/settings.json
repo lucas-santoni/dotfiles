@@ -1,9 +1,10 @@
 {
   // ---------------------------------------------------------------------------
   // Found this font order in a tutorial, may not be necessary
-  "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
+  "workbench.colorTheme": "Night Owl",
+  "editor.fontFamily": "PragmataPro, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
-  "editor.fontSize": 18,
+  "editor.fontSize": 17,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [
@@ -39,8 +40,8 @@
   "workbench.colorCustomizations": {
     // Nuances can be generated with
     // https://superdevresources.com/tools/color-shades
-    "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
-    "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
+    // "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
+    // "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
     // "statusBar.debuggingBackground": "#333", // When in live debugging
     // "notificationCenter.border": "#aaa",
     // "notifications.border": "#aaa",
@@ -158,7 +159,8 @@
   },
   "files.associations": {
     ".eslintrc": "jsonc",
-    "*.prisma": "graphql"
-  },
+    "*.prisma": "graphql",
+    "*.html": "html"
+  }
   // ---------------------------------------------------------------------------
 }

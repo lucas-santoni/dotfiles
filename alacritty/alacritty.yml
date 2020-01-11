@@ -37,15 +37,15 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
+    family: PragmataPro
     style: Regular
 
   bold:
-    family: Iosevka
-    style: Bold
+    family: PragmataPro
+    style: Regular
 
   italic:
-    family: Iosevka
+    family: PragmataPro
     style: Italic
 
   size: 17.0
@@ -67,47 +67,39 @@ font:
 # If true, bold text is drawn using the bright color variants
 draw_bold_text_with_bright_colors: true
 
-# Colors
+# Colors (Night Owl by Sarah Drasner)
 colors:
   # Default colors
   primary:
-    background: '0x151515'
-    foreground: '0xd0d0d0'
+    background: '0x011627'
+    foreground: '0xd6deeb'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x151515'
-    cursor: '0xd0d0d0'
+    text: '0xffffff'
+    cursor: '0x7e57c2'
 
   # Normal colors
   normal:
-    black:   '0x151515'
-    red:     '0xfb9fb1'
-    green:   '0xacc267'
-    yellow:  '0xddb26f'
-    blue:    '0x6fc2ef'
-    magenta: '0xe1a3ee'
-    cyan:    '0x12cfc0'
-    white:   '0xd0d0d0'
+    black:   '0x000000'
+    red:     '0xef5350'
+    green:   '0x22da6e'
+    yellow:  '0xaddb67'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x21c7a8'
+    white:   '0xffffff'
 
   # Bright colors
   bright:
-    black:   '0x505050'
-    red:     '0xfb9fb1'
-    green:   '0xacc267'
-    yellow:  '0xddb26f'
-    blue:    '0x6fc2ef'
-    magenta: '0xe1a3ee'
-    cyan:    '0x12cfc0'
-    white:   '0xf5f5f5'
-
-  indexed_colors:
-    - { index: 16, color: '0xeda987' }
-    - { index: 17, color: '0xdeaf8f' }
-    - { index: 18, color: '0x202020' }
-    - { index: 19, color: '0x303030' }
-    - { index: 20, color: '0xb0b0b0' }
-    - { index: 21, color: '0xe0e0e0' }
+    black:   '0x575656'
+    red:     '0xef5350'
+    green:   '0x22da6e'
+    yellow:  '0xffeb95'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x7fdbca'
+    white:   '0xffffff'
 
 # Background opacity
 background_opacity: 1

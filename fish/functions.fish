@@ -55,3 +55,7 @@ function cnotes
     $name.md \
     -o $name.pdf
 end
+
+function fcode
+  pygmentize -f rtf -O "fontface=Iosevka" $argv[1] | pbcopy
+end
