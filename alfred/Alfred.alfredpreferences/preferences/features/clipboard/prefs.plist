@@ -6,6 +6,8 @@
 	<false/>
 	<key>clearKeywordEnabled</key>
 	<false/>
+	<key>snippetKeywordEnabled</key>
+	<false/>
 	<key>viewerKeyword</key>
 	<string>clip</string>
 </dict>
