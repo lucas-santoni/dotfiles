@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim' "Colors
-Plug 'haishanh/night-owl.vim'
+Plug 'jacoborus/tender.vim' "Another one
 Plug 'raimondi/delimitmate' "Matching characters completions
 Plug 'scrooloose/nerdtree' "File explorer (built in Vim?)
 Plug 'danro/rename.vim' "The :Rename command
@@ -23,9 +23,9 @@ let g:sneak#use_ic_scs = 1
 hi link Sneak None
 
 "Colorscheme
-set background=dark
+"set background=dark
 set termguicolors
-colorscheme night-owl
+colorscheme tender
 let base16colorspace=256
 
 "Remap leader
@@ -166,7 +166,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 "Cleaner vertical split
-" hi VertSplit ctermbg=None
+hi VertSplit guibg=None guifg=black
 
 "Cleaner UI
 set shortmess+=WI
@@ -184,5 +184,5 @@ set secure
 " hi StatusLine ctermfg=245 ctermbg=none
 " hi StatusLineNC ctermfg=240 ctermbg=none
 " set statusline=%=%m\ %f\ %4l/%L
-let g:lightline = { 'colorscheme': 'nightowl'}
+let g:lightline = { 'colorscheme': 'tender'}
 

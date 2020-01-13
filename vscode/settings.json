@@ -1,7 +1,7 @@
 {
   // ---------------------------------------------------------------------------
   // Found this font order in a tutorial, may not be necessary
-  "workbench.colorTheme": "Night Owl",
+  "workbench.colorTheme": "Calamity",
   "editor.fontFamily": "PragmataPro, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
   "editor.fontSize": 17,
@@ -12,7 +12,6 @@
     120
   ],
   "editor.suggestSelection": "first",
-  "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "all",
   "editor.lightbulb.enabled": false,
   "editor.scrollbar.horizontal": "hidden",
@@ -59,16 +58,16 @@
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.normalModeKeyBindings": [
-    {
-      // Previous tab
-      "before": [ "<C-h>" ],
-      "commands": [ "workbench.action.previousEditor" ]
-    },
-    {
-      // Next tab
-      "before": [ "<C-l>" ],
-      "commands": [ "workbench.action.nextEditor" ]
-    },
+    // {
+    //   // Previous tab
+    //   "before": [ "<C-h>" ],
+    //   "commands": [ "workbench.action.previousEditor" ]
+    // },
+    // {
+    //   // Next tab
+    //   "before": [ "<C-l>" ],
+    //   "commands": [ "workbench.action.nextEditor" ]
+    // },
     {
       // Remove highlight after search
       "before": [ "q", "q" ],
@@ -161,6 +160,11 @@
     ".eslintrc": "jsonc",
     "*.prisma": "graphql",
     "*.html": "html"
-  }
+  },
+  "zenMode.fullScreen": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideLineNumbers": false,
+  "window.nativeTabs": true,
+  "workbench.editor.showTabs": false
   // ---------------------------------------------------------------------------
 }
