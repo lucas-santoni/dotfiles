@@ -1,17 +1,19 @@
 ## VIM
 abbr e "nvim"
 
+## VSCODE
+abbr c code
+
+## PYTHON
+abbr pip pipenv
+abbr pip3 pipenv
+
 ## LS/TREE/EXA
 abbr ls "exa"
 abbr l "exa -l"
 abbr la "exa -la"
 abbr tree "exa --tree"
 abbr t "exa --tree"
-
-## CD
-function c
-  cd $argv[1] ; and exa -l
-end
 
 ## GIT
 abbr g "git"
@@ -36,8 +38,6 @@ abbr ccp "cp -R"
 abbr mv "mv -v"
 
 ## TMUX
-abbr tmux "tmux -2"
-abbr tm "tmux -2"
 abbr at "tmux attach -t"
 abbr tmls "tmux list-sessions"
 
