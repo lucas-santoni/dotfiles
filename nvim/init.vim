@@ -1,6 +1,7 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'edkolev/tmuxline.vim' "Generate TMUX lines
 Plug 'chriskempson/base16-vim' "Colors
 Plug 'jacoborus/tender.vim' "Another one
 Plug 'raimondi/delimitmate' "Matching characters completions
@@ -23,7 +24,7 @@ let g:sneak#use_ic_scs = 1
 hi link Sneak None
 
 "Colorscheme
-"set background=dark
+set background=dark
 set termguicolors
 colorscheme tender
 let base16colorspace=256
@@ -156,9 +157,6 @@ function! s:goyo_leave()
 
   "This must be repeated
   hi clear signcolumn
-
-  " hi StatusLine ctermfg=245 ctermbg=none
-  " hi StatusLineNC ctermfg=240 ctermbg=none
 endfunction
 
 "Place Goyo hooks
@@ -184,5 +182,28 @@ set secure
 " hi StatusLine ctermfg=245 ctermbg=none
 " hi StatusLineNC ctermfg=240 ctermbg=none
 " set statusline=%=%m\ %f\ %4l/%L
-let g:lightline = { 'colorscheme': 'tender'}
+let g:lightline = {
+      \ 'colorscheme': 'tender',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': "\uE0B8", 'right': "\uE0BA" },
+      \ 'subseparator': { 'left': "\uE0B9", 'right': "\uE0BB" }
+      \ }
 
+"Tmuxline is generated from here
+let g:tmuxline_preset = {
+    \'a'       : '#S',
+    \'win'     : '#W',
+    \'cwin'    : '#W',
+    \'x'       : '%d-%m-%y',
+    \'y'       : '%H:%M',
+    \'z'       : "#H",
+    \'options' : {'status-justify' : 'left'}}
+
+let g:tmuxline_separators = {
+    \ 'left' : '\uE0B8',
+    \ 'left_alt': '\uE0B9',
+    \ 'right' : '\uE0BA',
+    \ 'right_alt' : '\eE0BB',
+    \ 'space' : ' '}
