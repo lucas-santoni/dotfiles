@@ -204,9 +204,13 @@ live_config_reload: false
 
 # Shell
 shell:
-  program: /usr/local/bin/fish
+  program: /usr/local/bin/tmux
   args:
-    - -c tmux attach -t WORK || tmux -u new -s WORK
+    - -u
+    - new
+    - -A
+    - -s
+    - WORK
 
 # Send ESC (\x1b) before characters when alt is pressed.
 alt_send_esc: false
