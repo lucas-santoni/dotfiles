@@ -10,7 +10,7 @@
           gc-cons-percentage 0.1)))
 
 ;; Another trick related to the minibuffer
-;; See https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#how-does-doom-start-up-so-quickly
+;; Stolen from Doom
 (setq doom-gc-cons-threshold 16777216)
 
 (defun doom-defer-garbage-collection-h ()
@@ -58,5 +58,7 @@
 
 ;; The rest of the configuration is in an Org file
 ;; It is easier to manage
+(setq user-settings-file "/Users/geographer/.dotfiles/emacs/settings.org")
 (require 'org)
-(org-babel-load-file (expand-file-name "/Users/geographer/.dotfiles/emacs/settings.org"))
+(org-babel-load-file
+  (expand-file-name user-settings-file))

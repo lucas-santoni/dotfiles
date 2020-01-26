@@ -21,6 +21,14 @@ The blocks of Lisp are what really matters.
      (find-file user-init-file))
    #+end_src
 
+** Edit settings file
+
+   #+begin_src emacs-lisp
+   (defun find-user-settings-file ()
+     (interactive)
+     (find-file user-settings-file))
+   #+end_src
+
 ** Open dired in ~
 
    #+begin_src emacs-lisp
@@ -46,6 +54,32 @@ The blocks of Lisp are what really matters.
        (let ((icon (all-the-icons-icon-for-mode major-mode)))
        (if (symbolp icon)
          (all-the-icons-icon-for-mode 'fundamental-mode) icon))))
+   #+end_src
+
+** Generate Org Calendar movement functions
+   
+   See General bindings for the Org Calendar date selector. This
+   helper allows to generate the functions and get a cleaner definition.
+
+   #+begin_src emacs-lisp
+   (defmacro my-org-in-calendar (command)
+     (let ((name (intern (format "my-org-in-calendar-%s" command))))
+       `(progn
+         (defun ,name ()
+           (interactive)
+           (org-eval-in-calendar '(call-interactively #',command)))
+         #',name)))
+   #+end_src
+
+** Reload configuration file
+
+   I have a shortcut to evaluate the current buffer. But =init.el= is not always
+   the current buffer.
+
+   #+begin_src emacs-lisp
+   (defun reload-init-file ()
+     (interactive)
+     (load-file user-init-file))
    #+end_src
 
 * UI Elements
@@ -105,6 +139,7 @@ The blocks of Lisp are what really matters.
    #+begin_src emacs-lisp
    (setq custom-file (concat user-emacs-directory "/custom.el"))
    #+end_src
+
 ** Automatic saves
    
    Put those files in their own directory. Stolen for [[https://emacs.stackexchange.com/questions/17210/how-to-place-all-auto-save-files-in-a-directory][here]].
@@ -168,7 +203,7 @@ The blocks of Lisp are what really matters.
    than that but its fine.
 
    #+begin_src emacs-lisp
-   (add-hook 'text-mode-hook 'turn-on-auto-fill)
+   (add-hook 'text-mode-hook #'turn-on-auto-fill)
    (setq fill-column 80)
    #+end_src
  
@@ -245,18 +280,18 @@ The blocks of Lisp are what really matters.
   
   #+begin_src emacs-lisp
   (use-package evil
-    ;; A few bonus keybinds for Evil that are not handled by General
+    ;; A few bonus keybinds for Evil that are relevant everywhere
     :bind (("C-j" . evil-scroll-line-down)
            ("C-k" . evil-scroll-line-up)
            ("C-s" . evil-ex-search-forward)
            ("C-h" . evil-ex-nohighlight))
     :init
     (setq
-      evil-search-module 'evil-search ;; Evil own search module
-      evil-vsplit-window-right t      ;; New vertical splits are put on the right
-      evil-split-window-below t       ;; New horizontal splits are put on the bottom
-      evil-want-keybinding nil        ;; Required for evil-collection
-      evil-want-C-u-scroll t)         ;; Otherwise it is an Emacs prefix
+      evil-search-module #'evil-search ;; Evil own search module
+      evil-vsplit-window-right t       ;; New vertical splits are put on the right
+      evil-split-window-below t        ;; New horizontal splits are put on the bottom
+      evil-want-keybinding nil         ;; Required for evil-collection
+      evil-want-C-u-scroll t)          ;; Otherwise it is an Emacs prefix
     :config
     (evil-mode))
   #+end_src
@@ -269,6 +304,8 @@ The blocks of Lisp are what really matters.
   #+begin_src emacs-lisp
   (use-package evil-collection
     :after evil
+    :custom
+    (evil-collection-setup-minibuffer t)
     :config
     (evil-collection-init))
   #+end_src
@@ -295,15 +332,15 @@ The blocks of Lisp are what really matters.
 
 * Evil Org
   
-  Org bindings for Org and Org Agenda.
+  Navigate with Evil bindings in Org (especially Agenda).
   
   #+begin_src emacs-lisp
   (use-package evil-org
     :after org
     :config
     (add-hook 'org-mode-hook 'evil-org-mode)
-    (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
-  
+    (add-hook 'evil-org-mode-hook (lambda ()
+      (evil-org-set-key-theme '(textobjects navigation heading todo))))
     (require 'evil-org-agenda)
     (evil-org-agenda-set-keys))
   #+end_src
@@ -350,7 +387,7 @@ The blocks of Lisp are what really matters.
     :config
     (setq
       ivy-re-builders-alist '((t . ivy--regex-fuzzy)) ; Fuzzy research
-      ivy-format-function 'ivy-format-function-line   ; TODO What is this
+      ivy-format-function #'ivy-format-function-line  ; Don't know what this is
       ivy-height 17                                   ; Fixed height for the buffer
       ivy-fixed-height-minibuffer t                   ; And fix the height
       ivy-wrap t                                      ; Wrap around at the last candidate
@@ -387,6 +424,7 @@ The blocks of Lisp are what really matters.
              (lambda (cand) (get-buffer cand)))))
     (ivy-rich-mode))
   #+end_src
+
 * Projectile
 
   Projectile brings project management to Emacs. To make it simple, a
@@ -441,6 +479,7 @@ The blocks of Lisp are what really matters.
       org-hide-leading-stars t
       org-hidden-keywords '(title)))
   #+end_src
+
 * Org Bullets
 
   Fancy bullets for Org!
@@ -450,8 +489,7 @@ The blocks of Lisp are what really matters.
     :init
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
     :config
-    (setq
-      org-bullets-bullet-list '("⁖" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")))
+    (setq org-bullets-bullet-list '("⁖" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")))
   #+end_src
 
 * Dired Icons
@@ -476,6 +514,9 @@ The blocks of Lisp are what really matters.
   
   General allows to setup bindings in a nice way: for different modes,
   using a prefix, etc.
+  
+  The =l= prefix is used for /local/ bindings, which are bound to a
+  specific mode.
 
   #+begin_src emacs-lisp
   (use-package general
@@ -487,59 +528,82 @@ The blocks of Lisp are what really matters.
      :states '(normal motion emacs)
      :keymaps 'override
      :prefix "SPC"
-     ":" 'counsel-M-x)
+     ":" #'counsel-M-x)
   
     ;; BUFFER BINDINGS
     (general-define-key
       :states '(normal motion emacs)
       :keymaps 'override
       :prefix "SPC a"
-      "a" 'counsel-switch-buffer
-      "z" 'evil-switch-to-windows-last-buffer
-      "h" 'evil-window-left   ; These are technically more like windows
-      "j" 'evil-window-down   ; stuff but I prefer them here
-      "k" 'evil-window-up     ; It also allows to leave room for the
-      "l" 'evil-window-right  ; mindow movements motions
-      "f" 'swiper             ; Find active buffer
-      "F" 'swiper-all         ; Find in all buffers
-      "s" 'evil-write         ; Write current buffer
-      "e" 'eval-buffer        ; Eval active buffer (reload configuration file)
-      "q" 'evil-delete-buffer ; These two are swaped as I use quit more often
-      "d" 'evil-quit)         ; And the d is more reachable
+      "a" #'counsel-switch-buffer
+      "z" #'evil-switch-to-windows-last-buffer
+      "h" #'evil-window-left   ; These are technically more like windows
+      "j" #'evil-window-down   ; stuff but I prefer them here
+      "k" #'evil-window-up     ; It also allows to leave room for the
+      "l" #'evil-window-right  ; mindow movements motions
+      "f" #'swiper             ; Find active buffer
+      "F" #'swiper-all         ; Find in all buffers
+      "s" #'evil-write         ; Write current buffer
+      "e" #'eval-buffer        ; Eval active buffer (reload configuration file)
+      "q" #'evil-delete-buffer ; These two are swaped as I use quit more often
+      "d" #'evil-quit)         ; And the d is more reachable
   
     ;; WINDOW BINDINGS
     (general-define-key
       :states '(normal motion emacs)
       :keymaps 'override
       :prefix "SPC e" ; I know that window starts with a "w" but "e" is more reachable
-      "h" 'evil-window-move-far-left
-      "j" 'evil-window-move-very-bottom
-      "k" 'evil-window-move-very-top
-      "l" 'evil-window-move-far-right
-      "s" 'evil-window-split
-      "v" 'evil-window-vsplit)
+      "h" #'evil-window-move-far-left
+      "j" #'evil-window-move-very-bottom
+      "k" #'evil-window-move-very-top
+      "l" #'evil-window-move-far-right
+      "s" #'evil-window-split
+      "v" #'evil-window-vsplit)
   
     ;; HELP BINDINGS
     (general-define-key
       :states '(normal motion emacs)
       :keymaps 'override
       :prefix "SPC h"
-      "b" 'describe-bindings
-      "f" 'counsel-describe-function
-      "v" 'counsel-describe-variable)
+      "b" #'describe-bindings
+      "f" #'counsel-describe-function
+      "v" #'counsel-describe-variable)
   
     ;; PROJECT BINDINGS
     (general-define-key
       :states '(normal motion emacs)
       :keymaps 'override
       :prefix "SPC p"
-      "a" 'projectile-add-known-project
-      "d" 'projectile-remove-known-project
-      "f" 'counsel-projectile-find-file
-      "b" 'counsel-projectile-switch-to-buffer
-      "s" 'counsel-projectile-ag
-      "p" 'counsel-projectile-switch-project)
-  
+      "a" #'projectile-add-known-project
+      "d" #'projectile-remove-known-project
+      "f" #'counsel-projectile-find-file
+      "b" #'counsel-projectile-switch-to-buffer
+      "s" #'counsel-projectile-ag
+      "p" #'counsel-projectile-switch-project)
+      
+    ;; MISC BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'override
+      :prefix "SPC m"
+      "r" #'reload-init-file)
+      
+    ;; LOCAL ORG BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'org-mode-map
+      :prefix "SPC l"
+      "d" #'org-deadline)
+      
+    ;; ORG CALENDAR PROMPT BINDINGS
+    (general-def org-read-date-minibuffer-local-map
+      "C-p" (my-org-in-calendar calendar-backward-day)
+      "C-n" (my-org-in-calendar calendar-forward-day)
+      "C-h" (my-org-in-calendar calendar-backward-week)
+      "C-l" (my-org-in-calendar calendar-forward-week)
+      "C-k" (my-org-in-calendar calendar-backward-month)
+      "C-j" (my-org-in-calendar calendar-forward-month))
+
     ;; OPEN BINDINGS
     (general-define-key
       :states '(normal motion emacs)
@@ -547,8 +611,9 @@ The blocks of Lisp are what really matters.
       :prefix "SPC o"
       "h" #'dired-home
       "d" #'dired-current
-      "a" 'org-agenda
-      "f" 'find-file
-      "r" 'counsel-recentf
-      "p" #'find-user-init-file))
+      "a" #'org-agenda
+      "f" #'find-file
+      "r" #'counsel-recentf
+      "p" #'find-user-settings-file
+      "P" #'find-user-init-file))
   #+end_src
