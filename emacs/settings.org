@@ -1,0 +1,540 @@
+#+title:Emacs Configuration
+
+See =init.el= to understand how this configuration is loaded.
+
+The blocks of Lisp are what really matters.
+
+* Things to do
+** TODO Deal with trailing spaces
+** TODO Deal with tabs
+** TODO Org TODOs states
+** TODO Org TODOs deadlines
+** TODO Org links insertion
+** TODO Org next/previous heading (see =doom.d/=)
+** TODO Org go back (see =doom.d/=)
+* Helper Functions
+** Edit configuration file
+
+   #+begin_src emacs-lisp
+   (defun find-user-init-file ()
+     (interactive)
+     (find-file user-init-file))
+   #+end_src
+
+** Open dired in ~
+
+   #+begin_src emacs-lisp
+   (defun dired-home ()
+     (interactive)
+     (dired "~"))
+   #+end_src
+
+** Open dired in .
+
+   #+begin_src emacs-lisp
+   (defun dired-current ()
+     (interactive)
+     (dired "."))
+   #+end_src
+
+** Display fancy icons in Ivy buffer switch
+
+   #+begin_src emacs-lisp
+   (defun ivy-rich-switch-buffer-icon (candidate)
+     (with-current-buffer
+       (get-buffer candidate)
+       (let ((icon (all-the-icons-icon-for-mode major-mode)))
+       (if (symbolp icon)
+         (all-the-icons-icon-for-mode 'fundamental-mode) icon))))
+   #+end_src
+
+* UI Elements
+** Titlebar
+
+   Make the titlebar transparent. It automatically takes the color of
+   the background.
+
+   #+begin_src emacs-lisp
+   ;; (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+   #+end_src
+   
+   Also, change the window title to more appropriate name.
+
+   #+begin_src emacs-lisp
+   (setq frame-title-format "Satan")
+   #+end_src
+   
+** Cleaner UI
+   
+   Remove UI elements that are never used.
+   
+   #+begin_src emacs-lisp
+   (tool-bar-mode -1)
+   (menu-bar-mode -1) 
+   (toggle-scroll-bar -1) 
+   #+end_src
+   
+** Startup positioning
+   
+   The window is too small and badly positioned by default.
+
+   #+begin_src emacs-lisp
+   (setq initial-frame-alist '((top . 50) (left . 90) (width . 140) (height . 42)))
+   #+end_src
+
+** Fringe
+   
+   Make the fringe background transparent.
+   
+   #+begin_src emacs-lisp
+   (set-face-attribute 'fringe nil :background nil)
+   #+end_src
+
+* General Settings
+** Custom
+   
+   Change the location of Custom settings. Custom settings are
+   /generated/ when tweaking things through the UI. By default, these
+   settings /pollute/ the =init.el= file. Its better to write them in
+   another file and then source this file, or cherry-pick the settings
+   afterwards.
+   
+   The =user-emacs-directory= variable is automatically put in scope,
+   so no need to set it.
+   
+   #+begin_src emacs-lisp
+   (setq custom-file (concat user-emacs-directory "/custom.el"))
+   #+end_src
+   
+** Prompt
+   
+   Quicker prompt interractions, using just =y= or =n=.
+   
+   #+begin_src emacs-lisp
+   (fset 'yes-or-no-p 'y-or-n-p)
+   #+end_src
+   
+** Meta
+   
+   I use the AZERTY layout, on a Mac so I need Meta to be free at all
+   time, in order to type character such as =#= or =~=.
+   
+   Commands can still be run thanks to Evil, using =:= or =SPC :=.
+   
+   #+begin_src emacs-lisp
+   (setq mac-option-modifier nil)
+   #+end_src
+
+** What to show on startup
+   
+   For now, the scratchpad.
+   
+   #+begin_src emacs-lisp
+   (setq inhibit-startup-screen t)
+   #+end_src
+   
+** Highlight current line
+   
+   #+begin_src emacs-lisp
+   (global-hl-line-mode 1)
+   #+end_src
+
+** Parenthesis
+   
+   Highlight, and complete matching parenthesis.
+   
+   #+begin_src emacs-lisp
+   (show-paren-mode 1)
+   (electric-pair-mode)
+   #+end_src
+
+** Text wrap
+   
+   Wrap text at 80 automatically. It actually seems to wrap a bit sooner
+   than that but its fine.
+
+   #+begin_src emacs-lisp
+   (add-hook 'text-mode-hook 'turn-on-auto-fill)
+   (setq fill-column 80)
+   #+end_src
+
+* Theming
+** Font
+
+   #+begin_src emacs-lisp
+   (set-face-attribute 'default nil
+		       :family "Iosevka"
+		       :height 170
+		       :weight 'normal
+		       :width 'normal)
+   #+end_src
+
+** Modus Themes
+   
+   See [[https://gitlab.com/protesilaos/modus-themes][this link]]. Modus Operandi is the light versions, whereas Modus Vivendi is the
+   black one. The default vertical border is a bit to bright.
+   
+   #+begin_src emacs-lisp
+   (use-package modus-vivendi-theme
+     :config
+     (set-face-background 'vertical-border "#333")
+     (set-face-foreground 'vertical-border (face-background 'vertical-border)))
+   #+end_src
+
+** Doom Themes
+
+   The collection of themes from Doom Emacs. They look especially good
+   with Doom Modeline. The full list is [[https://github.com/hlissner/emacs-doom-themes][available here]].
+   
+   #+begin_src emacs-lisp
+   ;; (use-package doom-themes
+   ;;   (setq doom-themes-enable-bold t
+   ;;     doom-themes-enable-italic t)
+   ;;   (load-theme 'doom-one-light t)
+   ;;   (doom-themes-org-config)) ; Org mode fontification
+   #+end_src
+
+** Doom Modeline
+   
+   Looks especially good with Doom Themes but can actually fit with
+   other themes without too much trouble.
+
+   #+begin_src emacs-lisp
+   (use-package doom-modeline
+     :config
+     (setq
+       doom-modeline-buffer-modification-icon nil
+       doom-modeline-buffer-encoding nil)
+     :hook (after-init . doom-modeline-mode))
+   #+end_src
+
+** Hide minor modes
+   
+   Using both Delight and Use-Package allows to hide minor modes. This
+   is actually not required while using Doom Modeline as it already
+   takes care of that for us.
+
+   #+begin_src emacs-lisp
+   ; (use-package delight)
+   #+end_src
+
+   Some modes, such as Eldoc, can not be reached using Use-Package so
+   we have to disable them manually.
+
+   #+begin_src emacs-lisp
+   ; (global-eldoc-mode -1)
+   #+end_src
+
+* Evil
+  
+  Evil brings Vim bindings to Emacs.
+  
+  #+begin_src emacs-lisp
+  (use-package evil
+    ;; A few bonus keybinds for Evil that are not handled by General
+    :bind (("C-j" . evil-scroll-line-down)
+           ("C-k" . evil-scroll-line-up)
+           ("C-s" . evil-ex-search-forward)
+           ("C-h" . evil-ex-nohighlight))
+    :init
+    (setq
+      evil-search-module 'evil-search ;; Evil own search module
+      evil-vsplit-window-right t      ;; New vertical splits are put on the right
+      evil-split-window-below t       ;; New horizontal splits are put on the bottom
+      evil-want-keybinding nil        ;; Required for evil-collection
+      evil-want-C-u-scroll t)         ;; Otherwise it is an Emacs prefix
+    :config
+    (evil-mode))
+  #+end_src
+
+* Evil Collection
+  
+  Be default, Evil does not reach parts of Emacs such as the
+  information or the calendar buffer. Evil Collection fixes this.
+  
+  #+begin_src emacs-lisp
+  (use-package evil-collection
+    :after evil
+    :config
+    (evil-collection-init))
+  #+end_src
+  
+* Evil Commentary
+  
+  Allows to quickly comment blocks of code.
+  
+  #+begin_src emacs-lisp
+  (use-package evil-commentary
+    :config
+    (evil-commentary-mode))
+  #+end_src
+  
+* Evil Lion
+  
+  Allows to quickly align pieces of text.
+  
+  #+begin_src emacs-lisp
+  (use-package evil-lion
+    :config
+    (evil-lion-mode))
+  #+end_src
+
+* Evil Org
+  
+  Org bindings for Org and Org Agenda.
+  
+  #+begin_src emacs-lisp
+  (use-package evil-org
+    :after org
+    :config
+    (add-hook 'org-mode-hook 'evil-org-mode)
+    (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
+  
+    (require 'evil-org-agenda)
+    (evil-org-agenda-set-keys))
+  #+end_src
+
+* Command Log Mode
+
+  Allows to log commands that are being run in real time. Great to
+  quickly pick a command name if you are able to run it some way.
+  
+  #+begin_src emacs-lisp
+  (use-package command-log-mode)
+  #+end_src
+
+* Counsel
+
+  Counsel provides custom versions of common Emacs commands so that
+  they work better with Ivy.
+
+  #+begin_src emacs-lisp
+  (use-package counsel
+    :config
+    (counsel-mode))
+  #+end_src
+
+* Counsel Projectile
+  
+  More counsel commands, for Projectile.
+
+  #+begin_src emacs-lisp
+  (use-package counsel-projectile
+    :config
+    (counsel-projectile-mode))
+  #+end_src
+  
+* Ivy
+  
+  Ivy is a completion framework. It is invoked for actions such as
+  finding a file, opening a project, getting help for a particular
+  symbol, etc. It is invoked automatically sometimes, but also
+  manually bound to a lot of actions using General.
+  
+  #+begin_src emacs-lisp
+  (use-package ivy
+    :config
+    (setq
+      ivy-re-builders-alist '((t . ivy--regex-fuzzy)) ; Fuzzy research
+      ivy-format-function 'ivy-format-function-line   ; TODO What is this
+      ivy-height 17                                   ; Fixed height for the buffer
+      ivy-fixed-height-minibuffer t                   ; And fix the height
+      ivy-wrap t                                      ; Wrap around at the last candidate
+      projectile-completion-system 'ivy               ; Ivy / Projectile
+      ivy-count-format "(%d/%d) "                     ; Displayed in Ivy minibuffer
+      ivy-magic-slash-non-match-action nil)           ; Do nothing
+    (ivy-mode))
+  #+end_src
+
+* Ivy Rich
+  
+  Ivy Rich makes Ivy quite fancier. It allows to customize Ivy's look,
+  get full line candidate selection, and add icons.
+  
+  #+begin_src emacs-lisp
+  (use-package ivy-rich
+    :config
+    (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+    (setq
+      ivy-rich--display-transformers-list
+        '(ivy-switch-buffer
+           (:columns
+             ((ivy-rich-switch-buffer-icon (:width 2))
+             (ivy-rich-candidate (:width 30))
+             (ivy-rich-switch-buffer-size (:width 7))
+             (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
+             (ivy-rich-switch-buffer-major-mode (:width 20 :face warning))
+             (ivy-rich-switch-buffer-project (:width 15 :face success))
+             (ivy-rich-switch-buffer-path
+               (:width (lambda (x)
+                         (ivy-rich-switch-buffer-shorten-path x
+                         (ivy-rich-minibuffer-width 0.3))))))
+           :predicate
+             (lambda (cand) (get-buffer cand)))))
+    (ivy-rich-mode))
+  #+end_src
+* Projectile
+
+  Projectile brings project management to Emacs. To make it simple, a
+  project is a versioned folder.
+
+  Most projects actions are done via Ivy. See General configuration
+  for the bindings.
+  
+  #+begin_src emacs-lisp
+  (use-package projectile
+    :config
+    (projectile-mode +1))
+  #+end_src
+  
+* Org
+  
+  The =org-directory= variable indicates where all the notes are
+  stored. There are subdirectories, which need to be added manually to
+  the agenda.
+
+  #+begin_src emacs-lisp
+  (use-package org
+    :ensure org-plus-contrib
+    :config
+    (set-face-attribute 'org-document-title nil
+                        :height 1.5
+                        :weight 'bold)
+    (set-face-attribute 'org-level-1 nil
+                        :height 1.1
+                        :weight 'bold)
+    (set-face-attribute 'org-level-2 nil
+                        :height 1.05
+                        :weight 'bold)
+    (set-face-attribute 'org-level-3 nil
+                        :weight 'bold)
+    (set-face-attribute 'org-level-4 nil
+                        :weight 'normal)
+    (set-face-attribute 'org-level-5 nil
+                        :weight 'normal)
+    (set-face-attribute 'org-level-6 nil
+                        :weight 'normal)
+  
+    (setq
+      org-directory "~/Documents/notes"
+  
+      org-agenda-files (list org-directory (concat org-directory "/kent"))
+      org-agenda-window-setup 'reorganize-frame
+      org-deadline-warning-days 7
+  
+      org-pretty-entities t
+      org-hierarchical-todo-statistics t
+      org-hide-leading-stars t
+      org-hidden-keywords '(title)))
+  #+end_src
+* Org Bullets
+
+  Fancy bullets for Org!
+
+  #+begin_src emacs-lisp
+  (use-package org-bullets
+    :init
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+    :config
+    (setq
+      org-bullets-bullet-list '("⁖" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")))
+  #+end_src
+
+* Dired Icons
+  
+  Brings icons to =dired= listings.
+  
+  #+begin_src emacs-lisp
+  (use-package all-the-icons-dired
+    :config
+    (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+  #+end_src
+
+* Keywords highlight
+  
+  Highlight keywords such as TODO or FIXME.
+
+  #+begin_src emacs-lisp
+  (use-package fixme-mode)
+  #+end_src
+
+* General Bindings
+  
+  General allows to setup bindings in a nice way: for different modes,
+  using a prefix, etc.
+
+  #+begin_src emacs-lisp
+  (use-package general
+    :after counsel
+    :config
+    (general-evil-setup t)
+  
+    (general-define-key
+     :states '(normal motion emacs)
+     :keymaps 'override
+     :prefix "SPC"
+     ":" 'counsel-M-x)
+  
+    ;; BUFFER BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'override
+      :prefix "SPC a"
+      "a" 'counsel-switch-buffer
+      "z" 'evil-switch-to-windows-last-buffer
+      "h" 'evil-window-left   ; These are technically more like windows
+      "j" 'evil-window-down   ; stuff but I prefer them here
+      "k" 'evil-window-up     ; It also allows to leave room for the
+      "l" 'evil-window-right  ; mindow movements motions
+      "f" 'swiper             ; Find active buffer
+      "F" 'swiper-all         ; Find in all buffers
+      "s" 'evil-write         ; Write current buffer
+      "e" 'eval-buffer        ; Eval active buffer (reload configuration file)
+      "q" 'evil-delete-buffer ; These two are swaped as I use quit more often
+      "d" 'evil-quit)         ; And the d is more reachable
+  
+    ;; WINDOW BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'override
+      :prefix "SPC e" ; I know that window starts with a "w" but "e" is more reachable
+      "h" 'evil-window-move-far-left
+      "j" 'evil-window-move-very-bottom
+      "k" 'evil-window-move-very-top
+      "l" 'evil-window-move-far-right
+      "s" 'evil-window-split
+      "v" 'evil-window-vsplit)
+  
+    ;; HELP BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'override
+      :prefix "SPC h"
+      "b" 'describe-bindings
+      "f" 'counsel-describe-function
+      "v" 'counsel-describe-variable)
+  
+    ;; PROJECT BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'override
+      :prefix "SPC p"
+      "a" 'projectile-add-known-project
+      "d" 'projectile-remove-known-project
+      "f" 'counsel-projectile-find-file
+      "b" 'counsel-projectile-switch-to-buffer
+      "s" 'counsel-projectile-ag
+      "p" 'counsel-projectile-switch-project)
+  
+    ;; OPEN BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'override
+      :prefix "SPC o"
+      "h" #'dired-home
+      "d" #'dired-current
+      "a" 'org-agenda
+      "f" 'find-file
+      "r" 'counsel-recentf
+      "p" #'find-user-init-file))
+  #+end_src
