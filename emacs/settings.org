@@ -105,7 +105,21 @@ The blocks of Lisp are what really matters.
    #+begin_src emacs-lisp
    (setq custom-file (concat user-emacs-directory "/custom.el"))
    #+end_src
+** Automatic saves
    
+   Put those files in their own directory. Stolen for [[https://emacs.stackexchange.com/questions/17210/how-to-place-all-auto-save-files-in-a-directory][here]].
+
+   #+begin_src emacs-lisp
+   (setq
+     backup-directory-alist '(("." . "~/.emacs-saves/"))
+     auto-save-file-name-transforms `((".*" "~/.emacs-saves/" t))
+     backup-by-copying t
+     delete-old-versions t
+     version-control t
+     kept-new-versions 6
+     kept-old-versions 2)
+   #+end_src
+
 ** Prompt
    
    Quicker prompt interractions, using just =y= or =n=.
@@ -157,7 +171,7 @@ The blocks of Lisp are what really matters.
    (add-hook 'text-mode-hook 'turn-on-auto-fill)
    (setq fill-column 80)
    #+end_src
-
+ 
 * Theming
 ** Font
 
