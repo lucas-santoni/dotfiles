@@ -237,9 +237,11 @@ The blocks of Lisp are what really matters.
    
    #+begin_src emacs-lisp
    ;; (use-package doom-themes
-   ;;   (setq doom-themes-enable-bold t
+   ;;   :config
+   ;;   (setq
+   ;;     doom-themes-enable-bold t
    ;;     doom-themes-enable-italic t)
-   ;;   (load-theme 'doom-one-light t)
+   ;;   (load-theme 'doom-challenger-deep t)
    ;;   (doom-themes-org-config)) ; Org mode fontification
    #+end_src
 
@@ -467,13 +469,19 @@ The blocks of Lisp are what really matters.
     (set-face-attribute 'org-level-6 nil
                         :weight 'normal)
   
+    (add-hook 'org-cycle-hook
+      (lambda (state)
+        (when (eq state 'children)
+          (setq org-cycle-subtree-status 'subtree))))
+
     (setq
       org-directory "~/Documents/notes"
   
       org-agenda-files (list org-directory (concat org-directory "/kent"))
       org-agenda-window-setup 'reorganize-frame
       org-deadline-warning-days 7
-  
+      
+      org-list-indent-offset 2
       org-pretty-entities t
       org-hierarchical-todo-statistics t
       org-hide-leading-stars t
@@ -502,6 +510,14 @@ The blocks of Lisp are what really matters.
     (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
   #+end_src
 
+* Golang Support
+  
+  Golang support. No completion in this module. But others exist if needed.
+  
+  #+begin_src emacs-lisp
+  (use-package go-mode)
+  #+end_src
+  
 * Keywords highlight
   
   Highlight keywords such as TODO or FIXME.
@@ -593,7 +609,16 @@ The blocks of Lisp are what really matters.
       :states '(normal motion emacs)
       :keymaps 'org-mode-map
       :prefix "SPC l"
-      "d" #'org-deadline)
+      "d" #'org-deadline
+      "c" #'org-ctrl-c-ctrl-c
+      "a" #'org-toggle-archive-tag)
+      
+    ;; DIRED BINDINGS
+    (general-define-key
+      :states '(normal motion emacs)
+      :keymaps 'dired-mode-map
+      "l" #'dired-find-file     ; Enter directory
+      "h" #'dired-up-directory) ; Go back
       
     ;; ORG CALENDAR PROMPT BINDINGS
     (general-def org-read-date-minibuffer-local-map
@@ -617,3 +642,4 @@ The blocks of Lisp are what really matters.
       "p" #'find-user-settings-file
       "P" #'find-user-init-file))
   #+end_src
+  
