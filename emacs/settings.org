@@ -57,7 +57,7 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 ** Generate Org Calendar movement functions
-   
+
    See General bindings for the Org Calendar date selector. This
    helper allows to generate the functions and get a cleaner definition.
 
@@ -91,25 +91,25 @@ The blocks of Lisp are what really matters.
    #+begin_src emacs-lisp
    ;; (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
    #+end_src
-   
+
    Also, change the window title to more appropriate name.
 
    #+begin_src emacs-lisp
    (setq frame-title-format "Satan")
    #+end_src
-   
+
 ** Cleaner UI
-   
+
    Remove UI elements that are never used.
-   
+
    #+begin_src emacs-lisp
    (tool-bar-mode -1)
-   (menu-bar-mode -1) 
-   (toggle-scroll-bar -1) 
+   (menu-bar-mode -1)
+   (toggle-scroll-bar -1)
    #+end_src
-   
+
 ** Startup positioning
-   
+
    The window is too small and badly positioned by default.
 
    #+begin_src emacs-lisp
@@ -117,31 +117,31 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 ** Fringe
-   
+
    Make the fringe background transparent.
-   
+
    #+begin_src emacs-lisp
    (set-face-attribute 'fringe nil :background nil)
    #+end_src
 
 * General Settings
 ** Custom
-   
+
    Change the location of Custom settings. Custom settings are
    /generated/ when tweaking things through the UI. By default, these
    settings /pollute/ the =init.el= file. Its better to write them in
    another file and then source this file, or cherry-pick the settings
    afterwards.
-   
+
    The =user-emacs-directory= variable is automatically put in scope,
    so no need to set it.
-   
+
    #+begin_src emacs-lisp
    (setq custom-file (concat user-emacs-directory "/custom.el"))
    #+end_src
 
 ** Automatic saves
-   
+
    Put those files in their own directory. Stolen for [[https://emacs.stackexchange.com/questions/17210/how-to-place-all-auto-save-files-in-a-directory][here]].
 
    #+begin_src emacs-lisp
@@ -156,49 +156,49 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 ** Prompt
-   
+
    Quicker prompt interractions, using just =y= or =n=.
-   
+
    #+begin_src emacs-lisp
    (fset 'yes-or-no-p 'y-or-n-p)
    #+end_src
-   
+
 ** Meta
-   
+
    I use the AZERTY layout, on a Mac so I need Meta to be free at all
    time, in order to type character such as =#= or =~=.
-   
+
    Commands can still be run thanks to Evil, using =:= or =SPC :=.
-   
+
    #+begin_src emacs-lisp
    (setq mac-option-modifier nil)
    #+end_src
 
 ** What to show on startup
-   
+
    For now, the scratchpad.
-   
+
    #+begin_src emacs-lisp
    (setq inhibit-startup-screen t)
    #+end_src
-   
+
 ** Highlight current line
-   
+
    #+begin_src emacs-lisp
    (global-hl-line-mode 1)
    #+end_src
 
 ** Parenthesis
-   
+
    Highlight, and complete matching parenthesis.
-   
+
    #+begin_src emacs-lisp
    (show-paren-mode 1)
    (electric-pair-mode)
    #+end_src
 
 ** Text wrap
-   
+
    Wrap text at 80 automatically. It actually seems to wrap a bit sooner
    than that but its fine.
 
@@ -206,7 +206,21 @@ The blocks of Lisp are what really matters.
    (add-hook 'text-mode-hook #'turn-on-auto-fill)
    (setq fill-column 80)
    #+end_src
- 
+
+** Trailing whitespaces
+
+   Show trailing whitespaces.
+
+   #+begin_src emacs-lisp
+   (setq show-trailing-whitespace t)
+   #+end_src
+
+   And delete them on write!
+
+   #+begin_src emacs-lisp
+   (add-hook 'before-save-hook #'delete-trailing-whitespace)
+   #+end_src
+
 * Theming
 ** Font
 
@@ -219,10 +233,10 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 ** Modus Themes
-   
+
    See [[https://gitlab.com/protesilaos/modus-themes][this link]]. Modus Operandi is the light versions, whereas Modus Vivendi is the
    black one. The default vertical border is a bit to bright.
-   
+
    #+begin_src emacs-lisp
    (use-package modus-vivendi-theme
      :config
@@ -234,7 +248,7 @@ The blocks of Lisp are what really matters.
 
    The collection of themes from Doom Emacs. They look especially good
    with Doom Modeline. The full list is [[https://github.com/hlissner/emacs-doom-themes][available here]].
-   
+
    #+begin_src emacs-lisp
    ;; (use-package doom-themes
    ;;   :config
@@ -246,7 +260,7 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 ** Doom Modeline
-   
+
    Looks especially good with Doom Themes but can actually fit with
    other themes without too much trouble.
 
@@ -260,7 +274,7 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 ** Hide minor modes
-   
+
    Using both Delight and Use-Package allows to hide minor modes. This
    is actually not required while using Doom Modeline as it already
    takes care of that for us.
@@ -277,9 +291,9 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 * Evil
-  
+
   Evil brings Vim bindings to Emacs.
-  
+
   #+begin_src emacs-lisp
   (use-package evil
     ;; A few bonus keybinds for Evil that are relevant everywhere
@@ -299,10 +313,10 @@ The blocks of Lisp are what really matters.
   #+end_src
 
 * Evil Collection
-  
+
   Be default, Evil does not reach parts of Emacs such as the
   information or the calendar buffer. Evil Collection fixes this.
-  
+
   #+begin_src emacs-lisp
   (use-package evil-collection
     :after evil
@@ -311,21 +325,21 @@ The blocks of Lisp are what really matters.
     :config
     (evil-collection-init))
   #+end_src
-  
+
 * Evil Commentary
-  
+
   Allows to quickly comment blocks of code.
-  
+
   #+begin_src emacs-lisp
   (use-package evil-commentary
     :config
     (evil-commentary-mode))
   #+end_src
-  
+
 * Evil Lion
-  
+
   Allows to quickly align pieces of text.
-  
+
   #+begin_src emacs-lisp
   (use-package evil-lion
     :config
@@ -333,9 +347,9 @@ The blocks of Lisp are what really matters.
   #+end_src
 
 * Evil Org
-  
+
   Navigate with Evil bindings in Org (especially Agenda).
-  
+
   #+begin_src emacs-lisp
   (use-package evil-org
     :after org
@@ -351,7 +365,7 @@ The blocks of Lisp are what really matters.
 
   Allows to log commands that are being run in real time. Great to
   quickly pick a command name if you are able to run it some way.
-  
+
   #+begin_src emacs-lisp
   (use-package command-log-mode)
   #+end_src
@@ -368,7 +382,7 @@ The blocks of Lisp are what really matters.
   #+end_src
 
 * Counsel Projectile
-  
+
   More counsel commands, for Projectile.
 
   #+begin_src emacs-lisp
@@ -376,14 +390,14 @@ The blocks of Lisp are what really matters.
     :config
     (counsel-projectile-mode))
   #+end_src
-  
+
 * Ivy
-  
+
   Ivy is a completion framework. It is invoked for actions such as
   finding a file, opening a project, getting help for a particular
   symbol, etc. It is invoked automatically sometimes, but also
   manually bound to a lot of actions using General.
-  
+
   #+begin_src emacs-lisp
   (use-package ivy
     :config
@@ -400,10 +414,10 @@ The blocks of Lisp are what really matters.
   #+end_src
 
 * Ivy Rich
-  
+
   Ivy Rich makes Ivy quite fancier. It allows to customize Ivy's look,
   get full line candidate selection, and add icons.
-  
+
   #+begin_src emacs-lisp
   (use-package ivy-rich
     :config
@@ -434,15 +448,15 @@ The blocks of Lisp are what really matters.
 
   Most projects actions are done via Ivy. See General configuration
   for the bindings.
-  
+
   #+begin_src emacs-lisp
   (use-package projectile
     :config
     (projectile-mode +1))
   #+end_src
-  
+
 * Org
-  
+
   The =org-directory= variable indicates where all the notes are
   stored. There are subdirectories, which need to be added manually to
   the agenda.
@@ -468,7 +482,7 @@ The blocks of Lisp are what really matters.
                         :weight 'normal)
     (set-face-attribute 'org-level-6 nil
                         :weight 'normal)
-  
+
     (add-hook 'org-cycle-hook
       (lambda (state)
         (when (eq state 'children)
@@ -476,11 +490,11 @@ The blocks of Lisp are what really matters.
 
     (setq
       org-directory "~/Documents/notes"
-  
+
       org-agenda-files (list org-directory (concat org-directory "/kent"))
       org-agenda-window-setup 'reorganize-frame
       org-deadline-warning-days 7
-      
+
       org-list-indent-offset 2
       org-pretty-entities t
       org-hierarchical-todo-statistics t
@@ -501,9 +515,9 @@ The blocks of Lisp are what really matters.
   #+end_src
 
 * Dired Icons
-  
+
   Brings icons to =dired= listings.
-  
+
   #+begin_src emacs-lisp
   (use-package all-the-icons-dired
     :config
@@ -511,15 +525,15 @@ The blocks of Lisp are what really matters.
   #+end_src
 
 * Golang Support
-  
+
   Golang support. No completion in this module. But others exist if needed.
-  
+
   #+begin_src emacs-lisp
   (use-package go-mode)
   #+end_src
-  
+
 * Keywords highlight
-  
+
   Highlight keywords such as TODO or FIXME.
 
   #+begin_src emacs-lisp
@@ -527,10 +541,10 @@ The blocks of Lisp are what really matters.
   #+end_src
 
 * General Bindings
-  
+
   General allows to setup bindings in a nice way: for different modes,
   using a prefix, etc.
-  
+
   The =l= prefix is used for /local/ bindings, which are bound to a
   specific mode.
 
@@ -539,13 +553,13 @@ The blocks of Lisp are what really matters.
     :after counsel
     :config
     (general-evil-setup t)
-  
+
     (general-define-key
      :states '(normal motion emacs)
      :keymaps 'override
      :prefix "SPC"
      ":" #'counsel-M-x)
-  
+
     ;; BUFFER BINDINGS
     (general-define-key
       :states '(normal motion emacs)
@@ -563,7 +577,7 @@ The blocks of Lisp are what really matters.
       "e" #'eval-buffer        ; Eval active buffer (reload configuration file)
       "q" #'evil-delete-buffer ; These two are swaped as I use quit more often
       "d" #'evil-quit)         ; And the d is more reachable
-  
+
     ;; WINDOW BINDINGS
     (general-define-key
       :states '(normal motion emacs)
@@ -575,7 +589,7 @@ The blocks of Lisp are what really matters.
       "l" #'evil-window-move-far-right
       "s" #'evil-window-split
       "v" #'evil-window-vsplit)
-  
+
     ;; HELP BINDINGS
     (general-define-key
       :states '(normal motion emacs)
@@ -584,7 +598,7 @@ The blocks of Lisp are what really matters.
       "b" #'describe-bindings
       "f" #'counsel-describe-function
       "v" #'counsel-describe-variable)
-  
+
     ;; PROJECT BINDINGS
     (general-define-key
       :states '(normal motion emacs)
@@ -596,14 +610,14 @@ The blocks of Lisp are what really matters.
       "b" #'counsel-projectile-switch-to-buffer
       "s" #'counsel-projectile-ag
       "p" #'counsel-projectile-switch-project)
-      
+
     ;; MISC BINDINGS
     (general-define-key
       :states '(normal motion emacs)
       :keymaps 'override
       :prefix "SPC m"
       "r" #'reload-init-file)
-      
+
     ;; LOCAL ORG BINDINGS
     (general-define-key
       :states '(normal motion emacs)
@@ -612,14 +626,14 @@ The blocks of Lisp are what really matters.
       "d" #'org-deadline
       "c" #'org-ctrl-c-ctrl-c
       "a" #'org-toggle-archive-tag)
-      
+
     ;; DIRED BINDINGS
     (general-define-key
       :states '(normal motion emacs)
       :keymaps 'dired-mode-map
       "l" #'dired-find-file     ; Enter directory
       "h" #'dired-up-directory) ; Go back
-      
+
     ;; ORG CALENDAR PROMPT BINDINGS
     (general-def org-read-date-minibuffer-local-map
       "C-p" (my-org-in-calendar calendar-backward-day)
@@ -642,4 +656,3 @@ The blocks of Lisp are what really matters.
       "p" #'find-user-settings-file
       "P" #'find-user-init-file))
   #+end_src
-  
