@@ -16,7 +16,7 @@
   "editor.lightbulb.enabled": false,
   "editor.scrollbar.horizontal": "hidden",
   // ---------------------------------------------------------------------------
-  "terminal.integrated.fontSize": 24,
+  "terminal.integrated.fontSize": 18,
   // ---------------------------------------------------------------------------
   "extensions.ignoreRecommendations": false, // No extensions recommendations
   // ---------------------------------------------------------------------------
@@ -165,6 +165,8 @@
   "zenMode.hideStatusBar": false,
   "zenMode.hideLineNumbers": false,
   "window.nativeTabs": true,
-  "workbench.editor.showTabs": false
+  "workbench.editor.showTabs": false,
+  "terminal.integrated.fontFamily": "Iosevka Term",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish"
   // ---------------------------------------------------------------------------
 }
