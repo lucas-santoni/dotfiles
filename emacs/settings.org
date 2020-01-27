@@ -50,10 +50,10 @@ The blocks of Lisp are what really matters.
    #+begin_src emacs-lisp
    (defun ivy-rich-switch-buffer-icon (candidate)
      (with-current-buffer
-       (get-buffer candidate)
+         (get-buffer candidate)
        (let ((icon (all-the-icons-icon-for-mode major-mode)))
-       (if (symbolp icon)
-         (all-the-icons-icon-for-mode 'fundamental-mode) icon))))
+         (if (symbolp icon)
+             (all-the-icons-icon-for-mode 'fundamental-mode) icon))))
    #+end_src
 
 ** Generate Org Calendar movement functions
@@ -65,10 +65,10 @@ The blocks of Lisp are what really matters.
    (defmacro my-org-in-calendar (command)
      (let ((name (intern (format "my-org-in-calendar-%s" command))))
        `(progn
-         (defun ,name ()
-           (interactive)
-           (org-eval-in-calendar '(call-interactively #',command)))
-         #',name)))
+          (defun ,name ()
+            (interactive)
+            (org-eval-in-calendar '(call-interactively #',command)))
+          #',name)))
    #+end_src
 
 ** Reload configuration file
@@ -146,13 +146,13 @@ The blocks of Lisp are what really matters.
 
    #+begin_src emacs-lisp
    (setq
-     backup-directory-alist '(("." . "~/.emacs-saves/"))
-     auto-save-file-name-transforms `((".*" "~/.emacs-saves/" t))
-     backup-by-copying t
-     delete-old-versions t
-     version-control t
-     kept-new-versions 6
-     kept-old-versions 2)
+    backup-directory-alist '(("." . "~/.emacs-saves/"))
+    auto-save-file-name-transforms `((".*" "~/.emacs-saves/" t))
+    backup-by-copying t
+    delete-old-versions t
+    version-control t
+    kept-new-versions 6
+    kept-old-versions 2)
    #+end_src
 
 ** Prompt
@@ -221,15 +221,23 @@ The blocks of Lisp are what really matters.
    (add-hook 'before-save-hook #'delete-trailing-whitespace)
    #+end_src
 
+** Tabs
+
+   By default, do not use tabs. Modes can override this if needed.
+
+   #+begin_src emacs-lisp
+   (setq-default indent-tabs-mode nil)
+   #+end_src
+
 * Theming
 ** Font
 
    #+begin_src emacs-lisp
    (set-face-attribute 'default nil
-		       :family "Iosevka"
-		       :height 170
-		       :weight 'normal
-		       :width 'normal)
+                       :family "Iosevka"
+                       :height 170
+                       :weight 'normal
+                       :width 'normal)
    #+end_src
 
 ** Modus Themes
@@ -239,7 +247,7 @@ The blocks of Lisp are what really matters.
 
    #+begin_src emacs-lisp
    (use-package modus-vivendi-theme
-     :config
+       :config
      (set-face-background 'vertical-border "#333")
      (set-face-foreground 'vertical-border (face-background 'vertical-border)))
    #+end_src
@@ -251,10 +259,10 @@ The blocks of Lisp are what really matters.
 
    #+begin_src emacs-lisp
    ;; (use-package doom-themes
-   ;;   :config
+   ;;     :config
    ;;   (setq
-   ;;     doom-themes-enable-bold t
-   ;;     doom-themes-enable-italic t)
+   ;;    doom-themes-enable-bold t
+   ;;    doom-themes-enable-italic t)
    ;;   (load-theme 'doom-challenger-deep t)
    ;;   (doom-themes-org-config)) ; Org mode fontification
    #+end_src
@@ -266,10 +274,10 @@ The blocks of Lisp are what really matters.
 
    #+begin_src emacs-lisp
    (use-package doom-modeline
-     :config
+       :config
      (setq
-       doom-modeline-buffer-modification-icon nil
-       doom-modeline-buffer-encoding nil)
+      doom-modeline-buffer-modification-icon nil
+      doom-modeline-buffer-encoding nil)
      :hook (after-init . doom-modeline-mode))
    #+end_src
 
@@ -280,14 +288,14 @@ The blocks of Lisp are what really matters.
    takes care of that for us.
 
    #+begin_src emacs-lisp
-   ; (use-package delight)
+                                           ; (use-package delight)
    #+end_src
 
    Some modes, such as Eldoc, can not be reached using Use-Package so
    we have to disable them manually.
 
    #+begin_src emacs-lisp
-   ; (global-eldoc-mode -1)
+                                           ; (global-eldoc-mode -1)
    #+end_src
 
 * Evil
@@ -296,20 +304,20 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package evil
-    ;; A few bonus keybinds for Evil that are relevant everywhere
-    :bind (("C-j" . evil-scroll-line-down)
-           ("C-k" . evil-scroll-line-up)
-           ("C-s" . evil-ex-search-forward)
-           ("C-h" . evil-ex-nohighlight))
-    :init
-    (setq
-      evil-search-module #'evil-search ;; Evil own search module
-      evil-vsplit-window-right t       ;; New vertical splits are put on the right
-      evil-split-window-below t        ;; New horizontal splits are put on the bottom
-      evil-want-keybinding nil         ;; Required for evil-collection
-      evil-want-C-u-scroll t)          ;; Otherwise it is an Emacs prefix
-    :config
-    (evil-mode))
+      ;; A few bonus keybinds for Evil that are relevant everywhere
+      :bind (("C-j" . evil-scroll-line-down)
+             ("C-k" . evil-scroll-line-up)
+             ("C-s" . evil-ex-search-forward)
+             ("C-h" . evil-ex-nohighlight))
+      :init
+      (setq
+       evil-search-module #'evil-search ;; Evil own search module
+       evil-vsplit-window-right t       ;; New vertical splits are put on the right
+       evil-split-window-below t        ;; New horizontal splits are put on the bottom
+       evil-want-keybinding nil         ;; Required for evil-collection
+       evil-want-C-u-scroll t)          ;; Otherwise it is an Emacs prefix
+      :config
+      (evil-mode))
   #+end_src
 
 * Evil Collection
@@ -319,9 +327,9 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package evil-collection
-    :after evil
-    :config
-    (evil-collection-init))
+      :after evil
+      :config
+      (evil-collection-init))
   #+end_src
 
 * Evil Commentary
@@ -330,7 +338,7 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package evil-commentary
-    :config
+      :config
     (evil-commentary-mode))
   #+end_src
 
@@ -340,7 +348,7 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package evil-lion
-    :config
+      :config
     (evil-lion-mode))
   #+end_src
 
@@ -350,13 +358,13 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package evil-org
-    :after org
-    :config
-    (add-hook 'org-mode-hook 'evil-org-mode)
-    (add-hook 'evil-org-mode-hook (lambda ()
-      (evil-org-set-key-theme '(textobjects navigation heading todo))))
-    (require 'evil-org-agenda)
-    (evil-org-agenda-set-keys))
+      :after org
+      :config
+      (add-hook 'org-mode-hook 'evil-org-mode)
+      (add-hook 'evil-org-mode-hook (lambda ()
+                                      (evil-org-set-key-theme '(textobjects navigation heading todo))))
+      (require 'evil-org-agenda)
+      (evil-org-agenda-set-keys))
   #+end_src
 
 * Command Log Mode
@@ -375,7 +383,7 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package counsel
-    :config
+      :config
     (counsel-mode))
   #+end_src
 
@@ -385,7 +393,7 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package counsel-projectile
-    :config
+      :config
     (counsel-projectile-mode))
   #+end_src
 
@@ -398,16 +406,16 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package ivy
-    :config
+      :config
     (setq
-      ivy-re-builders-alist '((t . ivy--regex-fuzzy)) ; Fuzzy research
-      ivy-format-function #'ivy-format-function-line  ; Don't know what this is
-      ivy-height 17                                   ; Fixed height for the buffer
-      ivy-fixed-height-minibuffer t                   ; And fix the height
-      ivy-wrap t                                      ; Wrap around at the last candidate
-      projectile-completion-system 'ivy               ; Ivy / Projectile
-      ivy-count-format "(%d/%d) "                     ; Displayed in Ivy minibuffer
-      ivy-magic-slash-non-match-action nil)           ; Do nothing
+     ivy-re-builders-alist '((t . ivy--regex-fuzzy)) ; Fuzzy research
+     ivy-format-function #'ivy-format-function-line  ; Don't know what this is
+     ivy-height 17                                   ; Fixed height for the buffer
+     ivy-fixed-height-minibuffer t                   ; And fix the height
+     ivy-wrap t                                      ; Wrap around at the last candidate
+     projectile-completion-system 'ivy               ; Ivy / Projectile
+     ivy-count-format "(%d/%d) "                     ; Displayed in Ivy minibuffer
+     ivy-magic-slash-non-match-action nil)           ; Do nothing
     (ivy-mode))
   #+end_src
 
@@ -418,24 +426,24 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package ivy-rich
-    :config
+      :config
     (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
     (setq
-      ivy-rich--display-transformers-list
-        '(ivy-switch-buffer
-           (:columns
-             ((ivy-rich-switch-buffer-icon (:width 2))
-             (ivy-rich-candidate (:width 30))
-             (ivy-rich-switch-buffer-size (:width 7))
-             (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
-             (ivy-rich-switch-buffer-major-mode (:width 20 :face warning))
-             (ivy-rich-switch-buffer-project (:width 15 :face success))
-             (ivy-rich-switch-buffer-path
-               (:width (lambda (x)
-                         (ivy-rich-switch-buffer-shorten-path x
-                         (ivy-rich-minibuffer-width 0.3))))))
-           :predicate
-             (lambda (cand) (get-buffer cand)))))
+     ivy-rich--display-transformers-list
+     '(ivy-switch-buffer
+       (:columns
+        ((ivy-rich-switch-buffer-icon (:width 2))
+         (ivy-rich-candidate (:width 30))
+         (ivy-rich-switch-buffer-size (:width 7))
+         (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
+         (ivy-rich-switch-buffer-major-mode (:width 20 :face warning))
+         (ivy-rich-switch-buffer-project (:width 15 :face success))
+         (ivy-rich-switch-buffer-path
+          (:width (lambda (x)
+                    (ivy-rich-switch-buffer-shorten-path x
+                                                         (ivy-rich-minibuffer-width 0.3))))))
+        :predicate
+        (lambda (cand) (get-buffer cand)))))
     (ivy-rich-mode))
   #+end_src
 
@@ -449,7 +457,7 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package projectile
-    :config
+      :config
     (projectile-mode +1))
   #+end_src
 
@@ -461,43 +469,47 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package org
-    :ensure org-plus-contrib
-    :config
-    (set-face-attribute 'org-document-title nil
-                        :height 1.5
-                        :weight 'bold)
-    (set-face-attribute 'org-level-1 nil
-                        :height 1.1
-                        :weight 'bold)
-    (set-face-attribute 'org-level-2 nil
-                        :height 1.05
-                        :weight 'bold)
-    (set-face-attribute 'org-level-3 nil
-                        :weight 'bold)
-    (set-face-attribute 'org-level-4 nil
-                        :weight 'normal)
-    (set-face-attribute 'org-level-5 nil
-                        :weight 'normal)
-    (set-face-attribute 'org-level-6 nil
-                        :weight 'normal)
+      :ensure org-plus-contrib
+      :config
+      (set-face-attribute 'org-document-title nil
+                          :height 1.5
+                          :weight 'bold)
+      (set-face-attribute 'org-level-1 nil
+                          :height 1.1
+                          :weight 'bold)
+      (set-face-attribute 'org-level-2 nil
+                          :height 1.05
+                          :weight 'bold)
+      (set-face-attribute 'org-level-3 nil
+                          :weight 'bold)
+      (set-face-attribute 'org-level-4 nil
+                          :weight 'normal)
+      (set-face-attribute 'org-level-5 nil
+                          :weight 'normal)
+      (set-face-attribute 'org-level-6 nil
+                          :weight 'normal)
 
-    (add-hook 'org-cycle-hook
-      (lambda (state)
-        (when (eq state 'children)
-          (setq org-cycle-subtree-status 'subtree))))
+      (add-hook 'org-cycle-hook
+                (lambda (state)
+                  (when (eq state 'children)
+                    (setq org-cycle-subtree-status 'subtree))))
 
-    (setq
-      org-directory "~/Documents/notes"
+      (setq
+       org-directory "~/Documents/notes"
 
-      org-agenda-files (list org-directory (concat org-directory "/kent"))
-      org-agenda-window-setup 'reorganize-frame
-      org-deadline-warning-days 7
+       org-agenda-files (list org-directory (concat org-directory "/kent"))
+       org-agenda-window-setup 'reorganize-frame
+       org-deadline-warning-days 7
 
-      org-list-indent-offset 2
-      org-pretty-entities t
-      org-hierarchical-todo-statistics t
-      org-hide-leading-stars t
-      org-hidden-keywords '(title)))
+       org-src-tab-acts-natively t
+       org-src-preserve-indentation nil
+       org-edit-src-content-indentation 0
+
+       org-list-indent-offset 2
+       org-pretty-entities t
+       org-hierarchical-todo-statistics t
+       org-hide-leading-stars t
+       org-hidden-keywords '(title)))
   #+end_src
 
 * Org Bullets
@@ -506,7 +518,7 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package org-bullets
-    :init
+      :init
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
     :config
     (setq org-bullets-bullet-list '("⁖" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")))
@@ -518,7 +530,7 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package all-the-icons-dired
-    :config
+      :config
     (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
   #+end_src
 
@@ -530,9 +542,9 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package go-mode
-    :config
+      :config
     (add-hook 'go-mode-hook (lambda ()
-      (setq tab-width 2))))
+                              (setq tab-width 2))))
   #+end_src
 
 * Lisp Support
@@ -544,13 +556,15 @@ The blocks of Lisp are what really matters.
   (setq lisp-indent-function 'common-lisp-indent-function)
   #+end_src
 
+  (indent-tabs-mode nil)
+
 * Indent guide
 
   Indent guide for the code.
 
   #+begin_src emacs-lisp
   (use-package highlight-indent-guides
-    :config
+      :config
     (setq highlight-indent-guides-method 'character)
     (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
   #+end_src
@@ -573,109 +587,109 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package general
-    :after counsel
-    :config
-    (general-evil-setup t)
+      :after counsel
+      :config
+      (general-evil-setup t)
 
-    (general-define-key
-     :states '(normal motion emacs)
-     :keymaps 'override
-     :prefix "SPC"
-     ":" #'counsel-M-x)
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       :prefix "SPC"
+       ":" #'counsel-M-x)
 
-    ;; BUFFER BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'override
-      :prefix "SPC a"
-      "a" #'counsel-switch-buffer
-      "z" #'evil-switch-to-windows-last-buffer
-      "h" #'evil-window-left   ; These are technically more like windows
-      "j" #'evil-window-down   ; stuff but I prefer them here
-      "k" #'evil-window-up     ; It also allows to leave room for the
-      "l" #'evil-window-right  ; mindow movements motions
-      "f" #'swiper             ; Find active buffer
-      "F" #'swiper-all         ; Find in all buffers
-      "s" #'evil-write         ; Write current buffer
-      "e" #'eval-buffer        ; Eval active buffer (reload configuration file)
-      "q" #'evil-delete-buffer ; These two are swaped as I use quit more often
-      "d" #'evil-quit)         ; And the d is more reachable
+      ;; BUFFER BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       :prefix "SPC a"
+       "a" #'counsel-switch-buffer
+       "z" #'evil-switch-to-windows-last-buffer
+       "h" #'evil-window-left   ; These are technically more like windows
+       "j" #'evil-window-down   ; stuff but I prefer them here
+       "k" #'evil-window-up     ; It also allows to leave room for the
+       "l" #'evil-window-right  ; mindow movements motions
+       "f" #'swiper             ; Find active buffer
+       "F" #'swiper-all         ; Find in all buffers
+       "s" #'evil-write         ; Write current buffer
+       "e" #'eval-buffer        ; Eval active buffer (reload configuration file)
+       "q" #'evil-delete-buffer ; These two are swaped as I use quit more often
+       "d" #'evil-quit)         ; And the d is more reachable
 
-    ;; WINDOW BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'override
-      :prefix "SPC e" ; I know that window starts with a "w" but "e" is more reachable
-      "h" #'evil-window-move-far-left
-      "j" #'evil-window-move-very-bottom
-      "k" #'evil-window-move-very-top
-      "l" #'evil-window-move-far-right
-      "s" #'evil-window-split
-      "v" #'evil-window-vsplit)
+      ;; WINDOW BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       :prefix "SPC e" ; I know that window starts with a "w" but "e" is more reachable
+       "h" #'evil-window-move-far-left
+       "j" #'evil-window-move-very-bottom
+       "k" #'evil-window-move-very-top
+       "l" #'evil-window-move-far-right
+       "s" #'evil-window-split
+       "v" #'evil-window-vsplit)
 
-    ;; HELP BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'override
-      :prefix "SPC h"
-      "b" #'describe-bindings
-      "f" #'counsel-describe-function
-      "v" #'counsel-describe-variable)
+      ;; HELP BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       :prefix "SPC h"
+       "b" #'describe-bindings
+       "f" #'counsel-describe-function
+       "v" #'counsel-describe-variable)
 
-    ;; PROJECT BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'override
-      :prefix "SPC p"
-      "a" #'projectile-add-known-project
-      "d" #'projectile-remove-known-project
-      "f" #'counsel-projectile-find-file
-      "b" #'counsel-projectile-switch-to-buffer
-      "s" #'counsel-projectile-ag
-      "p" #'counsel-projectile-switch-project)
+      ;; PROJECT BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       :prefix "SPC p"
+       "a" #'projectile-add-known-project
+       "d" #'projectile-remove-known-project
+       "f" #'counsel-projectile-find-file
+       "b" #'counsel-projectile-switch-to-buffer
+       "s" #'counsel-projectile-ag
+       "p" #'counsel-projectile-switch-project)
 
-    ;; MISC BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'override
-      :prefix "SPC m"
-      "r" #'reload-init-file)
+      ;; MISC BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       :prefix "SPC m"
+       "r" #'reload-init-file)
 
-    ;; LOCAL ORG BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'org-mode-map
-      :prefix "SPC l"
-      "d" #'org-deadline
-      "c" #'org-ctrl-c-ctrl-c
-      "a" #'org-toggle-archive-tag)
+      ;; LOCAL ORG BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'org-mode-map
+       :prefix "SPC l"
+       "d" #'org-deadline
+       "c" #'org-ctrl-c-ctrl-c
+       "a" #'org-toggle-archive-tag)
 
-    ;; DIRED BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'dired-mode-map
-      "l" #'dired-find-file     ; Enter directory
-      "h" #'dired-up-directory) ; Go back
+      ;; DIRED BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'dired-mode-map
+       "l" #'dired-find-file     ; Enter directory
+       "h" #'dired-up-directory) ; Go back
 
-    ;; ORG CALENDAR PROMPT BINDINGS
-    (general-def org-read-date-minibuffer-local-map
-      "C-p" (my-org-in-calendar calendar-backward-day)
-      "C-n" (my-org-in-calendar calendar-forward-day)
-      "C-h" (my-org-in-calendar calendar-backward-week)
-      "C-l" (my-org-in-calendar calendar-forward-week)
-      "C-k" (my-org-in-calendar calendar-backward-month)
-      "C-j" (my-org-in-calendar calendar-forward-month))
+      ;; ORG CALENDAR PROMPT BINDINGS
+      (general-def org-read-date-minibuffer-local-map
+          "C-p" (my-org-in-calendar calendar-backward-day)
+          "C-n" (my-org-in-calendar calendar-forward-day)
+          "C-h" (my-org-in-calendar calendar-backward-week)
+          "C-l" (my-org-in-calendar calendar-forward-week)
+          "C-k" (my-org-in-calendar calendar-backward-month)
+          "C-j" (my-org-in-calendar calendar-forward-month))
 
-    ;; OPEN BINDINGS
-    (general-define-key
-      :states '(normal motion emacs)
-      :keymaps 'override
-      :prefix "SPC o"
-      "h" #'dired-home
-      "d" #'dired-current
-      "a" #'org-agenda
-      "f" #'find-file
-      "r" #'counsel-recentf
-      "p" #'find-user-settings-file
-      "P" #'find-user-init-file))
+      ;; OPEN BINDINGS
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       :prefix "SPC o"
+       "h" #'dired-home
+       "d" #'dired-current
+       "a" #'org-agenda
+       "f" #'find-file
+       "r" #'counsel-recentf
+       "p" #'find-user-settings-file
+       "P" #'find-user-init-file))
   #+end_src
