@@ -320,8 +320,6 @@ The blocks of Lisp are what really matters.
   #+begin_src emacs-lisp
   (use-package evil-collection
     :after evil
-    :custom
-    (evil-collection-setup-minibuffer t)
     :config
     (evil-collection-init))
   #+end_src
@@ -528,8 +526,22 @@ The blocks of Lisp are what really matters.
 
   Golang support. No completion in this module. But others exist if needed.
 
+  We are using tabs, as =go gmt=.
+
   #+begin_src emacs-lisp
-  (use-package go-mode)
+  (use-package go-mode
+    :config
+    (add-hook 'go-mode-hook (lambda ()
+      (setq tab-width 2))))
+  #+end_src
+
+* Lisp Support
+
+  Emacs does not really need a plugin, but the default indendation is
+  ugly so let's change it.
+
+  #+begin_src emacs-lisp
+  (setq lisp-indent-function 'common-lisp-indent-function)
   #+end_src
 
 * Indent guide
@@ -538,9 +550,9 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package highlight-indent-guides
-  :config
-  (setq highlight-indent-guides-method 'character)
-  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+    :config
+    (setq highlight-indent-guides-method 'character)
+    (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
   #+end_src
 
 * Keywords highlight
