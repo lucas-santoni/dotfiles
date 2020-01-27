@@ -1,12 +1,19 @@
 ## VIM
 abbr e "nvim"
+abbr ee "nvim ."
 
 ## VSCODE
 abbr c code
 
+## Finder
+abbr f open .
+
 ## PYTHON
 abbr pip pipenv
 abbr pip3 pipenv
+
+## NODE
+abbr yarn npm
 
 ## LS/TREE/EXA
 abbr ls "exa"

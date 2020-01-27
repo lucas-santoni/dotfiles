@@ -41,7 +41,7 @@ end
 # FZF commands
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
-# This does not work, bash seems to hang
+# This does not work, shell seems to hang
 # set -gx FZF_TMUX 1
 
 # Default editor
@@ -71,6 +71,9 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 
 # Disable venv display (handled by prompt)
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+
+# Nodenv
+status --is-interactive; and source (nodenv init -|psub)
 
 # Prompt
 starship init fish | source
