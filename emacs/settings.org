@@ -532,6 +532,17 @@ The blocks of Lisp are what really matters.
   (use-package go-mode)
   #+end_src
 
+* Indent guide
+
+  Indent guide for the code.
+
+  #+begin_src emacs-lisp
+  (use-package highlight-indent-guides
+  :config
+  (setq highlight-indent-guides-method 'character)
+  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+  #+end_src
+
 * Keywords highlight
 
   Highlight keywords such as TODO or FIXME.
