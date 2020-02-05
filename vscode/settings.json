@@ -2,7 +2,7 @@
   // ---------------------------------------------------------------------------
   // Found this font order in a tutorial, may not be necessary
   "workbench.colorTheme": "Calamity",
-  "editor.fontFamily": "PragmataPro, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
   "editor.fontSize": 17,
   "editor.fontLigatures": true,
@@ -167,6 +167,9 @@
   "window.nativeTabs": true,
   "workbench.editor.showTabs": false,
   "terminal.integrated.fontFamily": "Iosevka Term",
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish"
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "erlang.erlangPath": "/usr/local/bin/",
+  "erlang.rebarPath": "/usr/local/bin/",
+  "erlang.codeLensEnabled": true
   // ---------------------------------------------------------------------------
 }

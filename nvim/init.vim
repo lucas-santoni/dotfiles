@@ -1,15 +1,14 @@
 "Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'jacoborus/tender.vim' "Colors
+"Some colorschemes
+Plug 'connorholyday/vim-snazzy'
 Plug 'jiangmiao/auto-pairs' "Matching characters completions
-Plug '/usr/local/opt/fzf' "Brew path
-Plug 'junegunn/fzf.vim' "Actual Vim plugin
+Plug '/usr/local/opt/fzf' "FZF Brew installation path
+Plug 'junegunn/fzf.vim' "Actual FZF Vim plugin
 Plug 'tpope/vim-commentary' "Motions to comments
 Plug 'sheerun/vim-polyglot' "Just in case
 Plug 'blockloop/vim-swigjs' "Not in Polyglot?
-Plug 'junegunn/goyo.vim' "The :Goyo command
-Plug 'justinmk/vim-sneak' "The famous s motion
 Plug 'itchyny/lightline.vim' "Statusline
 Plug 'edkolev/tmuxline.vim' "Generate TMUX lines
 
@@ -38,10 +37,6 @@ filetype plugin indent on
 let g:sneak#s_next=1
 let g:sneak#use_ic_scs=1
 hi link Sneak None
-
-"Colorscheme
-set termguicolors
-colorscheme tender
 
 "Splits
 set splitright
@@ -75,6 +70,14 @@ set list
 set expandtab
 let &listchars="tab:\u2192 ,extends:>,precedes:<,trail:\u00b7"
 
+"Colorscheme
+set termguicolors
+colorscheme snazzy
+
+"Color fixes
+" hi Normal guibg=NONE ctermbg=NONE
+hi VertSplit guibg=NONE guifg=#444444
+
 "But still insert tab
 inoremap hh <C-V><Tab>
 
@@ -96,11 +99,8 @@ let g:vim_markdown_frontmatter=1
 nnoremap <silent> <Leader>f :FZF <CR>
 nnoremap <silent> <Leader><Leader> :Buffers<CR>
 let g:fzf_layout={ 'window': '10new' }
-" Enough for dark
-" let g:fzf_colors={ 'bg+': ['bg', 'Normal', 'CursorColumn'] }
-" Better for light
 let g:fzf_colors =
-  \ { 'fg':      ['fg', 'Normal'],
+\ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -120,13 +120,6 @@ autocmd! FileType fzf set laststatus=0 noshowmode noruler
 "FZF as a grepper also
 nnoremap <silent> <Leader>h :Ag<CR>
 
-"Goyo configuration
-let g:goyo_width=90
-nnoremap <silent> <Leader>g :Goyo<CR>
-
-"Cleaner vertical split
-" hi VertSplit guibg=None guifg=black
-
 "Cleaner UI
 set shortmess+=WI
 set noshowmode
@@ -137,7 +130,7 @@ set secure
 
 "Statusline
 let g:lightline={
-      \ 'colorscheme'  : 'tender',
+      \ 'colorscheme'  : 'snazzy',
       \ 'component'    : {
       \   'readonly': '%{&readonly?"":""}',
       \ },

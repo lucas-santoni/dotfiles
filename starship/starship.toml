@@ -58,8 +58,11 @@ style = "bold white"
 [jobs]
 symbol = "+"
 
-# [nodejs]
-# symbol = ""
+[nodejs]
+symbol = "N "
+
+[python]
+symbol = "P "
 
 [env_var]
 disabled = true
