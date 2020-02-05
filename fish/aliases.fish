@@ -5,8 +5,15 @@ abbr ee "nvim ."
 ## VSCODE
 abbr c code
 
-## Finder
+## FINDER
 abbr f open .
+
+## FZF
+## Usually bound to some keys
+## But sometimes they are not available
+abbr fr fzf-history-widget
+abbr ft fzf-file-widget
+abbr fh fzf-cd-widget
 
 ## PYTHON
 abbr pip pipenv
@@ -81,6 +88,3 @@ abbr dcpsa "docker-compose ps -a"
 
 ## BAT
 abbr cat "bat --style=numbers,changes"
-
-## BLOG
-abbr blog "docker run --rm -v $HOME/Documents/blog:/srv/jekyll -v $HOME/.jekyll-gems:/usr/local/bundle -p 127.0.0.1:4000:4000 jekyll/jekyll:latest jekyll"
