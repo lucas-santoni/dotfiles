@@ -82,6 +82,15 @@ The blocks of Lisp are what really matters.
      (load-file user-init-file))
    #+end_src
 
+** Set a programming font
+
+   #+begin_src emacs-lisp
+   (defun enable-code-font ()
+     (interactive)
+     (setq buffer-face-mode-face '(:family "Iosevka" :height 170))
+     (buffer-face-mode))
+   #+end_src
+
 * UI Elements
 ** Titlebar
 
@@ -232,12 +241,35 @@ The blocks of Lisp are what really matters.
 * Theming
 ** Font
 
+   I want to have different fonts for what is code and what is not. The default
+   font is the /not code/ one. The /is code/ font is hooked to
+   =prog-mode-hook=. Most programming modes inherit from it. We could still do
+   manual hooking if we find a programming mode that does not.
+
    #+begin_src emacs-lisp
-   (set-face-attribute 'default nil
-                       :family "Iosevka"
-                       :height 170
-                       :weight 'normal
-                       :width 'normal)
+   (set-frame-font "Iosevka Slab 17" nil t)
+   #+end_src
+
+   Hook for the /is code/ font:
+
+   #+begin_src emacs-lisp
+   (add-hook 'prog-mode-hook #'enable-code-font)
+   #+end_src
+
+   We also need to tweak the code fonts for the Markdown mode:
+
+   #+begin_src emacs-lisp
+   (custom-set-faces
+    '(markdown-code-face ((t (:family "Iosevka"))))
+    '(markdown-inline-code-face ((t (:family "Iosevka")))))
+   #+end_src
+
+   And for Org:
+
+   #+begin_src emacs-lisp
+   (custom-set-faces
+    '(org-code ((t (:family "Iosevka"))))
+    '(org-src-block-face ((t (:family "Iosevka")))))
    #+end_src
 
 ** Modus Themes
@@ -263,7 +295,7 @@ The blocks of Lisp are what really matters.
    ;;   (setq
    ;;    doom-themes-enable-bold t
    ;;    doom-themes-enable-italic t)
-   ;;   (load-theme 'doom-challenger-deep t)
+   ;;   (load-theme 'doom-snazzy t)
    ;;   (doom-themes-org-config)) ; Org mode fontification
    #+end_src
 
@@ -273,29 +305,25 @@ The blocks of Lisp are what really matters.
    other themes without too much trouble.
 
    #+begin_src emacs-lisp
-   (use-package doom-modeline
-       :config
-     (setq
-      doom-modeline-buffer-modification-icon nil
-      doom-modeline-buffer-encoding nil)
-     :hook (after-init . doom-modeline-mode))
+   ;; (use-package doom-modeline
+   ;;     :config
+   ;;   (setq
+   ;;    doom-modeline-buffer-modification-icon nil
+   ;;    doom-modeline-buffer-encoding nil)
+   ;;   :hook (after-init . doom-modeline-mode))
    #+end_src
 
 ** Hide minor modes
 
-   Using both Delight and Use-Package allows to hide minor modes. This
-   is actually not required while using Doom Modeline as it already
-   takes care of that for us.
+   We could use Delight but using a regular expression makes it super
+   easy so I prefer Rich-Minority.
 
    #+begin_src emacs-lisp
-                                           ; (use-package delight)
-   #+end_src
-
-   Some modes, such as Eldoc, can not be reached using Use-Package so
-   we have to disable them manually.
-
-   #+begin_src emacs-lisp
-                                           ; (global-eldoc-mode -1)
+   (use-package rich-minority
+       :config
+     (unless rich-minority-mode
+       (rich-minority-mode 1))
+     (setf rm-blacklist ""))
    #+end_src
 
 * Evil
@@ -315,7 +343,10 @@ The blocks of Lisp are what really matters.
        evil-vsplit-window-right t       ;; New vertical splits are put on the right
        evil-split-window-below t        ;; New horizontal splits are put on the bottom
        evil-want-keybinding nil         ;; Required for evil-collection
-       evil-want-C-u-scroll t)          ;; Otherwise it is an Emacs prefix
+       evil-want-C-u-scroll t           ;; Otherwise it is an Emacs prefix
+       evil-normal-state-tag ""
+       evil-insert-state-tag ""
+       evil-visual-state-tag "")
       :config
       (evil-mode))
   #+end_src
@@ -432,8 +463,8 @@ The blocks of Lisp are what really matters.
      ivy-rich--display-transformers-list
      '(ivy-switch-buffer
        (:columns
-        ((ivy-rich-switch-buffer-icon (:width 2))
-         (ivy-rich-candidate (:width 30))
+        ((ivy-rich-candidate (:width 30))
+         ;; (ivy-rich-switch-buffer-icon (:width 2))
          (ivy-rich-switch-buffer-size (:width 7))
          (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
          (ivy-rich-switch-buffer-major-mode (:width 20 :face warning))
@@ -558,6 +589,41 @@ The blocks of Lisp are what really matters.
 
   (indent-tabs-mode nil)
 
+* Fish Support
+
+  Nice to edit Fish configuration files or scripts in Emacs.
+
+  #+begin_src emacs-lisp
+  (use-package fish-mode)
+  #+end_src
+
+  (indent-tabs-mode nil)
+
+* Markdown Support
+
+  #+begin_src emacs-lisp
+  (use-package markdown-mode
+      :commands (markdown-mode gfm-mode)
+      :mode (("README\\.md\\'" . gfm-mode)
+             ("\\.md\\'" . markdown-mode)
+             ("\\.markdown\\'" . markdown-mode))
+      :init (setq markdown-command "multimarkdown"))
+  #+end_src
+
+* Erlang Support
+
+  Erlang is shipped with a mode that you can use but I wanted to stick
+  to =use-package=.
+
+  #+begin_src emacs-lisp
+  (use-package erlang
+      :config
+    (add-hook 'erlang-mode-hook (lambda ()
+                                  (setq erlang-indent-level 2))))
+  #+end_src
+
+  (indent-tabs-mode nil)
+
 * Indent guide
 
   Indent guide for the code.
@@ -567,6 +633,13 @@ The blocks of Lisp are what really matters.
       :config
     (setq highlight-indent-guides-method 'character)
     (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+  #+end_src
+
+* VTerm
+  Terminal inside Emacs!
+
+  #+begin_src emacs-lisp
+  (use-package vterm)
   #+end_src
 
 * Keywords highlight
@@ -680,6 +753,10 @@ The blocks of Lisp are what really matters.
           "C-k" (my-org-in-calendar calendar-backward-month)
           "C-j" (my-org-in-calendar calendar-forward-month))
 
+      ;; EVIL + MARKDOWN
+      (evil-define-key 'normal markdown-mode-map
+        (kbd "<tab>") 'markdown-cycle)
+
       ;; OPEN BINDINGS
       (general-define-key
        :states '(normal motion emacs)
@@ -691,5 +768,9 @@ The blocks of Lisp are what really matters.
        "f" #'find-file
        "r" #'counsel-recentf
        "p" #'find-user-settings-file
+       "t" #'vterm
+       "T" #'vterm-other-window
        "P" #'find-user-init-file))
   #+end_src
+
+  End of keybindings!
