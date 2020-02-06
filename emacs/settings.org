@@ -326,6 +326,30 @@ The blocks of Lisp are what really matters.
      (setf rm-blacklist ""))
    #+end_src
 
+* Dashboard
+  A nice dashboard on startup!
+
+  #+begin_src emacs-lisp
+  (use-package dashboard
+      :ensure t
+      :config
+      (setq
+       dashboard-startup-banner 3
+       dashboard-page-separator "\n\n"
+       dashboard-banner-logo-title nil
+       dashboard-set-init-info nil
+       dashboard-show-shortcuts nil
+       dashboard-set-footer nil
+       dashboard-set-heading-icons t
+       dashboard-center-content t
+       dashboard-set-file-icons t
+       show-week-agenda-p t
+       dashboard-items '((recents   . 5)
+                         (projects  . 5)
+                         (agenda    . 5)))
+      (dashboard-setup-startup-hook))
+  #+end_src
+
 * Evil
 
   Evil brings Vim bindings to Emacs.
