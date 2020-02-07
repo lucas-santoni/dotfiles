@@ -2,7 +2,8 @@
 call plug#begin('~/.vim/plugged')
 
 "Some colorschemes
-Plug 'connorholyday/vim-snazzy'
+Plug 'chriskempson/base16-vim'
+Plug 'mike-hearn/base16-vim-lightline'
 Plug 'jiangmiao/auto-pairs' "Matching characters completions
 Plug '/usr/local/opt/fzf' "FZF Brew installation path
 Plug 'junegunn/fzf.vim' "Actual FZF Vim plugin
@@ -72,7 +73,7 @@ let &listchars="tab:\u2192 ,extends:>,precedes:<,trail:\u00b7"
 
 "Colorscheme
 set termguicolors
-colorscheme snazzy
+colorscheme base16-default-dark
 
 "Color fixes
 " hi Normal guibg=NONE ctermbg=NONE
@@ -130,7 +131,7 @@ set secure
 
 "Statusline
 let g:lightline={
-      \ 'colorscheme'  : 'snazzy',
+      \ 'colorscheme'  : 'base16_default_dark',
       \ 'component'    : {
       \   'readonly': '%{&readonly?"":""}',
       \ },
