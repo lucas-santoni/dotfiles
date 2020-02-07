@@ -5,13 +5,23 @@ See =init.el= to understand how this configuration is loaded.
 The blocks of Lisp are what really matters.
 
 * Things to do
-** TODO Deal with trailing spaces
-** TODO Deal with tabs
-** TODO Org TODOs states
-** TODO Org TODOs deadlines
+** TODO Remove Evil =--MODE--= thing
+** TODO Fix =PATH=
 ** TODO Org links insertion
 ** TODO Org next/previous heading (see =doom.d/=)
 ** TODO Org go back (see =doom.d/=)
+* Update packages
+
+  Make sure that all the installed packages are kept up to date.
+
+  #+begin_src emacs-lisp
+  (use-package auto-package-update
+      :config
+    (setq auto-package-update-delete-old-versions t
+          auto-package-update-hide-results t)
+    (auto-package-update-maybe))
+  #+end_src
+
 * Helper Functions
 ** Edit configuration file
 
@@ -91,6 +101,18 @@ The blocks of Lisp are what really matters.
      (buffer-face-mode))
    #+end_src
 
+** Indent buffer
+
+   This functions indents the whole buffer. It is bound to =SPC \== and
+   works better that the standard Evil motion =gg=G= as it does not
+   jump around the buffer.
+
+   #+begin_src emacs-lisp
+   (defun indent-buffer ()
+     (interactive)
+     (indent-region (point-min) (point-max)))
+   #+end_src
+
 * UI Elements
 ** Titlebar
 
@@ -104,7 +126,7 @@ The blocks of Lisp are what really matters.
    Also, change the window title to more appropriate name.
 
    #+begin_src emacs-lisp
-   (setq frame-title-format "Satan")
+   (setq frame-title-format "Emacs")
    #+end_src
 
 ** Cleaner UI
@@ -122,7 +144,7 @@ The blocks of Lisp are what really matters.
    The window is too small and badly positioned by default.
 
    #+begin_src emacs-lisp
-   (setq initial-frame-alist '((top . 50) (left . 90) (width . 140) (height . 42)))
+   (setq initial-frame-alist '((top . 50) (left . 350) (width . 90) (height . 42)))
    #+end_src
 
 ** Fringe
@@ -132,6 +154,39 @@ The blocks of Lisp are what really matters.
    #+begin_src emacs-lisp
    (set-face-attribute 'fringe nil :background nil)
    #+end_src
+
+   Disable the fringe.
+
+   #+begin_src emacs-lisp
+   ;; (set-face-attribute 'fringe nil :background nil)
+   (set-fringe-mode 0)
+   #+end_src
+
+* Dashboard
+
+  A nice dashboard on startup!
+
+  #+begin_src emacs-lisp
+  (use-package dashboard
+      :ensure t
+      :config
+      (setq
+       dashboard-startup-banner 1
+       dashboard-page-separator "\n\n"
+       dashboard-banner-logo-title nil
+       dashboard-set-init-info nil
+       dashboard-init-info (format "\n\f")
+       dashboard-show-shortcuts nil
+       dashboard-set-footer nil
+       dashboard-set-heading-icons t
+       dashboard-center-content t
+       dashboard-set-file-icons t
+       show-week-agenda-p t
+       dashboard-items '((recents   . 5)
+                         (projects  . 5)
+                         (agenda    . 5)))
+      (dashboard-setup-startup-hook))
+  #+end_src
 
 * General Settings
 ** Custom
@@ -239,6 +294,80 @@ The blocks of Lisp are what really matters.
    #+end_src
 
 * Theming
+** Modus Themes
+
+   See [[https://gitlab.com/protesilaos/modus-themes][this link]]. Modus Operandi is the light versions, whereas Modus Vivendi is the
+   black one. The default vertical border is a bit to bright.
+
+   #+begin_src emacs-lisp
+   ;; (use-package modus-vivendi-theme
+   ;;     :config
+   ;;   (set-face-background 'vertical-border "#333")
+   ;;   (set-face-foreground 'vertical-border (face-background 'vertical-border)))
+   #+end_src
+
+** Base16 Themes
+
+   #+begin_src emacs-lisp
+   ;; (use-package base16-theme
+   ;;     :ensure t
+   ;;     :config
+   ;;     (load-theme 'base16-default-dark t))
+
+   ;; Set the cursor color based on the evil state
+   ;; (defvar my/base16-colors base16-default-dark-colors)
+   ;; (setq evil-emacs-state-cursor   `(,(plist-get my/base16-colors :base0D) box)
+   ;;       evil-insert-state-cursor  `(,(plist-get my/base16-colors :base0D) bar)
+   ;;       evil-motion-state-cursor  `(,(plist-get my/base16-colors :base0E) box)
+   ;;       evil-normal-state-cursor  `(,(plist-get my/base16-colors :base0B) box)
+   ;;       evil-replace-state-cursor `(,(plist-get my/base16-colors :base08) bar)
+   ;;       evil-visual-state-cursor  `(,(plist-get my/base16-colors :base09) box))
+   #+end_src
+
+** Doom Themes
+
+   The collection of themes from Doom Emacs. They look especially good
+   with Doom Modeline. The full list is [[https://github.com/hlissner/emacs-doom-themes][available here]].
+
+   #+begin_src emacs-lisp
+   (use-package doom-themes
+       :config
+     (setq
+      doom-themes-enable-bold t
+      doom-themes-enable-italic t)
+     (load-theme 'doom-tomorrow-night t)
+     (doom-themes-org-config)) ; Org mode fontification
+   #+end_src
+
+** Doom Modeline
+
+   Looks especially good with Doom Themes but can actually fit with
+   other themes without too much trouble.
+
+   #+begin_src emacs-lisp
+   (use-package doom-modeline
+       :config
+     (setq
+      ;; doom-modeline-modal-icon t
+      ;; doom-modeline-major-mode-icon t
+      doom-modeline-buffer-modification-icon nil
+      doom-modeline-buffer-encoding nil)
+     :hook (after-init . doom-modeline-mode))
+   #+end_src
+
+** Hide minor modes
+
+   We could use Delight but using a regular expression makes it super
+   easy so I prefer Rich-Minority.
+
+   #+begin_src emacs-lisp
+   (use-package rich-minority
+       :config
+     (unless rich-minority-mode
+       (rich-minority-mode 1))
+     (setf rm-blacklist ""))
+   #+end_src
+
 ** Font
 
    I want to have different fonts for what is code and what is not. The default
@@ -269,86 +398,8 @@ The blocks of Lisp are what really matters.
    #+begin_src emacs-lisp
    (custom-set-faces
     '(org-code ((t (:family "Iosevka"))))
-    '(org-src-block-face ((t (:family "Iosevka")))))
+    '(org-block ((t (:family "Iosevka")))))
    #+end_src
-
-** Modus Themes
-
-   See [[https://gitlab.com/protesilaos/modus-themes][this link]]. Modus Operandi is the light versions, whereas Modus Vivendi is the
-   black one. The default vertical border is a bit to bright.
-
-   #+begin_src emacs-lisp
-   (use-package modus-vivendi-theme
-       :config
-     (set-face-background 'vertical-border "#333")
-     (set-face-foreground 'vertical-border (face-background 'vertical-border)))
-   #+end_src
-
-** Doom Themes
-
-   The collection of themes from Doom Emacs. They look especially good
-   with Doom Modeline. The full list is [[https://github.com/hlissner/emacs-doom-themes][available here]].
-
-   #+begin_src emacs-lisp
-   ;; (use-package doom-themes
-   ;;     :config
-   ;;   (setq
-   ;;    doom-themes-enable-bold t
-   ;;    doom-themes-enable-italic t)
-   ;;   (load-theme 'doom-snazzy t)
-   ;;   (doom-themes-org-config)) ; Org mode fontification
-   #+end_src
-
-** Doom Modeline
-
-   Looks especially good with Doom Themes but can actually fit with
-   other themes without too much trouble.
-
-   #+begin_src emacs-lisp
-   ;; (use-package doom-modeline
-   ;;     :config
-   ;;   (setq
-   ;;    doom-modeline-buffer-modification-icon nil
-   ;;    doom-modeline-buffer-encoding nil)
-   ;;   :hook (after-init . doom-modeline-mode))
-   #+end_src
-
-** Hide minor modes
-
-   We could use Delight but using a regular expression makes it super
-   easy so I prefer Rich-Minority.
-
-   #+begin_src emacs-lisp
-   (use-package rich-minority
-       :config
-     (unless rich-minority-mode
-       (rich-minority-mode 1))
-     (setf rm-blacklist ""))
-   #+end_src
-
-* Dashboard
-  A nice dashboard on startup!
-
-  #+begin_src emacs-lisp
-  (use-package dashboard
-      :ensure t
-      :config
-      (setq
-       dashboard-startup-banner 3
-       dashboard-page-separator "\n\n"
-       dashboard-banner-logo-title nil
-       dashboard-set-init-info nil
-       dashboard-show-shortcuts nil
-       dashboard-set-footer nil
-       dashboard-set-heading-icons t
-       dashboard-center-content t
-       dashboard-set-file-icons t
-       show-week-agenda-p t
-       dashboard-items '((recents   . 5)
-                         (projects  . 5)
-                         (agenda    . 5)))
-      (dashboard-setup-startup-hook))
-  #+end_src
 
 * Evil
 
@@ -356,23 +407,18 @@ The blocks of Lisp are what really matters.
 
   #+begin_src emacs-lisp
   (use-package evil
-      ;; A few bonus keybinds for Evil that are relevant everywhere
-      :bind (("C-j" . evil-scroll-line-down)
-             ("C-k" . evil-scroll-line-up)
-             ("C-s" . evil-ex-search-forward)
-             ("C-h" . evil-ex-nohighlight))
       :init
-      (setq
-       evil-search-module #'evil-search ;; Evil own search module
-       evil-vsplit-window-right t       ;; New vertical splits are put on the right
-       evil-split-window-below t        ;; New horizontal splits are put on the bottom
-       evil-want-keybinding nil         ;; Required for evil-collection
-       evil-want-C-u-scroll t           ;; Otherwise it is an Emacs prefix
-       evil-normal-state-tag ""
-       evil-insert-state-tag ""
-       evil-visual-state-tag "")
-      :config
-      (evil-mode))
+    (setq
+     evil-search-module #'evil-search ;; Evil own search module
+     evil-vsplit-window-right t       ;; New vertical splits are put on the right
+     evil-split-window-below t        ;; New horizontal splits are put on the bottom
+     evil-want-keybinding nil         ;; Required for evil-collection
+     evil-want-C-u-scroll t           ;; Otherwise it is an Emacs prefix
+     evil-normal-state-tag ""
+     evil-insert-state-tag ""
+     evil-visual-state-tag "")
+    :config
+    (evil-mode))
   #+end_src
 
 * Evil Collection
@@ -463,7 +509,7 @@ The blocks of Lisp are what really matters.
   (use-package ivy
       :config
     (setq
-     ivy-re-builders-alist '((t . ivy--regex-fuzzy)) ; Fuzzy research
+     ;; ivy-re-builders-alist '((t . ivy--regex-fuzzy)) ; Fuzzy research
      ivy-format-function #'ivy-format-function-line  ; Don't know what this is
      ivy-height 17                                   ; Fixed height for the buffer
      ivy-fixed-height-minibuffer t                   ; And fix the height
@@ -659,13 +705,6 @@ The blocks of Lisp are what really matters.
     (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
   #+end_src
 
-* VTerm
-  Terminal inside Emacs!
-
-  #+begin_src emacs-lisp
-  (use-package vterm)
-  #+end_src
-
 * Keywords highlight
 
   Highlight keywords such as TODO or FIXME.
@@ -687,11 +726,15 @@ The blocks of Lisp are what really matters.
       :after counsel
       :config
       (general-evil-setup t)
+      (general-auto-unbind-keys)
 
+      ;; IMMEDIATE BINDINGS
       (general-define-key
        :states '(normal motion emacs)
        :keymaps 'override
        :prefix "SPC"
+       "SPC" #'counsel-projectile-find-file
+       "=" #'indent-buffer
        ":" #'counsel-M-x)
 
       ;; BUFFER BINDINGS
@@ -731,6 +774,7 @@ The blocks of Lisp are what really matters.
        :prefix "SPC h"
        "b" #'describe-bindings
        "f" #'counsel-describe-function
+       "a" #'counsel-describe-face
        "v" #'counsel-describe-variable)
 
       ;; PROJECT BINDINGS
@@ -742,7 +786,6 @@ The blocks of Lisp are what really matters.
        "d" #'projectile-remove-known-project
        "f" #'counsel-projectile-find-file
        "b" #'counsel-projectile-switch-to-buffer
-       "s" #'counsel-projectile-ag
        "p" #'counsel-projectile-switch-project)
 
       ;; MISC BINDINGS
@@ -781,6 +824,16 @@ The blocks of Lisp are what really matters.
       (evil-define-key 'normal markdown-mode-map
         (kbd "<tab>") 'markdown-cycle)
 
+      ;; EVIL
+      ;; A few bonus keybinds for Evil that are relevant everywhere
+      (general-define-key
+       :states '(normal motion emacs)
+       :keymaps 'override
+       "C-j" #'evil-scroll-line-down
+       "C-k" #'evil-scroll-line-up
+       "C-s" #'evil-ex-search-forward
+       "C-h" #'evil-ex-nohighlight)
+
       ;; OPEN BINDINGS
       (general-define-key
        :states '(normal motion emacs)
@@ -792,8 +845,6 @@ The blocks of Lisp are what really matters.
        "f" #'find-file
        "r" #'counsel-recentf
        "p" #'find-user-settings-file
-       "t" #'vterm
-       "T" #'vterm-other-window
        "P" #'find-user-init-file))
   #+end_src
 
