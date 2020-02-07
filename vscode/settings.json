@@ -1,7 +1,4 @@
 {
-  // ---------------------------------------------------------------------------
-  // Found this font order in a tutorial, may not be necessary
-  "workbench.colorTheme": "Calamity",
   "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
   "editor.fontSize": 17,
@@ -39,8 +36,8 @@
   "workbench.colorCustomizations": {
     // Nuances can be generated with
     // https://superdevresources.com/tools/color-shades
-    // "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
-    // "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
+    "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
+    "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
     // "statusBar.debuggingBackground": "#333", // When in live debugging
     // "notificationCenter.border": "#aaa",
     // "notifications.border": "#aaa",
@@ -90,11 +87,13 @@
   "C_Cpp.default.intelliSenseMode": "clang-x64",
   // ---------------------------------------------------------------------------
   "eslint.run": "onSave",
-  "eslint.validate": [ // Parse .js/.ts/.jsx/tsx
+  // Parse all the extensions
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    { "language": "svelte" }
   ],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -170,6 +169,7 @@
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "erlang.erlangPath": "/usr/local/bin/",
   "erlang.rebarPath": "/usr/local/bin/",
-  "erlang.codeLensEnabled": true
+  "erlang.codeLensEnabled": true,
+  "workbench.iconTheme": "vscode-icons"
   // ---------------------------------------------------------------------------
 }
