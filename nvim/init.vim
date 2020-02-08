@@ -115,8 +115,8 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 "Hiding fzf statusline is nicer for light theme
-autocmd! FileType fzf set laststatus=0 noshowmode noruler
-      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+" autocmd! FileType fzf set laststatus=0 noshowmode noruler
+"       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 "FZF as a grepper also
 nnoremap <silent> <Leader>h :Ag<CR>
