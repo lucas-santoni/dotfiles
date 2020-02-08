@@ -167,25 +167,25 @@ The blocks of Lisp are what really matters.
   A nice dashboard on startup!
 
   #+begin_src emacs-lisp
-  (use-package dashboard
-      :ensure t
-      :config
-      (setq
-       dashboard-startup-banner 1
-       dashboard-page-separator "\n\n"
-       dashboard-banner-logo-title nil
-       dashboard-set-init-info nil
-       dashboard-init-info (format "\n\f")
-       dashboard-show-shortcuts nil
-       dashboard-set-footer nil
-       dashboard-set-heading-icons t
-       dashboard-center-content t
-       dashboard-set-file-icons t
-       show-week-agenda-p t
-       dashboard-items '((recents   . 5)
-                         (projects  . 5)
-                         (agenda    . 5)))
-      (dashboard-setup-startup-hook))
+  ;; (use-package dashboard
+  ;;     :ensure t
+  ;;     :config
+  ;;     (setq
+  ;;      dashboard-startup-banner 1
+  ;;      dashboard-page-separator "\n\n"
+  ;;      dashboard-banner-logo-title nil
+  ;;      dashboard-set-init-info nil
+  ;;      dashboard-init-info (format "\n\f")
+  ;;      dashboard-show-shortcuts nil
+  ;;      dashboard-set-footer nil
+  ;;      dashboard-set-heading-icons t
+  ;;      dashboard-center-content t
+  ;;      dashboard-set-file-icons t
+  ;;      show-week-agenda-p t
+  ;;      dashboard-items '((recents   . 5)
+  ;;                        (projects  . 5)
+  ;;                        (agenda    . 5)))
+  ;;     (dashboard-setup-startup-hook))
   #+end_src
 
 * General Settings
@@ -335,7 +335,7 @@ The blocks of Lisp are what really matters.
      (setq
       doom-themes-enable-bold t
       doom-themes-enable-italic t)
-     (load-theme 'doom-tomorrow-night t)
+     (load-theme 'doom-one-light t)
      (doom-themes-org-config)) ; Org mode fontification
    #+end_src
 
@@ -399,6 +399,12 @@ The blocks of Lisp are what really matters.
    (custom-set-faces
     '(org-code ((t (:family "Iosevka"))))
     '(org-block ((t (:family "Iosevka")))))
+   #+end_src
+
+   And we need a fix in order to properly display emojis:
+
+   #+begin_src emacs-lisp
+   (set-fontset-font "fontset-default" 'unicode "Apple Color Emoji" nil 'prepend)
    #+end_src
 
 * Evil
