@@ -47,18 +47,21 @@ set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 # Default editor
 set -gx EDITOR nvim
 
+# Locales
+set -gx LC_CTYPE fr_FR.UTF-8
+set -gx LC_ALL fr_FR.UTF-8
+
 # Go main workspace
 set -gx GOPATH $HOME/Documents/go
 
 # Go binaries
 set -gx PATH $GOPATH/bin $PATH
 
-# Locales
-set -gx LC_CTYPE fr_FR.UTF-8
-set -gx LC_ALL fr_FR.UTF-8
-
 # Bat
 set -gx BAT_THEME "base16"
+
+# All the shit
+set -gx PATH "/usr/local/bin" $PATH
 
 # Non-Apple Ruby
 set -gx PATH "/usr/local/opt/ruby/bin" $PATH
