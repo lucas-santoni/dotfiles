@@ -15,10 +15,7 @@
   // ---------------------------------------------------------------------------
   "terminal.integrated.fontSize": 18,
   // ---------------------------------------------------------------------------
-  "extensions.ignoreRecommendations": false, // No extensions recommendations
-  // ---------------------------------------------------------------------------
-  "window.title": "${activeEditorShort}",
-  "window.titleBarStyle": "native",
+  "extensions.ignoreRecommendations": false,
   // ---------------------------------------------------------------------------
   "editor.detectIndentation": false, // Do not adapt to opened file indentation settings
   "[python]": {

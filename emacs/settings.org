@@ -808,6 +808,7 @@ The blocks of Lisp are what really matters.
        :prefix "SPC l"
        "d" #'org-deadline
        "c" #'org-ctrl-c-ctrl-c
+       "o" #'org-open-at-point
        "a" #'org-toggle-archive-tag)
 
       ;; DIRED BINDINGS
