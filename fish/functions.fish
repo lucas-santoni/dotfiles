@@ -59,3 +59,7 @@ end
 function fcode
   pygmentize -f rtf -O "fontface=Iosevka" $argv[1] | pbcopy
 end
+
+function reset_audio
+  sudo killall coreaudiod
+end
