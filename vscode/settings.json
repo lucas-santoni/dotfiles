@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "Iosevka, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Iosevka Slab, Consolas, 'Courier New', monospace",
   "editor.fontWeight": "400", // Normal
   "editor.fontSize": 17,
   "editor.fontLigatures": true,
@@ -11,7 +11,6 @@
   "editor.suggestSelection": "first",
   "editor.renderLineHighlight": "all",
   "editor.lightbulb.enabled": false,
-  "editor.scrollbar.horizontal": "hidden",
   // ---------------------------------------------------------------------------
   "terminal.integrated.fontSize": 18,
   // ---------------------------------------------------------------------------
@@ -80,8 +79,8 @@
     }
   ],
   // ---------------------------------------------------------------------------
-  "C_Cpp.default.cppStandard": "c++17",
-  "C_Cpp.default.intelliSenseMode": "clang-x64",
+  // "C_Cpp.default.cppStandard": "c++17",
+  // "C_Cpp.default.intelliSenseMode": "clang-x64",
   // ---------------------------------------------------------------------------
   "eslint.run": "onSave",
   // Parse all the extensions
@@ -90,7 +89,7 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    { "language": "svelte" }
+    "svelte"
   ],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -99,7 +98,7 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
   // ---------------------------------------------------------------------------
-  "java.errors.incompleteClasspath.severity": "ignore",
+  // "java.errors.incompleteClasspath.severity": "ignore",
   // ---------------------------------------------------------------------------
   "python.linting.enabled": true,
   "python.linting.mypyEnabled": false, // Check types, enabled on project basis
@@ -108,17 +107,14 @@
   "python.jediEnabled": false, // No care
   "python.linting.pydocstyleEnabled": false, // Included in flake8
   // ---------------------------------------------------------------------------
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.message.update.show": false,
-  // ---------------------------------------------------------------------------
-  "crystal-lang.compiler": "/usr/local/bin/crystal",
-  "crystal-lang.completion": true,
-  "crystal-lang.hover": true,
-  "crystal-lang.implementations": true,
+  // "crystal-lang.compiler": "/usr/local/bin/crystal",
+  // "crystal-lang.completion": true,
+  // "crystal-lang.hover": true,
+  // "crystal-lang.implementations": true,
   // ---------------------------------------------------------------------------
   // Server is at false for now as it breaks the autocompletion of
   // not imported packages, fields completion
-  "go.useLanguageServer": false,
+  "go.useLanguageServer": true,
   "[go]": {
     "editor.snippetSuggestions": "none",
     "editor.formatOnSave": true,
@@ -155,7 +151,8 @@
   "files.associations": {
     ".eslintrc": "jsonc",
     "*.prisma": "graphql",
-    "*.html": "html"
+    "*.html": "html",
+    "*.pl": "prolog"
   },
   "zenMode.fullScreen": false,
   "zenMode.hideStatusBar": false,
@@ -168,5 +165,4 @@
   "erlang.rebarPath": "/usr/local/bin/",
   "erlang.codeLensEnabled": true,
   "workbench.iconTheme": "vscode-icons"
-  // ---------------------------------------------------------------------------
 }

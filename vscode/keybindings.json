@@ -1,5 +1,3 @@
-// While Vim bindings relies on the ctrl key and letters in normal mode,
-// VSCode bindings mostly relies on the cmd key
 [
   {
     "key": "cmd+p",
@@ -20,7 +18,7 @@
   },
   {
     "key": "ctrl+l",
-    "command": "workbench.action.openNextRecentlyUsedEditorInGroup"
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
   },
   {
     "key": "ctrl+l",
@@ -29,7 +27,7 @@
   },
   {
     "key": "ctrl+h",
-    "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+    "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
   },
   {
     "key": "ctrl+h",

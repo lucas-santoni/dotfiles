@@ -300,10 +300,10 @@ The blocks of Lisp are what really matters.
    black one. The default vertical border is a bit to bright.
 
    #+begin_src emacs-lisp
-   ;; (use-package modus-vivendi-theme
-   ;;     :config
-   ;;   (set-face-background 'vertical-border "#333")
-   ;;   (set-face-foreground 'vertical-border (face-background 'vertical-border)))
+   (use-package modus-vivendi-theme
+       :config
+     (set-face-background 'vertical-border "#333")
+     (set-face-foreground 'vertical-border (face-background 'vertical-border)))
    #+end_src
 
 ** Base16 Themes
@@ -330,13 +330,13 @@ The blocks of Lisp are what really matters.
    with Doom Modeline. The full list is [[https://github.com/hlissner/emacs-doom-themes][available here]].
 
    #+begin_src emacs-lisp
-   (use-package doom-themes
-       :config
-     (setq
-      doom-themes-enable-bold t
-      doom-themes-enable-italic t)
-     (load-theme 'doom-one-light t)
-     (doom-themes-org-config)) ; Org mode fontification
+   ;; (use-package doom-themes
+   ;;     :config
+   ;;   (setq
+   ;;    doom-themes-enable-bold t
+   ;;    doom-themes-enable-italic t)
+   ;;   (load-theme 'doom-one t)
+   ;;   (doom-themes-org-config)) ; Org mode fontification
    #+end_src
 
 ** Doom Modeline
@@ -345,14 +345,14 @@ The blocks of Lisp are what really matters.
    other themes without too much trouble.
 
    #+begin_src emacs-lisp
-   (use-package doom-modeline
-       :config
-     (setq
-      ;; doom-modeline-modal-icon t
-      ;; doom-modeline-major-mode-icon t
-      doom-modeline-buffer-modification-icon nil
-      doom-modeline-buffer-encoding nil)
-     :hook (after-init . doom-modeline-mode))
+   ;; (use-package doom-modeline
+   ;;     :config
+   ;;   (setq
+   ;;    ;; doom-modeline-modal-icon t
+   ;;    ;; doom-modeline-major-mode-icon t
+   ;;    doom-modeline-buffer-modification-icon nil
+   ;;    doom-modeline-buffer-encoding nil)
+   ;;   :hook (after-init . doom-modeline-mode))
    #+end_src
 
 ** Hide minor modes
