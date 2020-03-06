@@ -61,5 +61,5 @@ function fcode
 end
 
 function reset_audio
-  sudo killall coreaudiod
+  sudo kill -9 (ps ax | grep 'coreaudio[a-z]' | awk '{print $1}')
 end
