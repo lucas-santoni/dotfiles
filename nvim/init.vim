@@ -135,8 +135,6 @@ let g:lightline={
       \ 'component'    : {
       \   'readonly': '%{&readonly?"":""}',
       \ },
-      \ 'separator'    : { 'left': "\uE0B8", 'right': "\uE0BA" },
-      \ 'subseparator' : { 'left': "\uE0B9", 'right': "\uE0BB" }
       \ }
 
 "Tmuxline is generated from here
@@ -148,10 +146,3 @@ let g:tmuxline_preset={
     \'y'       : '%H:%M',
     \'z'       : "#H",
     \'options' : { 'status-justify' : 'left' }}
-
-let g:tmuxline_separators={
-    \ 'left'      : '\uE0B8',
-    \ 'left_alt'  : '\uE0B9',
-    \ 'right'     : '\uE0BA',
-    \ 'right_alt' : '\eE0BB',
-    \ 'space'     : ' '}
