@@ -69,9 +69,6 @@ set -gx PATH "/usr/local/opt/ruby/bin" $PATH
 # Non-Apple Binutils
 set -gx PATH "/usr/local/opt/binutils/bin" $PATH
 
-# Rust
-set -gx PATH "$HOME/.cargo/bin" $PATH
-
 # Disable venv display (handled by prompt)
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 

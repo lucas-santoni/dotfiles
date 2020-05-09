@@ -3249,9 +3249,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>63 184 1094 698 0 0 1680 1027 </string>
+	<string>75 60 1283 698 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>86 271 1094 728 0 0 1680 1050 </string>
+	<string>121 318 1094 698 0 0 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_2C0ACE4C-4BB5-40D3-9E89-4C7B80312828</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_2C0ACE4C-4BB5-40D3-9E89-4C7B80312828_selection</key>
@@ -3876,7 +3876,7 @@
 			<key>Name</key>
 			<string>Terminal</string>
 			<key>Non Ascii Font</key>
-			<string>Iosevka-Term-Slab 18</string>
+			<string>Iosevka 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
@@ -4254,22 +4254,21 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Iosevka</string>
 		<string>Iosevka Term Slab</string>
 		<string>Iosevka Type Slab</string>
-		<string>Menlo</string>
-		<string>CozetteVector</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{426, 708}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>2B44F4F5-ECAF-4182-A010-C90BDF420E34</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>87</integer>
+	<integer>118</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverPromptToChangeOption</key>
@@ -5030,7 +5029,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-06T11:15:43Z</date>
+	<date>2020-04-05T18:29:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -5073,6 +5072,8 @@
 	<false/>
 	<key>disableMetalWhenUnplugged</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>

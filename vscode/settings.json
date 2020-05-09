@@ -42,7 +42,7 @@
   },
   // ---------------------------------------------------------------------------
   "explorer.openEditors.visible": 0,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
   // ---------------------------------------------------------------------------
   "vim.hlsearch": true,
   "vim.leader": "<space>",
@@ -63,19 +63,34 @@
     // },
     {
       // Remove highlight after search
-      "before": [ "q", "q" ],
-      "commands": [ ":nohl" ]
+      "before": [
+        "q",
+        "q"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
       // Search panel
-      "before": [ "<leader>", "f" ],
-      "commands": [ "workbench.view.search" ]
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.view.search"
+      ]
     }
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": [ "j", "j" ],
-      "after": [ "<Esc>" ]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   // ---------------------------------------------------------------------------
@@ -117,7 +132,6 @@
   "go.useLanguageServer": true,
   "[go]": {
     "editor.snippetSuggestions": "none",
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     },
@@ -164,5 +178,10 @@
   "erlang.erlangPath": "/usr/local/bin/",
   "erlang.rebarPath": "/usr/local/bin/",
   "erlang.codeLensEnabled": true,
-  "workbench.iconTheme": "vscode-icons"
+  "[erlang]": {
+    "editor.formatOnSave": false
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "editor.formatOnSave": false, // TODO: Fix this
+  "debug.allowBreakpointsEverywhere": true,
 }

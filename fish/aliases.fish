@@ -25,6 +25,7 @@ abbr yarn npm
 ## LS/TREE/EXA
 abbr ls "exa"
 abbr l "exa -l"
+abbr ll "exa -l"
 abbr la "exa -la"
 abbr tree "exa --tree"
 abbr t "exa --tree"
