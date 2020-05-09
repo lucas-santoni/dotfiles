@@ -300,9 +300,9 @@ The blocks of Lisp are what really matters.
    black one. The default vertical border is a bit to bright.
 
    #+begin_src emacs-lisp
-   (use-package modus-vivendi-theme
+   (use-package modus-operandi-theme
        :config
-     (set-face-background 'vertical-border "#333")
+     (set-face-background 'vertical-border "#aaa")
      (set-face-foreground 'vertical-border (face-background 'vertical-border)))
    #+end_src
 
@@ -335,7 +335,7 @@ The blocks of Lisp are what really matters.
    ;;   (setq
    ;;    doom-themes-enable-bold t
    ;;    doom-themes-enable-italic t)
-   ;;   (load-theme 'doom-one t)
+   ;;   (load-theme 'doom-one-light t)
    ;;   (doom-themes-org-config)) ; Org mode fontification
    #+end_src
 
@@ -709,6 +709,14 @@ The blocks of Lisp are what really matters.
       :config
     (setq highlight-indent-guides-method 'character)
     (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+  #+end_src
+
+* Zen Mode
+
+  A simple zen mode that allows for distraction-free writing.
+
+  #+begin_src emacs-lisp
+  (use-package darkroom)
   #+end_src
 
 * Keywords highlight

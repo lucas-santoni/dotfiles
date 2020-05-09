@@ -12,6 +12,7 @@ Plug 'sheerun/vim-polyglot' "Just in case
 Plug 'blockloop/vim-swigjs' "Not in Polyglot?
 Plug 'itchyny/lightline.vim' "Statusline
 Plug 'edkolev/tmuxline.vim' "Generate TMUX lines
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
