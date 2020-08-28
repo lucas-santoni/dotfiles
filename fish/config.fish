@@ -38,7 +38,7 @@ set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 
 # Default editor
-set -gx EDITOR nvim
+set -gx EDITOR vim
 
 # Locales
 set -gx LC_CTYPE fr_FR.UTF-8

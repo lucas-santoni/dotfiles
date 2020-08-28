@@ -4,7 +4,7 @@
 [push]
   default = simple
 [core]
-  editor = nvim
+  editor = vim
 [commit]
   verbose = true
 [pull]
