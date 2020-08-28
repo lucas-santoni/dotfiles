@@ -1,5 +1,5 @@
 [user]
-  name = Geographer
+  name  = Geographer
   email = geographer@live.fr
 [push]
   default = simple
@@ -7,3 +7,5 @@
   editor = nvim
 [commit]
   verbose = true
+[pull]
+  rebase = false

@@ -32,8 +32,6 @@ add_newline = false
 [character]
 symbol = "λ"
 vicmd_symbol = "Λ"
-# symbol = "🙈 "
-# vicmd_symbol = "🙉 "
 
 [cmd_duration]
 prefix = ""
@@ -64,6 +62,9 @@ symbol = "N "
 [python]
 symbol = "P "
 
+[golang]
+symbol = "G "
+
 [env_var]
 disabled = true
 
@@ -71,9 +72,6 @@ disabled = true
 disabled = true
 
 [kubernetes]
-disabled = true
-
-[golang]
 disabled = true
 
 [conda]

@@ -1,0 +1,116 @@
+"Plugins, managed via Plug
+call plug#begin('~/.vim/plugged')
+Plug 'chriskempson/base16-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'Andilutten/vim-base16-lightline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'markonm/traces.vim'
+Plug 'dag/vim-fish'
+call plug#end()
+
+"Sync base16 colorscheme with base16-shell
+if filereadable(expand("~/.vimrc_background"))
+  set termguicolors "Enable true colors
+  set background=light "Chose the base16 variant
+  source ~/.vimrc_background "Apply the theme set via baes16-shell
+endif
+
+"Change the leader to space
+"Has to be done before further configuration read the <leader> value
+let mapleader=" "
+
+"Don't wrap code (let if get off screen)
+set nowrap
+
+"Basic syntaxtic support
+syntax on
+filetype plugin indent on
+
+"Allow for multiple unsaved buffers
+set hidden
+
+"Split mapping
+nnoremap <silent> <leader>s :split<cr>
+nnoremap <silent> <leader>v :vsplit<cr>
+nnoremap <silent> <leader>q :quit<cr>
+
+"Buffer mappings
+nnoremap <silent> <C-h> :bprev<cr>
+nnoremap <silent> <C-l> :bnext<cr>
+
+"Write mappings
+nnoremap <silent> <leader>z :w<cr>
+nnoremap <silent> <leader>a :w<cr>
+
+"Quickly remove highlighting
+nnoremap <silent> <leader><esc> :nohlsearch<cr>
+
+"Toggle line number (on by default)
+nnoremap <silent> <leader>n :set number!<cr>
+set number
+
+"FZF mappings
+nnoremap <silent> <leader>f :Files<cr>
+nnoremap <silent> <leader>g :Ag<cr>
+nnoremap <silent> <leader>/ :BLines<cr>
+nnoremap <silent> <leader><leader> :Buffers<cr>
+
+"Forget Vi compatible backspacing
+set backspace=indent,eol,start
+
+"Configure fillchars
+set fillchars+=vert:\|
+
+"Lightline configuration
+let g:lightline =
+	\{
+	\  'colorscheme': 'base16',
+	\  'inactive': { 'left': [], 'right': [] },
+	\}
+
+"Always show the statusline
+set laststatus=2
+
+"Hide the mode (shown by the statusline)
+set noshowmode
+
+"Show less things in the command area
+set noshowcmd
+
+"Better command autocompletion
+set wildmenu
+
+"Incremental search
+set incsearch
+
+"Ignore case on search
+set ignorecase
+
+"Highlight all matches
+set hlsearch
+
+"Change the appearance of the separators
+highlight VertSplit guibg=NONE guifg=Grey80
+
+"Disable fzf preview window
+let g:fzf_preview_window = ''
+
+"Make fzf respect the colorscheme's colors
+"bg+ is tweaked so that it blends with the background
+let g:fzf_colors =
+	\{
+	\  'fg':      ['fg', 'Normal'],
+	\  'bg':      ['bg', 'Normal'],
+	\  'hl':      ['fg', 'Comment'],
+	\  'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+	\  'bg+':     ['bg', 'Normal', 'CursorColumn'],
+	\  'hl+':     ['fg', 'Statement'],
+	\  'info':    ['fg', 'PreProc'],
+	\  'border':  ['fg', 'Ignore'],
+	\  'prompt':  ['fg', 'Conditional'],
+	\  'pointer': ['fg', 'Exception'],
+	\  'marker':  ['fg', 'Keyword'],
+	\  'spinner': ['fg', 'Label'],
+	\  'header':  ['fg', 'Comment']
+	\}

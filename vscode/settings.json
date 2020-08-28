@@ -22,7 +22,8 @@
     "files.insertFinalNewline": true, // Empty line at end of file
   },
   "[typescriptreact]": {
-    "files.insertFinalNewline": true, // Empty line at end of file
+    "files.insertFinalNewline": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // Empty line at end of file
   },
   // ---------------------------------------------------------------------------
   "breadcrumbs.enabled": false, // The vertical bar on the left
@@ -32,8 +33,8 @@
   "workbench.colorCustomizations": {
     // Nuances can be generated with
     // https://superdevresources.com/tools/color-shades
-    "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
-    "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
+    // "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
+    // "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
     // "statusBar.debuggingBackground": "#333", // When in live debugging
     // "notificationCenter.border": "#aaa",
     // "notifications.border": "#aaa",
@@ -42,7 +43,7 @@
   },
   // ---------------------------------------------------------------------------
   "explorer.openEditors.visible": 0,
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 0,
   // ---------------------------------------------------------------------------
   "vim.hlsearch": true,
   "vim.leader": "<space>",
@@ -119,7 +120,6 @@
   "python.linting.mypyEnabled": false, // Check types, enabled on project basis
   "python.linting.flake8Enabled": true, // General linting, should always be there
   "python.linting.pylintEnabled": false, // No care
-  "python.jediEnabled": false, // No care
   "python.linting.pydocstyleEnabled": false, // Included in flake8
   // ---------------------------------------------------------------------------
   // "crystal-lang.compiler": "/usr/local/bin/crystal",
@@ -143,6 +143,9 @@
     "-Elll",
     "-Eunconvert",
     "-Eunparam",
+    "-Egoconst",
+    "-Egodot",
+    "-Eprealloc",
     "--fast"
   ],
   // Go settings that activate when the language server is disabled
@@ -160,7 +163,8 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
+    "**/*.module.css.d.ts": true,
   },
   "files.associations": {
     ".eslintrc": "jsonc",
@@ -178,10 +182,32 @@
   "erlang.erlangPath": "/usr/local/bin/",
   "erlang.rebarPath": "/usr/local/bin/",
   "erlang.codeLensEnabled": true,
-  "[erlang]": {
-    "editor.formatOnSave": false
-  },
   "workbench.iconTheme": "vscode-icons",
-  "editor.formatOnSave": false, // TODO: Fix this
+  "editor.formatOnSave": true, // TODO: Fix this
   "debug.allowBreakpointsEverywhere": true,
+  "prettier.requireConfig": true,
+  "prettier.semi": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
+"vsicons.dontShowNewVersionMessage": true,
+"telemetry.enableTelemetry": false,
+"telemetry.enableCrashReporter": false,
+"python.showStartPage": false,
+"explorer.compactFolders": false,
+"workbench.colorTheme": "GitHub Light",
 }
