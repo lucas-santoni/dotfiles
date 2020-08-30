@@ -2,7 +2,9 @@
 source $HOME/.dotfiles/fish/abbreviations.fish
 
 # Get the functions
-source $HOME/.dotfiles/fish/functions/*.fish
+for f in $HOME/.dotfiles/fish/functions/*.fish
+  source $f
+end
 
 # Disable greeting
 set fish_greeting
@@ -20,12 +22,10 @@ function fish_user_key_bindings
     bind -M $mode \cf forward-char
   end
 
-  # Get the default FZF functions and bindings
+  # Get fzf functions and set normal mode bindings
   fzf_key_bindings
 
-  # bind -e \ec
-  # bind \ch fzf-cd-widget
-
+  # Set fzf bindings for insert mode
   if bind -M insert > /dev/null 2>&1
     bind -M insert \cr fzf-history-widget
     bind -M insert \ct fzf-file-widget
@@ -33,7 +33,7 @@ function fish_user_key_bindings
   end
 end
 
-# FZF commands
+# fzf commands
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
 set -gx FZF_CTRL_T_COMMAND "fd -t f -E Library -E Applications"
 
@@ -58,12 +58,6 @@ set -gx PATH "/usr/local/opt/binutils/bin" $PATH
 
 # Disable venv display (handled by prompt)
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
-
-# Base 16
-if status --is-interactive
-  set BASE16_SHELL "$HOME/.config/base16-shell/"
-  source "$BASE16_SHELL/profile_helper.fish"
-end
 
 # Prompt
 starship init fish | source

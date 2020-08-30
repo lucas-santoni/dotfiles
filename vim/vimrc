@@ -7,6 +7,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'markonm/traces.vim'
 Plug 'dag/vim-fish'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 "Sync base16 colorscheme with base16-shell
@@ -27,21 +28,27 @@ set nowrap
 syntax on
 filetype plugin indent on
 
+"Replace tabs with 2 spaces
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 "Allow for multiple unsaved buffers
 set hidden
 
 "Split mapping
 nnoremap <silent> <leader>s :split<cr>
-nnoremap <silent> <leader>v :vsplit<cr>
+nnoremap <silent> <leader>S :vsplit<cr>
 nnoremap <silent> <leader>q :quit<cr>
 
 "Buffer mappings
-nnoremap <silent> <C-h> :bprev<cr>
-nnoremap <silent> <C-l> :bnext<cr>
+nnoremap <silent> <c-h> :bprev<cr>
+nnoremap <silent> <c-l> :bnext<cr>
 
 "Write mappings
 nnoremap <silent> <leader>z :w<cr>
-nnoremap <silent> <leader>a :w<cr>
+nnoremap <silent> <leader>a :wa<cr>
 
 "Quickly remove highlighting
 nnoremap <silent> <leader><esc> :nohlsearch<cr>
@@ -49,6 +56,10 @@ nnoremap <silent> <leader><esc> :nohlsearch<cr>
 "Toggle line number (on by default)
 nnoremap <silent> <leader>n :set number!<cr>
 set number
+
+"We don't really need q so let's use it to access
+"a character that is hard to get
+nnoremap <silent> q ~
 
 "FZF mappings
 nnoremap <silent> <leader>f :Files<cr>
@@ -66,8 +77,13 @@ set fillchars+=vert:\|
 let g:lightline =
 	\{
 	\  'colorscheme': 'base16',
-	\  'inactive': { 'left': [], 'right': [] },
 	\}
+
+"Lightline inactive colors
+let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
+let s:palette.inactive.left = [ [ 'Grey70', 'Grey90', 'Red', 'Red' ] ]
+let s:palette.inactive.middle = [ [ 'Grey70', 'Grey90', 'Red', 'Red' ] ]
+let s:palette.inactive.right = [ [ 'Grey70', 'Grey90', 'Red', 'Red'] ]
 
 "Always show the statusline
 set laststatus=2
@@ -95,6 +111,9 @@ highlight VertSplit guibg=NONE guifg=Grey80
 
 "Disable fzf preview window
 let g:fzf_preview_window = ''
+
+"Make fzf appear in a floating window
+let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6, 'border': 'sharp' } }
 
 "Make fzf respect the colorscheme's colors
 "bg+ is tweaked so that it blends with the background
