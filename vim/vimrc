@@ -61,7 +61,7 @@ set number
 "a character that is hard to get
 nnoremap <silent> q ~
 
-"FZF mappings
+"fzf mappings
 nnoremap <silent> <leader>f :Files<cr>
 nnoremap <silent> <leader>g :Ag<cr>
 nnoremap <silent> <leader>/ :BLines<cr>
