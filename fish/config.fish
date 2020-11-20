@@ -61,3 +61,6 @@ set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # Prompt
 starship init fish | source
+
+# Be beautiful
+get_base16

@@ -1,40 +1,41 @@
-prompt_order = [
-  "username",
-  "hostname",
-  "kubernetes",
-  "directory",
-  "git_branch",
-  "git_state",
-  "git_status",
-  "package",
-  "dotnet",
-  "golang",
-  "java",
-  "nodejs",
-  "python",
-  "ruby",
-  "rust",
-  "nix_shell",
-  "conda",
-  "memory_usage",
-  "aws",
-  "env_var",
-  "cmd_duration",
-  "line_break",
-  "jobs",
-  "time",
-  "character",
-  "battery",
-]
+format = """\
+  $username\
+  $hostname\
+  $kubernetes\
+  $directory\
+  $git_branch\
+  $git_state\
+  $git_status\
+  $package\
+  $dotnet\
+  $golang\
+  $java\
+  $nodejs\
+  $python\
+  $ruby\
+  $rust\
+  $nix_shell\
+  $conda\
+  $memory_usage\
+  $aws\
+  $env_var\
+  $cmd_duration\
+  $line_break\
+  $jobs\
+  $time\
+  $character\
+  $battery\
+"""
 
 add_newline = false
 
 [character]
-symbol = "λ"
-vicmd_symbol = "Λ"
+success_symbol = "[λ](bold green)"
+error_symbol = "[λ](bold red)"
+vicmd_symbol = "[Λ](bold purple)"
 
 [cmd_duration]
-prefix = ""
+format = "[$duration]($style) "
 
 [battery]
 full_symbol = ""
@@ -46,8 +47,9 @@ threshold = 30
 style = "bold red"
 
 [git_status]
-prefix = ""
-suffix = " "
+ahead = "↑${count}"
+diverged = "↑${ahead_count}↓${behind_count}"
+behind = "↓${count}"
 
 [directory]
 truncation_length = 1

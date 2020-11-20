@@ -19,9 +19,6 @@ abbr fh fzf-cd-widget
 abbr pip pipenv
 abbr pip3 pipenv
 
-## NODE
-abbr npm yarn
-
 ## LS/TREE/EXA
 abbr ls "exa"
 abbr l "exa -l"

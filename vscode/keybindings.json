@@ -2,19 +2,16 @@
   {
     "key": "cmd+p",
     "command": "workbench.action.quickOpen"
-    // Browse file when not in an editor (f-f is available otherwise)
   },
   {
     "key": "cmd+i",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
-    // Hover with keyboard
   },
   {
     "key": "shift+cmd+i",
     "command": "editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-    // Open quick fix with keyboard
   },
   {
     "key": "ctrl+l",
@@ -33,5 +30,5 @@
     "key": "ctrl+h",
     "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
     "when": "inEditorsPicker && inQuickOpen"
-  },
+  }
 ]

@@ -1,5 +1,6 @@
 "Plugins, managed via Plug
 call plug#begin('~/.vim/plugged')
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Andilutten/vim-base16-lightline'
@@ -10,7 +11,7 @@ Plug 'dag/vim-fish'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
-"Sync base16 colorscheme with base16-shell
+" Sync base16 colorscheme with base16-shell
 if filereadable(expand("~/.vimrc_background"))
   set termguicolors "Enable true colors
   set background=light "Chose the base16 variant
@@ -53,9 +54,8 @@ nnoremap <silent> <leader>a :wa<cr>
 "Quickly remove highlighting
 nnoremap <silent> <leader><esc> :nohlsearch<cr>
 
-"Toggle line number (on by default)
+"Toggle line number (off by default)
 nnoremap <silent> <leader>n :set number!<cr>
-set number
 
 "We don't really need q so let's use it to access
 "a character that is hard to get
@@ -63,6 +63,7 @@ nnoremap <silent> q ~
 
 "fzf mappings
 nnoremap <silent> <leader>f :Files<cr>
+nnoremap <silent> <leader>F :GFiles<cr>
 nnoremap <silent> <leader>g :Ag<cr>
 nnoremap <silent> <leader>/ :BLines<cr>
 nnoremap <silent> <leader><leader> :Buffers<cr>
@@ -75,15 +76,15 @@ set fillchars+=vert:\|
 
 "Lightline configuration
 let g:lightline =
-	\{
-	\  'colorscheme': 'base16',
-	\}
+      \{
+      \  'colorscheme': 'base16',
+      \}
 
 "Lightline inactive colors
 let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-let s:palette.inactive.left = [ [ 'Grey70', 'Grey90', 'Red', 'Red' ] ]
-let s:palette.inactive.middle = [ [ 'Grey70', 'Grey90', 'Red', 'Red' ] ]
-let s:palette.inactive.right = [ [ 'Grey70', 'Grey90', 'Red', 'Red'] ]
+let s:palette.inactive.left = [ [ 'Grey10', 'Grey30', 'Red', 'Red' ] ]
+let s:palette.inactive.middle = [ [ 'Grey10', 'Grey30', 'Red', 'Red' ] ]
+let s:palette.inactive.right = [ [ 'Grey10', 'Grey30', 'Red', 'Red'] ]
 
 "Always show the statusline
 set laststatus=2
@@ -107,29 +108,28 @@ set ignorecase
 set hlsearch
 
 "Change the appearance of the separators
-highlight VertSplit guibg=NONE guifg=Grey80
+highlight VertSplit guibg=NONE
 
 "Disable fzf preview window
 let g:fzf_preview_window = ''
 
 "Make fzf appear in a floating window
-let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6, 'border': 'sharp' } }
+let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6, 'border': 'sharp' } }
 
 "Make fzf respect the colorscheme's colors
-"bg+ is tweaked so that it blends with the background
 let g:fzf_colors =
-	\{
-	\  'fg':      ['fg', 'Normal'],
-	\  'bg':      ['bg', 'Normal'],
-	\  'hl':      ['fg', 'Comment'],
-	\  'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-	\  'bg+':     ['bg', 'Normal', 'CursorColumn'],
-	\  'hl+':     ['fg', 'Statement'],
-	\  'info':    ['fg', 'PreProc'],
-	\  'border':  ['fg', 'Ignore'],
-	\  'prompt':  ['fg', 'Conditional'],
-	\  'pointer': ['fg', 'Exception'],
-	\  'marker':  ['fg', 'Keyword'],
-	\  'spinner': ['fg', 'Label'],
-	\  'header':  ['fg', 'Comment']
-	\}
+      \{
+      \  'fg':      ['fg', 'Normal'],
+      \  'bg':      ['bg', 'Normal'],
+      \  'hl':      ['fg', 'Comment'],
+      \  'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \  'bg+':     ['bg', 'Normal', 'CursorColumn'],
+      \  'hl+':     ['fg', 'Statement'],
+      \  'info':    ['fg', 'PreProc'],
+      \  'border':  ['fg', 'Ignore'],
+      \  'prompt':  ['fg', 'Conditional'],
+      \  'pointer': ['fg', 'Exception'],
+      \  'marker':  ['fg', 'Keyword'],
+      \  'spinner': ['fg', 'Label'],
+      \  'header':  ['fg', 'Comment']
+      \}

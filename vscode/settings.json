@@ -1,50 +1,38 @@
 {
-  "editor.fontFamily": "Iosevka Slab, Consolas, 'Courier New', monospace",
-  "editor.fontWeight": "400", // Normal
-  "editor.fontSize": 17,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+
+  "editor.fontFamily": "Jetbrains Mono",
+  "editor.fontWeight": "400",
+  "editor.fontSize": 24,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [ 80, 120 ],
   "editor.suggestSelection": "first",
   "editor.renderLineHighlight": "all",
   "editor.lightbulb.enabled": false,
-  // ---------------------------------------------------------------------------
-  "terminal.integrated.fontSize": 18,
-  // ---------------------------------------------------------------------------
-  "extensions.ignoreRecommendations": false,
-  // ---------------------------------------------------------------------------
-  "editor.detectIndentation": false, // Do not adapt to opened file indentation settings
-  "[python]": {
-    "editor.tabSize": 4, // 4 spaces in Python to respect PEP8
-    "files.insertFinalNewline": true, // Empty line at end of file
-  },
-  "[typescriptreact]": {
-    "files.insertFinalNewline": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode", // Empty line at end of file
-  },
-  // ---------------------------------------------------------------------------
-  "breadcrumbs.enabled": false, // The vertical bar on the left
-  "workbench.startupEditor": "newUntitledFile", // Hide menu
-  "workbench.editor.enablePreview": false, // Disable the preview on single click and open the file right away
+  "editor.minimap.enabled": false,
+  "editor.detectIndentation": false, 
+
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "Iosevka Term",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+
+  "extensions.ignoreRecommendations": true,
+
+  "breadcrumbs.enabled": false, 
+
+  "workbench.editor.enablePreview": false, 
   "workbench.activityBar.visible": false,
-  "workbench.colorCustomizations": {
-    // Nuances can be generated with
-    // https://superdevresources.com/tools/color-shades
-    // "statusBar.background": "#333", // Status bar when a folder is open (code . for example)
-    // "statusBar.noFolderBackground": "#333", // When no folder is open, I don't care so same color
-    // "statusBar.debuggingBackground": "#333", // When in live debugging
-    // "notificationCenter.border": "#aaa",
-    // "notifications.border": "#aaa",
-    // "notificationToast.border": "#aaa",
-    // "notifications.background": "#1a1a1a",
-  },
-  // ---------------------------------------------------------------------------
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.showTabs": false,
+
   "explorer.openEditors.visible": 0,
+  "explorer.compactFolders": false,
+
   "window.zoomLevel": 0,
-  // ---------------------------------------------------------------------------
+  "window.nativeTabs": true,
+
   "vim.hlsearch": true,
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
@@ -52,90 +40,30 @@
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.normalModeKeyBindings": [
-    // {
-    //   // Previous tab
-    //   "before": [ "<C-h>" ],
-    //   "commands": [ "workbench.action.previousEditor" ]
-    // },
-    // {
-    //   // Next tab
-    //   "before": [ "<C-l>" ],
-    //   "commands": [ "workbench.action.nextEditor" ]
-    // },
     {
-      // Remove highlight after search
-      "before": [
-        "q",
-        "q"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": [ "<leader>", "h" ],
+      "commands": [ ":nohl" ]
     },
     {
-      // Search panel
-      "before": [
-        "<leader>",
-        "f"
-      ],
-      "commands": [
-        "workbench.view.search"
-      ]
+      "before": [ "<leader>", "f" ],
+      "commands": [ "workbench.view.search" ]
     }
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": [ "j", "j" ],
+      "after": [ "<Esc>" ]
     }
   ],
-  // ---------------------------------------------------------------------------
-  // "C_Cpp.default.cppStandard": "c++17",
-  // "C_Cpp.default.intelliSenseMode": "clang-x64",
-  // ---------------------------------------------------------------------------
-  "eslint.run": "onSave",
-  // Parse all the extensions
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "svelte"
-  ],
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "javascript.preferences.quoteStyle": "single",
-  "typescript.preferences.quoteStyle": "single",
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-  // ---------------------------------------------------------------------------
-  // "java.errors.incompleteClasspath.severity": "ignore",
-  // ---------------------------------------------------------------------------
+
+  "python.showStartPage": false,
   "python.linting.enabled": true,
-  "python.linting.mypyEnabled": false, // Check types, enabled on project basis
-  "python.linting.flake8Enabled": true, // General linting, should always be there
-  "python.linting.pylintEnabled": false, // No care
-  "python.linting.pydocstyleEnabled": false, // Included in flake8
-  // ---------------------------------------------------------------------------
-  // "crystal-lang.compiler": "/usr/local/bin/crystal",
-  // "crystal-lang.completion": true,
-  // "crystal-lang.hover": true,
-  // "crystal-lang.implementations": true,
-  // ---------------------------------------------------------------------------
-  // Server is at false for now as it breaks the autocompletion of
-  // not imported packages, fields completion
+  "python.linting.mypyEnabled": false, 
+  "python.linting.flake8Enabled": true, 
+  "python.linting.pylintEnabled": false, 
+  "python.linting.pydocstyleEnabled": false, 
+
   "go.useLanguageServer": true,
-  "[go]": {
-    "editor.snippetSuggestions": "none",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    },
-  },
   "go.lintTool": "golangci-lint",
   "go.lintFlags": [
     "-Egolint",
@@ -148,66 +76,32 @@
     "-Eprealloc",
     "--fast"
   ],
-  // Go settings that activate when the language server is disabled
   "go.formatTool": "goimports",
   "go.autocompleteUnimportedPackages": true,
-  // ---------------------------------------------------------------------------
-  "git.autofetch": true, // Fetch be fore pull
-  // ---------------------------------------------------------------------------
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+
+  "javascript.validate.enable": false,
+  "standard.autoFixOnSave": true,
+
+  "git.autofetch": true, 
+
   "files.exclude": {
-    "**/__pycache__/": true,
-    "**/*.pyc": true,
-    "**/.mypy_cache/": true,
-    "**/.idea/": true,
     "node_modules/": true,
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true,
-    "**/*.module.css.d.ts": true,
+    "dist/": true,
   },
-  "files.associations": {
-    ".eslintrc": "jsonc",
-    "*.prisma": "graphql",
-    "*.html": "html",
-    "*.pl": "prolog"
-  },
+
   "zenMode.fullScreen": false,
   "zenMode.hideStatusBar": false,
   "zenMode.hideLineNumbers": false,
-  "window.nativeTabs": true,
-  "workbench.editor.showTabs": false,
-  "terminal.integrated.fontFamily": "Iosevka Term",
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-  "erlang.erlangPath": "/usr/local/bin/",
-  "erlang.rebarPath": "/usr/local/bin/",
-  "erlang.codeLensEnabled": true,
-  "workbench.iconTheme": "vscode-icons",
-  "editor.formatOnSave": true, // TODO: Fix this
-  "debug.allowBreakpointsEverywhere": true,
-  "prettier.requireConfig": true,
-  "prettier.semi": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "spellright.language": [
-    "en"
-  ],
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext"
-  ],
-"vsicons.dontShowNewVersionMessage": true,
-"telemetry.enableTelemetry": false,
-"telemetry.enableCrashReporter": false,
-"python.showStartPage": false,
-"explorer.compactFolders": false,
-"workbench.colorTheme": "GitHub Light",
+
+  // "workbench.colorCustomizations": {
+  //   "statusBar.background" : "#202020",
+  //   "statusBar.noFolderBackground" : "#202020",
+  //   "statusBar.debuggingBackground": "#263238"
+  // }
 }
