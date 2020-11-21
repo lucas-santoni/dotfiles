@@ -11,7 +11,7 @@ Plug 'dag/vim-fish'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
-" Sync base16 colorscheme with base16-shell
+"Sync base16 colorscheme with base16-shell
 if filereadable(expand("~/.vimrc_background"))
   set termguicolors "Enable true colors
   set background=light "Chose the base16 variant
