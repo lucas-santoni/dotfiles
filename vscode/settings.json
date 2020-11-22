@@ -4,7 +4,7 @@
 
   "editor.fontFamily": "Jetbrains Mono",
   "editor.fontWeight": "400",
-  "editor.fontSize": 24,
+  "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [ 80, 120 ],
@@ -15,7 +15,7 @@
   "editor.detectIndentation": false, 
 
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "Iosevka Term",
+  "terminal.integrated.fontFamily": "Iosevka Term Slab",
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
 
   "extensions.ignoreRecommendations": true,
@@ -26,6 +26,7 @@
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": "vscode-icons",
   "workbench.editor.showTabs": false,
+  "workbench.startupEditor": "newUntitledFile",
 
   "explorer.openEditors.visible": 0,
   "explorer.compactFolders": false,
@@ -86,22 +87,25 @@
   },
 
   "javascript.validate.enable": false,
+  "standard.engine": "ts-standard",
   "standard.autoFixOnSave": true,
 
   "git.autofetch": true, 
 
   "files.exclude": {
     "node_modules/": true,
-    "dist/": true,
+    "dist/": true
   },
 
   "zenMode.fullScreen": false,
   "zenMode.hideStatusBar": false,
   "zenMode.hideLineNumbers": false,
 
-  // "workbench.colorCustomizations": {
-  //   "statusBar.background" : "#202020",
-  //   "statusBar.noFolderBackground" : "#202020",
-  //   "statusBar.debuggingBackground": "#263238"
-  // }
+  "vsicons.dontShowNewVersionMessage": true,
+
+  "workbench.colorCustomizations": {
+    "statusBar.background" : "#303030",
+    "statusBar.noFolderBackground" : "#303030",
+    "statusBar.debuggingBackground": "#263238"
+  }
 }

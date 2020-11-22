@@ -85,4 +85,4 @@ abbr dcps "docker-compose ps"
 abbr dcpsa "docker-compose ps -a"
 
 ## BAT
-abbr cat "bat --style=numbers,changes"
+abbr cat "bat"

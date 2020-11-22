@@ -53,8 +53,6 @@ set -gx BAT_THEME "base16"
 # Environment
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH "/usr/local/bin" $PATH
-set -gx PATH "/usr/local/opt/ruby/bin" $PATH
-set -gx PATH "/usr/local/opt/binutils/bin" $PATH
 
 # Disable venv display (handled by prompt)
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1

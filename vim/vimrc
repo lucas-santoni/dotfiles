@@ -1,6 +1,5 @@
 "Plugins, managed via Plug
 call plug#begin('~/.vim/plugged')
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Andilutten/vim-base16-lightline'

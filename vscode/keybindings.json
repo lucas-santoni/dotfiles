@@ -12,23 +12,5 @@
     "key": "shift+cmd+i",
     "command": "editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
   }
 ]
