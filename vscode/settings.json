@@ -12,7 +12,7 @@
   "editor.renderLineHighlight": "all",
   "editor.lightbulb.enabled": false,
   "editor.minimap.enabled": false,
-  "editor.detectIndentation": false, 
+  "editor.detectIndentation": true,
 
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontFamily": "Iosevka Term Slab",
@@ -89,6 +89,7 @@
   "javascript.validate.enable": false,
   "standard.engine": "ts-standard",
   "standard.autoFixOnSave": true,
+  "standard.usePackageJson": true,
 
   "git.autofetch": true, 
 
