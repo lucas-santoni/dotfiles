@@ -1,10 +1,9 @@
-# Get the aliases
-source $HOME/.dotfiles/fish/abbreviations.fish
+# Don't forget to put the aliases in conf.d/
+# ln -s ~/.dotfiles/fish/abbreviations.fish ~/.config/fish/conf.d/
 
-# Get the functions
-for f in $HOME/.dotfiles/fish/functions/*.fish
-  source $f
-end
+# And install the functions
+# ln -s ~/.dotfiles/fish/functions/* ~/.config/fish/functions/
+# (This command must be run again if new function files are created)
 
 # Disable greeting
 set fish_greeting
@@ -14,24 +13,6 @@ fish_vi_key_bindings
 
 # Disable valid path underline
 set fish_color_valid_path
-
-# Bindings
-function fish_user_key_bindings
-  # Still enable ctrl+f in Vim mode
-  for mode in insert default visual
-    bind -M $mode \cf forward-char
-  end
-
-  # Get fzf functions and set normal mode bindings
-  fzf_key_bindings
-
-  # Set fzf bindings for insert mode
-  if bind -M insert > /dev/null 2>&1
-    bind -M insert \cr fzf-history-widget
-    bind -M insert \ct fzf-file-widget
-    bind -M insert \ch fzf-cd-widget
-  end
-end
 
 # fzf commands
 set -gx FZF_ALT_C_COMMAND "fd -t d -E Library -E Applications"
@@ -56,9 +37,3 @@ set -gx PATH "/usr/local/bin" $PATH
 
 # Disable venv display (handled by prompt)
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
-
-# Prompt
-starship init fish | source
-
-# Be beautiful
-get_base16
