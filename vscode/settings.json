@@ -2,9 +2,9 @@
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
 
-  "editor.fontFamily": "Jetbrains Mono",
+  "editor.fontFamily": "Iosevka Slab",
   "editor.fontWeight": "400",
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [ 80, 120 ],
@@ -27,6 +27,11 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.editor.showTabs": false,
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorCustomizations": {
+    "statusBar.background" : "#303030",
+    "statusBar.noFolderBackground" : "#303030",
+    "statusBar.debuggingBackground": "#263238"
+  },
 
   "explorer.openEditors.visible": 0,
   "explorer.compactFolders": false,
@@ -40,56 +45,12 @@
   "vim.incsearch": true,
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [ "<leader>", "h" ],
-      "commands": [ ":nohl" ]
-    },
-    {
-      "before": [ "<leader>", "f" ],
-      "commands": [ "workbench.view.search" ]
-    }
-  ],
   "vim.insertModeKeyBindings": [
     {
       "before": [ "j", "j" ],
       "after": [ "<Esc>" ]
     }
   ],
-
-  "python.showStartPage": false,
-  "python.linting.enabled": true,
-  "python.linting.mypyEnabled": false, 
-  "python.linting.flake8Enabled": true, 
-  "python.linting.pylintEnabled": false, 
-  "python.linting.pydocstyleEnabled": false, 
-
-  "go.useLanguageServer": true,
-  "go.lintTool": "golangci-lint",
-  "go.lintFlags": [
-    "-Egolint",
-    "-Einterfacer",
-    "-Elll",
-    "-Eunconvert",
-    "-Eunparam",
-    "-Egoconst",
-    "-Egodot",
-    "-Eprealloc",
-    "--fast"
-  ],
-  "go.formatTool": "goimports",
-  "go.autocompleteUnimportedPackages": true,
-  "[go]": {
-    "editor.snippetSuggestions": "none",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
-  },
-
-  "javascript.validate.enable": false,
-  "standard.engine": "ts-standard",
-  "standard.autoFixOnSave": true,
-  "standard.usePackageJson": true,
 
   "git.autofetch": true, 
 
@@ -102,11 +63,5 @@
   "zenMode.hideStatusBar": false,
   "zenMode.hideLineNumbers": false,
 
-  "vsicons.dontShowNewVersionMessage": true,
-
-  "workbench.colorCustomizations": {
-    "statusBar.background" : "#303030",
-    "statusBar.noFolderBackground" : "#303030",
-    "statusBar.debuggingBackground": "#263238"
-  }
+  "vsicons.dontShowNewVersionMessage": true
 }
