@@ -31,7 +31,6 @@ ln -s ~/.dotfiles/aspell/aspell.en.pws ~/.aspell.en.pws
 ln -s ~/.dotfiles/aspell/aspell.en.prepl ~/.aspell.en.prepl
 ```
 
-
 ## Bspwm
 
 Dependencies: actually a lot of stuff as most background programs are
@@ -87,6 +86,13 @@ Install the plugins:
 ```fish
 # First, install fisher
 ln -s ~/.dotfiles/fish/fish_plugins ~/.config/fish
+fisher update
+```
+
+And load the base16 on startup:
+
+```fish
+ln -s ~/.dotfiles/fish/base16.fish ~/.config/fish/conf.d
 ```
 
 ## Git
