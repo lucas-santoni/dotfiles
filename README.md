@@ -105,6 +105,14 @@ Nothing special:
 ln -s ~/.dotfiles/imwheel/imwheelrc ~/.imwheelrc
 ```
 
+## Picom
+
+Nothing special:
+
+```fish
+ln -s ~/.dotfiles/picom ~/.config
+```
+
 ## Polybar
 
 Nothing special:
