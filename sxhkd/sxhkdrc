@@ -1,0 +1,88 @@
+# Lock the screen and start the screen saver
+super + x
+  xscreensaver-command --lock
+
+# Run the terminal emulator
+super + Return
+  alacritty
+
+# Run the browser
+super + g
+  google-chrome-stable
+
+# Run the file explorer
+super + t
+  pcmanfm
+
+# Run the application launcher
+super + d
+  rofi -show drun
+
+# Run the application switcher
+super + Tab
+  rofi -show window
+
+# Run the clipboard history selector
+super + c
+  rofi -show clip -config ~/.config/rofi/config_clip.rasi
+
+# Take a screenshot (in the clipboard)
+super + m
+  maim -s | xclip -selection clipboard -t image/png
+
+# Take a screenshot (to the filesystem)
+# The delay is there just in case
+super + shift + m
+  maim --delay 2 -s ~/Pictures/screenshots/(date +%s).png
+
+# The commands I'm using don't work properly
+# Polybar, by default, works better (using the mouse)
+# TODO Write a script of fix these commands
+
+# Sound down
+# super + i
+#   pactl set-sink-volume (pactl list short | grep "RUNNING\|SUSPENDED" | cut -f1 | head -n1) -5%
+
+# Sound up
+# super + o
+#   pactl set-sink-volume (pactl list short | grep "RUNNING\|SUSPENDED" | cut -f1 | head -n1) +5%
+
+# Sound toggle mute
+# super + shift + o
+#   pactl set-sink-mute (pactl list short | grep "RUNNING\|SUSPENDED" | cut -f1 | head -n1) toggle
+
+# Open PA GUI
+super + shift + i
+  pavucontrol
+
+# Reload bspwm (and all the stuff launched in the bspwmrc file)
+super + r
+  bspc wm -r
+
+# Close focused node
+super + q
+  bspc node -c
+
+# Kill focused node
+super + shift + q
+  bspc node -k
+
+# Switch between tiles and monocle
+super + f
+  bspc desktop -l next
+
+# Focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+  bspc node -{f,s} {west,south,north,east}
+
+# Focus the next/previous window in the current desktop
+super + {n,p}
+  bspc node -f {next,prev}.local.!hidden.window
+
+# Focus or send to the given desktop
+super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Toggle floating mode
+super + {s}
+  bspc node -t {\~floating}

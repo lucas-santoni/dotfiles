@@ -16,8 +16,9 @@ abbr ft fzf-file-widget
 abbr fh fzf-cd-widget
 
 ## PYTHON
-abbr pip pipenv
-abbr pip3 pipenv
+## I mostly use poetry now
+# abbr pip pipenv
+# abbr pip3 pipenv
 
 ## LS/TREE/EXA
 abbr ls "exa"
@@ -86,3 +87,8 @@ abbr dcpsa "docker-compose ps -a"
 
 ## BAT
 abbr cat "bat"
+
+## XCLIP
+## macOS already has pbcopy and pbpaste which are short enough
+abbr copy "xclip -selection clipboard"
+abbr paste "xclip -selection clipboard -out"

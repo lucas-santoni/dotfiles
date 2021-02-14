@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Andilutten/vim-base16-lightline'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'markonm/traces.vim'
 Plug 'dag/vim-fish'
@@ -13,7 +12,8 @@ call plug#end()
 "Sync base16 colorscheme with base16-shell
 if filereadable(expand("~/.vimrc_background"))
   set termguicolors "Enable true colors
-  set background=light "Chose the base16 variant
+  set background=dark "Chose the base16 variant
+  let base16colorspace=256
   source ~/.vimrc_background "Apply the theme set via baes16-shell
 endif
 
@@ -63,7 +63,7 @@ nnoremap <silent> q ~
 "fzf mappings
 nnoremap <silent> <leader>f :Files<cr>
 nnoremap <silent> <leader>F :GFiles<cr>
-nnoremap <silent> <leader>g :Ag<cr>
+nnoremap <silent> <leader>g :Rg<cr>
 nnoremap <silent> <leader>/ :BLines<cr>
 nnoremap <silent> <leader><leader> :Buffers<cr>
 
@@ -74,16 +74,13 @@ set backspace=indent,eol,start
 set fillchars+=vert:\|
 
 "Lightline configuration
-let g:lightline =
-      \{
-      \  'colorscheme': 'base16',
-      \}
+let g:lightline = { 'colorscheme': 'base16' }
 
 "Lightline inactive colors
 let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-let s:palette.inactive.left = [ [ 'Grey10', 'Grey30', 'Red', 'Red' ] ]
-let s:palette.inactive.middle = [ [ 'Grey10', 'Grey30', 'Red', 'Red' ] ]
-let s:palette.inactive.right = [ [ 'Grey10', 'Grey30', 'Red', 'Red'] ]
+let s:palette.inactive.left = [ [ 'Grey40', 'Grey20', 'Red', 'Red' ] ]
+let s:palette.inactive.middle = [ [ 'Grey40', 'Grey20', 'Red', 'Red' ] ]
+let s:palette.inactive.right = [ [ 'Grey40', 'Grey20', 'Red', 'Red'] ]
 
 "Always show the statusline
 set laststatus=2
@@ -107,7 +104,7 @@ set ignorecase
 set hlsearch
 
 "Change the appearance of the separators
-highlight VertSplit guibg=NONE
+highlight VertSplit guibg=NONE guifg=Grey30
 
 "Disable fzf preview window
 let g:fzf_preview_window = ''

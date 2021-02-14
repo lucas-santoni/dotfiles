@@ -1,0 +1,35 @@
+* {
+  spacing: 0;
+  width: 25%;
+  background-color: #282c34;
+  text-color: #abb2bf;
+}
+
+window {
+  border: 5px;
+  border-color: #be5046;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+}
+
+prompt {
+  padding: 32px;
+}
+
+entry {
+  padding: 32px 0px;
+}
+
+element {
+  padding: 16px;
+}
+
+element-icon {
+  size: 2ch;
+}
+
+element selected {
+  background-color: #444;
+}

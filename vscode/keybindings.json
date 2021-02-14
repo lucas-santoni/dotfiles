@@ -1,16 +1,34 @@
 [
   {
-    "key": "cmd+p",
+    "key": "ctrl+space",
     "command": "workbench.action.quickOpen"
   },
   {
-    "key": "cmd+i",
+    "key": "ctrl+i",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+cmd+i",
+    "key": "shift+ctrl+i",
     "command": "editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "!editorFocus"
   }
 ]

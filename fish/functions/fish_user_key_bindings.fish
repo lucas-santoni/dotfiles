@@ -1,4 +1,8 @@
+# Overriding this function allows to set custom bindings
 function fish_user_key_bindings
+  # Enable Vim mode
+  fish_vi_key_bindings
+
   # Still enable ctrl+f in Vim mode
   for mode in insert default visual
     bind -M $mode \cf forward-char

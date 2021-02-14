@@ -2,7 +2,7 @@
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
 
-  "editor.fontFamily": "Jetbrains Mono",
+  "editor.fontFamily": "Iosevka",
   "editor.fontWeight": "400",
   "editor.fontSize": 16,
   "editor.fontLigatures": true,
@@ -15,7 +15,7 @@
   "editor.detectIndentation": true,
 
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "Iosevka Term Slab",
+  "terminal.integrated.fontFamily": "Iosevka Term",
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
 
   "extensions.ignoreRecommendations": true,
@@ -25,7 +25,6 @@
   "workbench.editor.enablePreview": false, 
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": "vscode-icons",
-  "workbench.editor.showTabs": false,
   "workbench.startupEditor": "newUntitledFile",
 
   "explorer.openEditors.visible": 0,
@@ -40,16 +39,6 @@
   "vim.incsearch": true,
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [ "<leader>", "h" ],
-      "commands": [ ":nohl" ]
-    },
-    {
-      "before": [ "<leader>", "f" ],
-      "commands": [ "workbench.view.search" ]
-    }
-  ],
   "vim.insertModeKeyBindings": [
     {
       "before": [ "j", "j" ],
@@ -104,9 +93,13 @@
 
   "vsicons.dontShowNewVersionMessage": true,
 
-  "workbench.colorCustomizations": {
-    "statusBar.background" : "#303030",
-    "statusBar.noFolderBackground" : "#303030",
-    "statusBar.debuggingBackground": "#263238"
-  }
+  // "workbench.colorCustomizations": {
+  //   "statusBar.background" : "#303030",
+  //   "statusBar.noFolderBackground" : "#303030",
+  //   "statusBar.debuggingBackground": "#263238"
+  // },
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.statusBar.visible": true,
+  "workbench.editor.showTabs": false,
+  "window.menuBarVisibility": "toggle"
 }

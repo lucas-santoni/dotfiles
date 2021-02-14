@@ -1,0 +1,16 @@
+configuration {
+  modi: "clip:greenclip print";
+  show-icons: false;
+  lines: 7;
+  font: "SF Pro Display 30";
+}
+
+@import "theme"
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  padding: 32px 16px;
+}
