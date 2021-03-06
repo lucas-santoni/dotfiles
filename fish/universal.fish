@@ -26,12 +26,15 @@ set -Ux GOPATH $HOME/Documents/go
 # Bat
 set -Ux BAT_THEME "base16"
 
-# Environment
-set -Ux PATH $GOPATH/bin $PATH
-set -Ux PATH "/usr/local/bin" $PATH
-
 # Disable venv display (handled by prompt)
 set -Ux VIRTUAL_ENV_DISABLE_PROMPT 1
 
+# Environment
+set -U fish_user_paths $GOPATH/bin $PATH
+set -U fish_user_paths "/usr/local/bin" $PATH
+
 # Disable fish welcome message
-set -Ux fish_greeting
+set -U fish_greeting
+
+# Disable fish underlining stuff
+set -U fish_color_valid_path
