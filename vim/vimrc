@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'markonm/traces.vim'
 Plug 'dag/vim-fish'
 Plug 'tpope/vim-commentary'
+Plug 'chrisbra/Colorizer'
 call plug#end()
 
 "Sync base16 colorscheme with base16-shell
@@ -78,9 +79,9 @@ let g:lightline = { 'colorscheme': 'base16' }
 
 "Lightline inactive colors
 let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-let s:palette.inactive.left = [ [ 'Grey40', 'Grey20', 'Red', 'Red' ] ]
-let s:palette.inactive.middle = [ [ 'Grey40', 'Grey20', 'Red', 'Red' ] ]
-let s:palette.inactive.right = [ [ 'Grey40', 'Grey20', 'Red', 'Red'] ]
+let s:palette.inactive.left = [ [ '#aaaaaa', '#cccccc', 'Red', 'Red' ] ]
+let s:palette.inactive.middle = [ [ '#aaaaaa', '#cccccc', 'Red', 'Red' ] ]
+let s:palette.inactive.right = [ [ '#aaaaaa', '#cccccc', 'Red', 'Red'] ]
 
 "Always show the statusline
 set laststatus=2
@@ -104,7 +105,7 @@ set ignorecase
 set hlsearch
 
 "Change the appearance of the separators
-highlight VertSplit guibg=NONE guifg=Grey30
+highlight VertSplit guibg=NONE guifg=#cccccc
 
 "Disable fzf preview window
 let g:fzf_preview_window = ''

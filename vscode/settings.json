@@ -2,9 +2,9 @@
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
 
-  "editor.fontFamily": "Iosevka Slab",
+  "editor.fontFamily": "Iosevka",
   "editor.fontWeight": "400",
-  "editor.fontSize": 17,
+  "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [ 80, 120 ],
@@ -14,7 +14,7 @@
   "editor.minimap.enabled": false,
   "editor.detectIndentation": true,
 
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "Iosevka Term",
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
 
@@ -26,11 +26,11 @@
   "workbench.activityBar.visible": false,
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorCustomizations": {
-    "statusBar.background" : "#303030",
-    "statusBar.noFolderBackground" : "#303030",
-    "statusBar.debuggingBackground": "#263238"
-  },
+  // "workbench.colorCustomizations": {
+  //   "statusBar.background" : "#303030",
+  //   "statusBar.noFolderBackground" : "#303030",
+  //   "statusBar.debuggingBackground": "#263238"
+  // },
 
   "explorer.openEditors.visible": 0,
   "explorer.compactFolders": false,
@@ -64,12 +64,7 @@
 
   "vsicons.dontShowNewVersionMessage": true,
 
-  // "workbench.colorCustomizations": {
-  //   "statusBar.background" : "#303030",
-  //   "statusBar.noFolderBackground" : "#303030",
-  //   "statusBar.debuggingBackground": "#263238"
-  // },
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": false,
   "window.menuBarVisibility": "toggle"
