@@ -5,8 +5,8 @@ configuration {
   font: "SF Pro Display 30";
   drun-display-format: "{icon}  {name}";
   window-format: "{icon}  {t}";
-  display-drun: "👁";
-  display-window: "🗗";
+  display-drun: "🕵️";
+  display-window: "🪟";
 }
 
 @import "theme"

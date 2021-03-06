@@ -2,7 +2,7 @@
   spacing: 0;
   width: 25%;
   background-color: #efecf4;
-  text-color: #333;
+  text-color: #585260;
 }
 
 window {
@@ -31,5 +31,5 @@ element-icon {
 }
 
 element selected {
-  background-color: #ddd;
+  background-color: #dedede;
 }
