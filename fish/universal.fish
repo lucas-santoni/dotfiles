@@ -24,14 +24,17 @@ set -Ux LC_ALL fr_FR.UTF-8
 set -Ux GOPATH $HOME/Documents/go
 
 # Bat
-set -Ux BAT_THEME "base16"
+set -Ux BAT_THEME base16
 
 # Disable venv display (handled by prompt)
 set -Ux VIRTUAL_ENV_DISABLE_PROMPT 1
 
-# Environment
+# Path
 set -U fish_user_paths $GOPATH/bin $PATH
-set -U fish_user_paths "/usr/local/bin" $PATH
+set -U fish_user_paths /usr/local/bin $PATH
+
+# Default NVM
+set -Ux nvm_default_version lts
 
 # Disable fish welcome message
 set -U fish_greeting
