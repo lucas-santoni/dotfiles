@@ -138,8 +138,8 @@ echo ">> sxhkd launched"
 
 # Finally, some bspwm configuration
 
-bspc monitor DP-0 -d I II III IV V
-bspc monitor DP-2 -d VI VII VIII IX X
+bspc monitor DP-0 -d 1 2 3 4 5
+bspc monitor DP-2 -d 6 7 8 9 10
 
 bspc config border_width          4
 bspc config window_gap           20

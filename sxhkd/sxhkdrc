@@ -55,6 +55,21 @@ super + shift + m
 super + shift + i
   pavucontrol
 
+# Brightess down
+super + i
+  ddccontrol -r 0x10 -W -10 dev:/dev/i2c-5 ; \
+  ddccontrol -r 0x10 -W -10 dev:/dev/i2c-6
+
+# Brightness up
+super + o
+  ddccontrol -r 0x10 -W +10 dev:/dev/i2c-5 ; \
+  ddccontrol -r 0x10 -W +10 dev:/dev/i2c-6
+
+# Brightness reset
+super + shift + o
+  ddccontrol -r 0x10 -w 0 dev:/dev/i2c-5 ; \
+  ddccontrol -r 0x10 -w 0 dev:/dev/i2c-6
+
 # Reload bspwm (and all the stuff launched in the bspwmrc file)
 super + r
   bspc wm -r
