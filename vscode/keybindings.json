@@ -1,9 +1,5 @@
 [
   {
-    "key": "ctrl+space",
-    "command": "workbench.action.quickOpen"
-  },
-  {
     "key": "ctrl+i",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
@@ -15,24 +11,25 @@
   },
   {
     "key": "ctrl+j",
-    "command": "workbench.action.togglePanel"
+    "command": "workbench.action.togglePanel",
   },
   {
     "key": "ctrl+b",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "command": "workbench.action.toggleSidebarVisibility",
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.openPreviousEditorFromHistory",
+    "when": "!suggestWidgetVisible"
   },
   {
     "key": "ctrl+n",
     "command": "workbench.action.quickOpenSelectNext",
-    "when": "!editorFocus"
+    "when": "inQuickOpen"
   },
   {
     "key": "ctrl+p",
     "command": "workbench.action.quickOpenSelectPrevious",
-    "when": "!editorFocus"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeActiveEditor"
+    "when": "inQuickOpen"
   }
 ]
