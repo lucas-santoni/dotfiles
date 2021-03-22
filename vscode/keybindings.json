@@ -1,9 +1,5 @@
 [
   {
-    "key": "ctrl+space",
-    "command": "workbench.action.quickOpen"
-  },
-  {
     "key": "ctrl+i",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
@@ -21,15 +17,16 @@
     "key": "ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
+  { "key": "ctrl+n", "command": "workbench.action.openPreviousEditorFromHistory" },
   {
     "key": "ctrl+n",
     "command": "workbench.action.quickOpenSelectNext",
-    "when": "!editorFocus"
+    "when": "inQuickOpen"
   },
   {
     "key": "ctrl+p",
     "command": "workbench.action.quickOpenSelectPrevious",
-    "when": "!editorFocus"
+    "when": "inQuickOpen"
   },
   {
     "key": "ctrl+w",
