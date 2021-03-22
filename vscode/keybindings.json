@@ -17,7 +17,11 @@
     "key": "ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
-  { "key": "ctrl+n", "command": "workbench.action.openPreviousEditorFromHistory" },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.openPreviousEditorFromHistory",
+    "when": "!suggestWidgetVisible"
+  },
   {
     "key": "ctrl+n",
     "command": "workbench.action.quickOpenSelectNext",

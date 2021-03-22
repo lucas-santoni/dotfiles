@@ -63,10 +63,9 @@
   "zenMode.hideLineNumbers": false,
 
   "vsicons.dontShowNewVersionMessage": true,
-
-  "workbench.colorTheme": "GitHub Light",
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": false,
   "window.menuBarVisibility": "toggle",
-  "standard.autoFixOnSave": true
+  "standard.autoFixOnSave": true,
+  "workbench.colorTheme": "GitHub Light"
 }
