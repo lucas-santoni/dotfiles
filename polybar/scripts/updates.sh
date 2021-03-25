@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "UPDATES $(yay -Qu | wc -l) "
+echo "UPDATES $(yay -Qu | wc -l)"
