@@ -1,6 +1,6 @@
 ## VIM
 abbr e "vim"
-abbr ee "vim ."
+abbr ee "emacsclient -n"
 
 ## VSCODE
 abbr c code
