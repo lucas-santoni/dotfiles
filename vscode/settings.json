@@ -24,7 +24,7 @@
 
   "workbench.editor.enablePreview": false, 
   "workbench.activityBar.visible": false,
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "ayu",
   "workbench.startupEditor": "newUntitledFile",
   // "workbench.colorCustomizations": {
   //   "statusBar.background" : "#303030",
