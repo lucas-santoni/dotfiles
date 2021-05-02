@@ -50,6 +50,14 @@ Nothing special:
 ln -s ~/.dotfiles/dunst ~/.config
 ```
 
+## Emacs
+
+Nothing special:
+
+```fish
+ln -s ~/.dotfiles/emacs/* ~/.emacs.d/
+```
+
 ## Fish
 
 Dependencies:
@@ -58,28 +66,14 @@ Dependencies:
 * https://github.com/chriskempson/base16-shell
 * https://starship.rs/fr-fr/ (see below)
 
-Install the abbreviations:
-
-```fish
-ln -s ~/.dotfiles/fish/abbreviations.fish ~/.config/fish/conf.d/
-```
-
 Install the functions:
 
 ```fish
 ln -s ~/.dotfiles/fish/functions/* ~/.config/fish/functions/
 ```
 
-Note: run the command again if you create new files in the `functions/`
-directory.
-
-Source the universal variables:
-
-```fish
-source ~/.dotfiles/fish/universal.fish
-```
-
-Note: run the command again if you change this file.
+*Note: run the command again if you create new files in the `functions/`
+directory.*
 
 Install the plugins:
 
@@ -89,11 +83,26 @@ ln -s ~/.dotfiles/fish/fish_plugins ~/.config/fish
 fisher update
 ```
 
-And load the base16 on startup:
+Install the base16 helper:
 
 ```fish
 ln -s ~/.dotfiles/fish/base16.fish ~/.config/fish/conf.d
 ```
+
+Source the universal variables:
+
+```fish
+source ~/.dotfiles/fish/universal.fish
+```
+
+Source the abbreviations:
+
+```fish
+source ~/.dotfiles/fish/abbreviations.fish
+```
+
+*Note: run the command again if you change one of these files.*
+
 
 ## Git
 
@@ -180,9 +189,13 @@ ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 
 ## VSCode
 
+Nothing special:
+
 ```fish
-ln -s ~/.dotfiles/vscode/* ~/.config/Code\ -\ OSS/User/
+ln -s ~/.dotfiles/vscode/* ~/.config/Code/User/
 ```
+
+I don't track the plugins I install.
 
 ## X
 
@@ -193,6 +206,9 @@ ln -s ~/.dotfiles/x/xinitrc ~/.xinitrc
 ln -s ~/.dotfiles/x/Xresources ~/.Xresources
 ln -s ~/.dotfiles/x/xscreensaver ~/.xscreensaver
 ```
+
+*Note: be careful! You probably want to edit those files first if you don't have a 4K
+screen. Otherwise everything will look huge.*
 
 ## Zathura
 

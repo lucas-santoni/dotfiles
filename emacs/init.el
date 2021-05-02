@@ -6,5 +6,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(setq vc-follow-symlinks t)
+
 (require 'org)
 (org-babel-load-file (expand-file-name "settings.org" user-emacs-directory))

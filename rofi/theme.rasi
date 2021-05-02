@@ -1,13 +1,13 @@
 * {
   spacing: 0;
   width: 25%;
-  background-color: #efecf4;
-  text-color: #585260;
+  background-color: #181818;
+  text-color: #d8d8d8;
 }
 
 window {
   border: 5px;
-  border-color: #be4678;
+  border-color: #585858;
 }
 
 inputbar {
@@ -31,5 +31,5 @@ element-icon {
 }
 
 element selected {
-  background-color: #dedede;
+  background-color: #383838;
 }

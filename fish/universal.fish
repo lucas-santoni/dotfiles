@@ -1,5 +1,5 @@
 # These are universal variables
-# They are defined *everywhere* and preserved
+# They are defined _everywhere_ and preserved
 # accross restarts so this file should only be sourced
 # when it changes
 
