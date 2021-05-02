@@ -103,7 +103,6 @@ source ~/.dotfiles/fish/abbreviations.fish
 
 *Note: run the command again if you change one of these files.*
 
-
 ## Git
 
 Nothing special:
