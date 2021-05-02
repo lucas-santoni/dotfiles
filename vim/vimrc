@@ -25,20 +25,20 @@ let mapleader=" "
 "Don't wrap code (let if get off screen)
 set nowrap
 
-"Basic syntaxtic support
+"Bla bla
 syntax on
 filetype plugin indent on
 
-"Replace tabs with 2 spaces
+"No tabs
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-"Allow for multiple unsaved buffers
+"Allow for "hidden" unsaved buffers
 set hidden
 
-"Split mapping
+"Split mappings
 nnoremap <silent> <leader>s :split<cr>
 nnoremap <silent> <leader>S :vsplit<cr>
 nnoremap <silent> <leader>q :quit<cr>
@@ -71,17 +71,17 @@ nnoremap <silent> <leader><leader> :Buffers<cr>
 "Forget Vi compatible backspacing
 set backspace=indent,eol,start
 
-"Configure fillchars
+"The characters which appear when doing a vertical split
 set fillchars+=vert:\|
 
-"Lightline configuration
+"The lightline will follow base16 as well
 let g:lightline = { 'colorscheme': 'base16' }
 
-"Lightline inactive colors
+"The lightline inactive colors
 let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-let s:palette.inactive.left = [ [ '#aaaaaa', '#cccccc', 'Red', 'Red' ] ]
-let s:palette.inactive.middle = [ [ '#aaaaaa', '#cccccc', 'Red', 'Red' ] ]
-let s:palette.inactive.right = [ [ '#aaaaaa', '#cccccc', 'Red', 'Red'] ]
+let s:palette.inactive.left = [ [ '#888888', '#333333', 'Red', 'Red' ] ]
+let s:palette.inactive.middle = [ [ '#888888', '#333333', 'Red', 'Red' ] ]
+let s:palette.inactive.right = [ [ '#888888', '#333333', 'Red', 'Red'] ]
 
 "Always show the statusline
 set laststatus=2
@@ -92,7 +92,7 @@ set noshowmode
 "Show less things in the command area
 set noshowcmd
 
-"Better command autocompletion
+"Better? command autocompletion
 set wildmenu
 
 "Incremental search
@@ -107,13 +107,13 @@ set hlsearch
 "Change the appearance of the separators
 highlight VertSplit guibg=NONE guifg=#cccccc
 
-"Disable fzf preview window
+"Disable fzf preview
 let g:fzf_preview_window = ''
 
 "Make fzf appear in a floating window
 let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6, 'border': 'sharp' } }
 
-"Make fzf respect the colorscheme's colors
+"Make fzf somewhat respect the colorscheme's colors
 let g:fzf_colors =
       \{
       \  'fg':      ['fg', 'Normal'],
