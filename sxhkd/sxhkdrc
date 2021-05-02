@@ -6,6 +6,10 @@ super + x
 super + Return
   alacritty
 
+# Run Emacs
+super + e
+  emacs
+
 # Run the browser
 super + g
   google-chrome-stable
@@ -57,13 +61,13 @@ super + shift + i
 
 # Brightess down
 super + i
-  ddccontrol -r 0x10 -W -10 dev:/dev/i2c-5 ; \
-  ddccontrol -r 0x10 -W -10 dev:/dev/i2c-6
+  ddccontrol -r 0x10 -W -5 dev:/dev/i2c-5 ; \
+  ddccontrol -r 0x10 -W -5 dev:/dev/i2c-6
 
 # Brightness up
 super + o
-  ddccontrol -r 0x10 -W +10 dev:/dev/i2c-5 ; \
-  ddccontrol -r 0x10 -W +10 dev:/dev/i2c-6
+  ddccontrol -r 0x10 -W +5 dev:/dev/i2c-5 ; \
+  ddccontrol -r 0x10 -W +5 dev:/dev/i2c-6
 
 # Brightness reset
 super + shift + o
