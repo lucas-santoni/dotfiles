@@ -35,5 +35,13 @@
   {
     "key": "ctrl+w",
     "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.closeAllEditors"
   }
 ]

@@ -67,5 +67,8 @@
   "workbench.editor.showTabs": false,
   "window.menuBarVisibility": "toggle",
   "standard.autoFixOnSave": true,
-  "workbench.colorTheme": "GitHub Dark Dimmed"
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false
 }
