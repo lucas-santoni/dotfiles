@@ -11,7 +11,7 @@
   "editor.suggestSelection": "first",
   "editor.renderLineHighlight": "all",
   "editor.lightbulb.enabled": false,
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   "editor.detectIndentation": true,
 
   "terminal.integrated.fontSize": 15,
