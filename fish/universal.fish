@@ -17,6 +17,7 @@ set -Ux EDITOR vim
 set -Ux MANPAGER "/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 # Locales
+set -Ux LOCALE fr_FR.UTF-8
 set -Ux LC_CTYPE fr_FR.UTF-8
 set -Ux LC_ALL fr_FR.UTF-8
 
