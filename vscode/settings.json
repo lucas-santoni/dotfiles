@@ -4,7 +4,7 @@
 
   "editor.fontFamily": "Iosevka",
   "editor.fontWeight": "400",
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [ 80, 120 ],
@@ -26,7 +26,7 @@
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "Better Solarized Light",
+  "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "ayu",
   "workbench.startupEditor": "newUntitledFile",
   // "workbench.colorCustomizations": {

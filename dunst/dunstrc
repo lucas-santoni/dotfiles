@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "600x30-40-95"
+    geometry = "600x30-50-50"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -291,9 +291,9 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    frame_color = "#7cafc2"
-    background  = "#181818"
-    foreground  = "#d8d8d8"
+    frame_color = "#873E40"
+    background  = "#fffcfd"
+    foreground  = "#250e07"
 
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
@@ -302,9 +302,9 @@
 [urgency_normal]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    frame_color = "#7cafc2"
-    background  = "#181818"
-    foreground  = "#d8d8d8"
+    frame_color = "#873E40"
+    background  = "#fffcfd"
+    foreground  = "#250e07"
 
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
@@ -313,9 +313,9 @@
 [urgency_critical]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    frame_color = "#7cafc2"
-    background  = "#181818"
-    foreground  = "#d8d8d8"
+    frame_color = "#873E40"
+    background  = "#fffcfd"
+    foreground  = "#250e07"
 
     timeout = 5
     # Icon for notifications with critical urgency, uncomment to enable
