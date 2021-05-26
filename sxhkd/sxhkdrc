@@ -31,11 +31,11 @@ super + c
   rofi -show clip -config ~/.config/rofi/config_clip.rasi
 
 # Redshift ON
-super + n
+super + v
   redshift -P -O 3200
 
 # Redshift OFF
-super + shift + n
+super + shift + v
   redshift -P -x
 
 # Take a screenshot (in the clipboard)
