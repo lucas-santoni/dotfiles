@@ -1,6 +1,6 @@
 # Lock the screen and start the screen saver
 super + x
-  xscreensaver-command --lock
+  xfce4-screensaver-command --activate --lock
 
 # Run the terminal emulator
 super + Return
