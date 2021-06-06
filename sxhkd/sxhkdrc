@@ -83,7 +83,7 @@ super + shift + o
   ddccontrol -r 0x10 -w 0 dev:/dev/i2c-6
 
 # Reload bspwm (and all the stuff launched in the bspwmrc file)
-super + r
+super + shift + r
   bspc wm -r
 
 # Close focused node
