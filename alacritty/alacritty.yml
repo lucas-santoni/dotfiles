@@ -43,7 +43,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x:  5
+    x: 11
     y:  5
 
   # Spread additional padding evenly around the terminal content.
