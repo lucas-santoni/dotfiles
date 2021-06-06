@@ -12,7 +12,6 @@ Various stuff to install:
 Handy to have around:
 
 * https://github.com/fnune/base16-fzf
-* https://github.com/devkral/lightsonplus
 
 ## Alacritty
 
@@ -203,7 +202,6 @@ Nothing special:
 ```fish
 ln -s ~/.dotfiles/x/xinitrc ~/.xinitrc
 ln -s ~/.dotfiles/x/Xresources ~/.Xresources
-ln -s ~/.dotfiles/x/xscreensaver ~/.xscreensaver
 ```
 
 *Note: be careful! You probably want to edit those files first if you don't have a 4K

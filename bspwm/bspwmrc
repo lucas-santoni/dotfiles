@@ -76,20 +76,6 @@ while pgrep -u $UID -x xfce4-screensaver >/dev/null; do sleep 1; done
 xfce4-screensaver &
 echo ">> xfce4-screensaver launched"
 
-# Also, start lightson+ in order to try disabling the screen saver
-# when there is some kind of media running
-# The delay parameter has to be lower than xscreensaver's timeout
-# Not really needed to kill it as it does not start if another instance is running
-# TODO Still, kill it first
-lightson+ \
-  --delay 4 \
-  --audio 1 \
-  --vlc 1 \
-  --chromium-flash 1 \
-  --webkit-flash 1 \
-  --html5 1 &
-echo ">> lightson+ launched"
-
 # Get a bluetooth applet
 # Killing blueman does NOT interrupt active bluetooth connections
 killall -q blueman-applet
