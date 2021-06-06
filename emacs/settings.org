@@ -79,7 +79,7 @@ overwrite them.
   (use-package modus-themes
     :ensure t
     :config
-    (load-theme 'modus-vivendi t))
+    (load-theme 'modus-operandi t))
 #+END_SRC
 
 * Faces
