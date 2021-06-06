@@ -16,7 +16,6 @@
 
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "Iosevka Term",
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
 
   "extensions.ignoreRecommendations": true,
 
@@ -27,7 +26,6 @@
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": false,
   "workbench.colorTheme": "GitHub Light Default",
-  "workbench.iconTheme": "ayu",
   "workbench.startupEditor": "newUntitledFile",
   // "workbench.colorCustomizations": {
   //   "statusBar.background" : "#303030",
@@ -39,6 +37,7 @@
   "explorer.compactFolders": false,
 
   "window.zoomLevel": 0,
+  "window.menuBarVisibility": "toggle",
   "window.nativeTabs": true,
 
   "vim.hlsearch": true,
@@ -66,12 +65,10 @@
   "zenMode.hideLineNumbers": false,
 
   "vsicons.dontShowNewVersionMessage": true,
-  "window.menuBarVisibility": "toggle",
-  "standard.autoFixOnSave": true,
 
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
 
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
 }
