@@ -134,9 +134,9 @@ bspc config single_monocle      true
 bspc config gapless_monocle     true
 bspc config borderless_monocle  true
 
-bspc config normal_border_color  "#873E40"
-bspc config active_border_color  "#873E40"
-bspc config focused_border_color "#873E40"
+bspc config normal_border_color  "#000000"
+bspc config active_border_color  "#000000"
+bspc config focused_border_color "#dd3E40"
 
 bspc rule -a "Bitwarden" state=floating
 bspc rule -a "Pcmanfm" state=floating
