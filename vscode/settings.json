@@ -70,5 +70,5 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
 
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
