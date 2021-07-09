@@ -45,7 +45,7 @@ super + m
 # Take a screenshot (to the filesystem)
 # The delay is there just in case
 super + shift + m
-  maim --delay 2 -s ~/Pictures/screenshots/(date +%s).png
+  maim --delay 2 -s ~/Pictures/screenshots/$(date +%s).png
 
 # The commands I'm using don't work properly
 # Polybar, by default, works better (using the mouse)
