@@ -15,7 +15,7 @@ local packer = require('packer')
 packer.startup(function()
   use { 'wbthomason/packer.nvim', opt = true }
   use 'jiangmiao/auto-pairs'
-  use 'folke/whic-key.nvim'
+  use 'folke/which-key.nvim'
   use 'hrsh7th/nvim-compe'
   use 'tpope/vim-commentary'
   use 'famiu/nvim-reload'
