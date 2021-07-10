@@ -379,8 +379,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux new-session -A -s WORK"
-    # - "tmux new -t WORK"
+    - "tmux new-session -A -s work"
 
 # Startup directory
 #
