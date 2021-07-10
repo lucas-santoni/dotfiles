@@ -109,19 +109,6 @@ while pgrep -u $UID -x sxhkd >/dev/null; do sleep 1; done
 sxhkd -m 1 &
 echo ">> sxhkd launched"
 
-# And get an alt+tab switcher
-# killall -q alttab
-# while pgrep -u $UID -x alttab >/dev/null; do sleep 1; done
-# alttab \
-#   -d 2 \
-#   -mk "Super_L" \
-#   -ck "Escape" \
-#   -i 128x128 \
-#   -t 128x128 \
-#   -bg "#eeeeee" \
-#   -frame "#e53935" \
-#   &
-
 # Finally, some bspwm configuration
 
 bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 10
@@ -134,9 +121,9 @@ bspc config single_monocle      true
 bspc config gapless_monocle     true
 bspc config borderless_monocle  true
 
-bspc config normal_border_color  "#000000"
-bspc config active_border_color  "#000000"
-bspc config focused_border_color "#dd3E40"
+bspc config normal_border_color  "#555555"
+bspc config active_border_color  "#555555"
+bspc config focused_border_color "#7cafc2"
 
 bspc rule -a "Bitwarden" state=floating
 bspc rule -a "Pcmanfm" state=floating
@@ -144,14 +131,3 @@ bspc rule -a "JetBrains Toolbox" state=floating
 
 bspc rule -a "Zathura" state=tiled
 bspc rule -a Emacs state=tiled
-
-# Monitor node states in order to only apply shadows (via Picom)
-# to floating windows
-# bspc subscribe node_state | while read -r _ _ _ node state status; do
-#   if [[ "$state" == "floating" ]]; then
-#     case "$status" in
-#       off) xprop -id "$node" -remove _PICOM_SHADOW;;
-#       on) xprop -id "$node" -f _PICOM_SHADOW 32c -set _PICOM_SHADOW 1;;
-#     esac
-#   fi
-# done

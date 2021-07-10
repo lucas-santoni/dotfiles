@@ -1,5 +1,5 @@
 ## VIM
-abbr e "vim"
+abbr e "nvim"
 abbr ee "emacsclient -n"
 
 ## VSCODE
