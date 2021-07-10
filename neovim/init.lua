@@ -15,6 +15,7 @@ local packer = require('packer')
 packer.startup(function()
   use { 'wbthomason/packer.nvim', opt = true }
   use 'jiangmiao/auto-pairs'
+  use 'folke/whic-key.nvim'
   use 'hrsh7th/nvim-compe'
   use 'tpope/vim-commentary'
   use 'famiu/nvim-reload'
@@ -30,10 +31,12 @@ end)
 local telescope = require('telescope')
 local reload = require('nvim-reload')
 local compe = require('compe')
+local wk = require('which-key')
 
 -- Setup colorscheme
 -- We could probably use a Lua function exposed by the package here but who
 -- cares and that's what the documentation recommends anyways
+cmd('set termguicolors')
 cmd('colorscheme base16-default-dark')
 
 -- Various Vim settings
@@ -51,72 +54,10 @@ opt.splitright = true                 -- Put new windows right of current
 opt.tabstop = 2                       -- Number of spaces tabs count for
 opt.termguicolors = true              -- True color support
 opt.wrap = false                      -- Disable line wrap
-opt.signcolumn = 'yes'                -- Disable line wrap
-
--- Remap the default leader (;) to ' ' (space)
-g.mapleader = ' '
-
--- Helper to define a new mapping
--- local function map(mode, lhs, rhs, opts)
---   local options = {noremap = true}
---   if opts then options = vim.tbl_extend('force', options, opts) end
---   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
--- end
-
--- Helper to define a new mapping with leader
--- local function mapl(mode, lhs, rhs, opts)
---   map(mode, '<leader>' .. lhs, rhs, opts)
--- end
-
--- Helper to define a new mapping with leader, and a prefix
--- local function maplp(mode, p, lhs, rhs, opts)
---   map(mode, '<leader>' .. p .. lhs, rhs, opts)
--- end
-
--- Top mappings, no rules here
--- mapl('n', '<leader>', '<cmd>:Telescope buffers<cr>')
--- mapl('n', 'q', '<cmd>:close<cr>')
-
--- Save mappings
--- local save_prefix = 's'
--- maplp('n', save_prefix, 's',  '<cmd>:w<cr>')
--- maplp('n', save_prefix, 'a', '<cmd>:wa<cr>')
--- maplp('n', save_prefix, 'q', '<cmd>:wqa<cr>')
-
--- Buffer mappings
--- local buffer_prefix = 'b'
--- maplp('n', buffer_prefix, 'n', '<cmd>:bnext<cr>')
--- maplp('n', buffer_prefix, 'p', '<cmd>:bprev<cr>')
-
--- Split mappings
--- local split_prefix = 'a'
--- maplp('n', split_prefix, 'x', '<cmd>:split<cr>')
--- maplp('n', split_prefix, 'v', '<cmd>:vsplit<cr>')
--- maplp('n', split_prefix, 'a', '<cmd>:vsplit<cr>')
--- maplp('n', split_prefix, 'q', '<cmd>:close<cr>')
--- maplp('n', split_prefix, 'h', '<C-w>h')
--- maplp('n', split_prefix, 'j', '<C-w>j')
--- maplp('n', split_prefix, 'k', '<C-w>k')
--- maplp('n', split_prefix, 'l', '<C-w>l')
-
--- Miscellaneous mappings
--- local misc_prefix = 'm'
--- maplp('n', misc_prefix, 'n', '<cmd>:nohl<cr>')
--- maplp('n', misc_prefix, 's', '<cmd>:source %<cr>')
--- maplp('n', misc_prefix, 'r', '<cmd>:Reload<cr>')
--- maplp('n', misc_prefix, 'R', '<cmd>:Restart<cr>')
--- maplp('n', misc_prefix, 'q', '<cmd>:q<cr>')
--- maplp('n', misc_prefix, 'Q', '<cmd>:qa<cr>')
-
--- Telescope mappings
--- local telescope_mapping = 'f'
--- maplp('n', telescope_mapping, 'f', '<cmd>:Telescope find_files<cr>')
--- maplp('n', telescope_mapping, 'F', '<cmd>:Telescope file_browser<cr>')
--- maplp('n', telescope_mapping, 'b', '<cmd>:Telescope buffers<cr>')
--- maplp('n', telescope_mapping, 'g', '<cmd>:Telescope live_grep<cr>')
+-- opt.signcolumn = 'yes'                -- Disable line wrap
 
 -- Telescope settings
-telescope.setup {
+telescope.setup({
   defaults = {
     color_devicons = false,
   },
@@ -129,16 +70,16 @@ telescope.setup {
       theme = 'dropdown',
     }
   },
-}
+})
 
 -- Helper function to call highlight
 function hi(group, opts)
-	local c = 'highlight ' .. group
-	for k, v in pairs(opts) do
-		c = c .. ' ' .. k .. '=' .. v
-	end
+  local c = 'highlight ' .. group
+  for k, v in pairs(opts) do
+    c = c .. ' ' .. k .. '=' .. v
+  end
 
-	vim.cmd(c)
+  vim.cmd(c)
 end
 
 -- Change the character used as a vertical split
@@ -146,7 +87,7 @@ end
 vim.cmd('set fillchars+=vert:\\|')
 
 -- Make the vertical split less visible
--- hi('VertSplit', { guibg = 'NONE', guifg='NONE' })
+hi('VertSplit', { guibg = 'NONE', guifg='#ff0000', ctermbg='NONE', ctermfg=6 })
 -- hi('SignColumn', { guibg = 'NONE' })
 -- hi('StatusLine', { guibg = '#cccccc' })
 -- hi('StatusLineNC', { guibg = '#cccccc', guifg = '#bbbbbb' })
@@ -157,3 +98,54 @@ g.netrw_banner = 0
 -- To be converted
 vim.cmd('set completeopt=menuone,noselect')
 vim.cmd('set shortmess+=c')
+
+-- Remap the default leader (;) to ' ' (space)
+g.mapleader = ' '
+
+wk.setup({
+  icons = {
+    breadcrumb = "»",
+    separator = "➜ ",
+    group = "+",
+  },
+  window = {
+    border = "single",
+    position = "bottom",
+    margin = { 1, 0, 1, 0 },
+    padding = { 0, 0, 0, 0 },
+  },
+  layout = {
+    height = { min = 4, max = 25 },
+    width = { min = 20, max = 50 },
+    spacing = 3,
+    align = "left",
+  },
+  show_help = true,
+})
+
+wk.register({
+  ["<leader>"] = { "<cmd>Telescope buffers<cr>", "Buffer List" },
+  ["n"] = { "<cmd>nohl<cr>", "No Highlight" },
+  a = {
+    name = "windows/buffer",
+    h = { "<C-w>h", "Window Left" },
+    j = { "<C-w>j", "Window Down" },
+    k = { "<C-w>k", "Window Right" },
+    l = { "<C-w>l", "Window Up" },
+    n = { "<cmd>bnext<cr>", "Next Buffer" },
+    p = { "<cmd>bprev<cr>", "Previous Buffer" },
+    s = { "<cmd>split<cr>", "Split Horizontally" },
+    v = { "<cmd>vsplit<cr>", "Split Vertically" },
+    q = { "<cmd>close<cr>", "Close" },
+  },
+  f = {
+    name = "find",
+    b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
+    f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+    g = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+  },
+  m = {
+    name = "misc",
+    s = { "<cmd>source %<cr>", "Source current" },
+  },
+}, { prefix = "<leader>" })
