@@ -25,7 +25,7 @@
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.startupEditor": "newUntitledFile",
   // "workbench.colorCustomizations": {
   //   "statusBar.background" : "#303030",
