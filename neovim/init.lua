@@ -43,6 +43,7 @@ local packer = require('packer')
 -- here too but I prefer to have the package configurations outside for now
 packer.startup(function()
   use({ 'wbthomason/packer.nvim', opt = true })
+  use('kyazdani42/nvim-web-devicons')
   use('jiangmiao/auto-pairs')
   use('folke/which-key.nvim')
   use('tpope/vim-commentary')
@@ -111,10 +112,12 @@ opt.cursorline = true
 opt.completeopt = 'menuone,noselect'
 opt.pumheight = 10
 
+vim.cmd('set noshowmode')
+
 -- Telescope settings
 telescope.setup({
   defaults = {
-    color_devicons = false,
+    color_devicons = true,
   },
   pickers = {
     buffers = {
@@ -139,7 +142,7 @@ end
 
 -- Change the character used as a vertical split
 -- No clue how to do this in Lua
-vim.cmd('set fillchars+=vert:\\▏')
+vim.cmd('set fillchars+=vert:\\|')
 
 hi('VertSplit', { guibg = 'NONE' })
 hi('SignColumn', { guibg = 'NONE' })
@@ -266,6 +269,7 @@ wk.register({
 
 -- Enabled LSP servers
 lsp.gopls.setup({})
+lsp.tsserver.setup({})
 
 -- Configuration for Compe
 compe.setup({
@@ -289,7 +293,7 @@ compe.setup({
 
 -- Configuration for trouble
 trouble.setup({
-  icons = false,
+  icons = true,
   fold_open = '',
   fold_closed = '',
   indent_lines = true,
@@ -384,19 +388,101 @@ end
 
 function line()
   local bg = background_l
+  local fg = foreground_d
+
+  local condition = require('galaxyline.condition')
+
+  gls.short_line_left[1] = {
+    mode_short = {
+      provider = function()
+        return '  KILL ME '
+      end,
+      separator = ' ',
+      highlight = { bg, background_lll },
+      separator_highlight = { bg, bg }
+    }
+  }
+
+  gls.short_line_left[2] = {
+    filename_short = {
+      provider = { 'FileName' },
+      highlight = { fg, bg }
+    }
+  }
 
   gls.left[1] = {
-    FileName = {
+    mode = {
+      provider = function()
+        local alias = {
+          n      = '  NORMAL ',
+          i      = '  INSERT ',
+          c      = '  COMMAND ',
+          v      = '  VISUAL ',
+          V      = '  VISUAL LINE ',
+          [''] = '  VISUAL BLOCK '
+        }
+
+        return alias[vim.fn.mode()]
+      end,
+      separator = ' ',
+      highlight = { bg, red },
+      separator_highlight = { bg, bg }
+    }
+  }
+
+  gls.left[2] = {
+    filename = {
       provider = { 'FileName' },
       condition = buffer_not_empty,
-      highlight = { foreground, bg }
+      highlight = { fg, bg }
+    }
+  }
+
+  gls.right[4] = {
+    line_percentage = {
+      provider = 'LinePercent',
+      highlight = { bg, green }
+    }
+  }
+
+  gls.right[3] = {
+    some_icon = {
+      provider = function()
+        return '  '
+      end,
+      separator = ' ',
+      separator_highlight = { green, bg },
+      highlight = { bg, green }
+    }
+  }
+
+  gls.right[2] = {
+    current_column = {
+      provider = function()
+        return vim.fn.virtcol(".")
+      end,
+      separator = ':',
+      separator_highlight = { fg, bg },
+      highlight = { fg, bg }
     }
   }
 
   gls.right[1] = {
-    PerCent = {
-      provider = 'LinePercent',
-      highlight = {foreground, bg},
+    current_line = {
+      provider = function()
+        return vim.fn.line(".")
+      end,
+      separator_highlight = { fg, bg },
+      highlight = { fg, bg }
+    }
+  }
+
+  gls.short_line_right[1] = {
+    please_short = {
+      provider = function()
+        return '  PLEASE '
+      end,
+      highlight = { bg, background_lll }
     }
   }
 end
