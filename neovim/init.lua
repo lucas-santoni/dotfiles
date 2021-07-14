@@ -407,7 +407,7 @@ function line()
   gls.short_line_left[1] = {
     mode_short = {
       provider = function()
-        return '  KILL ME '
+        return '  INACTIVE '
       end,
       separator = ' ',
       highlight = { bg, background_lll },
@@ -458,7 +458,7 @@ function line()
       provider = { 'FileName' },
       highlight = { fg, bg },
       separator = '→ ',
-      separator_highlight = { fg, bg }
+      separator_highlight = { background_lll, bg }
     }
   }
 
@@ -496,7 +496,8 @@ function line()
           return hints .. pluralize(hints > 1, ' hint')
         end
 
-        return 'wtf'
+        hi('LineDiagnostic', { guibg = bg, guifg = fg })
+        return 'all good'
       end,
       highlight = 'LineDiagnostic',
     }
@@ -543,7 +544,7 @@ function line()
   gls.short_line_right[1] = {
     please_short = {
       provider = function()
-        return '  PLEASE '
+        return '  BUFFER '
       end,
       highlight = { bg, background_lll }
     }
