@@ -218,9 +218,13 @@ wk.register({
     o = { '<C-o>', 'Back Buffer' },
     i = { '<C-i>', 'Forward Buffer' },
     h = { '<C-w>h', 'Window Left' },
+    H = { '<C-w>H', 'Window Left' },
     j = { '<C-w>j', 'Window Down' },
+    J = { '<C-w>J', 'Window Down' },
     k = { '<C-w>k', 'Window Right' },
+    K = { '<C-w>K', 'Window Right' },
     l = { '<C-w>l', 'Window Up' },
+    L = { '<C-w>L', 'Window Up' },
     n = { '<cmd>bnext<cr>', 'Next Buffer' },
     p = { '<cmd>bprev<cr>', 'Previous Buffer' },
     d = { '<cmd>bdelete<cr>', 'Delete Buffer' },
@@ -365,25 +369,33 @@ g.indent_blankline_show_first_indent_level = false
 local gls = galaxy.section
 galaxy.short_line_list = {'LuaTree','vista','dbui'}
 
-local colors = {
-  bg = '#282c34',
-  yellow = '#fabd2f',
-  cyan = '#008080',
-  darkblue = '#081633',
-  green = '#afd700',
-  orange = '#FF8800',
-  purple = '#5d4d7a',
-  magenta = '#d16d9e',
-  grey = '#c0c0c0',
-  blue = '#0087d7',
-  red = '#ec5f67'
-}
-
 local buffer_not_empty = function()
   if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
     return true
   end
   return false
+end
+
+-- Don't call this function with no LSP attached
+-- Stolen from https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_diagnostic.lua
+function get_nvim_lsp_diagnostic(clients, diag_type)
+  local count = 0
+
+  for _, client in ipairs(clients) do
+    count = count + vim.lsp.diagnostic.get_count(vim.api.nvim_get_current_buf(),diag_type,client.id)
+  end
+
+  return count
+end
+
+function pluralize(condition, string, plural)
+  plural = 's'
+
+  if condition then
+    return string .. plural
+  end
+
+  return string
 end
 
 function line()
@@ -405,7 +417,7 @@ function line()
 
   gls.short_line_left[2] = {
     filename_short = {
-      provider = { 'FileName' },
+      provider = 'FileName',
       highlight = { fg, bg }
     }
   }
@@ -422,27 +434,79 @@ function line()
           [''] = '  VISUAL BLOCK '
         }
 
+        local mode_colors = {
+          n      = green,
+          i      = red,
+          c      = yellow,
+          v      = pink,
+          V      = pink,
+          [''] = pink
+        }
+
+        hi('LineViMode', { guibg = mode_colors[vim.fn.mode()], guifg = bg })
         return alias[vim.fn.mode()]
       end,
+      highlight = 'LineViMode',
       separator = ' ',
-      highlight = { bg, red },
       separator_highlight = { bg, bg }
     }
   }
 
   gls.left[2] = {
     filename = {
-      provider = { 'FileName' },
       condition = buffer_not_empty,
-      highlight = { fg, bg }
+      provider = { 'FileName' },
+      highlight = { fg, bg },
+      separator = '→ ',
+      separator_highlight = { fg, bg }
+    }
+  }
+
+  gls.left[3] = {
+    diagnostic = {
+      provider = function()
+        if next(vim.lsp.buf_get_clients(0)) == nil then
+          hi('LineDiagnostic', { guibg = bg, guifg = fg })
+          return 'no lsp'
+        end
+
+        local clients = vim.lsp.get_active_clients()
+        local errors = get_nvim_lsp_diagnostic(clients, 'Error')
+        local warnings = get_nvim_lsp_diagnostic(clients, 'Warning')
+        local informations = get_nvim_lsp_diagnostic(clients, 'Information')
+        local hints = get_nvim_lsp_diagnostic(clients, 'Hint')
+
+        if errors ~= 0 then
+          hi('LineDiagnostic', { guibg = bg, guifg = red })
+          return errors .. pluralize(errors > 1, ' error')
+        end
+
+        if warnings ~= 0 then
+          hi('LineDiagnostic', { guibg = bg, guifg = orange })
+          return warnings .. pluralize(warnings > 1, ' warning')
+        end
+
+        if informations ~= 0 then
+          hi('LineDiagnostic', { guibg = bg, guifg = blue })
+          return informations .. pluralize(informations > 1, ' information')
+        end
+
+        if hints ~= 0 then
+          hi('LineDiagnostic', { guibg = bg, guifg = blue })
+          return hints .. pluralize(hints > 1, ' hint')
+        end
+
+        return 'wtf'
+      end,
+      highlight = 'LineDiagnostic',
     }
   }
 
   gls.right[4] = {
     line_percentage = {
       provider = 'LinePercent',
-      highlight = { bg, green }
-    }
+      highlight = 'LineViMode'
+    },
   }
 
   gls.right[3] = {
@@ -450,9 +514,9 @@ function line()
       provider = function()
         return '  '
       end,
+      highlight = 'LineViMode',
       separator = ' ',
       separator_highlight = { green, bg },
-      highlight = { bg, green }
     }
   }
 
@@ -461,9 +525,9 @@ function line()
       provider = function()
         return vim.fn.virtcol(".")
       end,
+      highlight = { fg, bg },
       separator = ':',
       separator_highlight = { fg, bg },
-      highlight = { fg, bg }
     }
   }
 
@@ -472,8 +536,7 @@ function line()
       provider = function()
         return vim.fn.line(".")
       end,
-      separator_highlight = { fg, bg },
-      highlight = { fg, bg }
+      highlight = { fg, bg },
     }
   }
 
