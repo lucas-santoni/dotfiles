@@ -59,6 +59,8 @@ packer.startup(function()
   use('onsails/lspkind-nvim')
   use('lukas-reineke/indent-blankline.nvim')
   use('glepnir/galaxyline.nvim')
+  use('phaazon/hop.nvim')
+  use('kyazdani42/nvim-tree.lua')
 end)
 
 -- Variables for quick packages access
@@ -181,6 +183,11 @@ hi('TelescopeMatching', { guifg = red })
 
 hi('TelescopePromptPrefix', { guifg = red })
 
+hi('HopUnmatched', { guibg = background, guifg = background_ll })
+hi('HopNextKey', { guibg = background, guifg = red })
+hi('HopNextKey1', { guibg = background, guifg = red })
+hi('HopNextKey2', { guibg = background, guifg = red })
+
 -- Configure netrw
 g.netrw_banner = 0
 
@@ -212,7 +219,17 @@ wk.setup({
 -- Mappings for which-key
 wk.register({
   ['<leader>'] = { tbuiltin.buffers, 'Buffer List' },
+
+  ['s'] = { '<cmd>:HopChar2<cr>', 'Jump To (2)' },
+  ['S'] = { '<cmd>:HopChar1<cr>', 'Jump To (1)' },
+
   ['n'] = { '<cmd>nohl<cr>', 'No Highlight' },
+
+  ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Toogle Tree' },
+  ['E'] = { '<cmd>NvimTreeFindFile<cr>', 'Toogle Tree' },
+
+  ['z'] = { '/', 'Search' },
+
   a = {
     name = 'windows/buffer',
     o = { '<C-o>', 'Back Buffer' },
@@ -233,12 +250,14 @@ wk.register({
     c = { '<cmd>close<cr>', 'Close' },
     q = { '<cmd>quit<cr>', 'Quit' },
   },
+
   d = {
     name = 'document',
     s = { '<cmd>w<cr>', 'Save Changes' },
     S = { '<cmd>wa<cr>', 'Save All Changes' },
     r = { '<cmd>u0<cr>', 'Restore Changes' },
   },
+
   f = {
     name = 'find',
     b = { tbuiltin.buffers, 'Find Buffers' },
@@ -251,6 +270,7 @@ wk.register({
     p = { tbuiltin.oldfiles, 'Previously Opened' },
     r = { tbuiltin.registers, 'Registers' },
   },
+
   l = {
     name = 'lsp',
     t = { '<cmd>TroubleToggle lsp_document_diagnostics<cr>', 'Document Diagnostics' },
@@ -259,10 +279,12 @@ wk.register({
     d = { tbuiltin.lsp_definitions, 'Definitions' },
     i = { tbuiltin.lsp_implementations, 'Implementations' },
   },
+
   m = {
     name = 'misc',
     s = { '<cmd>source %<cr>', 'Source current' },
   },
+
   p = {
     name = 'packer',
     s = { '<cmd>PackerSync<cr>', 'Packer Sync' },
@@ -527,7 +549,7 @@ function line()
         return vim.fn.virtcol(".")
       end,
       highlight = { fg, bg },
-      separator = ':',
+      separator = ',',
       separator_highlight = { fg, bg },
     }
   }
