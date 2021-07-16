@@ -92,3 +92,6 @@ abbr cat "bat"
 ## macOS already has pbcopy and pbpaste which are short enough
 abbr copy "xclip -selection clipboard"
 abbr paste "xclip -selection clipboard -out"
+
+## Yarn Workspaces
+abbr yw "yarn workspace"
