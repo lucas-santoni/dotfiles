@@ -74,6 +74,7 @@ local compe       = require('compe')
 local trouble     = require('trouble')
 local lspkind     = require('lspkind')
 local galaxy      = require('galaxyline')
+local icons       = require('nvim-web-devicons')
 
 -- Setup colorscheme
 -- We could probably use a Lua function exposed by the package here but who
@@ -579,3 +580,14 @@ g.indent_blankline_buftype_exclude = {
 }
 g.indent_blankline_show_trailing_blankline_indent = false
 g.indent_blankline_show_first_indent_level = false
+
+icons.setup({
+ override = {
+  go = {
+    icon = "ﳑ",
+    name = "Golang",
+    color = "#00AED8"
+  },
+ },
+ default = true;
+})
