@@ -66,7 +66,6 @@ end)
 -- Variables for quick packages access
 local base16      = require('base16')
 local telescope   = require('telescope')
-local tbuiltin    = require('telescope.builtin')
 local reload      = require('nvim-reload')
 local compe       = require('compe')
 local wk          = require('which-key')
@@ -100,9 +99,9 @@ opt.shiftround = true
 opt.hidden = true
 opt.showcmd = false
 opt.ignorecase = true
+opt.smartcase = true
 opt.scrolloff = 4
 opt.sidescrolloff = 8
-opt.smartcase = true
 opt.smartindent = true
 opt.splitbelow = true
 opt.splitright = true
@@ -113,22 +112,32 @@ opt.number = false
 opt.cursorline = true
 opt.completeopt = 'menuone,noselect'
 opt.pumheight = 10
+opt.inccommand = 'nosplit'
 
 vim.cmd('set noshowmode')
 
 -- Telescope settings
 telescope.setup({
   defaults = {
+    sorting_strategy = 'ascending',
+    prompt_prefix = '→ ',
+    selection_caret = '• ',
     color_devicons = true,
+    layout_strategy = 'bottom_pane',
+    layout_config = {
+      height = 0.15,
+      prompt_position = 'top',
+    },
+    borderchars = {
+      'z',
+      prompt = { '─', '', '', '', '─', '─', '', '' },
+      results = { '' },
+    },
   },
   pickers = {
     buffers = {
       sort_lastused = true,
-      theme = 'dropdown',
     },
-    find_files = {
-      theme = 'dropdown',
-    }
   },
 })
 
@@ -149,10 +158,8 @@ vim.cmd('set fillchars+=vert:\\|')
 hi('VertSplit', { guibg = 'NONE' })
 hi('SignColumn', { guibg = 'NONE' })
 
--- Avoid unthemed character
--- https://github.com/vim-airline/vim-airline-themes/issues/48
-hi('StatusLine', { guibg = background_l })
-hi('StatusLineNC', { guibg = background_l })
+hi('Search', { guibg = background_ll, guifg = foreground_d })
+hi('IncSearch', { guibg = orange, guifg = background})
 
 hi('LineNR', { guibg = 'NONE', guifg = background_ll })
 hi('CursorLine', { guibg = 'NONE', guifg = 'NONE' })
@@ -169,6 +176,7 @@ hi('TroubleIndent', { guibg = 'NONE', guifg = background_ll })
 hi('TroubleLocation', { guibg = 'NONE', guifg = background_lll })
 hi('TroubleSource', { guibg = 'NONE', guifg = background_lll })
 
+-- hi('IndentBlanklineChar', { guibg = 'NONE', guifg = background_l })
 hi('IndentBlanklineChar', { guibg = 'NONE', guifg = background_l })
 
 hi('TelescopeSelection', { guibg = 'NONE', guifg = foreground })
@@ -179,9 +187,8 @@ hi('TelescopePromptBorder', { guifg = background_lll })
 hi('TelescopeResultsBorder', { guifg = background_lll })
 hi('TelescopePreviewBorder', { guifg = background_lll })
 
-hi('TelescopeMatching', { guifg = red })
-
-hi('TelescopePromptPrefix', { guifg = red })
+hi('TelescopeMatching', { guibg = background_ll, guifg = foreground_d })
+hi('TelescopePromptPrefix', { guifg = green })
 
 hi('HopUnmatched', { guibg = background, guifg = background_ll })
 hi('HopNextKey', { guibg = background, guifg = red })
@@ -198,7 +205,7 @@ g.mapleader = ' '
 wk.setup({
   icons = {
     breadcrumb = '»',
-    separator = '➜ ',
+    separator = '→',
     group = '+',
   },
   window = {
@@ -208,20 +215,23 @@ wk.setup({
     padding = { 1, 0, 1, 0 },
   },
   layout = {
-    height = { min = 4, max = 25 },
-    width = { min = 20, max = 50 },
+    height = { min = 1, max = 5 },
     spacing = 3,
     align = 'left',
   },
-  show_help = true,
+  show_help = false,
 })
+
+local function t(command)
+  return '<cmd>Telescope ' .. command .. ' prompt_title="" previewer=false<cr>'
+end
 
 -- Mappings for which-key
 wk.register({
-  ['<leader>'] = { tbuiltin.buffers, 'Buffer List' },
+  ['<leader>'] = { t('buffers'), 'Buffer List' },
 
-  ['s'] = { '<cmd>:HopChar2<cr>', 'Jump To (2)' },
-  ['S'] = { '<cmd>:HopChar1<cr>', 'Jump To (1)' },
+  ['s'] = { '<cmd>HopChar2<cr>', 'Jump To (2)' },
+  ['S'] = { '<cmd>HopChar1<cr>', 'Jump To (1)' },
 
   ['n'] = { '<cmd>nohl<cr>', 'No Highlight' },
 
@@ -260,24 +270,24 @@ wk.register({
 
   f = {
     name = 'find',
-    b = { tbuiltin.buffers, 'Find Buffers' },
-    c = { tbuiltin.command_history, 'Command History' },
-    C = { tbuiltin.commands, 'Command' },
-    f = { tbuiltin.git_files, 'Find Files (Git)' },
-    F = { tbuiltin.find_files, 'Find Files (All)' },
-    g = { tbuiltin.live_grep, 'Find Text' },
-    o = { tbuiltin.vim_options, 'Vim Option' },
-    p = { tbuiltin.oldfiles, 'Previously Opened' },
-    r = { tbuiltin.registers, 'Registers' },
+    b = { t('buffers'), 'Find Buffers' },
+    c = { t('command_history'), 'Command History' },
+    C = { t('commands'), 'Command' },
+    f = { t('git_files'), 'Find Files (Git)' },
+    F = { t('find_files'), 'Find Files (All)' },
+    g = { t('live_grep'), 'Find Text' },
+    o = { t('vim_options'), 'Vim Option' },
+    p = { t('oldfiles'), 'Previously Opened' },
+    r = { t('registers'), 'Registers' },
   },
 
   l = {
     name = 'lsp',
     t = { '<cmd>TroubleToggle lsp_document_diagnostics<cr>', 'Document Diagnostics' },
     T = { '<cmd>TroubleToggle lsp_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
-    r = { tbuiltin.lsp_references, 'References' },
-    d = { tbuiltin.lsp_definitions, 'Definitions' },
-    i = { tbuiltin.lsp_implementations, 'Implementations' },
+    r = { t('lsp_references'), 'References' },
+    d = { t('lsp_definitions'), 'Definitions' },
+    i = { t('lsp_implementations'), 'Implementations' },
   },
 
   m = {
@@ -375,21 +385,8 @@ lspkind.init({
   },
 })
 
-g.indentLine_enabled = 1
-g.indent_blankline_char = '▏'
-g.indent_blankline_filetype_exclude = {
-  'help',
-  'terminal',
-  'dashboard'
-}
-g.indent_blankline_buftype_exclude = {
-  'terminal'
-}
-g.indent_blankline_show_trailing_blankline_indent = false
-g.indent_blankline_show_first_indent_level = false
-
 local gls = galaxy.section
-galaxy.short_line_list = {'LuaTree','vista','dbui'}
+galaxy.short_line_list = {'NvimTree', 'Trouble'}
 
 local buffer_not_empty = function()
   if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
@@ -426,24 +423,6 @@ function line()
 
   local condition = require('galaxyline.condition')
 
-  gls.short_line_left[1] = {
-    mode_short = {
-      provider = function()
-        return '  INACTIVE '
-      end,
-      separator = ' ',
-      highlight = { bg, background_lll },
-      separator_highlight = { bg, bg }
-    }
-  }
-
-  gls.short_line_left[2] = {
-    filename_short = {
-      provider = 'FileName',
-      highlight = { fg, bg }
-    }
-  }
-
   gls.left[1] = {
     mode = {
       provider = function()
@@ -479,7 +458,7 @@ function line()
       condition = buffer_not_empty,
       provider = { 'FileName' },
       highlight = { fg, bg },
-      separator = '→ ',
+      separator = '· ',
       separator_highlight = { background_lll, bg }
     }
   }
@@ -546,7 +525,7 @@ function line()
   gls.right[2] = {
     current_column = {
       provider = function()
-        return vim.fn.virtcol(".")
+        return vim.fn.virtcol('.')
       end,
       highlight = { fg, bg },
       separator = ',',
@@ -557,20 +536,46 @@ function line()
   gls.right[1] = {
     current_line = {
       provider = function()
-        return vim.fn.line(".")
+        return vim.fn.line('.')
       end,
       highlight = { fg, bg },
-    }
-  }
-
-  gls.short_line_right[1] = {
-    please_short = {
-      provider = function()
-        return '  BUFFER '
-      end,
-      highlight = { bg, background_lll }
     }
   }
 end
 
 line()
+
+-- Avoid unthemed character
+-- https://github.com/vim-airline/vim-airline-themes/issues/48
+hi('StatusLine', { guibg = background_l })
+hi('StatusLineNC', { guibg = background_l })
+
+g.nvim_tree_width = 40
+g.nvim_tree_ignore = { '.git', 'node_modules' }
+g.nvim_tree_gitignore = 1
+g.nvim_tree_auto_ignore_ft = {}
+g.nvim_tree_auto_resize = 0
+g.nvim_tree_disable_netrw = 0
+g.nvim_tree_hijack_netrw = 0
+
+local tree_cb = require('nvim-tree.config').nvim_tree_callback
+g.nvim_tree_bindings = {
+  { key = { 'e' },          cb = tree_cb('edit') },
+  { key = 'v',              cb = tree_cb('vsplit') },
+  { key = 's',              cb = tree_cb('split') },
+  { key = '<C-p>',          cb = tree_cb('parent_node') },
+  { key = 'h',              cb = tree_cb('close_node') },
+  { key = 'l',              cb = tree_cb('open_node') },
+  { key = '<C-l>',          cb = tree_cb('cd') },
+  { key = 'u',              cb = tree_cb('dir_up') },
+  { key = '?',              cb = tree_cb('toggle_help') },
+}
+
+g.indentLine_enabled = 1
+g.indent_blankline_char = '▏'
+g.indent_blankline_filetype_exclude = {}
+g.indent_blankline_buftype_exclude = {
+  'help',
+}
+g.indent_blankline_show_trailing_blankline_indent = false
+g.indent_blankline_show_first_indent_level = false
