@@ -32,7 +32,8 @@ local cmd = vim.cmd
 local fn = vim.fn
 local g = vim.g
 local opt = vim.opt
-local execute = vim.api.nvim_command
+local api = vim.api
+local execute = api.nvim_command
 
 -- Packer package manager
 execute 'packadd packer.nvim'
@@ -61,7 +62,7 @@ packer.startup(function()
   use('glepnir/galaxyline.nvim')
   use('phaazon/hop.nvim')
   use('kyazdani42/nvim-tree.lua')
-  use('ntpeters/vim-better-whitespace')
+  -- use('ntpeters/vim-better-whitespace')
 end)
 
 -- Variables for quick packages access
@@ -393,7 +394,7 @@ lspkind.init({
 })
 
 local gls = galaxy.section
-galaxy.short_line_list = {'NvimTree', 'Trouble'}
+galaxy.short_line_list = {'NvimTree', 'Trouble', 'LSPHelp'}
 
 local buffer_not_empty = function()
   if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
@@ -606,6 +607,44 @@ require('nvim-autopairs.completion.compe').setup({
 })
 
 vim.lsp.handlers['textDocument/hover'] = function(_, method, result)
+  local buf_handle = nil
+  for _, v in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.fn.bufname(v) == 'LSP Help' then
+      buf_handle = v
+      break
+    end
+  end
+
+  api.nvim_command('botright split new')
+  api.nvim_win_set_height(0, 10)
+  win_handle = api.nvim_tabpage_get_win(0)
+  buf_handle = api.nvim_win_get_buf(0)
+
+  api.nvim_buf_set_name(buf_handle, 'LSP Help')
+
+  api.nvim_buf_set_option(buf_handle, 'filetype', 'LSPHelp')
+  api.nvim_buf_set_option(buf_handle, "buftype", "nofile")
+  api.nvim_buf_set_option(buf_handle, "bufhidden", "wipe")
+  api.nvim_buf_set_option(buf_handle, "swapfile", false)
+  api.nvim_buf_set_option(buf_handle, "buflisted", false)
+
+  api.nvim_win_set_option(win_handle, "spell", false)
+  api.nvim_win_set_option(win_handle, "list", false)
+  api.nvim_win_set_option(win_handle, "winfixheight", true)
+  api.nvim_win_set_option(win_handle, "winfixwidth", true)
+  api.nvim_win_set_option(win_handle, "signcolumn", "no")
+  api.nvim_win_set_option(win_handle, "foldenable", false)
+  -- api.nvim_buf_set_option(buf_handle, "winhighlight", "Normal:TroubleNormal,EndOfBuffer:TroubleNormal,SignColumn:TroubleNormal", true)
+  -- api.nvim_buf_set_option(buf_handle, "fcs", "eob: ", true)
+
+  -- run your stuff here, could be anything
+  -- jobID = api.nvim_call_function('termopen', {'$SHELL'})
   local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
-  vim.lsp.util.open_floating_preview(markdown_lines, nil, nil)
+  table.insert(markdown_lines, 1, ' ') -- will be invisble
+  vim.lsp.util.stylize_markdown(buf_handle, markdown_lines, nil)
+
+  api.nvim_buf_set_option(buf_handle, 'readonly', true)
+  api.nvim_buf_set_option(buf_handle, 'modifiable', false)
+
+  api.nvim_command('wincmd p') -- go back to previous window
 end
