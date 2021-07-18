@@ -44,7 +44,7 @@ local packer = require('packer')
 packer.startup(function()
   use({ 'wbthomason/packer.nvim', opt = true })
   use('kyazdani42/nvim-web-devicons')
-  use('jiangmiao/auto-pairs')
+  use('windwp/nvim-autopairs')
   use('folke/which-key.nvim')
   use('tpope/vim-commentary')
   use('norcalli/nvim-base16.lua')
@@ -61,6 +61,7 @@ packer.startup(function()
   use('glepnir/galaxyline.nvim')
   use('phaazon/hop.nvim')
   use('kyazdani42/nvim-tree.lua')
+  use('ntpeters/vim-better-whitespace')
 end)
 
 -- Variables for quick packages access
@@ -121,8 +122,8 @@ vim.cmd('set noshowmode')
 telescope.setup({
   defaults = {
     sorting_strategy = 'ascending',
-    prompt_prefix = '→ ',
-    selection_caret = '• ',
+    prompt_prefix = '▶ ',
+    selection_caret = '→ ',
     color_devicons = true,
     layout_strategy = 'bottom_pane',
     layout_config = {
@@ -196,6 +197,8 @@ hi('HopNextKey', { guibg = background, guifg = red })
 hi('HopNextKey1', { guibg = background, guifg = red })
 hi('HopNextKey2', { guibg = background, guifg = red })
 
+hi('ExtraWhitespace', { guibg = red })
+
 -- Configure netrw
 g.netrw_banner = 0
 
@@ -224,7 +227,7 @@ wk.setup({
 })
 
 local function t(command)
-  return '<cmd>Telescope ' .. command .. ' prompt_title="" previewer=false<cr>'
+  return '<cmd>Telescope ' .. command .. ' prompt_title= previewer=false<cr>'
 end
 
 -- Mappings for which-key
@@ -286,9 +289,11 @@ wk.register({
     name = 'lsp',
     t = { '<cmd>TroubleToggle lsp_document_diagnostics<cr>', 'Document Diagnostics' },
     T = { '<cmd>TroubleToggle lsp_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
-    r = { t('lsp_references'), 'References' },
-    d = { t('lsp_definitions'), 'Definitions' },
-    i = { t('lsp_implementations'), 'Implementations' },
+    r = { t('lsp_references'), 'Show References' },
+    d = { t('lsp_definitions'), 'Show Definitions' },
+    i = { t('lsp_implementations'), 'Show Implementations' },
+    f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', 'Format Buffer' },
+    s = { '<cmd>lua vim.lsp.buf.signature_help()<cr>', 'Show Signature' }
   },
 
   m = {
@@ -574,20 +579,27 @@ g.nvim_tree_bindings = {
 
 g.indentLine_enabled = 1
 g.indent_blankline_char = '▏'
-g.indent_blankline_filetype_exclude = {}
-g.indent_blankline_buftype_exclude = {
-  'help',
-}
+g.indent_blankline_filetype_exclude = { 'packer' }
+g.indent_blankline_buftype_exclude = { 'help' }
 g.indent_blankline_show_trailing_blankline_indent = false
 g.indent_blankline_show_first_indent_level = false
 
 icons.setup({
  override = {
   go = {
-    icon = "ﳑ",
-    name = "Golang",
-    color = "#00AED8"
+    icon = 'ﳑ',
+    name = 'Golang',
+    color = '#00AED8'
   },
  },
  default = true;
+})
+
+require('nvim-autopairs').setup({
+  disable_filetype = { 'TelescopePrompt' },
+})
+
+require('nvim-autopairs.completion.compe').setup({
+  map_cr = true,
+  map_complete = true
 })
