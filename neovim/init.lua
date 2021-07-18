@@ -145,7 +145,7 @@ telescope.setup({
 
 -- Helper function to call highlight
 function hi(group, opts)
-  local c = 'highlight ' .. group
+  local c = 'highlight! ' .. group
   for k, v in pairs(opts) do
     c = c .. ' ' .. k .. '=' .. v
   end
@@ -293,12 +293,13 @@ wk.register({
     d = { t('lsp_definitions'), 'Show Definitions' },
     i = { t('lsp_implementations'), 'Show Implementations' },
     f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', 'Format Buffer' },
-    s = { '<cmd>lua vim.lsp.buf.signature_help()<cr>', 'Show Signature' }
+    h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'Show Help' }
   },
 
   m = {
     name = 'misc',
-    s = { '<cmd>source %<cr>', 'Source current' },
+    s = { '<cmd>source %<cr>', 'Source Current' },
+    h = { '<cmd>echo map(synstack(line(\'.\'), col(\'.\')), \'synIDattr(v:val, "name")\') <cr>', 'Show Highlight Group' },
   },
 
   p = {
@@ -360,10 +361,10 @@ for type, icon in pairs(signs) do
 end
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = false,
-  underline = false,
-}
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = false,
+    underline = false,
+  }
 )
 
 lspkind.init({
@@ -603,3 +604,8 @@ require('nvim-autopairs.completion.compe').setup({
   map_cr = true,
   map_complete = true
 })
+
+vim.lsp.handlers['textDocument/hover'] = function(_, method, result)
+  local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+  vim.lsp.util.open_floating_preview(markdown_lines, nil, nil)
+end
