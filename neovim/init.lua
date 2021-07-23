@@ -19,12 +19,26 @@ local brown =          '#a16946'
 -- Map utility
 function map(arr, f)
   local res = {}
-
   for k, v in pairs(arr) do
     res[k] = f(v)
-  end
+  end return res
+end
 
-  return res
+-- Length utility
+function length(arr)
+  local c = 0
+  for _ in pairs(arr) do
+    c = c + 1
+  end
+  return c
+end
+
+-- Min utility
+function min(a, b)
+  if (a > b) then
+    return b
+  end
+  return a
 end
 
 -- Variables for quick access to 'built-in' stuff
@@ -62,6 +76,7 @@ packer.startup(function()
   use('glepnir/galaxyline.nvim')
   use('phaazon/hop.nvim')
   use('kyazdani42/nvim-tree.lua')
+  use('gennaro-tedesco/nvim-jqx')
   -- use('ntpeters/vim-better-whitespace')
 end)
 
@@ -116,6 +131,8 @@ opt.cursorline = true
 opt.completeopt = 'menuone,noselect'
 opt.pumheight = 10
 opt.inccommand = 'nosplit'
+opt.list = true
+opt.listchars = "eol:↵"
 
 vim.cmd('set noshowmode')
 
@@ -123,7 +140,7 @@ vim.cmd('set noshowmode')
 telescope.setup({
   defaults = {
     sorting_strategy = 'ascending',
-    prompt_prefix = '▶ ',
+    prompt_prefix = '→ ',
     selection_caret = '→ ',
     color_devicons = true,
     layout_strategy = 'bottom_pane',
@@ -179,8 +196,8 @@ hi('TroubleIndent', { guibg = 'NONE', guifg = background_ll })
 hi('TroubleLocation', { guibg = 'NONE', guifg = background_lll })
 hi('TroubleSource', { guibg = 'NONE', guifg = background_lll })
 
--- hi('IndentBlanklineChar', { guibg = 'NONE', guifg = background_l })
 hi('IndentBlanklineChar', { guibg = 'NONE', guifg = background_l })
+hi('NonText', { guibg = 'NONE', guifg = background_l })
 
 hi('TelescopeSelection', { guibg = 'NONE', guifg = foreground })
 hi('TelescopeNormal', { guibg = background, guifg = foreground })
@@ -191,7 +208,7 @@ hi('TelescopeResultsBorder', { guifg = background_lll })
 hi('TelescopePreviewBorder', { guifg = background_lll })
 
 hi('TelescopeMatching', { guibg = background_ll, guifg = foreground_d })
-hi('TelescopePromptPrefix', { guifg = green })
+hi('TelescopePromptPrefix', { guifg = red })
 
 hi('HopUnmatched', { guibg = background, guifg = background_ll })
 hi('HopNextKey', { guibg = background, guifg = red })
@@ -291,6 +308,7 @@ wk.register({
     t = { '<cmd>TroubleToggle lsp_document_diagnostics<cr>', 'Document Diagnostics' },
     T = { '<cmd>TroubleToggle lsp_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
     r = { t('lsp_references'), 'Show References' },
+    R = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
     d = { t('lsp_definitions'), 'Show Definitions' },
     i = { t('lsp_implementations'), 'Show Implementations' },
     f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', 'Format Buffer' },
@@ -606,45 +624,47 @@ require('nvim-autopairs.completion.compe').setup({
   map_complete = true
 })
 
-vim.lsp.handlers['textDocument/hover'] = function(_, method, result)
-  local buf_handle = nil
-  for _, v in ipairs(vim.api.nvim_list_bufs()) do
-    if vim.fn.bufname(v) == 'LSP Help' then
-      buf_handle = v
-      break
-    end
-  end
+-- vim.lsp.handlers['textDocument/hover'] = function(_, method, result)
+--   local buf_handle = nil
+--   for _, v in ipairs(vim.api.nvim_list_bufs()) do
+--     if vim.fn.bufname(v) == 'LSP Help' then
+--       buf_handle = v
+--       break
+--     end
+--   end
 
-  api.nvim_command('botright split new')
-  api.nvim_win_set_height(0, 10)
-  win_handle = api.nvim_tabpage_get_win(0)
-  buf_handle = api.nvim_win_get_buf(0)
+--   api.nvim_command('botright split new')
+--   win_handle = api.nvim_tabpage_get_win(0)
+--   buf_handle = api.nvim_win_get_buf(0)
 
-  api.nvim_buf_set_name(buf_handle, 'LSP Help')
+--   api.nvim_buf_set_name(buf_handle, 'LSP Help')
 
-  api.nvim_buf_set_option(buf_handle, 'filetype', 'LSPHelp')
-  api.nvim_buf_set_option(buf_handle, "buftype", "nofile")
-  api.nvim_buf_set_option(buf_handle, "bufhidden", "wipe")
-  api.nvim_buf_set_option(buf_handle, "swapfile", false)
-  api.nvim_buf_set_option(buf_handle, "buflisted", false)
+--   api.nvim_buf_set_option(buf_handle, 'filetype', 'LSPHelp')
+--   api.nvim_buf_set_option(buf_handle, "buftype", "nofile")
+--   api.nvim_buf_set_option(buf_handle, "bufhidden", "wipe")
+--   api.nvim_buf_set_option(buf_handle, "swapfile", false)
+--   api.nvim_buf_set_option(buf_handle, "buflisted", false)
 
-  api.nvim_win_set_option(win_handle, "spell", false)
-  api.nvim_win_set_option(win_handle, "list", false)
-  api.nvim_win_set_option(win_handle, "winfixheight", true)
-  api.nvim_win_set_option(win_handle, "winfixwidth", true)
-  api.nvim_win_set_option(win_handle, "signcolumn", "no")
-  api.nvim_win_set_option(win_handle, "foldenable", false)
-  -- api.nvim_buf_set_option(buf_handle, "winhighlight", "Normal:TroubleNormal,EndOfBuffer:TroubleNormal,SignColumn:TroubleNormal", true)
-  -- api.nvim_buf_set_option(buf_handle, "fcs", "eob: ", true)
+--   api.nvim_win_set_option(win_handle, "spell", false)
+--   api.nvim_win_set_option(win_handle, "list", false)
+--   api.nvim_win_set_option(win_handle, "winfixheight", true)
+--   api.nvim_win_set_option(win_handle, "winfixwidth", true)
+--   api.nvim_win_set_option(win_handle, "signcolumn", "no")
+--   api.nvim_win_set_option(win_handle, "foldenable", false)
+--   -- api.nvim_win_set_option(win_handle, "wrap", true)
+--   -- api.nvim_buf_set_option(buf_handle, "winhighlight", "Normal:TroubleNormal,EndOfBuffer:TroubleNormal,SignColumn:TroubleNormal", true)
+--   -- api.nvim_buf_set_option(buf_handle, "fcs", "eob: ", true)
 
-  -- run your stuff here, could be anything
-  -- jobID = api.nvim_call_function('termopen', {'$SHELL'})
-  local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
-  table.insert(markdown_lines, 1, ' ') -- will be invisble
-  vim.lsp.util.stylize_markdown(buf_handle, markdown_lines, nil)
+--   -- run your stuff here, could be anything
+--   -- jobID = api.nvim_call_function('termopen', {'$SHELL'})
+--   local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+--   -- table.insert(markdown_lines, 1, ' ') -- will be invisble
+--   vim.lsp.util.stylize_markdown(buf_handle, markdown_lines, nil)
 
-  api.nvim_buf_set_option(buf_handle, 'readonly', true)
-  api.nvim_buf_set_option(buf_handle, 'modifiable', false)
+--   api.nvim_win_set_height(0, min(length(markdown_lines), 10))
 
-  api.nvim_command('wincmd p') -- go back to previous window
-end
+--   api.nvim_buf_set_option(buf_handle, 'readonly', true)
+--   api.nvim_buf_set_option(buf_handle, 'modifiable', false)
+
+--   api.nvim_command('wincmd p') -- go back to previous window
+-- end
