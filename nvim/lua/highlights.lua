@@ -70,3 +70,6 @@ hi('lsp_markdown3', { guifg = foreground_d })
 -- https://github.com/vim-airline/vim-airline-themes/issues/48
 hi('StatusLine', { guibg = background_l })
 hi('StatusLineNC', { guibg = background_l })
+
+-- Make the indentation quiter
+hi('NvimTreeIndentMarker', { guibg = 'NONE', guifg = background_l })
