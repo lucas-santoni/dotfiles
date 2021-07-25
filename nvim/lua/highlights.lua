@@ -73,3 +73,8 @@ hi('StatusLineNC', { guibg = background_l })
 
 -- Make the indentation quiter
 hi('NvimTreeIndentMarker', { guibg = 'NONE', guifg = background_l })
+
+-- GitSigns colors
+hi('DiffAdd', { guibg = background, guifg = green })
+hi('DiffChange', { guibg = background, guifg = orange })
+hi('DiffDelete', { guibg = background, guifg = red })

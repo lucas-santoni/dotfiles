@@ -73,6 +73,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/geo/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/geo/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
   ["hop.nvim"] = {
     loaded = true,
     path = "/Users/geo/.local/share/nvim/site/pack/packer/start/hop.nvim"

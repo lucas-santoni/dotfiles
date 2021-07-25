@@ -11,6 +11,12 @@ packer.startup(function()
   use('hrsh7th/nvim-compe')
   use('kyazdani42/nvim-tree.lua')
   use('kyazdani42/nvim-web-devicons')
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
   use('lukas-reineke/indent-blankline.nvim')
   use('neovim/nvim-lspconfig')
   use('norcalli/nvim-base16.lua')

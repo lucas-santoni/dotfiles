@@ -23,6 +23,7 @@ vim.opt.pumheight = 10
 vim.opt.inccommand = 'nosplit'
 vim.opt.list = true
 vim.opt.listchars = "eol:↵,tab:↣  "
+vim.opt.shortmess = "filnxtToOfc"
 
 -- Change the character used as a vertical split
 -- TODO Convert to Lua one day
