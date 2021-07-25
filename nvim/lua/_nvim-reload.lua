@@ -1,0 +1,3 @@
+local reload = require('nvim-reload')
+
+-- Nothing more...
