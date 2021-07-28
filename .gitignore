@@ -1,3 +1,4 @@
 *.swp
 .DS_Store
 emacs/settings.el
+nvim/plugin/packer_compiled.lua
