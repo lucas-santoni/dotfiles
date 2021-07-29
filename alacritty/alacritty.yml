@@ -72,7 +72,7 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  #title: Alacritty
+  title: Hack The Planet
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
