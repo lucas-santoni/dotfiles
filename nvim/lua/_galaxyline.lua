@@ -71,7 +71,9 @@ local function line()
   gls.left[2] = {
     filename = {
       condition = buffer_not_empty,
-      provider = { 'FileName' },
+      provider = function() return
+        require('galaxyline.provider_fileinfo').get_current_file_name('', '')
+      end,
       highlight = { fg, bg },
       separator = '· ',
       separator_highlight = { background_lll, bg }
