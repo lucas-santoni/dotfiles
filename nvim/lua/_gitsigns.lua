@@ -1,6 +1,7 @@
 local gitsigns = require('gitsigns')
 
 -- TODO Make it work nicely with the LSP errors
+-- TODO Check font problem on Linux
 gitsigns.setup({
   signs = {
     add = { hl = "DiffAdd", text = "│", numhl = "GitSignsNr" },
