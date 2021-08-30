@@ -30,3 +30,10 @@ vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
 }
+
+vim.g.nvim_tree_window_picker_exclude = {
+  filetype = {
+    "packer",
+    "Trouble",
+  }
+}
