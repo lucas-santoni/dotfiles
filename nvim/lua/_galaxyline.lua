@@ -115,7 +115,7 @@ local function line()
         end
 
         hi('LineDiagnostic', { guibg = bg, guifg = fg })
-        return 'all good'
+        return '👍'
       end,
       highlight = 'LineDiagnostic',
     }

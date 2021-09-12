@@ -93,5 +93,10 @@ abbr cat "bat"
 abbr copy "xclip -selection clipboard"
 abbr paste "xclip -selection clipboard -out"
 
-## Yarn Workspaces
+## YARN WORKSPACES
 abbr yw "yarn workspace"
+
+## CRYPTIO
+abbr fro "yarn workspace front start"
+abbr bgw "yarn workspace background-worker dev"
+abbr bac "yarn workspace back start:dev"

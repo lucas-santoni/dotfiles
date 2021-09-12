@@ -4,6 +4,7 @@ local packer = require('packer')
 packer.startup(function()
   use({ 'wbthomason/packer.nvim', opt = true })
 
+  use('dstein64/vim-startuptime')
   use('famiu/nvim-reload')
   use('folke/trouble.nvim')
   use('folke/which-key.nvim')
