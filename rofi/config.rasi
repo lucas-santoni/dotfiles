@@ -9,4 +9,4 @@ configuration {
   display-window: "🪟";
 }
 
-@import "theme"
+@theme "theme"

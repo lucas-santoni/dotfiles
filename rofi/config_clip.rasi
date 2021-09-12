@@ -1,11 +1,10 @@
 configuration {
   modi: "clip:greenclip print";
   show-icons: false;
-  lines: 7;
   font: "SF Pro Display 30";
 }
 
-@import "theme"
+@theme "theme"
 
 prompt {
   enabled: false;
