@@ -7,7 +7,7 @@ nvim_tree.setup({
   ignore_ft_on_setup = {},
   auto_close = false,
   open_on_tab = false,
-  hijack_cursor = false,
+  hijack_cursor = true,
   update_cwd = false,
   lsp_diagnostics = false,
   update_focused_file = {
