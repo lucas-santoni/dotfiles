@@ -172,18 +172,19 @@ Nothing special:
 ln -s ~/.dotfiles/tmux ~/.config/
 ```
 
-## Vim
+## Neovim
 
 Dependencies:
 
-* https://github.com/junegunn/vim-plug
-* https://github.com/chriskempson/base16-shell
+* https://github.com/wbthomason/packer.nvim
 
-Otherwise nothing special:
+Get the whole configuration folder:
 
 ```fish
-ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/.dotfiles/nvim ~/.config
 ```
+
+Then run Neovim and `:PackerInstall`.
 
 ## VSCode
 
