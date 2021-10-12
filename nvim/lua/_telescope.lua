@@ -8,7 +8,7 @@ telescope.setup({
     color_devicons = true,
     layout_strategy = 'bottom_pane',
     layout_config = {
-      height = 0.20,
+      height = 0.40,
       prompt_position = 'top',
     },
     borderchars = {
