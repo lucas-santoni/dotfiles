@@ -20,11 +20,6 @@ wk.setup({
   show_help = false,
 })
 
--- Helper to map Telescope bindings
-local function t(command)
-  return '<cmd>Telescope ' .. command .. ' prompt_title= previewer=false<cr>'
-end
-
 wk.register({
   ['<leader>'] = { t('buffers'), 'Buffer List' },
 
@@ -42,14 +37,14 @@ wk.register({
     name = 'windows/buffer',
     o = { '<C-o>', 'Back Buffer' },
     i = { '<C-i>', 'Forward Buffer' },
-    h = { '<C-w>h', 'Window Left' },
-    H = { '<C-w>H', 'Window Left' },
-    j = { '<C-w>j', 'Window Down' },
-    J = { '<C-w>J', 'Window Down' },
-    k = { '<C-w>k', 'Window Right' },
-    K = { '<C-w>K', 'Window Right' },
-    l = { '<C-w>l', 'Window Up' },
-    L = { '<C-w>L', 'Window Up' },
+    h = { '<C-w>h', 'Go window left' },
+    H = { '<C-w>H', 'Move window left' },
+    j = { '<C-w>j', 'Go window down' },
+    J = { '<C-w>J', 'Move window down' },
+    k = { '<C-w>k', 'Go window right' },
+    K = { '<C-w>K', 'Move window right' },
+    l = { '<C-w>l', 'Go window up' },
+    L = { '<C-w>L', 'Move window up' },
     n = { '<cmd>bnext<cr>', 'Next Buffer' },
     p = { '<cmd>bprev<cr>', 'Previous Buffer' },
     d = { '<cmd>bdelete<cr>', 'Delete Buffer' },
@@ -70,9 +65,9 @@ wk.register({
     name = 'find',
     b = { t('buffers'), 'Find Buffers' },
     c = { t('command_history'), 'Command History' },
-    C = { t('commands'), 'Command' },
-    f = { t('git_files'), 'Find Files (Git)' },
-    F = { t('find_files'), 'Find Files (All)' },
+    C = { t('commands'), 'Run a command' },
+    f = { t('find_files'), 'Find Files (All)' },
+    F = { t('git_files'), 'Find Files (Git)' },
     g = { t('live_grep'), 'Find Text' },
     o = { t('vim_options'), 'Vim Option' },
     p = { t('oldfiles'), 'Previously Opened' },

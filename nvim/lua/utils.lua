@@ -19,3 +19,13 @@ function min(a, b)
   end
   return a
 end
+
+-- Helper to map Telescope bindings
+function t(command)
+  return '<cmd>' .. tdb(command) .. '<cr>'
+end
+
+-- Helper to map Telescope bindings (for the dashboard)
+function tdb(command)
+  return 'Telescope ' .. command .. ' prompt_title= previewer=false'
+end

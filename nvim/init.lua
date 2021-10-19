@@ -1,3 +1,5 @@
+-- I would like to put these alphabetically, but the order matters...
+
 require('utils')
 require('colors')
 require('options')
@@ -6,6 +8,7 @@ require('lsp')
 require('plugins')
 require('_base16')
 require('_compe')
+require('_dashboard')
 require('_galaxyline')
 require('_gitsigns')
 require('_indent-blankline')
