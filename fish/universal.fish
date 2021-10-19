@@ -14,7 +14,7 @@ set -Ux EDITOR vim
 # Also use vim to read man pages
 # See "Edit 2" of this post:
 # https://zameermanji.com/blog/2012/12/30/using-vim-as-manpager/
-set -Ux MANPAGER "/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+set -Ux MANPAGER "/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 # Locales
 set -Ux LOCALE fr_FR.UTF-8
