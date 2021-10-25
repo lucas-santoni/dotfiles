@@ -432,5 +432,15 @@
 #[stack-volumes]
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
+
+[Telegram]
+    appname = "Telegram Desktop"
+    new_icon = /usr/share/icons/Papirus/48x48/apps/telegram-desktop.svg
+
+[Discord]
+    appname = "discord"
+    new_icon = /usr/share/icons/Papirus/48x48/apps/discord.svg
+    format = "<b>Discord</b>\n%s\n%b"
+
 #
 # vim: ft=cfg
