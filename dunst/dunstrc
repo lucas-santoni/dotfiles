@@ -24,10 +24,10 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = 340
 
     # The maximum height of a single notification, excluding the frame.
-    height = 100
+    height = 90
 
     # Position the notification in the bottom right corner
     origin = bottom-right
