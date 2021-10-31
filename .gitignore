@@ -1,10 +1,12 @@
 *.swp
 .DS_Store
+emacs/.last-package-update-day
 emacs/.lsp-session-*
 emacs/auto-save-list
 emacs/backups
 emacs/custom.el
 emacs/elpa
+emacs/quelpa
 emacs/recentf
 emacs/settings.el
 nvim/plugin/packer_compiled.lua
