@@ -1,11 +1,33 @@
 local nvim_tree = require('nvim-tree')
 local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
+vim.g.nvim_tree_gitignore = 1
+vim.g.nvim_tree_indent_markers = 1
+
+vim.g.nvim_tree_show_icons = {
+  git = 1,
+  folders = 1,
+  files = 1
+}
+
+vim.g.nvim_tree_icons = {
+  default = "",
+  symlink = "",
+}
+
+vim.g.nvim_tree_window_picker_exclude = {
+  filetype = {
+    "packer",
+    "Trouble",
+  }
+}
+
 nvim_tree.setup({
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
   ignore_ft_on_setup = {},
+  nvim_tree_ignore = { '.git', 'node_modules' },
   auto_close = false,
   open_on_tab = false,
   hijack_cursor = true,
@@ -42,25 +64,3 @@ nvim_tree.setup({
     }
   }
 })
-
-vim.g.nvim_tree_gitignore = 1
-vim.g.nvim_tree_ignore = { '.git', 'node_modules' }
-vim.g.nvim_tree_indent_markers = 1
-
-vim.g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1
-}
-
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-}
-
-vim.g.nvim_tree_window_picker_exclude = {
-  filetype = {
-    "packer",
-    "Trouble",
-  }
-}
