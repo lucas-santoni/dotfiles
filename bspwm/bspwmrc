@@ -88,12 +88,12 @@ blueman-applet &
 echo ">> blueman launched"
 
 # Set a wallpaper
-# feh --bg-fill ~/Pictures/wallpapers/current
-# echo ">> Wallpaper set"
+feh --bg-fill ~/Pictures/wallpapers/current
+echo ">> Wallpaper set"
 
 # Or set a solid color
-hsetroot -solid "#181818"
-echo ">> Solid wallpaper set"
+# hsetroot -solid "#181818"
+# echo ">> Solid wallpaper set"
 
 # Start a clipboard manager
 # Allows for unification and history with rofi later on
@@ -117,9 +117,9 @@ bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 10
 bspc config border_width          4
 bspc config window_gap           22
 
-bspc config single_monocle      true
-bspc config gapless_monocle     true
-bspc config borderless_monocle  true
+bspc config single_monocle      false
+bspc config gapless_monocle     false
+bspc config borderless_monocle  false
 
 bspc config normal_border_color  "#383838"
 bspc config active_border_color  "#383838"
