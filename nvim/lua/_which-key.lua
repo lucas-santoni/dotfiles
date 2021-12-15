@@ -77,7 +77,7 @@ wk.register({
 
   l = {
     name = 'lsp',
-    t = { '<cmd>TroubleToggle lsp_document_diagnostics<cr>', 'Document Diagnostics' },
+    t = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Document Diagnostics' },
     T = { '<cmd>TroubleToggle lsp_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
     r = { t('lsp_references'), 'Show References' },
     R = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
