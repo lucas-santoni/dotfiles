@@ -1,4 +1,6 @@
-Xft.dpi: 192
+! 192 should be the way to go, but it does not seem to make a difference.
+Xft.dpi: 96
+
 Xft.antialias: true
 Xft.hinting: true
 Xft.autohint: false
