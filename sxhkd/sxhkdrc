@@ -6,16 +6,12 @@ super + x
 super + Return
   alacritty
 
-# Run Emacs
-super + e
-  emacs
-
 # Run the browser
 super + g
   google-chrome-stable
 
 # Run the file explorer
-super + t
+super + s
   pcmanfm
 
 # Run the application launcher
@@ -86,17 +82,17 @@ super + shift + o
 super + shift + r
   bspc wm -r
 
-# Close focused node
-super + q
-  bspc node -c
-
-# Kill focused node
-super + shift + q
-  bspc node -k
+# Close, or kill, focused node
+super + {_,shift} q
+  bspc node -{c,k}
 
 # Switch between tiles and monocle
-super + f
+super + shift + f
   bspc desktop -l next
+
+# Toggle floating mode
+super + f
+  bspc node -t {\~floating}
 
 # Focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -110,6 +106,10 @@ super + {n,p}
 super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
   bspc {desktop -f,node -d} '^{1-9,10}'
 
-# Toggle floating mode
-super + {s}
-  bspc node -t {\~floating}
+# Next split direction
+super + {_,shift +} t
+  bspc node -p {east,south}
+
+# Balance
+super + e
+  bspc node @/ --balance

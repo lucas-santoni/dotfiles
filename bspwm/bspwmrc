@@ -117,6 +117,10 @@ bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 10
 bspc config border_width          4
 bspc config window_gap           22
 
+bspc config split_ratio         0.50
+
+bspc config presel_feedback     false
+
 bspc config single_monocle      false
 bspc config gapless_monocle     false
 bspc config borderless_monocle  false
@@ -125,9 +129,9 @@ bspc config normal_border_color  "#383838"
 bspc config active_border_color  "#383838"
 bspc config focused_border_color "#b8b8b8"
 
-bspc rule -a "Bitwarden" state=floating
-bspc rule -a "Pcmanfm" state=floating
-bspc rule -a "JetBrains Toolbox" state=floating
+bspc rule -a "Bitwarden"            state=floating
+bspc rule -a "Pcmanfm"              state=floating
+bspc rule -a "JetBrains Toolbox"    state=floating
 
-bspc rule -a "Zathura" state=tiled
-bspc rule -a Emacs state=tiled
+bspc rule -a "Zathura"              state=tiled
+bspc rule -a Emacs                  state=tiled
