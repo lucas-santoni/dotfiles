@@ -1,0 +1,15 @@
+#
+# ~/.bashrc
+#
+
+# Load base16 colors
+sh $(realpath ~/.base16_theme)
+
+# If not running interactively, don't do anything else
+[[ $- != *i* ]] && return
+
+# Look of the prompt
+PS1='[\u@\h \W]\$ '
+
+# The only bash command I launch
+alias x='startx'
