@@ -2,7 +2,7 @@ configuration {
   modi: "window,drun,clip:greenclip print";
   show-icons: true;
   lines: 7;
-  font: "SF Pro Display 30";
+  font: "SF Pro Display 20";
   drun-display-format: "{icon}  {name}";
   window-format: "{icon}  {t}";
   display-drun: "🕵️";

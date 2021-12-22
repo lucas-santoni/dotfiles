@@ -8,5 +8,3 @@ razer.turn_off_on_screensaver = False
 for device in razer.devices:
     device.brightness = 100
     device.fx.static(255, 255, 255)
-    if device.type == "mouse":
-        device.poll_rate = 1000

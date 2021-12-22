@@ -1,7 +1,7 @@
 configuration {
   modi: "clip:greenclip print";
   show-icons: false;
-  font: "SF Pro Display 30";
+  font: "SF Pro Display 20";
 }
 
 @theme "theme"
@@ -11,5 +11,5 @@ prompt {
 }
 
 entry {
-  padding: 32px 16px;
+  padding: 16px 8px;
 }

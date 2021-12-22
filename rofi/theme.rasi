@@ -1,25 +1,25 @@
 * {
   spacing: 0;
-  width: 25%;
+  width: 17%;
   background-color: #181818;
   text-color: #b8b8b8;
 }
 
 window {
-  border: 5px;
+  border: 3px;
   border-color: #585858;
 }
 
 prompt {
-  padding: 32px;
+  padding: 16px;
 }
 
 entry {
-  padding: 32px 0px;
+  padding: 16px 0px;
 }
 
 element {
-  padding: 16px;
+  padding: 8px;
 }
 
 element-icon {
