@@ -11,7 +11,7 @@ super + g
   google-chrome-stable
 
 # Run the file explorer
-super + s
+super + p
   pcmanfm
 
 # Run the application launcher
@@ -60,23 +60,23 @@ super + shift + m
 #   pactl set-sink-mute (pactl list short | grep "RUNNING\|SUSPENDED" | cut -f1 | head -n1) toggle
 
 # Open PA GUI
-super + shift + i
+super + shift + p
   pavucontrol
 
 # Brightess down
-super + i
-  ddccontrol -r 0x10 -W -5 dev:/dev/i2c-5 ; \
-  ddccontrol -r 0x10 -W -5 dev:/dev/i2c-6
+# super + i
+#   ddccontrol -r 0x10 -W -5 dev:/dev/i2c-5 ; \
+#   ddccontrol -r 0x10 -W -5 dev:/dev/i2c-6
 
 # Brightness up
-super + o
-  ddccontrol -r 0x10 -W +5 dev:/dev/i2c-5 ; \
-  ddccontrol -r 0x10 -W +5 dev:/dev/i2c-6
+# super + o
+#   ddccontrol -r 0x10 -W +5 dev:/dev/i2c-5 ; \
+#   ddccontrol -r 0x10 -W +5 dev:/dev/i2c-6
 
 # Brightness reset
-super + shift + o
-  ddccontrol -r 0x10 -w 0 dev:/dev/i2c-5 ; \
-  ddccontrol -r 0x10 -w 0 dev:/dev/i2c-6
+# super + shift + o
+#   ddccontrol -r 0x10 -w 0 dev:/dev/i2c-5 ; \
+#   ddccontrol -r 0x10 -w 0 dev:/dev/i2c-6
 
 # Reload bspwm (and all the stuff launched in the bspwmrc file)
 super + shift + r
@@ -98,9 +98,9 @@ super + f
 super + {_,shift + }{h,j,k,l}
   bspc node -{f,s} {west,south,north,east}
 
-# Focus the next/previous window in the current desktop
-super + {n,p}
-  bspc node -f {next,prev}.local.!hidden.window
+# Focus the next window in the current desktop
+super + n
+  bspc node -f next.local.!hidden.window
 
 # Focus or send to the given desktop
 super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
