@@ -25,10 +25,10 @@ hi('CursorLine', { guibg = 'NONE', guifg = 'NONE' })
 hi('CursorLineNR', { guibg = 'NONE', guifg = background_lll })
 
 -- LSP gutter signs colors
-hi('LspDiagnosticsDefaultError', { guibg = 'NONE', guifg = red })
-hi('LspDiagnosticsDefaultWarning', { guibg = 'NONE', guifg = orange })
-hi('LspDiagnosticsDefaultInformation', { guibg = 'NONE', guifg = blue })
-hi('LspDiagnosticsDefaultHint', { guibg = 'NONE', guifg = blue })
+hi('DiagnosticSignError', { guibg = 'NONE', guifg = red })
+hi('DiagnosticSignWarn', { guibg = 'NONE', guifg = orange })
+hi('DiagnosticSignInfo', { guibg = 'NONE', guifg = blue })
+hi('DiagnosticSignHint', { guibg = 'NONE', guifg = white })
 
 -- Trouble colors
 hi('TroubleCount', { guibg = background_lll, guifg = background })

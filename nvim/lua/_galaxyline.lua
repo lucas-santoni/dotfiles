@@ -11,11 +11,11 @@ end
 
 -- Don't call this function with no LSP attached
 -- Stolen from https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_diagnostic.lua
-local function get_nvim_lsp_diagnostic(clients, diag_type)
+local function get_nvim_lsp_diagnostic(clients, severity)
   local count = 0
 
   for _, client in ipairs(clients) do
-    count = count + vim.lsp.diagnostic.get_count(vim.api.nvim_get_current_buf(),diag_type,client.id)
+    count = count + length(vim.diagnostic.get(vim.api.nvim_get_current_buf(), { severity = severity }))
   end
 
   return count
@@ -89,10 +89,10 @@ local function line()
         end
 
         local clients = vim.lsp.get_active_clients()
-        local errors = get_nvim_lsp_diagnostic(clients, 'Error')
-        local warnings = get_nvim_lsp_diagnostic(clients, 'Warning')
-        local informations = get_nvim_lsp_diagnostic(clients, 'Information')
-        local hints = get_nvim_lsp_diagnostic(clients, 'Hint')
+        local errors = get_nvim_lsp_diagnostic(clients, vim.diagnostic.severity.ERROR)
+        local warnings = get_nvim_lsp_diagnostic(clients, vim.diagnostic.severity.WARN)
+        local informations = get_nvim_lsp_diagnostic(clients, vim.diagnostic.severity.INFO)
+        local hints = get_nvim_lsp_diagnostic(clients, vim.diagnostic.severity.HINT)
 
         if errors ~= 0 then
           hi('LineDiagnostic', { guibg = bg, guifg = red })
@@ -110,7 +110,7 @@ local function line()
         end
 
         if hints ~= 0 then
-          hi('LineDiagnostic', { guibg = bg, guifg = blue })
+          hi('LineDiagnostic', { guibg = bg, guifg = white})
           return hints .. pluralize(hints > 1, ' hint')
         end
 

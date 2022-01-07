@@ -130,7 +130,7 @@ bspc config left_monocle_padding    500
 
 bspc config normal_border_color  "#383838"
 bspc config active_border_color  "#383838"
-bspc config focused_border_color "#3a709e"
+bspc config focused_border_color "#d32f2f"
 
 bspc rule -a "Bitwarden"            state=floating
 bspc rule -a "Pcmanfm"              state=floating
