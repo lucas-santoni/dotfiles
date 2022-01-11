@@ -1,10 +1,9 @@
 {
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
+  "telemetry.telemetryLevel": "off",
 
   "editor.fontFamily": "Iosevka",
   "editor.fontWeight": "400",
-  "editor.fontSize": 17,
+  "editor.fontSize": 18,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.rulers": [ 80, 120 ],
@@ -21,11 +20,12 @@
 
   "breadcrumbs.enabled": false, 
 
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.editor.enablePreview": false, 
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": false,
-  "workbench.colorTheme": "GitHub Dark",
   "workbench.startupEditor": "newUntitledFile",
   // "workbench.colorCustomizations": {
   //   "statusBar.background" : "#303030",
@@ -52,6 +52,32 @@
       "after": [ "<Esc>" ]
     }
   ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [ "<leader>", "<leader>" ],
+      "commands": [ "workbench.action.quickOpen" ]
+    },
+    {
+      "before": [ "<leader>", "s" ],
+      "commands": [ "workbench.action.toggleSidebarVisibility" ],
+    },
+    {
+      "before": [ "<leader>", "j" ],
+      "commands": [ "workbench.action.togglePanel" ]
+    },
+    {
+      "before": [ "<leader>", "p" ],
+      "commands": [ "workbench.action.previousEditor" ]
+    },
+    {
+      "before": [ "<leader>", "z" ],
+      "commands": [ "workbench.view.search" ]
+    },
+    {
+      "before": [ "<leader>", "e" ],
+      "commands": [ "workbench.view.explorer" ]
+    },
+  ],
 
   "git.autofetch": true, 
 
@@ -65,10 +91,6 @@
   "zenMode.hideLineNumbers": false,
 
   "vsicons.dontShowNewVersionMessage": true,
-
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.codeLens.enabled": false,
 
   "typescript.updateImportsOnFileMove.enabled": "always"
 }

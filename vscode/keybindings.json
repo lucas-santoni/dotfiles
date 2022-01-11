@@ -1,5 +1,9 @@
 [
   {
+    "key": "ctrl+f",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
     "key": "ctrl+i",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
@@ -16,11 +20,6 @@
   {
     "key": "ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.openPreviousEditorFromHistory",
-    "when": "!suggestWidgetVisible"
   },
   {
     "key": "ctrl+n",
