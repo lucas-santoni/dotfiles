@@ -25,7 +25,6 @@
   "workbench.editor.enablePreview": false, 
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
-  "workbench.editor.showTabs": false,
   "workbench.startupEditor": "newUntitledFile",
   // "workbench.colorCustomizations": {
   //   "statusBar.background" : "#303030",
@@ -92,5 +91,6 @@
 
   "vsicons.dontShowNewVersionMessage": true,
 
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": false
 }
