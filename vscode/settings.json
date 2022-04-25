@@ -89,5 +89,6 @@
 
   "vsicons.dontShowNewVersionMessage": true,
 
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": false
 }
