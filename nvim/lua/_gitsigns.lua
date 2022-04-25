@@ -11,7 +11,7 @@ gitsigns.setup({
     changedelete = { hl = "DiffChange", text = "│", numhl = "GitSignsNr" }
   },
   numhl = false,
-  watch_gitdir= {
+  watch_gitdir = {
     interval = 100
   },
   sign_priority = 5,
