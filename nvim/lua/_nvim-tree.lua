@@ -1,8 +1,6 @@
 local nvim_tree = require('nvim-tree')
 local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
-vim.g.nvim_tree_indent_markers = 1
-
 vim.g.nvim_tree_show_icons = {
   git = 1,
   folders = 1,
@@ -12,13 +10,6 @@ vim.g.nvim_tree_show_icons = {
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
-}
-
-vim.g.nvim_tree_window_picker_exclude = {
-  filetype = {
-    "packer",
-    "Trouble",
-  }
 }
 
 nvim_tree.setup({
@@ -65,6 +56,23 @@ nvim_tree.setup({
         { key = '<C-l>',  cb = tree_cb('cd') },
         { key = 'u',      cb = tree_cb('dir_up') },
         { key = '?',      cb = tree_cb('toggle_help') },
+      }
+    }
+  },
+  renderer = {
+    indent_markers = {
+      enable = true
+    }
+  },
+  actions = {
+    open_file = {
+      window_picker = {
+        exclude = {
+          filetype = {
+            "packer",
+            "Trouble",
+          }
+        }
       }
     }
   }
