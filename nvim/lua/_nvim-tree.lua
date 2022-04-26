@@ -17,9 +17,6 @@ nvim_tree.setup({
   hijack_netrw = true,
   open_on_setup = false,
   ignore_ft_on_setup = {},
-  nvim_tree_gitignore = true,
-  nvim_tree_ignore = { '.git', 'node_modules' },
-  auto_close = false,
   open_on_tab = false,
   hijack_cursor = true,
   update_cwd = false,
@@ -43,7 +40,6 @@ nvim_tree.setup({
   view = {
     width = 40,
     side = 'left',
-    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {
