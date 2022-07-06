@@ -114,7 +114,7 @@ echo ">> sxhkd launched"
 bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 10
 # bspc monitor DP-2 -d 6 7 8 9 10
 
-bspc config border_width          3
+bspc config border_width          2
 bspc config window_gap           10
 
 bspc config split_ratio         0.60
@@ -130,7 +130,7 @@ bspc config left_monocle_padding    500
 
 bspc config normal_border_color  "#383838"
 bspc config active_border_color  "#383838"
-bspc config focused_border_color "#d32f2f"
+bspc config focused_border_color "#f57f17"
 
 bspc rule -a "Bitwarden"            state=floating
 bspc rule -a "Pcmanfm"              state=floating

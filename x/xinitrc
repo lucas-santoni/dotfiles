@@ -1,6 +1,8 @@
-export GDK_SCALE=1
-export GDK_DPI_SCALE=1.25
+# export GDK_SCALE=1
+# export GDK_DPI_SCALE=1.25
 
+export QT_SCALE_FACTOR=1.25
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+xrdb -merge ~/.Xresources
 exec bspwm

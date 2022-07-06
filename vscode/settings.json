@@ -90,5 +90,6 @@
   "vsicons.dontShowNewVersionMessage": true,
 
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "svelte.enable-ts-plugin": true
 }

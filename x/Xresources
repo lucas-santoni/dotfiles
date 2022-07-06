@@ -1,5 +1,4 @@
-! 192 should be the way to go, but it does not seem to make a difference.
-Xft.dpi: 96
+Xft.dpi: 120
 
 Xft.antialias: true
 Xft.hinting: true
@@ -7,3 +6,5 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
+
+Xcursor.size: 32
