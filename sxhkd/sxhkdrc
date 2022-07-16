@@ -12,7 +12,7 @@ super + g
 
 # Run the file explorer
 super + p
-  pcmanfm
+  nautilus
 
 # Run the application launcher
 super + d
