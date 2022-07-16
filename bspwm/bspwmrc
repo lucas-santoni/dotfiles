@@ -38,6 +38,9 @@ echo ">> Screens position set"
 xsetroot -cursor_name left_ptr &
 echo ">> X cursor set"
 
+# Set mouse speed. We could do that via a X configuration file but who cares.
+xinput --set-prop "8" "libinput Accel Speed" -0.6
+
 # Make sure that imwheel is running
 # This allows to have a faster scrolling speed
 # It think the software itself is completely deprecated but it works
