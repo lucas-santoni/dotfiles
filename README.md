@@ -11,7 +11,7 @@ Various stuff to install:
 
 Handy to have around:
 
-* https://github.com/fnune/base16-fzf
+* https://github.com/base16-project/base16-fzf.git
 
 ## Alacritty
 
@@ -147,7 +147,7 @@ ln -s ~/.dotfiles/rofi ~/.config
 Link the file:
 
 ```fish
-ln -s ~/.config/starship/starship/toml ~/.config/starship.toml
+ln -s ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
 ```
 
 Then, write the startup procedure:
