@@ -1,3 +1,9 @@
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
+#
+# ~/.bash_profile
+#
+
+# Disable history
+unset HISTFILE
+
+# Load rest of configuration
+[[ -f ~/.bashrc ]] && . ~/.bashrc
