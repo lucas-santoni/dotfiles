@@ -9,8 +9,5 @@
   verbose = true
 [pull]
   rebase = false
-[merge]
-  tool = nvimdiff3
-  conflictstyle = diff3
 [mergetool]
 	keepBackup = false
