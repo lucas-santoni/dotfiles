@@ -46,7 +46,6 @@ wk.register({
     l = { '<C-w>l', 'Go window up' },
     L = { '<C-w>L', 'Move window up' },
     n = { '<cmd>bnext<cr>', 'Next Buffer' },
-    N = { '<cmd>DashboardNewFile<cr>', 'News file' },
     p = { '<cmd>bprev<cr>', 'Previous Buffer' },
     d = { '<cmd>bdelete<cr>', 'Delete Buffer' },
     s = { '<cmd>split<cr>', 'Split Horizontally' },
