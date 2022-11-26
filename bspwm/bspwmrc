@@ -50,8 +50,9 @@ imwheel --focus --kill
 echo ">> Scroll speed fixed"
 
 # Light the mouse up
-razer-lights
-echo ">> Razer lights up"
+# (I don't use a Razer mouse anymore...)
+# razer-lights
+# echo ">> Razer lights up"
 
 # Make sure the compositor is always started
 killall -q picom
