@@ -11,4 +11,5 @@ set -gx PATH \
       /sbin \
       /usr/sbin \
       /Users/geo/.cargo/bin \
-      /Users/geo/Library/Python/3.8/bin
+      /Users/geo/Library/Python/3.8/bin \
+      $HOME/.local/share/nvm/$nvm_current_version/bin
