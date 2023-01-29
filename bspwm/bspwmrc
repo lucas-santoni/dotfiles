@@ -30,7 +30,7 @@ echo ">> < and > are now accessible"
 # Setup monitors
 # Sometimes resolution has to be set explicitly here
 # Nothing to kill here, xrandr does not stay alive
-xrandr --output DP-0 --primary --mode 3440x1440 --rate 120.00 # --left-of DP-2 --output DP-2 --auto
+xrandr --output DP-2 --primary --mode 3440x1440 --rate 120.00 # --left-of DP-2 --output DP-2 --auto
 echo ">> Screens position set"
 
 # Avoid the ugly "cross" default X cursor
@@ -115,7 +115,7 @@ echo ">> sxhkd launched"
 
 # Finally, some bspwm configuration
 
-bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 10
 # bspc monitor DP-2 -d 6 7 8 9 10
 
 bspc config border_width          2
