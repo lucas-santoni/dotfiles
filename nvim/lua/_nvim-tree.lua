@@ -67,6 +67,16 @@ local on_attach = function(bufnr)
   vim.keymap.set('n', '<2-LeftMouse>',  api.node.open.edit,           opts('Open'))
   vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
   -- END_DEFAULT_ON_ATTACH
+
+  vim.keymap.del('n', 's', { buffer = bufnr })
+  vim.keymap.del('n', 'e', { buffer = bufnr })
+
+  vim.keymap.set('n', 'e', api.node.open.edit,              opts('Open'))
+  vim.keymap.set('n', 'l', api.tree.expand_all,             opts('Expand All'))
+  vim.keymap.set('n', 'h', api.node.navigate.parent_close,  opts('Close Directory'))
+  vim.keymap.set('n', 'v', api.node.open.vertical,          opts('Open: Vertical Split'))
+  vim.keymap.set('n', 's', api.node.open.horizontal,        opts('Open: Horizontal Split'))
+  vim.keymap.set('n', '?', api.tree.toggle_help,            opts('Help'))
 end
 
 nvim_tree.setup({
@@ -97,21 +107,7 @@ nvim_tree.setup({
   },
   view = {
     width = 40,
-    side = 'left',
-    mappings = {
-      custom_only = false,
-      list = {
-        -- { key = { 'e' },  cb = tree_cb('edit') },
-        -- { key = 'v',      cb = tree_cb('vsplit') },
-        -- { key = 's',      cb = tree_cb('split') },
-        -- { key = '<C-p>',  cb = tree_cb('parent_node') },
-        -- { key = 'h',      cb = tree_cb('close_node') },
-        -- { key = 'l',      cb = tree_cb('open_node') },
-        -- { key = '<C-l>',  cb = tree_cb('cd') },
-        -- { key = 'u',      cb = tree_cb('dir_up') },
-        -- { key = '?',      cb = tree_cb('toggle_help') },
-      }
-    }
+    side = 'left'
   },
   renderer = {
     indent_markers = {
