@@ -28,7 +28,7 @@ vim.opt.laststatus = 3
 
 -- Change the character used as a vertical split
 -- TODO Convert to Lua one day
-vim.cmd('set fillchars+=vert:\\|')
+vim.cmd('set fillchars+=vert:\\│')
 
 -- Don't show netrw help banner
 vim.g.netrw_banner = 0
