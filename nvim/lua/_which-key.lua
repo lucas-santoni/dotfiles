@@ -29,12 +29,12 @@ wk.register({
   ['n'] = { '<cmd>nohl<cr>', 'No Highlight' },
 
   ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Toogle Tree' },
-  ['E'] = { '<cmd>NvimTreeFindFile<cr>', 'Toogle Tree' },
+  ['E'] = { '<cmd>NvimTreeFindFile<cr>', 'Toogle Tree (File)' },
 
   ['z'] = { '/', 'Search' },
 
   a = {
-    name = 'windows/buffer',
+    name = 'windows/buffers',
     o = { '<C-o>', 'Back Buffer' },
     i = { '<C-i>', 'Forward Buffer' },
     h = { '<C-w>h', 'Go window left' },
