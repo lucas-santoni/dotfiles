@@ -1,3 +1,5 @@
+-- These variable are read while configuring the main theme,
+-- as well as other plugins.
 -- TODO Read this from the environment
 background =     '#181818'
 background_l =   '#282828'

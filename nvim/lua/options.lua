@@ -25,17 +25,11 @@ vim.opt.list = true
 vim.opt.listchars = "eol:↵,tab:↣  "
 vim.opt.shortmess = "filnxtToOfc"
 vim.opt.laststatus = 3
-
--- Change the character used as a vertical split
--- TODO Convert to Lua one day
-vim.cmd('set fillchars+=vert:\\│')
-
--- Don't show netrw help banner
+vim.opt.fillchars = { vert = '│' }
 vim.g.netrw_banner = 0
 
--- Remap leader to `space`
+-- This configuration relies on the spacebar a lot
 vim.g.mapleader = ' '
 
--- Mode is already displayed in the statusline so we can hide it here.
--- TODO Convert to Lua one day...
+-- Mode is already displayed by the statusline plugin
 vim.cmd('set noshowmode')

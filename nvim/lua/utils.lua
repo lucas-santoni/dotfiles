@@ -1,3 +1,4 @@
+-- Some helper functions, accessible everywhere
 function map(arr, f)
   local res = {}
   for k, v in pairs(arr) do
