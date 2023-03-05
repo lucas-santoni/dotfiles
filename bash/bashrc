@@ -3,7 +3,7 @@
 #
 
 # Load base16 colors
-sh $(realpath ~/.base16_theme)
+sh $(/opt/homebrew/bin/grealpath ~/.base16_theme)
 
 # If not running interactively, don't do anything else
 [[ $- != *i* ]] && return
