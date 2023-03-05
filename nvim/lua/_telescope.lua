@@ -3,8 +3,8 @@ local telescope = require('telescope')
 telescope.setup({
   defaults = {
     sorting_strategy = 'ascending',
-    prompt_prefix = '→ ',
-    selection_caret = '→ ',
+    prompt_prefix = '→  ',
+    selection_caret = '· ',
     color_devicons = true,
     layout_strategy = 'bottom_pane',
     layout_config = {

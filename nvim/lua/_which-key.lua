@@ -3,7 +3,7 @@ local wk = require('which-key')
 wk.setup({
   icons = {
     breadcrumb = '»',
-    separator = '→',
+    separator = '→ ',
     group = '+',
   },
   window = {
@@ -13,7 +13,7 @@ wk.setup({
     padding = { 1, 0, 1, 0 },
   },
   layout = {
-    height = { min = 1, max = 5 },
+    height = { min = 1, max = 10 },
     spacing = 3,
     align = 'left',
   },
@@ -21,30 +21,30 @@ wk.setup({
 })
 
 wk.register({
-  ['<leader>'] = { t('buffers'), 'Buffer List' },
+  ['<leader>'] = { t('buffers'), 'Buffers' },
 
   ['s'] = { '<cmd>HopChar2<cr>', 'Jump To (2)' },
   ['S'] = { '<cmd>HopChar1<cr>', 'Jump To (1)' },
 
   ['n'] = { '<cmd>nohl<cr>', 'No Highlight' },
 
-  ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Toogle Tree' },
-  ['E'] = { '<cmd>NvimTreeFindFile<cr>', 'Toogle Tree (File)' },
+  ['e'] = { '<cmd>NvimTreeToggle<cr>', 'File Tree' },
+  ['E'] = { '<cmd>NvimTreeFindFile<cr>', 'File Tree (Current)' },
 
   ['z'] = { '/', 'Search' },
 
   a = {
     name = 'windows/buffers',
-    o = { '<C-o>', 'Back Buffer' },
-    i = { '<C-i>', 'Forward Buffer' },
-    h = { '<C-w>h', 'Go window left' },
-    H = { '<C-w>H', 'Move window left' },
-    j = { '<C-w>j', 'Go window down' },
-    J = { '<C-w>J', 'Move window down' },
-    k = { '<C-w>k', 'Go window right' },
-    K = { '<C-w>K', 'Move window right' },
-    l = { '<C-w>l', 'Go window up' },
-    L = { '<C-w>L', 'Move window up' },
+    o = { '<C-o>', 'Jump Backward' },
+    i = { '<C-i>', 'Jump Forward' },
+    h = { '<C-w>h', 'Go Window Left' },
+    H = { '<C-w>H', 'Move Window Left' },
+    j = { '<C-w>j', 'Go Window Down' },
+    J = { '<C-w>J', 'Move Window Down' },
+    k = { '<C-w>k', 'Go Window Right' },
+    K = { '<C-w>K', 'Move Window Right' },
+    l = { '<C-w>l', 'Go Window Up' },
+    L = { '<C-w>L', 'Move Window Up' },
     n = { '<cmd>bnext<cr>', 'Next Buffer' },
     p = { '<cmd>bprev<cr>', 'Previous Buffer' },
     d = { '<cmd>bdelete<cr>', 'Delete Buffer' },
@@ -63,15 +63,16 @@ wk.register({
 
   f = {
     name = 'find',
-    b = { t('buffers'), 'Find Buffers' },
-    c = { t('command_history'), 'Command History' },
-    C = { t('commands'), 'Run a command' },
-    f = { t('find_files'), 'Find Files (All)' },
-    F = { t('git_files'), 'Find Files (Git)' },
+    b = { t('buffers'), 'Buffer' },
+    c = { t('command_history'), 'Command (History)' },
+    f = { t('find_files'), 'File (All)' },
+    F = { t('git_files'), 'File (Git)' },
     g = { t('live_grep'), 'Find Text' },
     o = { t('vim_options'), 'Vim Option' },
     p = { t('oldfiles'), 'Previously Opened' },
     r = { t('registers'), 'Registers' },
+    j = { t('jumplist'), 'Jumplist' },
+    k = { t('keymaps'), 'Keymaps' },
   },
 
   l = {
@@ -83,13 +84,13 @@ wk.register({
     d = { t('lsp_definitions'), 'Show Definitions' },
     i = { t('lsp_implementations'), 'Show Implementations' },
     f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', 'Format Buffer' },
-    h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'Show Help' }
+    h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'Show Help' },
   },
 
   m = {
     name = 'misc',
     s = { '<cmd>source %<cr>', 'Source Current' },
-    h = { '<cmd>echo map(synstack(line(\'.\'), col(\'.\')), \'synIDattr(v:val, "name")\') <cr>', 'Show Highlight Group' },
+    h = { '<cmd>echo map(synstack(line(\'.\'), col(\'.\')), \'synIDattr(v:val, "name")\')<cr>', 'Show Highlight Group' },
   },
 
   p = {
