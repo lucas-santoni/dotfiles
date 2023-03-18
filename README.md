@@ -107,7 +107,7 @@ source ~/.dotfiles/fish/abbreviations.fish
 Nothing special:
 
 ```fish
-ln -s ~/.dotfiles/git/config ~/.gitconfig
+ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ```
 
 ## IMWheel
