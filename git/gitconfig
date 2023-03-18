@@ -10,4 +10,4 @@
 [pull]
   rebase = false
 [mergetool]
-	keepBackup = false
+  keepBackup = false
