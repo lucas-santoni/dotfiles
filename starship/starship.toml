@@ -29,6 +29,12 @@ format = """\
 
 add_newline = false
 
+[username]
+format= ""
+
+[hostname]
+format= ""
+
 [character]
 success_symbol = "[λ](bold green)"
 error_symbol = "[λ](bold red)"
