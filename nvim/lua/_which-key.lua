@@ -2,15 +2,10 @@ local wk = require('which-key')
 
 wk.setup({
   icons = {
+    mappings = false,
     breadcrumb = '»',
     separator = '→ ',
     group = '+',
-  },
-  window = {
-    border = 'none',
-    position = 'bottom',
-    margin = { 1, 0, 1, 0 },
-    padding = { 1, 0, 1, 0 },
   },
   layout = {
     height = { min = 1, max = 10 },
@@ -20,82 +15,51 @@ wk.setup({
   show_help = false,
 })
 
-wk.register({
-  ['<leader>'] = { t('buffers'), 'Buffers' },
-
-  ['s'] = { '<cmd>HopChar2<cr>', 'Jump To (2)' },
-  ['S'] = { '<cmd>HopChar1<cr>', 'Jump To (1)' },
-
-  ['n'] = { '<cmd>nohl<cr>', 'No Highlight' },
-
-  ['e'] = { '<cmd>NvimTreeToggle<cr>', 'File Tree' },
-  ['E'] = { '<cmd>NvimTreeFindFile<cr>', 'File Tree (Current)' },
-
-  ['z'] = { '/', 'Search' },
-
-  a = {
-    name = 'windows/buffers',
-    o = { '<C-o>', 'Jump Backward' },
-    i = { '<C-i>', 'Jump Forward' },
-    h = { '<C-w>h', 'Go Window Left' },
-    H = { '<C-w>H', 'Move Window Left' },
-    j = { '<C-w>j', 'Go Window Down' },
-    J = { '<C-w>J', 'Move Window Down' },
-    k = { '<C-w>k', 'Go Window Right' },
-    K = { '<C-w>K', 'Move Window Right' },
-    l = { '<C-w>l', 'Go Window Up' },
-    L = { '<C-w>L', 'Move Window Up' },
-    n = { '<cmd>bnext<cr>', 'Next Buffer' },
-    p = { '<cmd>bprev<cr>', 'Previous Buffer' },
-    d = { '<cmd>bdelete<cr>', 'Delete Buffer' },
-    s = { '<cmd>split<cr>', 'Split Horizontally' },
-    v = { '<cmd>vsplit<cr>', 'Split Vertically' },
-    c = { '<cmd>close<cr>', 'Close' },
-    q = { '<cmd>quit<cr>', 'Quit' },
-  },
-
-  d = {
-    name = 'document',
-    s = { '<cmd>w<cr>', 'Save Changes' },
-    S = { '<cmd>wa<cr>', 'Save All Changes' },
-    r = { '<cmd>u0<cr>', 'Restore Changes' },
-  },
-
-  f = {
-    name = 'find',
-    b = { t('buffers'), 'Buffer' },
-    c = { t('command_history'), 'Command (History)' },
-    f = { t('find_files'), 'File (All)' },
-    F = { t('git_files'), 'File (Git)' },
-    g = { t('live_grep'), 'Find Text' },
-    o = { t('vim_options'), 'Vim Option' },
-    p = { t('oldfiles'), 'Previously Opened' },
-    r = { t('registers'), 'Registers' },
-    j = { t('jumplist'), 'Jumplist' },
-    k = { t('keymaps'), 'Keymaps' },
-  },
-
-  l = {
-    name = 'lsp',
-    t = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Document Diagnostics' },
-    T = { '<cmd>TroubleToggle lsp_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
-    r = { t('lsp_references'), 'Show References' },
-    R = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
-    d = { t('lsp_definitions'), 'Show Definitions' },
-    i = { t('lsp_implementations'), 'Show Implementations' },
-    f = { '<cmd>lua vim.lsp.buf.formatting()<cr>', 'Format Buffer' },
-    h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'Show Help' },
-  },
-
-  m = {
-    name = 'misc',
-    s = { '<cmd>source %<cr>', 'Source Current' },
-    h = { '<cmd>echo map(synstack(line(\'.\'), col(\'.\')), \'synIDattr(v:val, "name")\')<cr>', 'Show Highlight Group' },
-  },
-
-  p = {
-    name = 'packer',
-    s = { '<cmd>PackerSync<cr>', 'Packer Sync' },
-    u = { '<cmd>PackerUpdate<cr>', 'Packer Update' },
-  },
-}, { prefix = '<leader>' })
+wk.add({
+  { "<leader><leader>", "<cmd>Telescope buffers prompt_title= previewer=false<cr>", desc = "Buffers" },
+  { "<leader>E", "<cmd>NvimTreeFindFile<cr>", desc = "File Tree (Current)" },
+  { "<leader>S", "<cmd>HopChar1<cr>", desc = "Jump To (1)" },
+  { "<leader>d", group = "document" },
+  { "<leader>dS", "<cmd>wa<cr>", desc = "Save All Changes" },
+  { "<leader>dr", "<cmd>u0<cr>", desc = "Restore Changes" },
+  { "<leader>ds", "<cmd>w<cr>", desc = "Save Changes" },
+  { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Tree" },
+  { "<leader>f", group = "find" },
+  { "<leader>fF", "<cmd>Telescope git_files prompt_title= previewer=false<cr>", desc = "File (Git)" },
+  { "<leader>fb", "<cmd>Telescope buffers prompt_title= previewer=false<cr>", desc = "Buffer" },
+  { "<leader>fc", "<cmd>Telescope command_history prompt_title= previewer=false<cr>", desc = "Command (History)" },
+  { "<leader>ff", "<cmd>Telescope find_files prompt_title= previewer=false<cr>", desc = "File (All)" },
+  { "<leader>fg", "<cmd>Telescope live_grep prompt_title= previewer=false<cr>", desc = "Find Text" },
+  { "<leader>fj", "<cmd>Telescope jumplist prompt_title= previewer=false<cr>", desc = "Jumplist" },
+  { "<leader>fk", "<cmd>Telescope keymaps prompt_title= previewer=false<cr>", desc = "Keymaps" },
+  { "<leader>fo", "<cmd>Telescope vim_options prompt_title= previewer=false<cr>", desc = "Vim Option" },
+  { "<leader>fp", "<cmd>Telescope oldfiles prompt_title= previewer=false<cr>", desc = "Previously Opened" },
+  { "<leader>fr", "<cmd>Telescope registers prompt_title= previewer=false<cr>", desc = "Registers" },
+  { "<leader>m", group = "misc" },
+  { "<leader>mh", "<cmd>echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, \"name\")')<cr>", desc = "Show Highlight Group" },
+  { "<leader>ms", "<cmd>source %<cr>", desc = "Source Current" },
+  { "<leader>n", "<cmd>nohl<cr>", desc = "No Highlight" },
+  { "<leader>p", group = "packer" },
+  { "<leader>ps", "<cmd>PackerSync<cr>", desc = "Packer Sync" },
+  { "<leader>pu", "<cmd>PackerUpdate<cr>", desc = "Packer Update" },
+  { "<leader>q", group = "windows/buffers" },
+  { "<leader>qH", "<C-w>H", desc = "Move Window Left" },
+  { "<leader>qJ", "<C-w>J", desc = "Move Window Down" },
+  { "<leader>qK", "<C-w>K", desc = "Move Window Right" },
+  { "<leader>qL", "<C-w>L", desc = "Move Window Up" },
+  { "<leader>qc", "<cmd>close<cr>", desc = "Close" },
+  { "<leader>qd", "<cmd>bdelete<cr>", desc = "Delete Buffer" },
+  { "<leader>qh", "<C-w>h", desc = "Go Window Left" },
+  { "<leader>qi", "<C-i>", desc = "Jump Forward" },
+  { "<leader>qj", "<C-w>j", desc = "Go Window Down" },
+  { "<leader>qk", "<C-w>k", desc = "Go Window Right" },
+  { "<leader>ql", "<C-w>l", desc = "Go Window Up" },
+  { "<leader>qn", "<cmd>bnext<cr>", desc = "Next Buffer" },
+  { "<leader>qo", "<C-o>", desc = "Jump Backward" },
+  { "<leader>qp", "<cmd>bprev<cr>", desc = "Previous Buffer" },
+  { "<leader>qq", "<cmd>quit<cr>", desc = "Quit" },
+  { "<leader>qs", "<cmd>split<cr>", desc = "Split Horizontally" },
+  { "<leader>qv", "<cmd>vsplit<cr>", desc = "Split Vertically" },
+  { "<leader>s", "<cmd>HopChar2<cr>", desc = "Jump To (2)" },
+  { "<leader>w", "/", desc = "Search" },
+})

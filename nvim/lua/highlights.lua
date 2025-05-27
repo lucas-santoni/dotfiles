@@ -9,7 +9,7 @@ function hi(group, opts)
 end
 
 -- No background allows for a _thiner_ vertical split
-hi('VertSplit', { guibg = 'NONE' })
+hi('WinSeparator', { guibg = 'NONE', guifg = background_ll })
 
 -- By default it uses a lighter background
 hi('SignColumn', { guibg = 'NONE' })
@@ -24,19 +24,6 @@ hi('LineNR', { guibg = 'NONE', guifg = background_l })
 hi('CursorLine', { guibg = 'NONE', guifg = 'NONE' })
 hi('CursorLineNR', { guibg = 'NONE', guifg = background_lll })
 
--- LSP gutter signs colors
-hi('DiagnosticSignError', { guibg = 'NONE', guifg = red })
-hi('DiagnosticSignWarn', { guibg = 'NONE', guifg = orange })
-hi('DiagnosticSignInfo', { guibg = 'NONE', guifg = blue })
-hi('DiagnosticSignHint', { guibg = 'NONE', guifg = white })
-
--- Trouble colors
-hi('TroubleCount', { guibg = background_lll, guifg = background })
-hi('TroubleFoldIcon', { guibg = 'NONE', guifg = background_ll })
-hi('TroubleIndent', { guibg = 'NONE', guifg = background_ll })
-hi('TroubleLocation', { guibg = 'NONE', guifg = background_lll })
-hi('TroubleSource', { guibg = 'NONE', guifg = background_lll })
-
 -- Ident sign
 hi('IndentBlanklineChar', { guibg = 'NONE', guifg = background_l })
 
@@ -46,6 +33,7 @@ hi('NonText', { guibg = 'NONE', guifg = background_l })
 -- Telescope colors, check
 -- https://github.com/nvim-telescope/telescope.nvim#how-to-change-telescope-highlights-group
 hi('TelescopeSelection', { guibg = 'NONE', guifg = foreground })
+hi('TelescopeSelectionCaret', { guibg = 'NONE', guifg = red })
 hi('TelescopeNormal', { guibg = background, guifg = foreground })
 hi('TelescopeBorder', { guifg = background_lll })
 hi('TelescopePromptBorder', { guifg = background_lll })
@@ -60,12 +48,6 @@ hi('HopNextKey', { guibg = background, guifg = red })
 hi('HopNextKey1', { guibg = background, guifg = red })
 hi('HopNextKey2', { guibg = background, guifg = red })
 
--- When in a LSP hover, the TypeScript parenthesis have a wrong background
-vim.cmd('highlight link typescriptParens typescript2')
-
--- Make the main text darker, so that it contrasts with the function definition
-hi('lsp_markdown3', { guifg = foreground_d })
-
 -- Avoid unthemed character in vertical split
 -- https://github.com/vim-airline/vim-airline-themes/issues/48
 hi('StatusLine', { guibg = background_l })
@@ -75,6 +57,52 @@ hi('StatusLineNC', { guibg = background_l })
 hi('NvimTreeIndentMarker', { guibg = 'NONE', guifg = background_l })
 
 -- GitSigns colors
-hi('DiffAdd', { guibg = background, guifg = green })
-hi('DiffChange', { guibg = background, guifg = orange })
-hi('DiffDelete', { guibg = background, guifg = red })
+hi('GitSignsAdd', { guibg = 'NONE' , guifg = green })
+hi('GitSignsChange', { guibg = 'NONE' , guifg = orange })
+hi('GitSignsDelete', { guibg = 'NONE' , guifg = red })
+
+-- WhichKey
+hi('WhichKey',          { guibg = background_l, guifg = orange })
+hi('WhichKeyBorder',    { guibg = background_l, guifg = background_lll })
+hi('WhichKeyDesc',      { guibg = background_l, guifg = green })
+hi('WhichKeyGroup',     { guibg = background_l, guifg = teal })
+hi('WhichKeyIcon',      { guibg = background_l, guifg = foreground_l })
+hi('WhichKeyIconAzure', { guibg = background_l, guifg = orange })
+hi('WhichKeyIconBlue',  { guibg = background_l, guifg = blue })
+hi('WhichKeyIconCyan',  { guibg = background_l, guifg = teal })
+hi('WhichKeyIconGreen', { guibg = background_l, guifg = green })
+hi('WhichKeyIconGrey',  { guibg = background_l, guifg = foreground })
+hi('WhichKeyIconOrange',{ guibg = background_l, guifg = orange })
+hi('WhichKeyIconPurple',{ guibg = background_l, guifg = pink })
+hi('WhichKeyIconRed',   { guibg = background_l, guifg = red })
+hi('WhichKeyIconYellow',{ guibg = background_l, guifg = yellow })
+hi('WhichKeyNormal',    { guibg = background_l, guifg = foreground })
+hi('WhichKeySeparator', { guibg = background_l, guifg = background_lll })
+hi('WhichKeyTitle',     { guibg = background_l, guifg = foreground_l })
+hi('WhichKeyValue',     { guibg = background_l, guifg = foreground_l })
+
+-- nvim-cmp highlight groups
+hi('CmpItemAbbr',               { guibg = background_l, guifg = foreground })
+hi('CmpItemAbbrDeprecated',     { guibg = background_l, guifg = brown, gui = 'strikethrough' })
+hi('CmpItemAbbrMatch',          { guibg = background_l, guifg = blue })
+hi('CmpItemAbbrMatchFuzzy',     { guibg = background_l, guifg = blue })
+hi('CmpItemKind',               { guibg = background_l, guifg = background_ll })
+hi('CmpItemMenu',               { guibg = background_l, guifg = teal })
+hi('CmpItemKindVariable',       { guibg = background_l, guifg = orange })
+hi('CmpItemKindInterface',      { guibg = background_l, guifg = yellow })
+hi('CmpItemKindText',           { guibg = background_l, guifg = foreground_d })
+hi('CmpItemKindFunction',       { guibg = background_l, guifg = pink })
+hi('CmpItemKindMethod',         { guibg = background_l, guifg = pink })
+hi('CmpItemKindConstructor',    { guibg = background_l, guifg = pink })
+hi('CmpItemKindField',          { guibg = background_l, guifg = teal })
+hi('CmpItemKindProperty',       { guibg = background_l, guifg = teal })
+hi('CmpItemKindEnum',           { guibg = background_l, guifg = yellow })
+hi('CmpItemKindKeyword',        { guibg = background_l, guifg = red })
+hi('CmpItemKindConstant',       { guibg = background_l, guifg = orange })
+hi('CmpItemKindModule',         { guibg = background_l, guifg = teal })
+hi('CmpItemKindStruct',         { guibg = background_l, guifg = teal })
+hi('CmpItemKindClass',          { guibg = background_l, guifg = yellow })
+hi('CmpItemKindEvent',          { guibg = background_l, guifg = orange })
+hi('CmpItemKindOperator',       { guibg = background_l, guifg = orange })
+hi('CmpItemKindTypeParameter',  { guibg = background_l, guifg = pink })
+hi('PmenuSel',                  { guibg = background_ll, guifg = foreground })

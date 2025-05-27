@@ -113,9 +113,9 @@ nvim_tree.setup({
     },
     icons = {
       show = {
-        git = true,
-        folder = true,
-        file = true
+        git = false,
+        folder = false,
+        file = false 
       },
       glyphs = {
         default = "",
@@ -129,7 +129,6 @@ nvim_tree.setup({
         exclude = {
           filetype = {
             "packer",
-            "Trouble",
           }
         }
       }

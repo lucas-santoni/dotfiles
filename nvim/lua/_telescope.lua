@@ -5,7 +5,7 @@ telescope.setup({
     sorting_strategy = 'ascending',
     prompt_prefix = '→  ',
     selection_caret = '· ',
-    color_devicons = true,
+    color_devicons = false,
     layout_strategy = 'bottom_pane',
     layout_config = {
       height = 0.40,
