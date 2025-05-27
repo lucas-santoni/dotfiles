@@ -7,3 +7,4 @@ unset HISTFILE
 
 # Load rest of configuration
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+. "$HOME/.cargo/env"

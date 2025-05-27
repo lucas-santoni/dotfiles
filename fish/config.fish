@@ -2,38 +2,44 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set -gx TERM xterm-256color
+
 set -gx PATH \
+      /opt/homebrew/opt/openjdk/bin \
       /bin \
       /usr/bin \
       /usr/local/bin \
       /sbin \
       /usr/sbin \
+      /opt/homebrew/bin \
+      /opt/homebrew/sbin \
       /Users/geo/.cargo/bin \
-      $HOME/.local/share/nvm/$nvm_current_version/bin
+      $HOME/.local/share/nvm/$nvm_current_version/bin \
+      /Users/geo/Library/Python/3.9/bin
 
 ## Neovim
 abbr e "nvim"
 
 ## VSCode
-abbr c code
+abbr c "code"
 
 ## Finder
-abbr f open .
+abbr f "open ."
 
 ## FZF
 ## Usually bound to some keys
 ## But sometimes they are not available
-abbr fr fzf-history-widget
-abbr ft fzf-file-widget
-abbr fh fzf-cd-widget
+abbr fr "fzf-history-widget"
+abbr ft "fzf-file-widget"
+abbr fh "fzf-cd-widget"
 
-## ls / tree / exa
-abbr ls "exa"
-abbr l "exa -l"
-abbr ll "exa -l"
-abbr la "exa -la"
-abbr tree "exa --tree"
-abbr t "exa --tree"
+## ls / tree / eza
+abbr ls "eza"
+abbr l "eza -l"
+abbr ll "eza -l"
+abbr la "eza -la"
+abbr tree "eza --tree"
+abbr t "eza --tree"
 
 ## Git
 abbr g "git"
