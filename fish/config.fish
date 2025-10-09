@@ -13,9 +13,10 @@ set -gx PATH \
       /usr/sbin \
       /opt/homebrew/bin \
       /opt/homebrew/sbin \
-      /Users/geo/.cargo/bin \
+      $HOME/.cargo/bin \
+      $HOME/.local/bin \
       $HOME/.local/share/nvm/$nvm_current_version/bin \
-      /Users/geo/Library/Python/3.9/bin
+      $HOME/Library/Python/3.9/bin
 
 ## Neovim
 abbr e "nvim"
