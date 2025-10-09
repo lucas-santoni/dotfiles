@@ -1,0 +1,47 @@
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.cursor]
+cursor = "#dddddd"
+text = "CellBackground"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 20.0
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Nerd Font"
+style = "Regular"
+
+[scrolling]
+history = 0
+
+[terminal.shell]
+args = ["-l", "-c", "/opt/homebrew/bin/tmux new-session -A -s work"]
+program = "/bin/bash"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+title = "You should not be reading this"
+
+[window.dimensions]
+columns = 100
+lines = 50
+
+[window.padding]
+x = 15
+y = 5
+
+[terminal]
