@@ -28,11 +28,13 @@ style = "Regular"
 history = 0
 
 [terminal.shell]
-args = ["-l", "-c", "/opt/homebrew/bin/tmux new-session -A -s work"]
-program = "/bin/bash"
+# args = ["-l", "-c", "/opt/homebrew/bin/tmux new-session -A -s work"]
+# program = "/bin/bash"
+program = "/opt/homebrew/bin/zellij"
+args = ["attach", "-c", "work"]
 
 [window]
-decorations = "none"
+# decorations = "none"
 dynamic_padding = true
 title = "You should not be reading this"
 
